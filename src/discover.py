@@ -219,7 +219,7 @@ def load_rows():
             **tr, **{k: fr.get(k) for k in (
                 "mcap", "pe_fwd", "peg", "ps", "roe", "margin", "rev_g", "eps_g",
                 "upside", "consensus", "n_analysts",
-                "next_earnings", "surprise_last", "beats4",
+                "next_earnings", "surprise_last", "beats4", "eps_hist",
                 "div_yield", "beta", "debt_eq")},
             "fcf_yield": fcf_yield,
             "fcf": fcf,
@@ -251,7 +251,7 @@ def build_bigcap(rows, total_mcap):
     top_share = (sum(r["mcap"] for r in ranked) / total_mcap * 100) if total_mcap else None
     return {
         "key": "bigcap", "name": "시총 1~10위",
-        "desc": "덩치가 가장 큰 열 종목이에요. 지수가 사실상 이들을 따라갑니다.",
+        "desc": "덩치로 줄 세워 앞의 열 개예요. 지수가 오르내리는 건 사실상 이들이 움직인 결과라, 시장이 어디로 가는지 보려면 여기부터 봅니다.",
         "rules": [
             "업종과 무관하게 시가총액 순위 1위부터 10위까지예요",
             "순위가 바뀌면 구성도 따라 바뀝니다",
@@ -317,6 +317,7 @@ def headline(key: str, hits_rows: list) -> dict | None:
         "dividend":      ("평균 배당수익률",   avg("div_yield"), "pct0"),
         "stable":        ("평균 변동성",       avg("vol_ann"), "pct0"),
         "oversold":      ("평균 RSI",          avg("rsi14"), "num"),
+        "earnings_miss": ("직전 실적 평균",    avg("surprise_last"), "pct"),
         "bigcap":        ("평균 1년 수익률",   avg("ret_12m"), "pct"),
     }.get(key)
     if not spec:
@@ -357,7 +358,7 @@ def build_momentum(rows, ret6_p75):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "momentum", "name": "잘 오르고 있는 주식",
-        "desc": "지난 반년간 크게 올랐고, 아직 상승 흐름이 꺾이지 않은 종목이에요.",
+        "desc": "오르는 중이고, 아직 안 꺾였어요. 지난 반년 수익률이 500종목 중 상위 25% 안에 든 것만 골랐습니다.",
         "rules": [
             "지금 주가가 1년 평균보다 높아요 (200일 이동평균)",
             "최근 흐름이 장기 흐름보다 위에 있어요 (50일선 > 200일선)",
@@ -392,7 +393,7 @@ def build_value_quality(rows, sector_pe_med):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "value_quality", "name": "싸면서 돈 잘 버는 회사",
-        "desc": "같은 업종 회사들보다 주가가 싼데, 실제로 이익은 잘 내고 있는 종목이에요.",
+        "desc": "같은 업종 평균보다 싸게 거래되는데 정작 이익은 잘 내고 있는 회사들이에요. 싼 데는 이유가 있을 수도 있으니, 왜 싼지는 따로 봐야 합니다.",
         "rules": [
             "주가가 같은 업종 평균보다 싸요 (예상 PER 기준)",
             "넣은 돈 대비 이익을 잘 내요 (ROE 15% 이상)",
@@ -436,12 +437,61 @@ def build_earnings(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "earnings", "name": "실적이 계속 잘 나오는 회사",
-        "desc": "분기 실적을 발표할 때마다 시장 기대를 넘어서고 있는 종목이에요.",
+        "desc": "네 번 발표해서 세 번 이상 시장 기대를 넘긴 회사예요.",
         "rules": [
             "최근 4번의 실적 발표 중 3번 이상 기대를 넘었어요",
             "가장 최근 실적도 기대보다 좋았어요",
             "이익이 늘고 있거나, 매출이 10% 넘게 늘고 있어요",
             "전문가 평가와 성장세가 좋은 순서로 보여드려요",
+        ],
+        "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
+    }, len(hits)
+
+
+def build_earnings_miss(rows):
+    """실적이 어긋나는 회사 — «잘 나오는 회사»의 정확한 반대편.
+
+    직전 한 번 삐끗한 것과 계속 어긋나는 것을 둘 다 잡는다. 한 분기 실수는
+    누구나 하지만 네 번 중 두 번을 못 맞추면 그건 회사 사정이거나 시장의 눈이
+    잘못 맞춰져 있다는 뜻이다. 어느 쪽인지는 말하지 않는다 — 사실만 적는다.
+    """
+    hits = []
+    for r in rows:
+        b4, sl = r.get("beats4"), r.get("surprise_last")
+        if b4 is None and sl is None:
+            continue
+        big_miss = sl is not None and sl <= -2
+        chronic = b4 is not None and b4 <= 2
+        if not (big_miss or chronic):
+            continue
+        # 못 맞춘 정도가 큰 순서. 상시로 어긋나는 쪽에 가중을 준다.
+        rank = (0 if sl is None else -sl) + (0 if b4 is None else (4 - b4) * 8)
+        why = []
+        if sl is not None and sl < 0:
+            # 부호를 붙이면 «-141.5% 못 미쳤어요»가 되어 이중부정으로 읽힌다.
+            why.append(f"직전 실적이 기대보다 {abs(sl):.1f}% 모자랐어요")
+        if b4 is not None:
+            why.append(f"최근 4번 중 {4 - b4}번은 기대를 못 맞췄어요" if b4 < 4
+                       else "다만 최근 4번은 모두 기대를 넘겼어요")
+        rev_g = r.get("rev_g")
+        if rev_g is not None:
+            why.append(f"매출은 {sign_pct(rev_g)} 움직이고 있어요")
+        d = days_until(r.get("next_earnings"))
+        if d is not None and 0 <= d <= 45:
+            why.append(f"다음 실적 발표가 {d}일 남았어요")
+        hits.append((rank, r, why[:4]))
+    hits.sort(key=lambda x: x[0], reverse=True)
+    _key = "earnings_miss"
+    _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
+    return {
+        "key": "earnings_miss", "name": "실적이 자꾸 어긋나는 회사",
+        "desc": "시장이 기대한 숫자를 못 맞추고 있는 회사예요. "
+                "싸게 방치된 걸 수도, 정말 나빠지는 중일 수도 있어요. "
+                "여기서는 어느 쪽인지 말하지 않고 어긋난 정도만 보여드려요.",
+        "rules": [
+            "직전 실적이 기대보다 2% 넘게 못 미쳤거나,",
+            "최근 4번의 실적 발표 중 2번 이상 기대를 못 맞췄어요",
+            "많이 어긋난 순서로 보여드려요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -467,7 +517,7 @@ def build_oversold(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "oversold", "name": "많이 떨어진 우량주",
-        "desc": "최근 단기간에 크게 밀렸지만, 회사 실적 자체는 튼튼한 종목이에요.",
+        "desc": "짧은 새 많이 밀렸는데 회사 자체는 멀쩡한 경우예요. 조건이 까다로워서 어떤 날은 한두 종목만 걸리고, 아예 비는 날도 있습니다.",
         "rules": [
             "최근 매도세가 강했어요 (RSI 32 이하)",
             "그래도 1년 평균에서 12% 넘게 벗어나진 않았어요",
@@ -499,7 +549,7 @@ def build_dividend(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "dividend", "name": "배당 주는 회사",
-        "desc": "주식을 갖고 있기만 해도 1년에 배당을 2.5% 넘게 주는 종목이에요.",
+        "desc": "갖고만 있어도 1년에 2.5% 넘게 현금으로 주는 회사예요 — 그것도 벌어들인 돈 안에서요.",
         "rules": [
             "배당수익률이 연 2.5% 이상이에요",
             "벌어들이는 현금이 플러스라 배당을 감당할 수 있어요",
@@ -533,7 +583,7 @@ def build_stable(rows, vol_p30, mcap_med):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "stable", "name": "덜 흔들리는 안정형",
-        "desc": "가격이 심하게 오르내리지 않으면서 회사도 튼튼한 종목이에요.",
+        "desc": "값이 덜 출렁여요. 500종목 중 변동성이 낮은 쪽 30%에 들면서 덩치도 중간 이상인 회사만 남겼습니다.",
         "rules": [
             f"1년 가격 변동성이 500개 중 하위 30%예요 ({vol_p30:.0f}% 이하)",
             "시가총액이 중간값 이상인 큰 회사예요",
@@ -565,7 +615,7 @@ def build_growth(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "growth", "name": "빠르게 크는 회사",
-        "desc": "매출이 1년 새 20% 넘게 늘어난, 아직 커지는 중인 종목이에요.",
+        "desc": "매출이 1년 새 20% 넘게 늘었어요. 회사가 아직 커지는 중이라는 뜻인데, 그만큼 주가에 기대가 미리 들어가 있기도 합니다.",
         "rules": [
             "매출이 1년 새 20% 이상 늘었어요",
             "이익도 줄지 않고 있어요",
@@ -599,6 +649,7 @@ def table_row(r):
     out["scores"] = r["scores"]
     out["spark"] = r.get("spark")
     out["signal"] = signal_for(r)
+    out["eps_hist"] = r.get("eps_hist")
     return out
 
 
@@ -653,7 +704,8 @@ def main():
                         (build_value_quality, (rows, sector_pe_med)),
                         (build_dividend, (rows,)),
                         (build_stable, (rows, vol_p30, mcap_med)),
-                        (build_oversold, (rows,))):
+                        (build_oversold, (rows,)),
+                        (build_earnings_miss, (rows,))):
         st, n = build(*args)
         strategies.append(st)
         counts[st["key"]] = n

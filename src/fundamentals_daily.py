@@ -32,8 +32,11 @@ UNIVERSE_PATH = ROOT / "data" / "universe_sp500.json"
 OUT_PATH = ROOT / "data" / "fundamentals.json"
 
 INFO_THROTTLE_SEC = 0.35   # t.info 호출 간 대기
-EXTRA_THROTTLE_SEC = 0.35  # 상위 200 종목 추가 호출 간 대기
-TOP_N_EXTRA = 200          # 실적 일정/서프라이즈를 수집할 시총 상위 종목 수
+EXTRA_THROTTLE_SEC = 0.35  # 추가 호출 간 대기
+# 실적 일정·서프라이즈를 수집할 시총 상위 종목 수. 0 이면 전 종목.
+# 200 으로 두던 시절엔 «실적 데이터가 없는 종목»이 절반이었는데, 없던 게 아니라
+# 우리가 안 물어본 것이었다. 어닝 기준 카테고리를 만들면서 전 종목으로 넓혔다.
+TOP_N_EXTRA = 0
 
 
 def f(x):
@@ -56,6 +59,7 @@ def null_row() -> dict:
         "roe": None, "margin": None, "rev_g": None, "eps_g": None,
         "fcf": None, "upside": None, "consensus": None, "n_analysts": None,
         "next_earnings": None, "surprise_last": None, "beats4": None,
+        "eps_hist": None,
         "div_yield": None, "beta": None, "debt_eq": None,
     }
 
@@ -115,7 +119,8 @@ def fetch_info(ticker: str) -> dict | None:
 
 def fetch_extras(ticker: str) -> dict:
     """시총 상위 종목용 추가 지표: 다음 실적발표일 + 서프라이즈 이력."""
-    out = {"next_earnings": None, "surprise_last": None, "beats4": None}
+    out = {"next_earnings": None, "surprise_last": None, "beats4": None,
+           "eps_hist": None}
     t = yf.Ticker(ticker)
 
     # 다음 실적발표일 -----------------------------------------------------
@@ -149,6 +154,21 @@ def fetch_extras(ticker: str) -> dict:
                     if fv is not None and fv > 0:
                         beats += 1
                 out["beats4"] = beats
+                # 분기별 예상·실제까지 남긴다. 같은 호출로 이미 받아온 값인데
+                # 요약 두 개만 남기고 버리고 있었다 — 상세 시트에서 표로 편다.
+                hist = []
+                for q, row in last4.iterrows():
+                    est, act = f(row.get("epsEstimate")), f(row.get("epsActual"))
+                    if est is None and act is None:
+                        continue
+                    pct = f(row.get("surprisePercent"))
+                    hist.append({
+                        "q": str(q)[:10],
+                        "est": round(est, 3) if est is not None else None,
+                        "act": round(act, 3) if act is not None else None,
+                        "pct": round(pct * 100, 1) if pct is not None else None,
+                    })
+                out["eps_hist"] = hist or None
             break
         except Exception as e:  # noqa: BLE001
             print(f"    {ticker}: earnings_history 시도 {attempt} 실패 ({type(e).__name__})",
@@ -209,8 +229,8 @@ def main() -> int:
     # 2단계: 시총 상위 TOP_N_EXTRA 종목 추가 수집 --------------------------
     ranked = sorted((tk for tk in rows if rows[tk]["mcap"] is not None),
                     key=lambda tk: rows[tk]["mcap"], reverse=True)
-    top = ranked[:TOP_N_EXTRA]
-    print(f"시총 상위 {len(top)} 종목 실적 일정/서프라이즈 수집", file=sys.stderr)
+    top = ranked if TOP_N_EXTRA <= 0 else ranked[:TOP_N_EXTRA]
+    print(f"{len(top)} 종목 실적 일정/서프라이즈 수집", file=sys.stderr)
     for i, tk in enumerate(top, 1):
         rows[tk].update(fetch_extras(tk))
         if i % 25 == 0 or i == len(top):

@@ -326,6 +326,29 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .sh-rule li{margin:3px 0}
 .sh-record{margin-top:10px;font-size:14px;color:var(--t2);line-height:1.6}
 .sh-record b{font-weight:700;color:var(--ink)}
+/* ---------- 전적 판 ---------- */
+.rk-item{padding:20px 4px;border-bottom:1px solid var(--line-2)}
+.rk-item:last-child{border-bottom:0}
+.rk-row{display:flex;align-items:baseline;gap:10px}
+.rk-n{font-size:14px;color:var(--t3);min-width:16px;flex:0 0 auto;
+  font-variant-numeric:tabular-nums}
+.rk-name{font-size:17px;font-weight:700}
+.rk-cnt{font-size:13px;color:var(--t3);flex:0 0 auto}
+.rk-wl{margin-left:auto;font-size:17px;font-weight:700;flex:0 0 auto;
+  font-variant-numeric:tabular-nums}
+.rk-item .rec-bar{margin-top:10px}
+.rk-sub{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;
+  font-size:13.5px;color:var(--t3)}
+.rk-sub b{font-weight:700;color:var(--ink)}
+.rk-none{margin:7px 0 0 26px;font-size:13.5px;color:var(--t4)}
+
+/* ---------- 분기별 실적 표 ---------- */
+.eps{margin-top:2px}
+.eps th{position:static;cursor:default;background:none;padding:6px 8px}
+.eps td{padding:9px 8px}
+.eps th:first-child,.eps td:first-child{padding-left:0}
+.eps th:last-child,.eps td:last-child{padding-right:0}
+
 .chg-was{font-size:13.5px;color:var(--t3);flex:0 0 auto}
 .chg-ar{font-size:13.5px;color:var(--t3);flex:0 0 auto;margin:0 -3px}
 .sig-sum{margin:16px 0 0;font-size:14.5px;color:var(--t2);line-height:1.65}
@@ -452,6 +475,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
     <span class="brand">종목 상황실</span>
     <nav class="seg" id="seg" role="tablist">
       <button role="tab" data-v="picks" aria-selected="true">추천</button>
+      <button role="tab" data-v="record" aria-selected="false">전적</button>
       <button role="tab" data-v="news"  aria-selected="false">뉴스</button>
       <button role="tab" data-v="mine"  aria-selected="false">내 종목</button>
     </nav>
@@ -465,7 +489,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 
 <section class="hero">
   <h1 id="heroT">오늘 주목할 종목</h1>
-  <p id="heroD">S&amp;P 500 500여 종목을 여덟 가지 기준으로 나눴습니다.</p>
+  <p id="heroD">S&amp;P 500 500여 종목을 규칙으로 나눴습니다.</p>
   <div class="stamp"><span id="mstatTxt2">—</span> · <span class="num" id="fresh">—</span></div>
 </section>
 
@@ -494,6 +518,10 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 
   <section class="view" id="v-news" hidden>
     <div class="news" id="newsList"></div>
+  </section>
+
+  <section class="view" id="v-record" hidden>
+    <div id="recBoard"></div>
   </section>
 
   <section class="view" id="v-mine" hidden>
@@ -1021,7 +1049,82 @@ function recordHtml(key){
   (b.partial ? '<div class="rec-none">' + esc(b.partial) + '</div>' : "");
 }
 
+/* ============ 전적 ============
+   기준마다 지수와 붙은 성적을 한 판에 세운다. 성적 있는 것을 승률 순으로 위에 놓고,
+   잴 수 없는 기준은 왜 못 재는지 적어 아래에 그대로 남긴다 — 빼면 골라 보여준 게 된다. */
+var NUM_KO = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉", "열", "열한", "열두"];
+function catCount(){
+  var n = (D && D.strategies || []).length;
+  return (NUM_KO[n] || n) + " 가지";
+}
+function recordList(){
+  var out = (D && D.strategies || []).map(function(s){
+    var b = BT && BT.strategies && BT.strategies[s.key];
+    return {name: s.name, n: (s.rows || []).length,
+            bt: (b && b.backtested) ? b : null,
+            why: (b && !b.backtested) ? b.reason : "가격 기록만으로는 재현할 수 없어요."};
+  });
+  var sg = BT && BT.signal;
+  if (sg && sg.backtested){
+    out.push({name: "매매 신호 · 매수 구간", n: null, bt: sg, why: null});
+  }
+  out.sort(function(a, c){
+    if (!!a.bt !== !!c.bt) return a.bt ? -1 : 1;
+    if (!a.bt) return 0;
+    return c.bt.win_rate - a.bt.win_rate;
+  });
+  return out;
+}
+function rankRow(x, i){
+  var head = '<div class="rk-row"><span class="rk-n num">' + (x.bt ? (i + 1) : "—") + '</span>' +
+    '<span class="rk-name">' + esc(x.name) + '</span>' +
+    (x.n ? '<span class="rk-cnt">' + x.n + '종목</span>' : "");
+  if (!x.bt){
+    return '<div class="rk-item">' + head + '</div>' +
+      '<div class="rk-none">' + esc(x.why) + '</div></div>';
+  }
+  var b = x.bt, w = Math.round(b.win_rate * b.months / 100), l = b.months - w;
+  return '<div class="rk-item">' + head +
+    '<span class="rk-wl num">' + w + '승 ' + l + '패</span></div>' +
+    '<div class="rec-bar"><i style="width:' + b.win_rate + '%;background:var(--up)"></i>' +
+      '<i style="width:' + (100 - b.win_rate) + '%;background:var(--down)"></i></div>' +
+    '<div class="rk-sub">' +
+      '<span>승률 <b class="num">' + num1(b.win_rate) + '%</b></span>' +
+      '<span>월평균 <b class="num ' + cls(b.avg_monthly) + '">' + pct1(b.avg_monthly) + '</b></span>' +
+      '<span>' + b.months + '개월 누적 <b class="num ' + cls(b.cumulative) + '">' + pct0(b.cumulative) +
+        '</b> <span class="num">(' + esc(benchName()) + ' ' + pct0(b.bench_cumulative) + ')</span></span>' +
+      '<span>최악의 달 <b class="num ' + cls(b.worst) + '">' + pct0(b.worst) + '</b></span>' +
+    '</div></div>';
+}
+function renderRecord(){
+  var box = $("recBoard");
+  if (!box) return;
+  var list = recordList(), scored = list.filter(function(x){ return x.bt; });
+  if (!scored.length){
+    box.innerHTML = '<p class="rec-none">아직 잴 수 있는 전적이 없어요.</p>';
+    return;
+  }
+  var i = 0;
+  box.innerHTML = '<div class="rk">' + list.map(function(x){
+      return rankRow(x, x.bt ? i++ : -1); }).join("") + '</div>' +
+    '<p class="hint">' + esc(benchName()) + '과 매달 붙여 이긴 달을 셉니다. ' +
+    '지난 성적이 앞으로를 말해주지 않고, 아래 주의사항도 그대로 적용됩니다.</p>' +
+    btCaveatHtml();
+}
+
 /* ============ 종목 상세 시트 ============ */
+function epsTable(h){
+  if (!h || !h.length) return "";
+  var rows = h.slice().reverse().map(function(q){
+    var m = /^(\d{2})(\d{2})-(\d{2})/.exec(q.q || "");
+    return '<tr><td>' + (m ? m[2] + "년 " + (+m[3]) + "월" : esc(q.q || NB)) + '</td>' +
+      '<td class="num">' + (has(q.est) ? q.est.toFixed(2) : NB) + '</td>' +
+      '<td class="num">' + (has(q.act) ? q.act.toFixed(2) : NB) + '</td>' +
+      '<td class="num ' + cls(q.pct) + '">' + pct1(q.pct) + '</td></tr>';
+  }).join("");
+  return '<table class="eps"><thead><tr><th>분기</th><th>예상 EPS</th><th>실제 EPS</th>' +
+    '<th>기대 대비</th></tr></thead><tbody>' + rows + '</tbody></table>';
+}
 function findRow(ticker){
   var t = (D.table || []).find(function(r){ return r.ticker === ticker; });
   if (t) return t;
@@ -1100,6 +1203,8 @@ function openSheet(ticker){
       cell("변동성", has(r.vol_ann) ? num1(r.vol_ann) + "%" : NB) +
       cell("목표가 대비", pct0(r.upside), cls(r.upside)) +
     '</div></div>' +
+    (r.eps_hist && r.eps_hist.length
+      ? '<div class="sh-sec"><h4>분기별 실적</h4>' + epsTable(r.eps_hist) + '</div>' : "") +
     '<div class="gbox" id="gbox" hidden></div>' +
     range +
     (r.spark ? '<div class="sh-sec"><h4>최근 3개월</h4>' + sparkSvg(r.spark, 460, 90) + '</div>' : "") +
@@ -1297,6 +1402,8 @@ function renderPortfolio(){
 /* ============ 뷰 전환 ============ */
 var HERO = {
   picks: ["오늘 주목할 종목", ""],
+  record:["전적",
+          "기준마다 지수와 몇 번 붙어서 몇 번 이겼는지. 진 것도 그대로 올립니다."],
   news:  ["오늘의 시장 뉴스",
           "국내 언론이 다룬 미국 증시·종목 기사를 모았습니다. 제목을 누르면 원문으로 이동합니다."],
   mine:  ["내 종목",
@@ -1308,10 +1415,10 @@ function setView(v){
   $("heroT").textContent = h[0];
   $("heroD").textContent = (v === "picks")
     ? (market === "kr"
-        ? "코스피·코스닥 주요 160여 종목을 여덟 가지 기준으로 나눴습니다."
-        : "S&P 500 500여 종목을 여덟 가지 기준으로 나눴습니다.")
+        ? "코스피·코스닥 주요 160여 종목을 " + catCount() + " 기준으로 나눴습니다."
+        : "S&P 500 500여 종목을 " + catCount() + " 기준으로 나눴습니다.")
     : h[1];
-  ["picks", "news", "mine"].forEach(function(k){ $("v-" + k).hidden = (k !== v); });
+  ["picks", "record", "news", "mine"].forEach(function(k){ $("v-" + k).hidden = (k !== v); });
   $("seg").querySelectorAll("[data-v]").forEach(function(b){
     b.setAttribute("aria-selected", b.getAttribute("data-v") === v ? "true" : "false"); });
   try { history.replaceState(null, "", "#" + v); } catch(e){}
@@ -1322,7 +1429,7 @@ function setView(v){
 function renderAll(){
   paintStatus();
   setView(view); renderMarket(); renderSignalSummary(); renderCats();
-  renderChanges(); renderStrategies();
+  renderChanges(); renderStrategies(); renderRecord();
   rebuildSectors(); renderTable();
   renderNews(); renderPortfolio();
   $("status").innerHTML = "";

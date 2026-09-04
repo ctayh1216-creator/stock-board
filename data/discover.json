@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T16:56:16+00:00",
+ "generated_at": "2026-09-04T17:53:07+00:00",
  "fx": {
   "rate": 1345.66,
   "prev": 1358.39,
@@ -139,7 +139,7 @@
   {
    "key": "bigcap",
    "name": "시총 1~10위",
-   "desc": "덩치가 가장 큰 열 종목이에요. 지수가 사실상 이들을 따라갑니다.",
+   "desc": "덩치로 줄 세워 앞의 열 개예요. 지수가 오르내리는 건 사실상 이들이 움직인 결과라, 시장이 어디로 가는지 보려면 여기부터 봅니다.",
    "rules": [
     "업종과 무관하게 시가총액 순위 1위부터 10위까지예요",
     "순위가 바뀌면 구성도 따라 바뀝니다"
@@ -625,7 +625,7 @@
   {
    "key": "momentum",
    "name": "잘 오르고 있는 주식",
-   "desc": "지난 반년간 크게 올랐고, 아직 상승 흐름이 꺾이지 않은 종목이에요.",
+   "desc": "오르는 중이고, 아직 안 꺾였어요. 지난 반년 수익률이 500종목 중 상위 25% 안에 든 것만 골랐습니다.",
    "rules": [
     "지금 주가가 1년 평균보다 높아요 (200일 이동평균)",
     "최근 흐름이 장기 흐름보다 위에 있어요 (50일선 > 200일선)",
@@ -1584,7 +1584,7 @@
   {
    "key": "earnings",
    "name": "실적이 계속 잘 나오는 회사",
-   "desc": "분기 실적을 발표할 때마다 시장 기대를 넘어서고 있는 종목이에요.",
+   "desc": "네 번 발표해서 세 번 이상 시장 기대를 넘긴 회사예요.",
    "rules": [
     "최근 4번의 실적 발표 중 3번 이상 기대를 넘었어요",
     "가장 최근 실적도 기대보다 좋았어요",
@@ -2535,7 +2535,7 @@
   {
    "key": "growth",
    "name": "빠르게 크는 회사",
-   "desc": "매출이 1년 새 20% 넘게 늘어난, 아직 커지는 중인 종목이에요.",
+   "desc": "매출이 1년 새 20% 넘게 늘었어요. 회사가 아직 커지는 중이라는 뜻인데, 그만큼 주가에 기대가 미리 들어가 있기도 합니다.",
    "rules": [
     "매출이 1년 새 20% 이상 늘었어요",
     "이익도 줄지 않고 있어요",
@@ -3488,7 +3488,7 @@
   {
    "key": "value_quality",
    "name": "싸면서 돈 잘 버는 회사",
-   "desc": "같은 업종 회사들보다 주가가 싼데, 실제로 이익은 잘 내고 있는 종목이에요.",
+   "desc": "같은 업종 평균보다 싸게 거래되는데 정작 이익은 잘 내고 있는 회사들이에요. 싼 데는 이유가 있을 수도 있으니, 왜 싼지는 따로 봐야 합니다.",
    "rules": [
     "주가가 같은 업종 평균보다 싸요 (예상 PER 기준)",
     "넣은 돈 대비 이익을 잘 내요 (ROE 15% 이상)",
@@ -4447,7 +4447,7 @@
   {
    "key": "dividend",
    "name": "배당 주는 회사",
-   "desc": "주식을 갖고 있기만 해도 1년에 배당을 2.5% 넘게 주는 종목이에요.",
+   "desc": "갖고만 있어도 1년에 2.5% 넘게 현금으로 주는 회사예요 — 그것도 벌어들인 돈 안에서요.",
    "rules": [
     "배당수익률이 연 2.5% 이상이에요",
     "벌어들이는 현금이 플러스라 배당을 감당할 수 있어요",
@@ -5405,7 +5405,7 @@
   {
    "key": "stable",
    "name": "덜 흔들리는 안정형",
-   "desc": "가격이 심하게 오르내리지 않으면서 회사도 튼튼한 종목이에요.",
+   "desc": "값이 덜 출렁여요. 500종목 중 변동성이 낮은 쪽 30%에 들면서 덩치도 중간 이상인 회사만 남겼습니다.",
    "rules": [
     "1년 가격 변동성이 500개 중 하위 30%예요 (27% 이하)",
     "시가총액이 중간값 이상인 큰 회사예요",
@@ -6363,7 +6363,7 @@
   {
    "key": "oversold",
    "name": "많이 떨어진 우량주",
-   "desc": "최근 단기간에 크게 밀렸지만, 회사 실적 자체는 튼튼한 종목이에요.",
+   "desc": "짧은 새 많이 밀렸는데 회사 자체는 멀쩡한 경우예요. 조건이 까다로워서 어떤 날은 한두 종목만 걸리고, 아예 비는 날도 있습니다.",
    "rules": [
     "최근 매도세가 강했어요 (RSI 32 이하)",
     "그래도 1년 평균에서 12% 넘게 벗어나진 않았어요",
@@ -6518,6 +6518,956 @@
     "value": 28.4,
     "fmt": "num"
    }
+  },
+  {
+   "key": "earnings_miss",
+   "name": "실적이 자꾸 어긋나는 회사",
+   "desc": "시장이 기대한 숫자를 못 맞추고 있는 회사예요. 싸게 방치된 걸 수도, 정말 나빠지는 중일 수도 있어요. 여기서는 어느 쪽인지 말하지 않고 어긋난 정도만 보여드려요.",
+   "rules": [
+    "직전 실적이 기대보다 2% 넘게 못 미쳤거나,",
+    "최근 4번의 실적 발표 중 2번 이상 기대를 못 맞췄어요",
+    "많이 어긋난 순서로 보여드려요"
+   ],
+   "rows": [
+    {
+     "ticker": "BA",
+     "name": "Boeing",
+     "sector": "Industrials",
+     "last": 210.84,
+     "day_pct": 0.2,
+     "mcap": 164507615232.0,
+     "rank_score": 157.5,
+     "why": [
+      "직전 실적이 기대보다 141.5% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +8.0% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      102.6,
+      105.4,
+      102.3,
+      101.0,
+      100.3,
+      108.6,
+      103.3,
+      100.6,
+      99.1,
+      96.6,
+      98.0,
+      102.3,
+      109.8,
+      108.6,
+      107.1,
+      104.6,
+      99.6,
+      97.8,
+      97.2,
+      96.7,
+      97.6
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 219.38,
+      "stop_pct": 4.1,
+      "target": 252.15,
+      "target_pct": 19.6
+     }
+    },
+    {
+     "ticker": "TSLA",
+     "name": "Tesla, Inc.",
+     "sector": "Consumer Discretionary",
+     "last": 352.21,
+     "day_pct": -6.4,
+     "mcap": 1508332142592.0,
+     "rank_score": 55.2,
+     "why": [
+      "직전 실적이 기대보다 39.2% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +25.5% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      97.6,
+      99.0,
+      99.0,
+      91.7,
+      102.8,
+      102.6,
+      99.4,
+      96.9,
+      93.1,
+      91.5,
+      75.6,
+      75.5,
+      80.0,
+      80.3,
+      80.1,
+      83.0,
+      84.4,
+      85.6,
+      85.3,
+      87.3,
+      86.1
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 357.91,
+      "stop_pct": 1.6,
+      "target": 489.88,
+      "target_pct": 39.1
+     }
+    },
+    {
+     "ticker": "GEV",
+     "name": "GE Vernova",
+     "sector": "Industrials",
+     "last": 944.14,
+     "day_pct": 0.2,
+     "mcap": 251272429568.0,
+     "rank_score": 38.4,
+     "why": [
+      "직전 실적이 기대보다 22.4% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +21.9% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      97.1,
+      105.2,
+      120.8,
+      116.3,
+      125.9,
+      123.4,
+      115.2,
+      114.2,
+      113.3,
+      105.5,
+      106.8,
+      105.2,
+      109.1,
+      106.1,
+      111.4,
+      115.6,
+      103.5,
+      99.3,
+      97.7,
+      98.8,
+      101.2
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 1015.44,
+      "stop_pct": 7.6,
+      "target": 1174.86,
+      "target_pct": 24.4
+     }
+    },
+    {
+     "ticker": "CMI",
+     "name": "Cummins",
+     "sector": "Industrials",
+     "last": 561.15,
+     "day_pct": 2.9,
+     "mcap": 75812519936.0,
+     "rank_score": 38.1,
+     "why": [
+      "직전 실적이 기대보다 6.1% 모자랐어요",
+      "최근 4번 중 4번은 기대를 못 맞췄어요",
+      "매출은 +9.4% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      97.5,
+      104.1,
+      107.8,
+      108.2,
+      106.0,
+      100.8,
+      100.1,
+      100.4,
+      96.4,
+      98.2,
+      98.4,
+      94.1,
+      94.5,
+      95.8,
+      94.8,
+      95.3,
+      88.2,
+      85.4,
+      84.3,
+      82.2,
+      83.7
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 630.87,
+      "stop_pct": 12.4,
+      "target": 724.89,
+      "target_pct": 29.2
+     }
+    },
+    {
+     "ticker": "WELL",
+     "name": "Welltower",
+     "sector": "Real Estate",
+     "last": 238.49,
+     "day_pct": -1.1,
+     "mcap": 173326385152.0,
+     "rank_score": 32.9,
+     "why": [
+      "직전 실적이 기대보다 16.9% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +39.1% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      105.3,
+      106.8,
+      105.7,
+      111.9,
+      113.5,
+      116.3,
+      116.1,
+      118.0,
+      121.6,
+      122.5,
+      124.2,
+      117.8,
+      115.8,
+      118.5,
+      115.6,
+      118.1,
+      119.1,
+      121.0,
+      119.5,
+      119.7,
+      119.7
+     ],
+     "signal": {
+      "state": "buy",
+      "label": "매수 구간",
+      "why": "1년 평균과 한 달 평균 위에 있고, 아직 과열도 아니에요",
+      "stop": 236.58,
+      "stop_pct": -0.8,
+      "target": 251.12,
+      "target_pct": 5.3
+     }
+    },
+    {
+     "ticker": "META",
+     "name": "Meta Platforms",
+     "sector": "Communication Services",
+     "last": 612.84,
+     "day_pct": 0.3,
+     "mcap": 1560652939264.0,
+     "rank_score": 30.4,
+     "why": [
+      "직전 실적이 기대보다 14.4% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +28.0% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      97.1,
+      102.6,
+      96.4,
+      92.8,
+      96.3,
+      102.6,
+      108.0,
+      113.0,
+      110.5,
+      107.2,
+      101.5,
+      92.2,
+      100.5,
+      101.2,
+      99.0,
+      97.3,
+      93.3,
+      97.5,
+      98.8,
+      101.4,
+      104.8
+     ],
+     "signal": {
+      "state": "watch",
+      "label": "관망",
+      "why": "아직 1년 평균 아래에 있어요",
+      "stop": 595.41,
+      "stop_pct": -2.8,
+      "target": 777.7,
+      "target_pct": 26.9
+     }
+    },
+    {
+     "ticker": "DASH",
+     "name": "DoorDash",
+     "sector": "Consumer Discretionary",
+     "last": 214.68,
+     "day_pct": -3.3,
+     "mcap": 96891920384.0,
+     "rank_score": 26.4,
+     "why": [
+      "직전 실적이 기대보다 2.4% 모자랐어요",
+      "최근 4번 중 3번은 기대를 못 맞췄어요",
+      "매출은 +35.6% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      101.4,
+      111.5,
+      112.8,
+      116.0,
+      121.0,
+      123.6,
+      126.1,
+      123.1,
+      120.8,
+      116.6,
+      120.9,
+      129.5,
+      132.7,
+      141.8,
+      139.3,
+      139.5,
+      145.8,
+      153.1,
+      155.2,
+      148.4,
+      140.8
+     ],
+     "signal": {
+      "state": "watch",
+      "label": "관망",
+      "why": "한 달 평균 아래로 내려왔어요",
+      "stop": 203.69,
+      "stop_pct": -5.1,
+      "target": 281.74,
+      "target_pct": 31.2
+     }
+    },
+    {
+     "ticker": "AEP",
+     "name": "American Electric Power",
+     "sector": "Utilities",
+     "last": 124.83,
+     "day_pct": 0.1,
+     "mcap": 67968012288.0,
+     "rank_score": 24.2,
+     "why": [
+      "직전 실적이 기대보다 8.2% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +7.0% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      101.3,
+      102.4,
+      102.8,
+      108.1,
+      107.9,
+      107.3,
+      105.6,
+      106.4,
+      104.2,
+      105.0,
+      105.4,
+      100.8,
+      101.2,
+      99.2,
+      99.1,
+      100.6,
+      99.9,
+      97.6,
+      97.2,
+      98.2,
+      99.2
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 128.69,
+      "stop_pct": 3.1,
+      "target": 137.64,
+      "target_pct": 10.3
+     }
+    },
+    {
+     "ticker": "DLR",
+     "name": "Digital Realty",
+     "sector": "Real Estate",
+     "last": 189.97,
+     "day_pct": 1.2,
+     "mcap": 70196355072.0,
+     "rank_score": 23.0,
+     "why": [
+      "직전 실적이 기대보다 15.0% 모자랐어요",
+      "최근 4번 중 1번은 기대를 못 맞췄어요",
+      "매출은 +29.9% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      100.4,
+      105.3,
+      108.1,
+      106.4,
+      99.2,
+      96.0,
+      99.1,
+      95.7,
+      96.1,
+      98.6,
+      108.2,
+      106.8,
+      107.2,
+      107.1,
+      108.9,
+      109.4,
+      107.4,
+      106.3,
+      102.5,
+      101.6,
+      105.0
+     ],
+     "signal": {
+      "state": "watch",
+      "label": "관망",
+      "why": "한 달 평균 아래로 내려왔어요",
+      "stop": 186.78,
+      "stop_pct": -1.7,
+      "target": 202.56,
+      "target_pct": 6.6
+     }
+    },
+    {
+     "ticker": "SPGI",
+     "name": "S&P Global",
+     "sector": "Financials",
+     "last": 443.31,
+     "day_pct": -1.6,
+     "mcap": 131915628544.0,
+     "rank_score": 18.9,
+     "why": [
+      "직전 실적이 기대보다 2.9% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +10.4% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      99.1,
+      103.9,
+      97.7,
+      94.7,
+      97.6,
+      113.3,
+      109.7,
+      111.2,
+      114.3,
+      108.7,
+      111.5,
+      105.2,
+      104.5,
+      103.4,
+      103.9,
+      104.0,
+      109.5,
+      109.7,
+      112.5,
+      109.7,
+      112.6
+     ],
+     "signal": {
+      "state": "buy",
+      "label": "매수 구간",
+      "why": "1년 평균과 한 달 평균 위에 있고, 아직 과열도 아니에요",
+      "stop": 425.6,
+      "stop_pct": -4.0,
+      "target": 516.58,
+      "target_pct": 16.5
+     }
+    },
+    {
+     "ticker": "MO",
+     "name": "Altria",
+     "sector": "Consumer Staples",
+     "last": 69.14,
+     "day_pct": -0.5,
+     "mcap": 116731797504.0,
+     "rank_score": 17.2,
+     "why": [
+      "직전 실적이 기대보다 1.2% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +1.2% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      100.2,
+      99.9,
+      99.0,
+      104.2,
+      102.4,
+      102.3,
+      101.9,
+      99.9,
+      105.7,
+      102.7,
+      103.8,
+      96.7,
+      96.9,
+      97.3,
+      91.7,
+      91.1,
+      95.3,
+      96.9,
+      97.7,
+      99.0,
+      98.4
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 69.83,
+      "stop_pct": 1.0,
+      "target": 74.92,
+      "target_pct": 8.4
+     }
+    },
+    {
+     "ticker": "VRTX",
+     "name": "Vertex Pharmaceuticals",
+     "sector": "Health Care",
+     "last": 551.37,
+     "day_pct": -1.2,
+     "mcap": 140785516544.0,
+     "rank_score": 16.3,
+     "why": [
+      "직전 실적이 기대보다 0.3% 모자랐어요",
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +12.5% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      100.5,
+      102.3,
+      105.4,
+      108.4,
+      112.1,
+      119.6,
+      112.1,
+      107.5,
+      109.6,
+      106.7,
+      108.1,
+      108.7,
+      108.1,
+      112.0,
+      118.7,
+      116.4,
+      122.0,
+      124.8,
+      122.3,
+      125.7,
+      124.5
+     ],
+     "signal": {
+      "state": "buy",
+      "label": "매수 구간",
+      "why": "1년 평균과 한 달 평균 위에 있고, 아직 과열도 아니에요",
+      "stop": 508.87,
+      "stop_pct": -7.7,
+      "target": 557.96,
+      "target_pct": 1.2
+     }
+    },
+    {
+     "ticker": "WMB",
+     "name": "Williams Companies",
+     "sector": "Energy",
+     "last": 73.62,
+     "day_pct": -0.6,
+     "mcap": 92025004032.0,
+     "rank_score": 15.8,
+     "why": [
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +7.8% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      100.0,
+      100.6,
+      105.5,
+      109.1,
+      104.6,
+      102.5,
+      106.2,
+      106.9,
+      103.3,
+      104.8,
+      99.6,
+      99.8,
+      100.6,
+      99.1,
+      103.7,
+      103.4,
+      100.9,
+      100.0,
+      103.7,
+      105.8,
+      103.6
+     ],
+     "signal": {
+      "state": "buy",
+      "label": "매수 구간",
+      "why": "1년 평균과 한 달 평균 위에 있고, 아직 과열도 아니에요",
+      "stop": 73.36,
+      "stop_pct": -0.4,
+      "target": 78.82,
+      "target_pct": 7.1
+     }
+    },
+    {
+     "ticker": "NFLX",
+     "name": "Netflix",
+     "sector": "Communication Services",
+     "last": 79.31,
+     "day_pct": -4.1,
+     "mcap": 342171746304.0,
+     "rank_score": 14.5,
+     "why": [
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +13.4% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      98.3,
+      95.3,
+      88.2,
+      85.8,
+      86.4,
+      92.0,
+      91.3,
+      89.0,
+      83.4,
+      82.9,
+      85.2,
+      88.5,
+      89.0,
+      89.7,
+      89.8,
+      92.0,
+      97.0,
+      99.5,
+      98.9,
+      100.1,
+      96.0
+     ],
+     "signal": {
+      "state": "watch",
+      "label": "관망",
+      "why": "아직 1년 평균 아래에 있어요",
+      "stop": 75.46,
+      "stop_pct": -4.9,
+      "target": 126.32,
+      "target_pct": 59.3
+     }
+    },
+    {
+     "ticker": "ABNB",
+     "name": "Airbnb",
+     "sector": "Consumer Discretionary",
+     "last": 182.02,
+     "day_pct": -1.7,
+     "mcap": 111146590208.0,
+     "rank_score": 14.5,
+     "why": [
+      "최근 4번 중 3번은 기대를 못 맞췄어요",
+      "매출은 +16.5% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      97.4,
+      105.0,
+      103.5,
+      105.5,
+      106.4,
+      109.8,
+      109.3,
+      109.0,
+      108.6,
+      104.2,
+      109.2,
+      113.1,
+      111.5,
+      132.5,
+      134.0,
+      133.4,
+      137.6,
+      141.7,
+      140.9,
+      136.3,
+      135.4
+     ],
+     "signal": {
+      "state": "watch",
+      "label": "관망",
+      "why": "한 달 평균 아래로 내려왔어요",
+      "stop": 162.96,
+      "stop_pct": -10.5,
+      "target": 190.5,
+      "target_pct": 4.7
+     }
+    },
+    {
+     "ticker": "WM",
+     "name": "Waste Management",
+     "sector": "Industrials",
+     "last": 219.26,
+     "day_pct": -1.1,
+     "mcap": 88213151744.0,
+     "rank_score": 13.9,
+     "why": [
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +4.0% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      101.2,
+      101.1,
+      98.7,
+      103.2,
+      103.1,
+      105.9,
+      107.2,
+      108.4,
+      110.7,
+      109.4,
+      110.1,
+      104.7,
+      104.2,
+      105.3,
+      104.7,
+      103.6,
+      104.1,
+      102.8,
+      101.6,
+      101.3,
+      101.4
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 228.34,
+      "stop_pct": 4.1,
+      "target": 244.47,
+      "target_pct": 11.5
+     }
+    },
+    {
+     "ticker": "PCAR",
+     "name": "Paccar",
+     "sector": "Industrials",
+     "last": 124.76,
+     "day_pct": 0.2,
+     "mcap": 65258729472.0,
+     "rank_score": 10.6,
+     "why": [
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +0.5% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      99.3,
+      102.2,
+      101.4,
+      102.7,
+      101.4,
+      106.3,
+      104.1,
+      104.6,
+      106.6,
+      110.7,
+      112.7,
+      112.9,
+      114.8,
+      112.4,
+      110.9,
+      110.8,
+      109.2,
+      109.4,
+      106.1,
+      103.4,
+      105.6
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 127.59,
+      "stop_pct": 2.3,
+      "target": 137.85,
+      "target_pct": 10.5
+     }
+    },
+    {
+     "ticker": "APO",
+     "name": "Apollo Global Management",
+     "sector": "Financials",
+     "last": 134.24,
+     "day_pct": -0.2,
+     "mcap": 78772551680.0,
+     "rank_score": 10.2,
+     "why": [
+      "직전 실적이 기대보다 2.2% 모자랐어요",
+      "최근 4번 중 1번은 기대를 못 맞췄어요",
+      "매출은 +63.8% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      105.0,
+      108.6,
+      106.0,
+      95.2,
+      92.7,
+      95.8,
+      93.9,
+      94.0,
+      94.4,
+      93.3,
+      97.4,
+      94.3,
+      104.4,
+      99.9,
+      108.7,
+      105.5,
+      102.3,
+      104.8,
+      106.3,
+      104.1,
+      105.7
+     ],
+     "signal": {
+      "state": "watch",
+      "label": "관망",
+      "why": "한 달 평균 아래로 내려왔어요",
+      "stop": 126.6,
+      "stop_pct": -5.7,
+      "target": 150.8,
+      "target_pct": 12.3
+     }
+    },
+    {
+     "ticker": "EQIX",
+     "name": "Equinix",
+     "sector": "Real Estate",
+     "last": 1046.08,
+     "day_pct": 0.5,
+     "mcap": 101631836160.0,
+     "rank_score": 9.7,
+     "why": [
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +16.7% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      98.2,
+      103.0,
+      105.0,
+      102.3,
+      98.1,
+      94.0,
+      97.4,
+      96.3,
+      96.0,
+      96.8,
+      98.5,
+      98.6,
+      98.9,
+      98.1,
+      100.6,
+      103.3,
+      102.4,
+      101.5,
+      98.7,
+      96.4,
+      98.9
+     ],
+     "signal": {
+      "state": "watch",
+      "label": "관망",
+      "why": "한 달 평균 아래로 내려왔어요",
+      "stop": 1042.22,
+      "stop_pct": -0.4,
+      "target": 1110.63,
+      "target_pct": 6.2
+     }
+    },
+    {
+     "ticker": "SPG",
+     "name": "Simon Property Group",
+     "sector": "Real Estate",
+     "last": 211.95,
+     "day_pct": 0.2,
+     "mcap": 80191668224.0,
+     "rank_score": 5.9,
+     "why": [
+      "최근 4번 중 2번은 기대를 못 맞췄어요",
+      "매출은 +19.5% 움직이고 있어요"
+     ],
+     "spark": [
+      100.0,
+      104.8,
+      104.9,
+      104.6,
+      109.9,
+      109.0,
+      109.7,
+      107.1,
+      107.9,
+      111.5,
+      110.3,
+      113.0,
+      112.4,
+      110.1,
+      108.7,
+      107.5,
+      108.1,
+      107.2,
+      106.8,
+      104.6,
+      102.5,
+      103.3
+     ],
+     "signal": {
+      "state": "exit",
+      "label": "청산 구간",
+      "why": "50일 평균선 아래로 내려왔어요",
+      "stop": 222.62,
+      "stop_pct": 5.0,
+      "target": 236.7,
+      "target_pct": 11.7
+     }
+    }
+   ],
+   "headline": {
+    "label": "직전 실적 평균",
+    "value": -11.9,
+    "fmt": "pct"
+   }
   }
  ],
  "table": [
@@ -6595,7 +7545,8 @@
     "stop_pct": -6.8,
     "target": 1213.37,
     "target_pct": 20.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SNDK",
@@ -6671,7 +7622,8 @@
     "stop_pct": -9.9,
     "target": 2335.0,
     "target_pct": 35.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "STX",
@@ -6747,7 +7699,8 @@
     "stop_pct": 1.2,
     "target": 1093.26,
     "target_pct": 29.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WDC",
@@ -6823,7 +7776,8 @@
     "stop_pct": 8.7,
     "target": 746.23,
     "target_pct": 60.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NVDA",
@@ -6899,7 +7853,8 @@
     "stop_pct": -8.9,
     "target": 235.47,
     "target_pct": 1.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HPE",
@@ -6975,7 +7930,8 @@
     "stop_pct": -4.3,
     "target": 59.82,
     "target_pct": 14.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EXPE",
@@ -7051,7 +8007,8 @@
     "stop_pct": -2.1,
     "target": 338.64,
     "target_pct": 12.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MPC",
@@ -7127,7 +8084,8 @@
     "stop_pct": -17.4,
     "target": null,
     "target_pct": null
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PSX",
@@ -7203,7 +8161,8 @@
     "stop_pct": -16.5,
     "target": 256.09,
     "target_pct": 0.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DVA",
@@ -7279,7 +8238,8 @@
     "stop_pct": 13.8,
     "target": 240.96,
     "target_pct": 31.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EOG",
@@ -7355,7 +8315,8 @@
     "stop_pct": -2.7,
     "target": 153.05,
     "target_pct": 5.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VLO",
@@ -7431,7 +8392,8 @@
     "stop_pct": -15.2,
     "target": 370.69,
     "target_pct": 0.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CF",
@@ -7507,7 +8469,8 @@
     "stop_pct": -10.2,
     "target": 139.27,
     "target_pct": 3.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FLEX",
@@ -7583,7 +8546,8 @@
     "stop_pct": 13.2,
     "target": 162.07,
     "target_pct": 49.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NXPI",
@@ -7659,7 +8623,8 @@
     "stop_pct": 9.9,
     "target": 331.55,
     "target_pct": 45.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DAL",
@@ -7735,7 +8700,8 @@
     "stop_pct": 8.3,
     "target": 93.43,
     "target_pct": 16.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "COF",
@@ -7811,7 +8777,8 @@
     "stop_pct": -4.0,
     "target": 254.96,
     "target_pct": 15.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CVS",
@@ -7887,7 +8854,8 @@
     "stop_pct": 3.0,
     "target": 109.92,
     "target_pct": 12.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "OXY",
@@ -7963,7 +8931,8 @@
     "stop_pct": -6.5,
     "target": 65.94,
     "target_pct": 9.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "JBL",
@@ -8039,7 +9008,8 @@
     "stop_pct": 5.4,
     "target": 385.55,
     "target_pct": 24.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AMAT",
@@ -8115,7 +9085,8 @@
     "stop_pct": 17.1,
     "target": 722.23,
     "target_pct": 58.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GS",
@@ -8191,7 +9162,8 @@
     "stop_pct": 0.6,
     "target": 1146.46,
     "target_pct": 11.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "APA",
@@ -8267,7 +9239,8 @@
     "stop_pct": -13.1,
     "target": 44.7,
     "target_pct": 2.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TER",
@@ -8343,7 +9316,8 @@
     "stop_pct": 4.3,
     "target": 483.84,
     "target_pct": 35.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "COP",
@@ -8419,7 +9393,8 @@
     "stop_pct": -11.1,
     "target": 137.2,
     "target_pct": 2.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ALL",
@@ -8495,7 +9470,8 @@
     "stop_pct": -2.1,
     "target": 273.97,
     "target_pct": 4.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FIS",
@@ -8571,7 +9547,8 @@
     "stop_pct": 0.3,
     "target": 66.81,
     "target_pct": 59.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ZBRA",
@@ -8647,7 +9624,8 @@
     "stop_pct": -13.6,
     "target": 383.06,
     "target_pct": 5.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KEYS",
@@ -8723,7 +9701,8 @@
     "stop_pct": -0.1,
     "target": 373.34,
     "target_pct": 14.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AIZ",
@@ -8799,7 +9778,8 @@
     "stop_pct": -1.9,
     "target": 300.64,
     "target_pct": 5.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LRCX",
@@ -8875,7 +9855,8 @@
     "stop_pct": 5.7,
     "target": 433.33,
     "target_pct": 42.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AMD",
@@ -8951,7 +9932,8 @@
     "stop_pct": 5.3,
     "target": 580.91,
     "target_pct": 22.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "C",
@@ -9027,7 +10009,8 @@
     "stop_pct": -1.7,
     "target": 144.93,
     "target_pct": 5.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NTRS",
@@ -9103,7 +10086,8 @@
     "stop_pct": -2.0,
     "target": 191.47,
     "target_pct": 2.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SCHW",
@@ -9179,7 +10163,8 @@
     "stop_pct": -4.1,
     "target": 113.65,
     "target_pct": 4.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MRVL",
@@ -9255,7 +10240,8 @@
     "stop_pct": -0.4,
     "target": 316.35,
     "target_pct": 42.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GEN",
@@ -9331,7 +10317,8 @@
     "stop_pct": -9.9,
     "target": 31.33,
     "target_pct": 2.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HAS",
@@ -9407,7 +10394,8 @@
     "stop_pct": -4.7,
     "target": 103.58,
     "target_pct": 11.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PRU",
@@ -9483,7 +10471,8 @@
     "stop_pct": -4.2,
     "target": 123.7,
     "target_pct": 0.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CPAY",
@@ -9559,7 +10548,8 @@
     "stop_pct": -8.0,
     "target": 425.24,
     "target_pct": 1.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CSCO",
@@ -9635,7 +10625,8 @@
     "stop_pct": 4.4,
     "target": 129.52,
     "target_pct": 18.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CVX",
@@ -9711,7 +10702,8 @@
     "stop_pct": -9.0,
     "target": 211.78,
     "target_pct": 1.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ADI",
@@ -9787,7 +10779,8 @@
     "stop_pct": 3.9,
     "target": 444.13,
     "target_pct": 22.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SMCI",
@@ -9863,7 +10856,8 @@
     "stop_pct": -21.9,
     "target": 58.68,
     "target_pct": 44.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GL",
@@ -9939,7 +10933,8 @@
     "stop_pct": 1.8,
     "target": 186.02,
     "target_pct": 6.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AVGO",
@@ -10015,7 +11010,8 @@
     "stop_pct": 8.0,
     "target": 480.81,
     "target_pct": 35.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IVZ",
@@ -10091,7 +11087,8 @@
     "stop_pct": -8.5,
     "target": 33.31,
     "target_pct": 0.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GOOGL",
@@ -10167,7 +11164,8 @@
     "stop_pct": 3.0,
     "target": 402.38,
     "target_pct": 18.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ANET",
@@ -10243,7 +11241,8 @@
     "stop_pct": -5.2,
     "target": 210.5,
     "target_pct": 9.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GOOG",
@@ -10319,7 +11318,8 @@
     "stop_pct": 3.4,
     "target": 398.8,
     "target_pct": 19.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MS",
@@ -10395,7 +11395,8 @@
     "stop_pct": -0.7,
     "target": 227.3,
     "target_pct": 5.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DELL",
@@ -10471,7 +11472,8 @@
     "stop_pct": -16.2,
     "target": null,
     "target_pct": null
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CRM",
@@ -10547,7 +11549,8 @@
     "stop_pct": -26.3,
     "target": 264.88,
     "target_pct": 1.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BAC",
@@ -10623,7 +11626,8 @@
     "stop_pct": -1.6,
     "target": 64.81,
     "target_pct": 3.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "INCY",
@@ -10699,7 +11703,8 @@
     "stop_pct": -5.3,
     "target": 129.93,
     "target_pct": 1.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TXN",
@@ -10775,7 +11780,8 @@
     "stop_pct": 8.1,
     "target": 330.59,
     "target_pct": 27.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VRT",
@@ -10851,7 +11857,8 @@
     "stop_pct": 2.2,
     "target": 376.15,
     "target_pct": 36.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AMP",
@@ -10927,7 +11934,8 @@
     "stop_pct": -5.2,
     "target": 570.68,
     "target_pct": 1.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BMY",
@@ -11003,7 +12011,8 @@
     "stop_pct": -6.0,
     "target": 68.09,
     "target_pct": 1.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DVN",
@@ -11079,7 +12088,8 @@
     "stop_pct": -7.0,
     "target": 51.7,
     "target_pct": 7.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GEV",
@@ -11155,7 +12165,8 @@
     "stop_pct": 7.6,
     "target": 1174.86,
     "target_pct": 24.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CAH",
@@ -11231,7 +12242,8 @@
     "stop_pct": -5.5,
     "target": 248.61,
     "target_pct": 0.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AMCR",
@@ -11307,7 +12319,8 @@
     "stop_pct": 0.2,
     "target": 49.11,
     "target_pct": 8.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FANG",
@@ -11383,7 +12396,8 @@
     "stop_pct": -2.3,
     "target": 211.36,
     "target_pct": 6.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PNC",
@@ -11459,7 +12473,8 @@
     "stop_pct": 1.2,
     "target": 256.97,
     "target_pct": 4.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RJF",
@@ -11535,7 +12550,8 @@
     "stop_pct": -4.0,
     "target": 181.18,
     "target_pct": 0.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ON",
@@ -11611,7 +12627,8 @@
     "stop_pct": 11.7,
     "target": 133.93,
     "target_pct": 79.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CFG",
@@ -11687,7 +12704,8 @@
     "stop_pct": 0.3,
     "target": 74.73,
     "target_pct": 5.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CINF",
@@ -11763,7 +12781,8 @@
     "stop_pct": 2.5,
     "target": 192.03,
     "target_pct": 10.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FIX",
@@ -11839,7 +12858,8 @@
     "stop_pct": 5.7,
     "target": 2065.44,
     "target_pct": 27.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "JPM",
@@ -11915,7 +12935,8 @@
     "stop_pct": -2.2,
     "target": 365.18,
     "target_pct": 2.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HIG",
@@ -11991,7 +13012,8 @@
     "stop_pct": -0.2,
     "target": 145.04,
     "target_pct": 4.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NTAP",
@@ -12067,7 +13089,8 @@
     "stop_pct": -3.3,
     "target": 207.08,
     "target_pct": 12.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AMZN",
@@ -12143,7 +13166,8 @@
     "stop_pct": -1.3,
     "target": 284.02,
     "target_pct": 10.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MPWR",
@@ -12219,7 +13243,8 @@
     "stop_pct": 8.6,
     "target": 1687.32,
     "target_pct": 38.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BKNG",
@@ -12295,7 +13320,8 @@
     "stop_pct": -0.1,
     "target": 221.56,
     "target_pct": 13.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GDDY",
@@ -12371,7 +13397,8 @@
     "stop_pct": -7.2,
     "target": 148.88,
     "target_pct": 47.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "APO",
@@ -12447,7 +13474,8 @@
     "stop_pct": -5.7,
     "target": 150.8,
     "target_pct": 12.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WDAY",
@@ -12523,7 +13551,8 @@
     "stop_pct": -16.6,
     "target": 247.69,
     "target_pct": 24.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EME",
@@ -12599,7 +13628,8 @@
     "stop_pct": 3.6,
     "target": 943.26,
     "target_pct": 25.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CAT",
@@ -12675,7 +13705,8 @@
     "stop_pct": 7.2,
     "target": 1062.93,
     "target_pct": 30.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BBY",
@@ -12751,7 +13782,8 @@
     "stop_pct": -6.6,
     "target": 90.17,
     "target_pct": 0.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "URI",
@@ -12827,7 +13859,8 @@
     "stop_pct": 7.8,
     "target": 1164.82,
     "target_pct": 15.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "OMC",
@@ -12903,7 +13936,8 @@
     "stop_pct": -0.2,
     "target": 88.94,
     "target_pct": 7.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MGM",
@@ -12979,7 +14013,8 @@
     "stop_pct": 8.8,
     "target": 50.69,
     "target_pct": 22.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BNY",
@@ -13055,7 +14090,8 @@
     "stop_pct": -5.0,
     "target": null,
     "target_pct": null
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LLY",
@@ -13131,7 +14167,8 @@
     "stop_pct": 3.9,
     "target": 1280.34,
     "target_pct": 11.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KEY",
@@ -13207,7 +14244,8 @@
     "stop_pct": 1.0,
     "target": 23.76,
     "target_pct": 6.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RDDT",
@@ -13283,7 +14321,8 @@
     "stop_pct": 9.6,
     "target": 270.71,
     "target_pct": 74.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "USB",
@@ -13359,7 +14398,8 @@
     "stop_pct": -0.7,
     "target": 65.42,
     "target_pct": 3.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "XOM",
@@ -13435,7 +14475,8 @@
     "stop_pct": -4.8,
     "target": 169.22,
     "target_pct": 5.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NEM",
@@ -13511,7 +14552,8 @@
     "stop_pct": -16.7,
     "target": 134.86,
     "target_pct": 5.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HOOD",
@@ -13587,7 +14629,8 @@
     "stop_pct": -17.1,
     "target": 152.46,
     "target_pct": 23.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LITE",
@@ -13663,7 +14706,8 @@
     "stop_pct": -7.2,
     "target": 1053.09,
     "target_pct": 19.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "UNH",
@@ -13739,7 +14783,8 @@
     "stop_pct": 3.5,
     "target": 436.35,
     "target_pct": 9.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BEN",
@@ -13815,7 +14860,8 @@
     "stop_pct": -2.8,
     "target": 35.77,
     "target_pct": 3.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IBKR",
@@ -13891,7 +14937,8 @@
     "stop_pct": -0.7,
     "target": 98.1,
     "target_pct": 6.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GPN",
@@ -13967,7 +15014,8 @@
     "stop_pct": -9.3,
     "target": 94.83,
     "target_pct": 1.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NUE",
@@ -14043,7 +15091,8 @@
     "stop_pct": -4.2,
     "target": 274.74,
     "target_pct": 5.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HAL",
@@ -14119,7 +15168,8 @@
     "stop_pct": -8.3,
     "target": 42.6,
     "target_pct": 15.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "STLD",
@@ -14195,7 +15245,8 @@
     "stop_pct": 0.1,
     "target": 282.12,
     "target_pct": 16.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SYF",
@@ -14271,7 +15322,8 @@
     "stop_pct": -4.7,
     "target": 87.38,
     "target_pct": 8.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IQV",
@@ -14347,7 +15399,8 @@
     "stop_pct": -14.1,
     "target": 271.62,
     "target_pct": 1.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ALB",
@@ -14423,7 +15476,8 @@
     "stop_pct": -0.3,
     "target": 215.07,
     "target_pct": 67.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AMGN",
@@ -14499,7 +15553,8 @@
     "stop_pct": -9.8,
     "target": 444.12,
     "target_pct": 1.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PWR",
@@ -14575,7 +15630,8 @@
     "stop_pct": 4.8,
     "target": 785.12,
     "target_pct": 26.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KLAC",
@@ -14651,7 +15707,8 @@
     "stop_pct": 9.8,
     "target": 301.37,
     "target_pct": 61.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "JBHT",
@@ -14727,7 +15784,8 @@
     "stop_pct": 1.7,
     "target": 297.91,
     "target_pct": 9.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HWM",
@@ -14803,7 +15861,8 @@
     "stop_pct": 5.7,
     "target": 292.65,
     "target_pct": 12.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BX",
@@ -14879,7 +15938,8 @@
     "stop_pct": -4.0,
     "target": 181.32,
     "target_pct": 31.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MCHP",
@@ -14955,7 +16015,8 @@
     "stop_pct": 7.5,
     "target": 102.1,
     "target_pct": 38.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ADSK",
@@ -15031,7 +16092,8 @@
     "stop_pct": 5.3,
     "target": 326.79,
     "target_pct": 49.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "APP",
@@ -15107,7 +16169,8 @@
     "stop_pct": 22.1,
     "target": 733.6,
     "target_pct": 127.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DXCM",
@@ -15183,7 +16246,8 @@
     "stop_pct": -8.0,
     "target": 92.34,
     "target_pct": 4.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FSLR",
@@ -15259,7 +16323,8 @@
     "stop_pct": 6.4,
     "target": 318.25,
     "target_pct": 54.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TRV",
@@ -15335,7 +16400,8 @@
     "stop_pct": -1.9,
     "target": 397.22,
     "target_pct": 7.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BLK",
@@ -15411,7 +16477,8 @@
     "stop_pct": -2.6,
     "target": 1183.47,
     "target_pct": 5.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CNC",
@@ -15487,7 +16554,8 @@
     "stop_pct": -3.3,
     "target": 68.72,
     "target_pct": 1.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WFC",
@@ -15563,7 +16631,8 @@
     "stop_pct": -3.6,
     "target": 94.83,
     "target_pct": 5.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DDOG",
@@ -15639,7 +16708,8 @@
     "stop_pct": 17.2,
     "target": 288.15,
     "target_pct": 35.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BG",
@@ -15715,7 +16785,8 @@
     "stop_pct": -5.2,
     "target": 130.59,
     "target_pct": 9.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FDX",
@@ -15791,7 +16862,8 @@
     "stop_pct": -0.8,
     "target": 339.35,
     "target_pct": 5.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ABBV",
@@ -15867,7 +16939,8 @@
     "stop_pct": -1.2,
     "target": 265.97,
     "target_pct": 3.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CI",
@@ -15943,7 +17016,8 @@
     "stop_pct": -0.4,
     "target": 305.8,
     "target_pct": 7.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LMT",
@@ -16019,7 +17093,8 @@
     "stop_pct": 4.7,
     "target": 668.17,
     "target_pct": 26.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "COHR",
@@ -16095,7 +17170,8 @@
     "stop_pct": 8.7,
     "target": 426.89,
     "target_pct": 51.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DLTR",
@@ -16171,7 +17247,8 @@
     "stop_pct": -3.0,
     "target": 141.21,
     "target_pct": 7.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MA",
@@ -16247,7 +17324,8 @@
     "stop_pct": -4.2,
     "target": 599.86,
     "target_pct": 3.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HUM",
@@ -16323,7 +17401,8 @@
     "stop_pct": -4.0,
     "target": 409.42,
     "target_pct": 1.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MET",
@@ -16399,7 +17478,8 @@
     "stop_pct": -4.7,
     "target": 99.95,
     "target_pct": 1.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FTNT",
@@ -16475,7 +17555,8 @@
     "stop_pct": 1.6,
     "target": 172.78,
     "target_pct": 10.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GM",
@@ -16551,7 +17632,8 @@
     "stop_pct": -4.4,
     "target": 90.3,
     "target_pct": 3.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TROW",
@@ -16627,7 +17709,8 @@
     "stop_pct": 4.1,
     "target": 121.68,
     "target_pct": 10.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EBAY",
@@ -16703,7 +17786,8 @@
     "stop_pct": 4.7,
     "target": 118.27,
     "target_pct": 13.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MSFT",
@@ -16779,7 +17863,8 @@
     "stop_pct": -11.5,
     "target": 537.65,
     "target_pct": 7.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SOLV",
@@ -16855,7 +17940,8 @@
     "stop_pct": -8.4,
     "target": 92.44,
     "target_pct": 0.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TPR",
@@ -16931,7 +18017,8 @@
     "stop_pct": 14.9,
     "target": 164.78,
     "target_pct": 34.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FITB",
@@ -17007,7 +18094,8 @@
     "stop_pct": 2.8,
     "target": 59.37,
     "target_pct": 7.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TGT",
@@ -17083,7 +18171,8 @@
     "stop_pct": -10.7,
     "target": 169.89,
     "target_pct": 3.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KDP",
@@ -17159,7 +18248,8 @@
     "stop_pct": -4.4,
     "target": 33.5,
     "target_pct": 2.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LYB",
@@ -17235,7 +18325,8 @@
     "stop_pct": -7.0,
     "target": 80.69,
     "target_pct": 24.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ROST",
@@ -17311,7 +18402,8 @@
     "stop_pct": 1.3,
     "target": 255.23,
     "target_pct": 10.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RL",
@@ -17387,7 +18479,8 @@
     "stop_pct": 8.2,
     "target": 413.24,
     "target_pct": 18.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SWK",
@@ -17463,7 +18556,8 @@
     "stop_pct": -2.5,
     "target": 104.0,
     "target_pct": 6.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FOX",
@@ -17539,7 +18633,8 @@
     "stop_pct": -8.1,
     "target": 67.07,
     "target_pct": 14.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GLW",
@@ -17615,7 +18710,8 @@
     "stop_pct": 8.5,
     "target": 255.21,
     "target_pct": 67.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TEL",
@@ -17691,7 +18787,8 @@
     "stop_pct": -1.8,
     "target": 246.32,
     "target_pct": 18.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BALL",
@@ -17767,7 +18864,8 @@
     "stop_pct": 0.0,
     "target": 67.1,
     "target_pct": 7.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MAS",
@@ -17843,7 +18941,8 @@
     "stop_pct": 3.9,
     "target": 82.41,
     "target_pct": 12.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MTB",
@@ -17919,7 +19018,8 @@
     "stop_pct": 1.1,
     "target": 252.46,
     "target_pct": 4.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ABNB",
@@ -17995,7 +19095,8 @@
     "stop_pct": -10.5,
     "target": 190.5,
     "target_pct": 4.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AES",
@@ -18071,7 +19172,8 @@
     "stop_pct": -0.9,
     "target": 16.87,
     "target_pct": 14.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CIEN",
@@ -18147,7 +19249,8 @@
     "stop_pct": 26.3,
     "target": 627.0,
     "target_pct": 95.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TFC",
@@ -18223,7 +19326,8 @@
     "stop_pct": -1.1,
     "target": 54.14,
     "target_pct": 4.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EXPD",
@@ -18299,7 +19403,8 @@
     "stop_pct": -5.7,
     "target": 190.97,
     "target_pct": 1.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CDW",
@@ -18375,7 +19480,8 @@
     "stop_pct": -9.1,
     "target": 167.36,
     "target_pct": 9.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ORCL",
@@ -18451,7 +19557,8 @@
     "stop_pct": -11.6,
     "target": 324.63,
     "target_pct": 105.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "REGN",
@@ -18527,7 +19634,8 @@
     "stop_pct": -11.6,
     "target": 852.03,
     "target_pct": 2.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "UAL",
@@ -18603,7 +19711,8 @@
     "stop_pct": 9.8,
     "target": 136.11,
     "target_pct": 22.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ADM",
@@ -18679,7 +19788,8 @@
     "stop_pct": -5.1,
     "target": 86.77,
     "target_pct": 2.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "V",
@@ -18755,7 +19865,8 @@
     "stop_pct": -3.6,
     "target": 384.14,
     "target_pct": 2.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VTRS",
@@ -18831,7 +19942,8 @@
     "stop_pct": -1.9,
     "target": 17.73,
     "target_pct": 4.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WAB",
@@ -18907,7 +20019,8 @@
     "stop_pct": 0.2,
     "target": 305.47,
     "target_pct": 8.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PLTR",
@@ -18983,7 +20096,8 @@
     "stop_pct": -14.3,
     "target": 207.18,
     "target_pct": 18.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AXP",
@@ -19059,7 +20173,8 @@
     "stop_pct": 4.4,
     "target": 381.78,
     "target_pct": 16.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FFIV",
@@ -19135,7 +20250,8 @@
     "stop_pct": 3.4,
     "target": 431.26,
     "target_pct": 10.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HPQ",
@@ -19211,7 +20327,8 @@
     "stop_pct": -16.2,
     "target": null,
     "target_pct": null
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WSM",
@@ -19287,7 +20404,8 @@
     "stop_pct": 2.7,
     "target": 251.78,
     "target_pct": 11.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NRG",
@@ -19363,7 +20481,8 @@
     "stop_pct": 8.8,
     "target": 182.82,
     "target_pct": 56.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "OKE",
@@ -19439,7 +20558,8 @@
     "stop_pct": -4.0,
     "target": 97.07,
     "target_pct": 2.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IT",
@@ -19515,7 +20635,8 @@
     "stop_pct": -12.8,
     "target": 264.09,
     "target_pct": 40.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "UBER",
@@ -19591,7 +20712,8 @@
     "stop_pct": -1.9,
     "target": 100.1,
     "target_pct": 32.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WYNN",
@@ -19667,7 +20789,8 @@
     "stop_pct": 5.7,
     "target": 132.13,
     "target_pct": 42.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HBAN",
@@ -19743,7 +20866,8 @@
     "stop_pct": 2.4,
     "target": 18.91,
     "target_pct": 10.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MDT",
@@ -19819,7 +20943,8 @@
     "stop_pct": -7.9,
     "target": 102.81,
     "target_pct": 9.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DRI",
@@ -19895,7 +21020,8 @@
     "stop_pct": -3.7,
     "target": 227.68,
     "target_pct": 4.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MMM",
@@ -19971,7 +21097,8 @@
     "stop_pct": 1.3,
     "target": 182.98,
     "target_pct": 8.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FOXA",
@@ -20047,7 +21174,8 @@
     "stop_pct": -8.1,
     "target": 75.41,
     "target_pct": 14.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PFG",
@@ -20123,7 +21251,8 @@
     "stop_pct": -4.6,
     "target": 118.51,
     "target_pct": 1.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EG",
@@ -20199,7 +21328,8 @@
     "stop_pct": -2.1,
     "target": 398.7,
     "target_pct": 4.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HSY",
@@ -20275,7 +21405,8 @@
     "stop_pct": 2.4,
     "target": 232.65,
     "target_pct": 33.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VEEV",
@@ -20351,7 +21482,8 @@
     "stop_pct": -20.2,
     "target": 306.22,
     "target_pct": 11.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DECK",
@@ -20427,7 +21559,8 @@
     "stop_pct": 14.0,
     "target": 123.91,
     "target_pct": 45.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ACGL",
@@ -20503,7 +21636,8 @@
     "stop_pct": 1.6,
     "target": 106.48,
     "target_pct": 8.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CSX",
@@ -20579,7 +21713,8 @@
     "stop_pct": 1.3,
     "target": 53.08,
     "target_pct": 7.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ADBE",
@@ -20655,7 +21790,8 @@
     "stop_pct": -7.2,
     "target": 367.46,
     "target_pct": 37.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AVY",
@@ -20731,7 +21867,8 @@
     "stop_pct": -2.9,
     "target": 194.1,
     "target_pct": 11.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PYPL",
@@ -20807,7 +21944,8 @@
     "stop_pct": 0.7,
     "target": 75.48,
     "target_pct": 38.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "INTC",
@@ -20883,7 +22021,8 @@
     "stop_pct": 5.2,
     "target": 140.94,
     "target_pct": 47.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LUV",
@@ -20959,7 +22098,8 @@
     "stop_pct": 14.3,
     "target": 54.07,
     "target_pct": 36.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "A",
@@ -21035,7 +22175,8 @@
     "stop_pct": -6.0,
     "target": 159.0,
     "target_pct": 5.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "STT",
@@ -21111,7 +22252,8 @@
     "stop_pct": -5.1,
     "target": null,
     "target_pct": null
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CCL",
@@ -21187,7 +22329,8 @@
     "stop_pct": 13.4,
     "target": 33.45,
     "target_pct": 41.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "STZ",
@@ -21263,7 +22406,8 @@
     "stop_pct": 3.2,
     "target": 164.28,
     "target_pct": 27.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PAYX",
@@ -21339,7 +22483,8 @@
     "stop_pct": -5.7,
     "target": 131.53,
     "target_pct": 7.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TRGP",
@@ -21415,7 +22560,8 @@
     "stop_pct": -4.7,
     "target": 302.25,
     "target_pct": 3.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NDSN",
@@ -21491,7 +22637,8 @@
     "stop_pct": -4.1,
     "target": 334.7,
     "target_pct": 5.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CMI",
@@ -21567,7 +22714,8 @@
     "stop_pct": 12.4,
     "target": 724.89,
     "target_pct": 29.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AAPL",
@@ -21643,7 +22791,8 @@
     "stop_pct": -1.9,
     "target": 339.79,
     "target_pct": 5.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VZ",
@@ -21719,7 +22868,8 @@
     "stop_pct": -8.1,
     "target": 50.59,
     "target_pct": 0.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LH",
@@ -21795,7 +22945,8 @@
     "stop_pct": -7.0,
     "target": 338.61,
     "target_pct": 2.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MCO",
@@ -21871,7 +23022,8 @@
     "stop_pct": -1.3,
     "target": 536.03,
     "target_pct": 8.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GNRC",
@@ -21947,7 +23099,8 @@
     "stop_pct": 16.2,
     "target": 295.54,
     "target_pct": 58.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TMUS",
@@ -22023,7 +23176,8 @@
     "stop_pct": -0.3,
     "target": 247.53,
     "target_pct": 36.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ROP",
@@ -22099,7 +23253,8 @@
     "stop_pct": -6.2,
     "target": 522.52,
     "target_pct": 27.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "UPS",
@@ -22175,7 +23330,8 @@
     "stop_pct": 3.5,
     "target": 115.87,
     "target_pct": 12.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HSIC",
@@ -22251,7 +23407,8 @@
     "stop_pct": -3.3,
     "target": 90.86,
     "target_pct": 0.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "UHS",
@@ -22327,7 +23484,8 @@
     "stop_pct": -4.1,
     "target": 243.12,
     "target_pct": 43.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "UNP",
@@ -22403,7 +23561,8 @@
     "stop_pct": 0.5,
     "target": 309.19,
     "target_pct": 6.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CASY",
@@ -22479,7 +23638,8 @@
     "stop_pct": 8.9,
     "target": 915.59,
     "target_pct": 20.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "COR",
@@ -22555,7 +23715,8 @@
     "stop_pct": -6.6,
     "target": 372.53,
     "target_pct": 11.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HST",
@@ -22631,7 +23792,8 @@
     "stop_pct": 6.2,
     "target": 25.54,
     "target_pct": 15.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SW",
@@ -22707,7 +23869,8 @@
     "stop_pct": 0.8,
     "target": 50.79,
     "target_pct": 10.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WTW",
@@ -22783,7 +23946,8 @@
     "stop_pct": -6.0,
     "target": 350.75,
     "target_pct": 4.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ELV",
@@ -22859,7 +24023,8 @@
     "stop_pct": -3.3,
     "target": 426.79,
     "target_pct": 4.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ALLE",
@@ -22935,7 +24100,8 @@
     "stop_pct": -2.6,
     "target": 178.36,
     "target_pct": 13.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CBRE",
@@ -23011,7 +24177,8 @@
     "stop_pct": -1.5,
     "target": 171.61,
     "target_pct": 16.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "META",
@@ -23087,7 +24254,8 @@
     "stop_pct": -2.8,
     "target": 777.7,
     "target_pct": 26.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WST",
@@ -23163,7 +24331,8 @@
     "stop_pct": 2.3,
     "target": 365.5,
     "target_pct": 6.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ZBH",
@@ -23239,7 +24408,8 @@
     "stop_pct": -3.7,
     "target": 104.63,
     "target_pct": 6.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AFL",
@@ -23315,7 +24485,8 @@
     "stop_pct": 2.9,
     "target": 128.9,
     "target_pct": 9.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FICO",
@@ -23391,7 +24562,8 @@
     "stop_pct": 24.9,
     "target": 1879.55,
     "target_pct": 101.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MDLZ",
@@ -23467,7 +24639,8 @@
     "stop_pct": -0.3,
     "target": 64.99,
     "target_pct": 5.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "QCOM",
@@ -23543,7 +24716,8 @@
     "stop_pct": 0.0,
     "target": 248.74,
     "target_pct": 47.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "APH",
@@ -23611,7 +24785,8 @@
     106.9,
     56.0
    ],
-   "signal": null
+   "signal": null,
+   "eps_hist": null
   },
   {
    "ticker": "DG",
@@ -23687,7 +24862,8 @@
     "stop_pct": -7.6,
     "target": 154.71,
     "target_pct": 16.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HON",
@@ -23763,7 +24939,8 @@
     "stop_pct": 9.7,
     "target": 257.94,
     "target_pct": 23.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "JCI",
@@ -23839,7 +25016,8 @@
     "stop_pct": 0.1,
     "target": 154.76,
     "target_pct": 7.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CB",
@@ -23915,7 +25093,8 @@
     "stop_pct": 1.3,
     "target": 363.5,
     "target_pct": 5.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KKR",
@@ -23991,7 +25170,8 @@
     "stop_pct": -5.9,
     "target": 148.27,
     "target_pct": 36.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NCLH",
@@ -24067,7 +25247,8 @@
     "stop_pct": 19.7,
     "target": 26.94,
     "target_pct": 71.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CHRW",
@@ -24143,7 +25324,8 @@
     "stop_pct": 14.7,
     "target": 209.42,
     "target_pct": 42.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "J",
@@ -24219,7 +25401,8 @@
     "stop_pct": -6.1,
     "target": 162.71,
     "target_pct": 10.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NDAQ",
@@ -24295,7 +25478,8 @@
     "stop_pct": -4.4,
     "target": 100.3,
     "target_pct": 3.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RF",
@@ -24371,7 +25555,8 @@
     "stop_pct": 0.2,
     "target": 32.07,
     "target_pct": 5.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VRTX",
@@ -24447,7 +25632,8 @@
     "stop_pct": -7.7,
     "target": 557.96,
     "target_pct": 1.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GE",
@@ -24523,7 +25709,8 @@
     "stop_pct": 6.8,
     "target": 381.22,
     "target_pct": 14.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PPG",
@@ -24599,7 +25786,8 @@
     "stop_pct": 2.7,
     "target": 129.16,
     "target_pct": 15.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SJM",
@@ -24675,7 +25863,8 @@
     "stop_pct": -6.9,
     "target": 132.34,
     "target_pct": 3.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BAX",
@@ -24751,7 +25940,8 @@
     "stop_pct": -5.1,
     "target": 28.34,
     "target_pct": 8.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WAT",
@@ -24827,7 +26017,8 @@
     "stop_pct": -4.8,
     "target": 421.26,
     "target_pct": 2.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "T",
@@ -24903,7 +26094,8 @@
     "stop_pct": -9.4,
     "target": 28.42,
     "target_pct": 9.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DD",
@@ -24979,7 +26171,8 @@
     "stop_pct": 4.8,
     "target": 152.69,
     "target_pct": 16.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DOV",
@@ -25055,7 +26248,8 @@
     "stop_pct": 7.3,
     "target": 231.59,
     "target_pct": 20.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MSCI",
@@ -25131,7 +26325,8 @@
     "stop_pct": 1.5,
     "target": 641.54,
     "target_pct": 12.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CHTR",
@@ -25207,7 +26402,8 @@
     "stop_pct": -4.8,
     "target": 282.74,
     "target_pct": 87.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CVNA",
@@ -25283,7 +26479,8 @@
     "stop_pct": -6.9,
     "target": 95.69,
     "target_pct": 29.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KR",
@@ -25359,7 +26556,8 @@
     "stop_pct": -2.2,
     "target": 74.69,
     "target_pct": 27.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MNST",
@@ -25435,7 +26633,8 @@
     "stop_pct": 8.1,
     "target": 49.97,
     "target_pct": 14.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PEP",
@@ -25511,7 +26710,8 @@
     "stop_pct": 1.1,
     "target": 167.22,
     "target_pct": 21.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AIG",
@@ -25587,7 +26787,8 @@
     "stop_pct": 1.6,
     "target": 85.51,
     "target_pct": 11.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EMR",
@@ -25663,7 +26864,8 @@
     "stop_pct": -2.7,
     "target": 163.82,
     "target_pct": 6.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FDS",
@@ -25739,7 +26941,8 @@
     "stop_pct": -10.4,
     "target": 368.74,
     "target_pct": 21.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "INTU",
@@ -25815,7 +27018,8 @@
     "stop_pct": -5.6,
     "target": 694.29,
     "target_pct": 107.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "YUM",
@@ -25891,7 +27095,8 @@
     "stop_pct": 0.6,
     "target": 167.49,
     "target_pct": 9.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HII",
@@ -25967,7 +27172,8 @@
     "stop_pct": 3.5,
     "target": 449.68,
     "target_pct": 57.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LVS",
@@ -26043,7 +27249,8 @@
     "stop_pct": 2.8,
     "target": 68.29,
     "target_pct": 52.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NWSA",
@@ -26119,7 +27326,8 @@
     "stop_pct": -7.3,
     "target": 31.19,
     "target_pct": 1.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PODD",
@@ -26195,7 +27403,8 @@
     "stop_pct": 4.3,
     "target": 352.82,
     "target_pct": 138.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AMT",
@@ -26271,7 +27480,8 @@
     "stop_pct": -3.1,
     "target": 192.28,
     "target_pct": 8.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BDX",
@@ -26347,7 +27557,8 @@
     "stop_pct": -8.8,
     "target": 192.0,
     "target_pct": 3.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BRK-B",
@@ -26423,7 +27634,8 @@
     "stop_pct": -0.6,
     "target": 529.42,
     "target_pct": 4.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DGX",
@@ -26499,7 +27711,8 @@
     "stop_pct": -4.4,
     "target": 245.0,
     "target_pct": 3.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EQIX",
@@ -26575,7 +27788,8 @@
     "stop_pct": -0.4,
     "target": 1110.63,
     "target_pct": 6.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ROK",
@@ -26651,7 +27865,8 @@
     "stop_pct": 4.2,
     "target": 493.56,
     "target_pct": 13.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SYY",
@@ -26727,7 +27942,8 @@
     "stop_pct": 2.8,
     "target": 89.88,
     "target_pct": 11.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CBOE",
@@ -26803,7 +28019,8 @@
     "stop_pct": -5.0,
     "target": 364.92,
     "target_pct": 22.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CDNS",
@@ -26879,7 +28096,8 @@
     "stop_pct": 15.6,
     "target": 416.39,
     "target_pct": 40.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GEHC",
@@ -26955,7 +28173,8 @@
     "stop_pct": -1.0,
     "target": 88.03,
     "target_pct": 27.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TPL",
@@ -27031,7 +28250,8 @@
     "stop_pct": 6.7,
     "target": 538.1,
     "target_pct": 48.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CTSH",
@@ -27107,7 +28327,8 @@
     "stop_pct": -16.9,
     "target": 85.16,
     "target_pct": 35.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EXE",
@@ -27183,7 +28404,8 @@
     "stop_pct": -5.6,
     "target": 120.76,
     "target_pct": 23.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SPGI",
@@ -27259,7 +28481,8 @@
     "stop_pct": -4.0,
     "target": 516.58,
     "target_pct": 16.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BR",
@@ -27335,7 +28558,8 @@
     "stop_pct": -7.9,
     "target": 249.13,
     "target_pct": 43.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NWS",
@@ -27411,7 +28635,8 @@
     "stop_pct": -5.6,
     "target": 35.32,
     "target_pct": 3.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ULTA",
@@ -27487,7 +28712,8 @@
     "stop_pct": -10.4,
     "target": 706.82,
     "target_pct": 25.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BSX",
@@ -27563,7 +28789,8 @@
     "stop_pct": -1.8,
     "target": 108.14,
     "target_pct": 126.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CRH",
@@ -27639,7 +28866,8 @@
     "stop_pct": 5.7,
     "target": 129.92,
     "target_pct": 38.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PANW",
@@ -27715,7 +28943,8 @@
     "stop_pct": 4.8,
     "target": 396.0,
     "target_pct": 18.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SPG",
@@ -27791,7 +29020,8 @@
     "stop_pct": 5.0,
     "target": 236.7,
     "target_pct": 11.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DOC",
@@ -27867,7 +29097,8 @@
     "stop_pct": 3.0,
     "target": 22.71,
     "target_pct": 9.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IEX",
@@ -27943,7 +29174,8 @@
     "stop_pct": 2.1,
     "target": 240.52,
     "target_pct": 7.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ALGN",
@@ -28019,7 +29251,8 @@
     "stop_pct": 7.4,
     "target": 197.51,
     "target_pct": 23.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SLB",
@@ -28095,7 +29328,8 @@
     "stop_pct": -11.4,
     "target": 59.79,
     "target_pct": 4.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LYV",
@@ -28171,7 +29405,8 @@
     "stop_pct": 4.7,
     "target": 188.46,
     "target_pct": 8.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MO",
@@ -28247,7 +29482,8 @@
     "stop_pct": 1.0,
     "target": 74.92,
     "target_pct": 8.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NFLX",
@@ -28323,7 +29559,8 @@
     "stop_pct": -4.9,
     "target": 126.32,
     "target_pct": 59.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "Q",
@@ -28399,7 +29636,8 @@
     "stop_pct": 12.9,
     "target": 175.52,
     "target_pct": 46.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TSN",
@@ -28475,7 +29713,8 @@
     "stop_pct": 10.5,
     "target": 67.54,
     "target_pct": 30.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TT",
@@ -28551,7 +29790,8 @@
     "stop_pct": 4.6,
     "target": 503.46,
     "target_pct": 12.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PGR",
@@ -28627,7 +29867,8 @@
     "stop_pct": -1.5,
     "target": 234.48,
     "target_pct": 6.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AKAM",
@@ -28703,7 +29944,8 @@
     "stop_pct": 10.2,
     "target": 161.14,
     "target_pct": 53.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AME",
@@ -28779,7 +30021,8 @@
     "stop_pct": 1.4,
     "target": 258.52,
     "target_pct": 8.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IR",
@@ -28855,7 +30098,8 @@
     "stop_pct": 6.6,
     "target": 98.69,
     "target_pct": 28.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TMO",
@@ -28931,7 +30175,8 @@
     "stop_pct": -7.2,
     "target": 638.18,
     "target_pct": 3.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PCG",
@@ -29007,7 +30252,8 @@
     "stop_pct": 21.5,
     "target": 19.0,
     "target_pct": 35.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BRO",
@@ -29083,7 +30329,8 @@
     "stop_pct": -2.9,
     "target": 95.04,
     "target_pct": 32.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MKC",
@@ -29159,7 +30406,8 @@
     "stop_pct": 0.6,
     "target": 70.38,
     "target_pct": 34.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NEE",
@@ -29235,7 +30483,8 @@
     "stop_pct": 2.8,
     "target": 96.44,
     "target_pct": 15.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GD",
@@ -29311,7 +30560,8 @@
     "stop_pct": 5.1,
     "target": 395.97,
     "target_pct": 10.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "OTIS",
@@ -29387,7 +30637,8 @@
     "stop_pct": 0.9,
     "target": 92.5,
     "target_pct": 29.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TDY",
@@ -29463,7 +30714,8 @@
     "stop_pct": 6.3,
     "target": 691.3,
     "target_pct": 13.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ADP",
@@ -29539,7 +30791,8 @@
     "stop_pct": -6.3,
     "target": 293.05,
     "target_pct": 4.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GWW",
@@ -29615,7 +30868,8 @@
     "stop_pct": 1.1,
     "target": 1399.3,
     "target_pct": 5.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MCK",
@@ -29691,7 +30945,8 @@
     "stop_pct": -7.7,
     "target": 993.53,
     "target_pct": 8.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RTX",
@@ -29767,7 +31022,8 @@
     "stop_pct": 3.2,
     "target": 225.49,
     "target_pct": 12.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VST",
@@ -29843,7 +31099,8 @@
     "stop_pct": 0.9,
     "target": 217.02,
     "target_pct": 46.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PH",
@@ -29919,7 +31176,8 @@
     "stop_pct": 2.3,
     "target": 1071.71,
     "target_pct": 10.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AJG",
@@ -29995,7 +31253,8 @@
     "stop_pct": -4.7,
     "target": 307.69,
     "target_pct": 15.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HCA",
@@ -30071,7 +31330,8 @@
     "stop_pct": -0.5,
     "target": 543.23,
     "target_pct": 34.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DHR",
@@ -30147,7 +31407,8 @@
     "stop_pct": -2.9,
     "target": 241.04,
     "target_pct": 16.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GRMN",
@@ -30223,7 +31484,8 @@
     "stop_pct": -1.8,
     "target": 313.16,
     "target_pct": 12.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KO",
@@ -30299,7 +31561,8 @@
     "stop_pct": -2.4,
     "target": 91.99,
     "target_pct": 4.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MSI",
@@ -30375,7 +31638,8 @@
     "stop_pct": -5.6,
     "target": 491.24,
     "target_pct": 4.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "XYZ",
@@ -30451,7 +31715,8 @@
     "stop_pct": -3.3,
     "target": 84.85,
     "target_pct": 2.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BKR",
@@ -30527,7 +31792,8 @@
     "stop_pct": -4.9,
     "target": 69.18,
     "target_pct": 10.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RCL",
@@ -30603,7 +31869,8 @@
     "stop_pct": 11.8,
     "target": 354.01,
     "target_pct": 33.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ETN",
@@ -30679,7 +31946,8 @@
     "stop_pct": 1.6,
     "target": 459.96,
     "target_pct": 12.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ACN",
@@ -30755,7 +32023,8 @@
     "stop_pct": -14.2,
     "target": 282.71,
     "target_pct": 50.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "INVH",
@@ -30831,7 +32100,8 @@
     "stop_pct": 4.5,
     "target": 30.59,
     "target_pct": 6.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BIIB",
@@ -30907,7 +32177,8 @@
     "stop_pct": -5.2,
     "target": 224.51,
     "target_pct": 1.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PLD",
@@ -30983,7 +32254,8 @@
     "stop_pct": 2.8,
     "target": 150.06,
     "target_pct": 8.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ICE",
@@ -31059,7 +32331,8 @@
     "stop_pct": -8.7,
     "target": 173.95,
     "target_pct": 7.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RVTY",
@@ -31135,7 +32408,8 @@
     "stop_pct": -11.4,
     "target": null,
     "target_pct": null
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SYK",
@@ -31211,7 +32485,8 @@
     "stop_pct": 8.2,
     "target": 390.37,
     "target_pct": 28.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WMB",
@@ -31287,7 +32562,8 @@
     "stop_pct": -0.4,
     "target": 78.82,
     "target_pct": 7.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "APTV",
@@ -31363,7 +32639,8 @@
     "stop_pct": 12.0,
     "target": 88.67,
     "target_pct": 86.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MRSH",
@@ -31439,7 +32716,8 @@
     "stop_pct": -1.6,
     "target": 203.77,
     "target_pct": 8.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TXT",
@@ -31515,7 +32793,8 @@
     "stop_pct": 11.1,
     "target": 100.73,
     "target_pct": 27.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PCAR",
@@ -31591,7 +32870,8 @@
     "stop_pct": 2.3,
     "target": 137.85,
     "target_pct": 10.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LDOS",
@@ -31667,7 +32947,8 @@
     "stop_pct": -8.3,
     "target": 197.91,
     "target_pct": 47.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PM",
@@ -31743,7 +33024,8 @@
     "stop_pct": 2.0,
     "target": 200.17,
     "target_pct": 8.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VLTO",
@@ -31819,7 +33101,8 @@
     "stop_pct": -1.2,
     "target": 108.52,
     "target_pct": 12.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VRSN",
@@ -31895,7 +33178,8 @@
     "stop_pct": -4.0,
     "target": 309.09,
     "target_pct": 6.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PHM",
@@ -31971,7 +33255,8 @@
     "stop_pct": 3.2,
     "target": 141.96,
     "target_pct": 13.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PKG",
@@ -32047,7 +33332,8 @@
     "stop_pct": 2.1,
     "target": 257.43,
     "target_pct": 8.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MAR",
@@ -32123,7 +33409,8 @@
     "stop_pct": 7.4,
     "target": 401.72,
     "target_pct": 19.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BA",
@@ -32199,7 +33486,8 @@
     "stop_pct": 4.1,
     "target": 252.15,
     "target_pct": 19.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GPC",
@@ -32275,7 +33563,8 @@
     "stop_pct": -5.8,
     "target": 146.31,
     "target_pct": 6.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HUBB",
@@ -32351,7 +33640,8 @@
     "stop_pct": 4.8,
     "target": 554.46,
     "target_pct": 20.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NOW",
@@ -32427,7 +33717,8 @@
     "stop_pct": -17.0,
     "target": 192.23,
     "target_pct": 36.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "JNJ",
@@ -32503,7 +33794,8 @@
     "stop_pct": -5.7,
     "target": 278.43,
     "target_pct": 0.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LII",
@@ -32579,7 +33871,8 @@
     "stop_pct": 21.4,
     "target": 574.42,
     "target_pct": 47.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TRMB",
@@ -32655,7 +33948,8 @@
     "stop_pct": -6.1,
     "target": 83.52,
     "target_pct": 39.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EQT",
@@ -32731,7 +34025,8 @@
     "stop_pct": -4.1,
     "target": 67.53,
     "target_pct": 23.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CSGP",
@@ -32807,7 +34102,8 @@
     "stop_pct": -2.2,
     "target": 89.46,
     "target_pct": 188.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GILD",
@@ -32883,7 +34179,8 @@
     "stop_pct": -9.6,
     "target": 153.91,
     "target_pct": 1.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SHW",
@@ -32959,7 +34256,8 @@
     "stop_pct": 2.8,
     "target": 371.7,
     "target_pct": 11.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CL",
@@ -33035,7 +34333,8 @@
     "stop_pct": 2.4,
     "target": 97.97,
     "target_pct": 9.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IRM",
@@ -33111,7 +34410,8 @@
     "stop_pct": 4.8,
     "target": 133.06,
     "target_pct": 13.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FCX",
@@ -33187,7 +34487,8 @@
     "stop_pct": -9.1,
     "target": 79.91,
     "target_pct": 9.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FISV",
@@ -33263,7 +34564,8 @@
     "stop_pct": -2.0,
     "target": 136.41,
     "target_pct": 156.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "COO",
@@ -33339,7 +34641,8 @@
     "stop_pct": 3.5,
     "target": 84.32,
     "target_pct": 20.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CRWD",
@@ -33415,7 +34718,8 @@
     "stop_pct": -5.9,
     "target": 231.0,
     "target_pct": 8.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PFE",
@@ -33491,7 +34795,8 @@
     "stop_pct": -9.7,
     "target": 29.02,
     "target_pct": 1.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WELL",
@@ -33567,7 +34872,8 @@
     "stop_pct": -0.8,
     "target": 251.12,
     "target_pct": 5.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AON",
@@ -33643,7 +34949,8 @@
     "stop_pct": 9.0,
     "target": 380.39,
     "target_pct": 17.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EIX",
@@ -33719,7 +35026,8 @@
     "stop_pct": 28.9,
     "target": 80.38,
     "target_pct": 43.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ARES",
@@ -33795,7 +35103,8 @@
     "stop_pct": -6.8,
     "target": 178.13,
     "target_pct": 26.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DOW",
@@ -33871,7 +35180,8 @@
     "stop_pct": -1.8,
     "target": 40.97,
     "target_pct": 35.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "L",
@@ -33947,7 +35257,8 @@
     "stop_pct": 3.9,
     "target": 119.33,
     "target_pct": 9.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CMG",
@@ -34023,7 +35334,8 @@
     "stop_pct": -6.2,
     "target": 42.36,
     "target_pct": 13.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LOW",
@@ -34099,7 +35411,8 @@
     "stop_pct": 4.7,
     "target": 284.26,
     "target_pct": 39.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MRK",
@@ -34175,7 +35488,8 @@
     "stop_pct": -10.6,
     "target": 156.45,
     "target_pct": 3.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SRE",
@@ -34251,7 +35565,8 @@
     "stop_pct": 5.5,
     "target": 99.04,
     "target_pct": 17.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ZTS",
@@ -34327,7 +35642,8 @@
     "stop_pct": -0.3,
     "target": 150.43,
     "target_pct": 98.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ODFL",
@@ -34403,7 +35719,8 @@
     "stop_pct": 15.9,
     "target": 248.34,
     "target_pct": 34.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AZO",
@@ -34479,7 +35796,8 @@
     "stop_pct": 2.8,
     "target": 4354.54,
     "target_pct": 47.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LHX",
@@ -34555,7 +35873,8 @@
     "stop_pct": 9.7,
     "target": 375.64,
     "target_pct": 45.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SNA",
@@ -34631,7 +35950,8 @@
     "stop_pct": 4.7,
     "target": 416.72,
     "target_pct": 8.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KVUE",
@@ -34707,7 +36027,8 @@
     "stop_pct": 0.6,
     "target": 19.61,
     "target_pct": 3.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "COST",
@@ -34783,7 +36104,8 @@
     "stop_pct": 3.0,
     "target": 1092.58,
     "target_pct": 19.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FTV",
@@ -34859,7 +36181,8 @@
     "stop_pct": 6.0,
     "target": 64.09,
     "target_pct": 12.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LULU",
@@ -34935,7 +36258,8 @@
     "stop_pct": 18.1,
     "target": 215.88,
     "target_pct": 115.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HD",
@@ -35011,7 +36335,8 @@
     "stop_pct": 5.0,
     "target": 411.76,
     "target_pct": 28.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PNR",
@@ -35087,7 +36412,8 @@
     "stop_pct": 12.1,
     "target": 111.23,
     "target_pct": 86.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WRB",
@@ -35163,7 +36489,8 @@
     "stop_pct": 2.5,
     "target": 76.44,
     "target_pct": 10.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NKE",
@@ -35239,7 +36566,8 @@
     "stop_pct": 6.8,
     "target": 72.94,
     "target_pct": 89.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RMD",
@@ -35315,7 +36643,8 @@
     "stop_pct": -5.4,
     "target": 280.31,
     "target_pct": 23.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SNPS",
@@ -35391,7 +36720,8 @@
     "stop_pct": 4.1,
     "target": 609.08,
     "target_pct": 53.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PTC",
@@ -35467,7 +36797,8 @@
     "stop_pct": -3.9,
     "target": 213.9,
     "target_pct": 50.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KMI",
@@ -35543,7 +36874,8 @@
     "stop_pct": 1.4,
     "target": 33.99,
     "target_pct": 8.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TJX",
@@ -35619,7 +36951,8 @@
     "stop_pct": 12.7,
     "target": 167.88,
     "target_pct": 26.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CRL",
@@ -35695,7 +37028,8 @@
     "stop_pct": -12.3,
     "target": 298.58,
     "target_pct": 2.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SBUX",
@@ -35771,7 +37105,8 @@
     "stop_pct": -0.4,
     "target": 108.49,
     "target_pct": 2.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "XYL",
@@ -35847,7 +37182,8 @@
     "stop_pct": 10.3,
     "target": 150.84,
     "target_pct": 42.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DHI",
@@ -35923,7 +37259,8 @@
     "stop_pct": 3.9,
     "target": 181.86,
     "target_pct": 26.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DLR",
@@ -35999,7 +37336,8 @@
     "stop_pct": -1.7,
     "target": 202.56,
     "target_pct": 6.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HLT",
@@ -36075,7 +37413,8 @@
     "stop_pct": 3.8,
     "target": 350.06,
     "target_pct": 11.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ITW",
@@ -36151,7 +37490,8 @@
     "stop_pct": 3.1,
     "target": 297.32,
     "target_pct": 9.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FE",
@@ -36227,7 +37567,8 @@
     "stop_pct": 1.2,
     "target": 50.88,
     "target_pct": 8.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ISRG",
@@ -36303,7 +37644,8 @@
     "stop_pct": 4.5,
     "target": 592.85,
     "target_pct": 62.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "REG",
@@ -36379,7 +37721,8 @@
     "stop_pct": 3.5,
     "target": 82.68,
     "target_pct": 8.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CNP",
@@ -36455,7 +37798,8 @@
     "stop_pct": 4.6,
     "target": 44.77,
     "target_pct": 12.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "STE",
@@ -36531,7 +37875,8 @@
     "stop_pct": 0.1,
     "target": 267.17,
     "target_pct": 18.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KMB",
@@ -36607,7 +37952,8 @@
     "stop_pct": 2.9,
     "target": 126.09,
     "target_pct": 18.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LIN",
@@ -36683,7 +38029,8 @@
     "stop_pct": 4.1,
     "target": 544.85,
     "target_pct": 13.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TDG",
@@ -36759,7 +38106,8 @@
     "stop_pct": 7.4,
     "target": 1450.0,
     "target_pct": 25.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "UDR",
@@ -36835,7 +38183,8 @@
     "stop_pct": 5.2,
     "target": 40.94,
     "target_pct": 11.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FRT",
@@ -36911,7 +38260,8 @@
     "stop_pct": 2.6,
     "target": 127.13,
     "target_pct": 8.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EL",
@@ -36987,7 +38337,8 @@
     "stop_pct": -14.6,
     "target": 118.37,
     "target_pct": 14.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FERG",
@@ -37063,7 +38414,8 @@
     "stop_pct": 2.5,
     "target": 265.69,
     "target_pct": 15.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AOS",
@@ -37139,7 +38491,8 @@
     "stop_pct": 0.3,
     "target": 79.53,
     "target_pct": 30.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "XEL",
@@ -37215,7 +38568,8 @@
     "stop_pct": 3.4,
     "target": 82.67,
     "target_pct": 8.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DIS",
@@ -37291,7 +38645,8 @@
     "stop_pct": -4.1,
     "target": 117.14,
     "target_pct": 11.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DASH",
@@ -37367,7 +38722,8 @@
     "stop_pct": -5.1,
     "target": 281.74,
     "target_pct": 31.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PSA",
@@ -37443,7 +38799,8 @@
     "stop_pct": 5.1,
     "target": 330.47,
     "target_pct": 8.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DPZ",
@@ -37519,7 +38876,8 @@
     "stop_pct": -2.2,
     "target": 457.29,
     "target_pct": 34.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EVRG",
@@ -37595,7 +38953,8 @@
     "stop_pct": 2.1,
     "target": 87.4,
     "target_pct": 6.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PPL",
@@ -37671,7 +39030,8 @@
     "stop_pct": 1.3,
     "target": 39.49,
     "target_pct": 12.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BF-B",
@@ -37747,7 +39107,8 @@
     "stop_pct": 0.7,
     "target": 30.08,
     "target_pct": 12.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "JKHY",
@@ -37823,7 +39184,8 @@
     "stop_pct": -6.4,
     "target": 191.04,
     "target_pct": 15.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MTD",
@@ -37899,7 +39261,8 @@
     "stop_pct": 0.4,
     "target": 1506.02,
     "target_pct": 11.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VICI",
@@ -37975,7 +39338,8 @@
     "stop_pct": 2.8,
     "target": 31.56,
     "target_pct": 23.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VRSK",
@@ -38051,7 +39415,8 @@
     "stop_pct": 2.6,
     "target": 270.57,
     "target_pct": 45.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IDXX",
@@ -38127,7 +39492,8 @@
     "stop_pct": 4.9,
     "target": 766.68,
     "target_pct": 44.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IP",
@@ -38203,7 +39569,8 @@
     "stop_pct": 4.4,
     "target": 47.45,
     "target_pct": 26.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CTAS",
@@ -38279,7 +39646,8 @@
     "stop_pct": -1.8,
     "target": 215.97,
     "target_pct": 7.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DE",
@@ -38355,7 +39723,8 @@
     "stop_pct": -11.5,
     "target": null,
     "target_pct": null
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ED",
@@ -38431,7 +39800,8 @@
     "stop_pct": 1.0,
     "target": 113.57,
     "target_pct": 5.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EFX",
@@ -38507,7 +39877,8 @@
     "stop_pct": 0.3,
     "target": 259.37,
     "target_pct": 46.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CTVA",
@@ -38583,7 +39954,8 @@
     "stop_pct": -5.6,
     "target": 90.32,
     "target_pct": 2.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NSC",
@@ -38659,7 +40031,8 @@
     "stop_pct": 1.6,
     "target": 352.98,
     "target_pct": 7.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IBM",
@@ -38735,7 +40108,8 @@
     "stop_pct": 2.1,
     "target": 326.89,
     "target_pct": 38.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ORLY",
@@ -38811,7 +40185,8 @@
     "stop_pct": 1.2,
     "target": 107.82,
     "target_pct": 22.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MCD",
@@ -38887,7 +40262,8 @@
     "stop_pct": 4.3,
     "target": 334.5,
     "target_pct": 30.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "FAST",
@@ -38963,7 +40339,8 @@
     "stop_pct": -2.1,
     "target": 52.38,
     "target_pct": 5.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "O",
@@ -39039,7 +40416,8 @@
     "stop_pct": 1.8,
     "target": 65.82,
     "target_pct": 6.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ETR",
@@ -39115,7 +40493,8 @@
     "stop_pct": 1.9,
     "target": 116.66,
     "target_pct": 8.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ABT",
@@ -39191,7 +40570,8 @@
     "stop_pct": -4.9,
     "target": 133.53,
     "target_pct": 21.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TKO",
@@ -39267,7 +40647,8 @@
     "stop_pct": 0.0,
     "target": 223.19,
     "target_pct": 17.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ECL",
@@ -39343,7 +40724,8 @@
     "stop_pct": -0.2,
     "target": 306.69,
     "target_pct": 9.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TYL",
@@ -39419,7 +40801,8 @@
     "stop_pct": -11.8,
     "target": 566.1,
     "target_pct": 53.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VTR",
@@ -39495,7 +40878,8 @@
     "stop_pct": 1.5,
     "target": 100.53,
     "target_pct": 9.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CARR",
@@ -39571,7 +40955,8 @@
     "stop_pct": 9.1,
     "target": 75.73,
     "target_pct": 27.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EW",
@@ -39647,7 +41032,8 @@
     "stop_pct": -0.1,
     "target": 95.18,
     "target_pct": 6.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SBAC",
@@ -39723,7 +41109,8 @@
     "stop_pct": -3.3,
     "target": 220.88,
     "target_pct": 17.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WM",
@@ -39799,7 +41186,8 @@
     "stop_pct": 4.1,
     "target": 244.47,
     "target_pct": 11.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NOC",
@@ -39875,7 +41263,8 @@
     "stop_pct": 4.4,
     "target": 761.19,
     "target_pct": 46.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ERIE",
@@ -39951,7 +41340,8 @@
     "stop_pct": -4.0,
     "target": 331.63,
     "target_pct": 29.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KHC",
@@ -40027,7 +41417,8 @@
     "stop_pct": 1.8,
     "target": 27.62,
     "target_pct": 10.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DTE",
@@ -40103,7 +41494,8 @@
     "stop_pct": 4.8,
     "target": 154.43,
     "target_pct": 12.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "KIM",
@@ -40179,7 +41571,8 @@
     "stop_pct": 4.1,
     "target": 26.38,
     "target_pct": 10.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CHD",
@@ -40255,7 +41648,8 @@
     "stop_pct": 0.2,
     "target": 104.6,
     "target_pct": 5.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WEC",
@@ -40331,7 +41725,8 @@
     "stop_pct": 3.8,
     "target": 117.82,
     "target_pct": 10.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WY",
@@ -40407,7 +41802,8 @@
     "stop_pct": 4.3,
     "target": 26.64,
     "target_pct": 15.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MLM",
@@ -40483,7 +41879,8 @@
     "stop_pct": 7.5,
     "target": 705.09,
     "target_pct": 37.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ECHO",
@@ -40559,7 +41956,8 @@
     "stop_pct": 1.6,
     "target": 141.8,
     "target_pct": 58.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BXP",
@@ -40635,7 +42033,8 @@
     "stop_pct": 0.7,
     "target": 75.56,
     "target_pct": 10.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CMCSA",
@@ -40711,7 +42110,8 @@
     "stop_pct": -6.4,
     "target": 31.68,
     "target_pct": 19.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "F",
@@ -40787,7 +42187,8 @@
     "stop_pct": -3.4,
     "target": 17.25,
     "target_pct": 18.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CEG",
@@ -40863,7 +42264,8 @@
     "stop_pct": -9.8,
     "target": 401.7,
     "target_pct": 36.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AEP",
@@ -40939,7 +42341,8 @@
     "stop_pct": 3.1,
     "target": 137.64,
     "target_pct": 10.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PG",
@@ -41015,7 +42418,8 @@
     "stop_pct": -0.4,
     "target": 164.72,
     "target_pct": 12.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "DUK",
@@ -41091,7 +42495,8 @@
     "stop_pct": 2.6,
     "target": 131.16,
     "target_pct": 8.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PSKY",
@@ -41167,7 +42572,8 @@
     "stop_pct": -12.1,
     "target": 19.46,
     "target_pct": 78.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CPRT",
@@ -41243,7 +42649,8 @@
     "stop_pct": -11.2,
     "target": 49.97,
     "target_pct": 47.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "HRL",
@@ -41319,7 +42726,8 @@
     "stop_pct": 11.7,
     "target": 26.2,
     "target_pct": 20.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "D",
@@ -41395,7 +42803,8 @@
     "stop_pct": 4.2,
     "target": 71.69,
     "target_pct": 8.7
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TTD",
@@ -41471,7 +42880,8 @@
     "stop_pct": 14.0,
     "target": 54.13,
     "target_pct": 272.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AEE",
@@ -41547,7 +42957,8 @@
     "stop_pct": 3.3,
     "target": 118.32,
     "target_pct": 10.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EXC",
@@ -41623,7 +43034,8 @@
     "stop_pct": 4.2,
     "target": 49.82,
     "target_pct": 13.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "RSG",
@@ -41699,7 +43111,8 @@
     "stop_pct": -2.9,
     "target": 231.19,
     "target_pct": 3.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ATO",
@@ -41775,7 +43188,8 @@
     "stop_pct": 1.9,
     "target": 190.06,
     "target_pct": 12.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "IFF",
@@ -41851,7 +43265,8 @@
     "stop_pct": -5.6,
     "target": 88.07,
     "target_pct": 2.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CCI",
@@ -41927,7 +43342,8 @@
     "stop_pct": 0.5,
     "target": 95.4,
     "target_pct": 25.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "EXR",
@@ -42003,7 +43419,8 @@
     "stop_pct": 4.0,
     "target": 152.85,
     "target_pct": 8.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VMC",
@@ -42079,7 +43496,8 @@
     "stop_pct": 7.7,
     "target": 328.48,
     "target_pct": 25.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LNT",
@@ -42155,7 +43573,8 @@
     "stop_pct": 5.3,
     "target": 77.44,
     "target_pct": 13.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CLX",
@@ -42231,7 +43650,8 @@
     "stop_pct": 5.5,
     "target": 124.13,
     "target_pct": 32.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SWKS",
@@ -42307,7 +43727,8 @@
     "stop_pct": -12.7,
     "target": 83.42,
     "target_pct": 12.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "SO",
@@ -42383,7 +43804,8 @@
     "stop_pct": 5.1,
     "target": 97.49,
     "target_pct": 10.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TECH",
@@ -42459,7 +43881,8 @@
     "stop_pct": -0.9,
     "target": 72.47,
     "target_pct": 0.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AWK",
@@ -42535,7 +43958,8 @@
     "stop_pct": -4.6,
     "target": 141.57,
     "target_pct": 0.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ESS",
@@ -42611,7 +44035,8 @@
     "stop_pct": 3.2,
     "target": 298.33,
     "target_pct": 6.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ES",
@@ -42687,7 +44112,8 @@
     "stop_pct": 2.0,
     "target": 75.39,
     "target_pct": 5.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NVR",
@@ -42763,7 +44189,8 @@
     "stop_pct": 0.9,
     "target": 8543.0,
     "target_pct": 34.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "VMRK",
@@ -42839,7 +44266,8 @@
     "stop_pct": 2.1,
     "target": 70.15,
     "target_pct": 6.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WMT",
@@ -42915,7 +44343,8 @@
     "stop_pct": 3.0,
     "target": 133.88,
     "target_pct": 24.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "BLDR",
@@ -42991,7 +44420,8 @@
     "stop_pct": 10.6,
     "target": 149.21,
     "target_pct": 125.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PNW",
@@ -43067,7 +44497,8 @@
     "stop_pct": 4.8,
     "target": 108.38,
     "target_pct": 10.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ROL",
@@ -43143,7 +44574,8 @@
     "stop_pct": 8.9,
     "target": 64.86,
     "target_pct": 79.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "NI",
@@ -43219,7 +44651,8 @@
     "stop_pct": 6.3,
     "target": 48.75,
     "target_pct": 17.6
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TAP",
@@ -43295,7 +44728,8 @@
     "stop_pct": -0.0,
     "target": 52.58,
     "target_pct": 29.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "APD",
@@ -43371,7 +44805,8 @@
     "stop_pct": -0.7,
     "target": 314.19,
     "target_pct": 3.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CME",
@@ -43447,7 +44882,8 @@
     "stop_pct": -8.0,
     "target": 317.19,
     "target_pct": 12.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "GIS",
@@ -43523,7 +44959,8 @@
     "stop_pct": -2.6,
     "target": 48.12,
     "target_pct": 24.3
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MAA",
@@ -43599,7 +45036,8 @@
     "stop_pct": 3.2,
     "target": 140.56,
     "target_pct": 8.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "PEG",
@@ -43675,7 +45113,8 @@
     "stop_pct": 4.4,
     "target": 85.51,
     "target_pct": 15.5
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CMS",
@@ -43751,7 +45190,8 @@
     "stop_pct": 4.7,
     "target": 78.69,
     "target_pct": 14.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TSCO",
@@ -43827,7 +45267,8 @@
     "stop_pct": -7.9,
     "target": 59.21,
     "target_pct": 67.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "AXON",
@@ -43903,7 +45344,8 @@
     "stop_pct": 8.8,
     "target": 777.58,
     "target_pct": 49.2
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TTWO",
@@ -43979,7 +45421,8 @@
     "stop_pct": 10.7,
     "target": 262.29,
     "target_pct": 21.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "WBD",
@@ -44055,7 +45498,8 @@
     "stop_pct": -4.2,
     "target": 29.98,
     "target_pct": 6.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MOS",
@@ -44131,7 +45575,8 @@
     "stop_pct": -12.2,
     "target": 34.95,
     "target_pct": 35.0
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "LEN",
@@ -44207,7 +45652,8 @@
     "stop_pct": 1.9,
     "target": 139.59,
     "target_pct": 66.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "MRNA",
@@ -44283,7 +45729,8 @@
     "stop_pct": -41.0,
     "target": 174.38,
     "target_pct": 20.4
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "ARE",
@@ -44359,7 +45806,8 @@
     "stop_pct": -4.0,
     "target": 82.43,
     "target_pct": 55.9
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "TSLA",
@@ -44435,7 +45883,8 @@
     "stop_pct": 1.6,
     "target": 489.88,
     "target_pct": 39.1
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "CPT",
@@ -44511,7 +45960,8 @@
     "stop_pct": 4.8,
     "target": 117.58,
     "target_pct": 10.8
-   }
+   },
+   "eps_hist": null
   },
   {
    "ticker": "COIN",
@@ -44587,7 +46037,8 @@
     "stop_pct": -12.0,
     "target": 387.27,
     "target_pct": 108.8
-   }
+   },
+   "eps_hist": null
   }
  ]
 }

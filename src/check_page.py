@@ -14,11 +14,12 @@ REQUIRED_FN = ["recordHtml", "renderStrategies", "renderCats", "catCard", "rende
                "renderPortfolio", "renderTable", "renderMarket", "logoHtml", "sparkSvg",
                "mergeLive", "marketStatus", "btCaveatHtml", "mainLabel", "price",
                "sigChip", "sigLevels", "sigRecord", "sigRules",
-               "renderChanges", "chgHtml"]
+               "renderChanges", "chgHtml", "renderRecord", "rankRow", "epsTable",
+               "catCount"]
 REQUIRED_CSS = [".mkts{", ".rec{", ".cat{", ".top{", ".pick{", ".na{", ".hold{", ".cats{",
-                ".sig{", ".sig-lv{", ".top-sig{"]
+                ".sig{", ".sig-lv{", ".top-sig{", ".rk-item{", ".eps{"]
 REQUIRED_ID = ["cats", "strats", "mkt", "mkts", "newsList", "pfHero", "uniBody", "status",
-               "sigSum", "chg"]
+               "sigSum", "chg", "recBoard", "v-record"]
 
 bad = []
 for fn in REQUIRED_FN:
