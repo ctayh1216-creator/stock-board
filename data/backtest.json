@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T16:14:19+00:00",
+ "generated_at": "2026-09-04T19:01:24+00:00",
  "benchmark": "S&P 500",
  "top_n": 20,
  "caveats": [
@@ -102,7 +102,7 @@
      "month": "2025-11",
      "n": 20,
      "ret": 4.63,
-     "bench": 0.19
+     "bench": 0.2
     },
     {
      "month": "2025-12",
@@ -161,21 +161,21 @@
     {
      "month": "2026-09",
      "n": 20,
-     "ret": 1.07,
-     "bench": 0.46
+     "ret": 1.05,
+     "bench": 0.41
     }
    ]
   },
   "oversold": {
    "backtested": true,
    "months": 21,
-   "avg_monthly": -1.53,
+   "avg_monthly": -1.54,
    "bench_avg_monthly": 1.21,
    "win_rate": 38.1,
    "best": 9.63,
    "worst": -10.61,
-   "cumulative": -29.4,
-   "bench_cumulative": 27.2,
+   "cumulative": -29.6,
+   "bench_cumulative": 27.1,
    "monthly": [
     {
      "month": "2024-11",
@@ -241,7 +241,7 @@
      "month": "2025-11",
      "n": 20,
      "ret": 2.23,
-     "bench": 0.19
+     "bench": 0.2
     },
     {
      "month": "2025-12",
@@ -300,8 +300,8 @@
     {
      "month": "2026-09",
      "n": 16,
-     "ret": 1.42,
-     "bench": 0.46
+     "ret": 1.12,
+     "bench": 0.41
     }
    ],
    "partial": "가격 조건만 재현했습니다. 실제 화면은 수익성 조건이 하나 더 붙습니다."
@@ -330,12 +330,12 @@
  "signal": {
   "backtested": true,
   "months": 24,
-  "avg_monthly": 1.39,
+  "avg_monthly": 1.38,
   "bench_avg_monthly": 1.38,
   "win_rate": 37.5,
   "best": 9.82,
   "worst": -6.42,
-  "cumulative": 36.9,
+  "cumulative": 36.7,
   "bench_cumulative": 37.0,
   "monthly": [
    {
@@ -420,7 +420,7 @@
     "month": "2025-11",
     "n": 133,
     "ret": 2.1,
-    "bench": 0.19
+    "bench": 0.2
    },
    {
     "month": "2025-12",
@@ -479,11 +479,11 @@
    {
     "month": "2026-09",
     "n": 144,
-    "ret": -0.45,
-    "bench": 0.46
+    "ret": -0.64,
+    "bench": 0.41
    }
   ],
   "hold_all_avg_monthly": 1.31,
-  "hold_all_cumulative": 35.0
+  "hold_all_cumulative": 34.8
  }
 }
