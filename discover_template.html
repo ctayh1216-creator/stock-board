@@ -1113,17 +1113,25 @@ function renderRecord(){
 }
 
 /* ============ 종목 상세 시트 ============ */
+/* 기대 대비 %는 (실제-예상)/|예상| 이라 예상이 0 근처면 -3458% 같은 숫자가 나온다.
+   수학은 맞지만 읽을 수 없는 값이라 «—» 로 두고 왜 비웠는지 아래에 적는다. */
+function epsPctOk(q){ return has(q.est) && q.est > 0.05; }
 function epsTable(h){
   if (!h || !h.length) return "";
+  var hid = false;
   var rows = h.slice().reverse().map(function(q){
     var m = /^(\d{2})(\d{2})-(\d{2})/.exec(q.q || "");
+    var ok = epsPctOk(q);
+    if (!ok) hid = true;
     return '<tr><td>' + (m ? m[2] + "년 " + (+m[3]) + "월" : esc(q.q || NB)) + '</td>' +
       '<td class="num">' + (has(q.est) ? q.est.toFixed(2) : NB) + '</td>' +
       '<td class="num">' + (has(q.act) ? q.act.toFixed(2) : NB) + '</td>' +
-      '<td class="num ' + cls(q.pct) + '">' + pct1(q.pct) + '</td></tr>';
+      '<td class="num ' + (ok ? cls(q.pct) : "") + '">' + (ok ? pct1(q.pct) : NB) + '</td></tr>';
   }).join("");
   return '<table class="eps"><thead><tr><th>분기</th><th>예상 EPS</th><th>실제 EPS</th>' +
-    '<th>기대 대비</th></tr></thead><tbody>' + rows + '</tbody></table>';
+    '<th>기대 대비</th></tr></thead><tbody>' + rows + '</tbody></table>' +
+    (hid ? '<p class="hint">예상 EPS가 0 근처인 분기는 몇 % 빗나갔는지가 뜻을 잃어 비워뒀어요. ' +
+           '예상과 실제 숫자로 봐주세요.</p>' : "");
 }
 function findRow(ticker){
   var t = (D.table || []).find(function(r){ return r.ticker === ticker; });

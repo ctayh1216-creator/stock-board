@@ -23,7 +23,10 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # 실적 서프라이즈 수집을 시총 상위 200 → 전 종목으로 넓히면서 이 단계만 20분을
+    # 넘겼다(로컬 실측). 25분이던 예산으로는 매일 잘리므로 넉넉히 잡는다.
+    # 공개 저장소라 Actions 분은 무료다.
+    timeout-minutes: 70
     steps:
       - name: Checkout
         uses: actions/checkout@v4

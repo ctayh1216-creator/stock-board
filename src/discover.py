@@ -309,6 +309,16 @@ def headline(key: str, hits_rows: list) -> dict | None:
         vals = [r.get(field) for r in hits_rows if r.get(field) is not None]
         return sum(vals) / len(vals) if vals else None
 
+    def med(field):
+        """어긋난 정도처럼 한쪽 꼬리가 극단인 값은 평균이 대표값이 못 된다.
+        COIN 한 종목의 -487% 가 스무 종목의 평균을 -55% 로 끌어내렸다."""
+        vals = sorted(r.get(field) for r in hits_rows
+                      if r.get(field) is not None and surprise_meaningful(r))
+        if not vals:
+            return None
+        m = len(vals) // 2
+        return vals[m] if len(vals) % 2 else (vals[m - 1] + vals[m]) / 2
+
     spec = {
         "momentum":      ("평균 6개월 수익률", avg("ret_6m"), "pct"),
         "earnings":      ("4번 중 기대 상회",  avg("beats4"), "count"),
@@ -317,7 +327,7 @@ def headline(key: str, hits_rows: list) -> dict | None:
         "dividend":      ("평균 배당수익률",   avg("div_yield"), "pct0"),
         "stable":        ("평균 변동성",       avg("vol_ann"), "pct0"),
         "oversold":      ("평균 RSI",          avg("rsi14"), "num"),
-        "earnings_miss": ("직전 실적 평균",    avg("surprise_last"), "pct"),
+        "earnings_miss": ("직전 실적 중간값",  med("surprise_last"), "pct"),
         "bigcap":        ("평균 1년 수익률",   avg("ret_12m"), "pct"),
     }.get(key)
     if not spec:
@@ -448,6 +458,20 @@ def build_earnings(rows):
     }, len(hits)
 
 
+def surprise_meaningful(r) -> bool:
+    """서프라이즈 %를 숫자로 쓸 수 있는지.
+
+    이 값은 (실제-예상)/|예상| 이라, 예상 EPS 가 0 근처이거나 적자면 분모가 무너진다.
+    COIN 은 예상 0.04 에 실제 -1.49 라서 -3458.9% 가 찍혔다 — 수학은 맞지만
+    다른 종목과 크기를 견줄 수도, 화면에 적을 수도 없는 숫자다.
+    """
+    h = r.get("eps_hist")
+    if not h:
+        return False
+    est = h[-1].get("est")
+    return est is not None and est > 0.05
+
+
 def build_earnings_miss(rows):
     """실적이 어긋나는 회사 — «잘 나오는 회사»의 정확한 반대편.
 
@@ -460,22 +484,30 @@ def build_earnings_miss(rows):
         b4, sl = r.get("beats4"), r.get("surprise_last")
         if b4 is None and sl is None:
             continue
-        big_miss = sl is not None and sl <= -2
+        ok = surprise_meaningful(r)
+        big_miss = ok and sl is not None and sl <= -2
         chronic = b4 is not None and b4 <= 2
         if not (big_miss or chronic):
             continue
-        # 못 맞춘 정도가 큰 순서. 상시로 어긋나는 쪽에 가중을 준다.
-        rank = (0 if sl is None else -sl) + (0 if b4 is None else (4 - b4) * 8)
+        # 이름이 «자꾸 어긋나는»이므로 몇 번 어긋났는지를 먼저 본다. 한 번 크게 삐끗한
+        # 종목이 1위로 올라오면 이름과 화면이 어긋난다. 크기는 보조로만 쓰고 100 에서
+        # 자른다 — 뜻을 잃은 %는 아예 빼서, 분모 작은 한 종목이 판을 가져가지 않게 한다.
+        miss_n = 0 if b4 is None else (4 - b4)
+        depth = min(-sl, 100) if (ok and sl is not None and sl < 0) else 0
+        rank = miss_n * 25 + depth
         why = []
-        if sl is not None and sl < 0:
+        if ok and sl is not None and sl < 0:
             # 부호를 붙이면 «-141.5% 못 미쳤어요»가 되어 이중부정으로 읽힌다.
             why.append(f"직전 실적이 기대보다 {abs(sl):.1f}% 모자랐어요")
+        elif not ok:
+            why.append("예상치가 0 근처라 몇 % 빗나갔는지는 뜻이 없어요")
         if b4 is not None:
             why.append(f"최근 4번 중 {4 - b4}번은 기대를 못 맞췄어요" if b4 < 4
                        else "다만 최근 4번은 모두 기대를 넘겼어요")
         rev_g = r.get("rev_g")
         if rev_g is not None:
-            why.append(f"매출은 {sign_pct(rev_g)} 움직이고 있어요")
+            why.append(f"매출은 1년 새 {abs(rev_g):.1f}% "
+                       + ("줄었어요" if rev_g < 0 else "늘었어요"))
         d = days_until(r.get("next_earnings"))
         if d is not None and 0 <= d <= 45:
             why.append(f"다음 실적 발표가 {d}일 남았어요")
@@ -491,7 +523,8 @@ def build_earnings_miss(rows):
         "rules": [
             "직전 실적이 기대보다 2% 넘게 못 미쳤거나,",
             "최근 4번의 실적 발표 중 2번 이상 기대를 못 맞췄어요",
-            "많이 어긋난 순서로 보여드려요",
+            "자주 어긋난 순서로 먼저 보여드리고, 같으면 크게 어긋난 쪽을 위에 둬요",
+            "예상 EPS가 0 근처인 분기는 몇 % 빗나갔는지가 뜻을 잃어 순위에서 뺐어요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
