@@ -73,7 +73,8 @@ jobs:
         run: |
           mkdir -p _site
           # 정적 파일 + 데이터 + 개인 콘솔(/me/, 비공개 저장소가 커밋해 둔 것)
-          cp index.html discover.html og.svg icon.svg manifest.json robots.txt sitemap.xml _site/ 2>/dev/null || true
+          # sitemap.xml 은 검색 노출을 끄면서 지웠다 (robots.txt 주석 참고)
+          cp index.html discover.html og.svg icon.svg manifest.json robots.txt _site/ 2>/dev/null || true
           cp -r data assets _site/ 2>/dev/null || true
           [ -d me ] && cp -r me _site/ || echo "me/ 없음 — 콘솔이 아직 게시하지 않음"
           touch _site/.nojekyll
