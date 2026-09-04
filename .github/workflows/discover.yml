@@ -115,6 +115,11 @@ jobs:
             echo "push attempt ${attempt}" >&2
             if git push origin main; then pushed=1; break; fi
             echo "push attempt ${attempt} failed; rebasing onto origin/main" >&2
-            git pull --rebase origin main
+            # --autostash 가 없으면 «cannot pull with rebase: You have unstaged changes» 로
+            # 잡이 통째로 죽는다. 파이프라인은 화이트리스트 밖 파일(live.json 등)도 건드리는데
+            # 그게 워킹트리에 남아 있기 때문이다. 2026-09-04 실행이 이걸로 실패했고,
+            # 이 잡이 signal_state.json 을 커밋하는 유일한 곳이라 «오늘 바뀐 신호»가 멈췄다.
+            git pull --rebase --autostash origin main || {
+              echo "rebase 실패 — 이번 실행은 포기한다" >&2; break; }
           done
           [ "${pushed}" = "1" ] || { echo "push failed after 3 attempts" >&2; exit 1; }
