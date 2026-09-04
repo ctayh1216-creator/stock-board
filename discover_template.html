@@ -595,7 +595,10 @@ function filterRows(rows, q, sector){
 }
 function stratAccent(key){ return STRAT_ACCENT[key] || "--s5"; }
 var PURE = { has:has, cmpVals:cmpVals, sortRows:sortRows, filterRows:filterRows,
-             stratAccent:stratAccent, STRAT_ACCENT:STRAT_ACCENT };
+             stratAccent:stratAccent, STRAT_ACCENT:STRAT_ACCENT,
+             /* 함수 선언은 끌어올려지므로 아래에 정의돼 있어도 여기서 잡힌다.
+                discover.py 의 signal_state() 와 짝이 맞는지 signal_parity_test.py 가 검사한다. */
+             sigState:sigState };
 if (typeof window === "undefined") { globalThis.__DISCOVER_PURE__ = PURE; return; }
 
 /* ============ 포맷 ============ */
@@ -755,6 +758,7 @@ function mergeLive(){
     D.fx.rate = LIVE.fx.rate;
     if (has(LIVE.fx.day_pct)) D.fx.day_pct = LIVE.fx.day_pct;
   }
+  refreshSignals();   /* 값이 바뀌었으면 구간도 다시 잡는다 */
   return true;
 }
 function dataAt(){ return (LIVE && LIVE.generated_at) || (D && D.generated_at) || null; }
@@ -796,23 +800,68 @@ function renderMarket(){
 /* ============ 매매 신호 ============
    규칙은 discover.py 의 signal_for() 하나뿐이고, 그 규칙과 성적을 화면에 그대로 편다.
    여기서 새 판단을 만들지 않는다 — 계산된 상태를 옮겨 적기만 한다. */
+/* 규칙 본체. discover.py 의 signal_state() 와 같은 순서다.
+   이 파일에도 두는 이유: discover.py 는 하루 한 번 도는데 시세는 3분마다 들어온다.
+   다시 재지 않으면 손절선을 뚫고 내려간 종목이 하루 종일 «매수 구간»으로 남는다.
+   문구·경계값은 여기 두지 않고 전부 데이터(D.signal)에서 받아 쓴다 — 갈라지지 않게. */
+function sigState(last, s20, s50, s200, rsi, rsiMax){
+  if (last < s50) return ["exit", "below_s50"];
+  if (last > s200 && last > s20 && rsi < rsiMax) return ["buy", "trend"];
+  if (last <= s200) return ["watch", "below_s200"];
+  if (rsi >= rsiMax) return ["watch", "hot"];
+  return ["watch", "below_s20"];
+}
+function sigLabel(sg){
+  var m = D && D.signal && D.signal.labels;
+  return (m && sg && m[sg.state]) || "";
+}
+function sigWhy(sg){
+  var m = D && D.signal && D.signal.reasons;
+  return (m && sg && m[sg.reason]) || "";
+}
+/* 들어온 시세로 상태를 고쳐 잡는다. 파이썬이 신호를 안 준 종목(분할 등)은 건드리지 않는다. */
+function refreshSignals(){
+  var g = D && D.signal;
+  if (!g || !g.labels) return;
+  var rsiMax = has(g.rsi_max) ? g.rsi_max : 70;
+  var lo = (g.split && g.split[0]) || 0.65, hi = (g.split && g.split[1]) || 1.55;
+  var fix = function(row){
+    var s = row.signal;
+    if (!s || !has(row.last) || !has(s.s20) || !has(s.stop) || !has(s.s200) || !has(s.rsi)) return;
+    /* 장중 분할이면 시세만 새 기준이 된다 — 그 종목은 판단하지 않는다. */
+    if (has(s.prev) && s.prev > 0 && !(lo < row.last / s.prev && row.last / s.prev < hi)){
+      row.signal = null; return;
+    }
+    var st = sigState(row.last, s.s20, s.stop, s.s200, s.rsi, rsiMax);
+    s.state = st[0]; s.reason = st[1];
+  };
+  (D.table || []).forEach(fix);
+  (D.strategies || []).forEach(function(t){ (t.rows || []).forEach(fix); });
+  var tally = {buy: 0, watch: 0, exit: 0};
+  (D.table || []).forEach(function(r){ if (r.signal) tally[r.signal.state]++; });
+  g.tally = tally;
+}
 function sigChip(sg){
   if (!sg || !sg.state) return "";
-  return '<span class="sig ' + esc(sg.state) + '"><i></i>' + esc(sg.label) + '</span>';
+  return '<span class="sig ' + esc(sg.state) + '"><i></i>' + esc(sigLabel(sg)) + '</span>';
 }
-function sigLevels(sg){
+/* 목표가·손절선은 규칙이 정한 «자리»라 그대로 두고, 거기까지 거리만 지금 시세로 다시 잰다. */
+function sigLevels(sg, last){
   if (!sg || !sg.state) return "";
-  var tgt = has(sg.target)
-    ? '<div class="v num">' + price(sg.target) + '</div>' +
-      '<div class="d num up">' + pct1(sg.target_pct) + '</div>'
+  var px = has(last) ? last : null;
+  var gap = function(v){ return (px && px > 0 && has(v)) ? (v / px - 1) * 100 : null; };
+  var tgt = (has(sg.hi) && px && sg.hi > px)
+    ? '<div class="v num">' + price(sg.hi) + '</div>' +
+      '<div class="d num up">' + pct1(gap(sg.hi)) + '</div>'
     : '<div class="v num">' + NB + '</div><div class="d">이미 52주 최고가예요</div>';
   /* 청산 구간이면 손절선이 현재가 위에 있다 — 이미 뚫고 내려왔다는 뜻이라 이름을 바꾼다. */
   var stopK = sg.state === "exit" ? "청산선 · 이미 아래" : "손절선";
+  var sp = gap(sg.stop);
   return '<div class="sig-lv">' +
     '<div><div class="k">목표가</div>' + tgt + '</div>' +
     '<div><div class="k">' + esc(stopK) + '</div>' +
       '<div class="v num">' + price(sg.stop) + '</div>' +
-      '<div class="d num ' + cls(sg.stop_pct) + '">' + pct1(sg.stop_pct) + '</div></div>' +
+      '<div class="d num ' + cls(sp) + '">' + pct1(sp) + '</div></div>' +
   '</div>';
 }
 /* 판정도 규칙으로 낸다 — 좋게 보이도록 말을 고르지 않는다.
@@ -864,7 +913,6 @@ function sigRules(){
 
 /* 오늘 구간이 바뀐 종목 — 매일 들러서 볼 거리.
    안 바뀌었으면 «없어요»라고 적는다. 억지로 채우면 매일 보는 의미가 없어진다. */
-var SIG_LABEL = {buy: "매수 구간", watch: "관망", exit: "청산 구간"};
 function mdText(iso){
   var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
   return m ? (+m[2]) + "월 " + (+m[3]) + "일" : "";
@@ -881,9 +929,9 @@ function chgHtml(c){
         '<div class="c num ' + cls(r.day_pct) + '">' + pct1(r.day_pct) + '</div></span>' +
     '</div>' +
     '<div class="pick-bot">' +
-      '<span class="chg-was">' + esc(SIG_LABEL[c.from] || c.from) + '</span>' +
+      '<span class="chg-was">' + esc(sigLabel({state: c.from})) + '</span>' +
       '<span class="chg-ar" aria-hidden="true">→</span>' +
-      sigChip({state: c.to, label: SIG_LABEL[c.to] || c.to}) +
+      sigChip({state: c.to}) +
       '<span class="pick-sp">' + sparkSvg(r.spark, 56, 20) + '</span></div>' +
   '</div>';
 }
@@ -938,8 +986,8 @@ function topHtml(r){
     '</div>' +
     '<div class="top-why">' + why + '</div>' +
     (r.signal ? '<div class="top-sig">' + sigChip(r.signal) +
-        '<span class="w">' + esc(r.signal.why) + '</span></div>' +
-        sigLevels(r.signal) : "") +
+        '<span class="w">' + esc(sigWhy(r.signal)) + '</span></div>' +
+        sigLevels(r.signal, r.last) : "") +
     '<div class="top-sp">' + sparkSvg(r.spark, 300, 46) + '</div>' +
   '</div>';
 }
@@ -1194,8 +1242,8 @@ function openSheet(ticker){
     })() +
     (r.signal ? '<div class="sh-sec"><h4>매매 신호</h4>' +
         '<div class="top-sig" style="margin-top:0;padding-top:0;border-top:0">' +
-          sigChip(r.signal) + '<span class="w">' + esc(r.signal.why) + '</span></div>' +
-        sigLevels(r.signal) + sigRules() + sigRecord() + '</div>' : "") +
+          sigChip(r.signal) + '<span class="w">' + esc(sigWhy(r.signal)) + '</span></div>' +
+        sigLevels(r.signal, r.last) + sigRules() + sigRecord() + '</div>' : "") +
     (why.length ? '<div class="sh-sec"><h4>이 종목이 걸린 이유</h4><div class="sh-why">' +
         why.map(function(w){ return '<span>' + esc(w) + '</span>'; }).join("") + '</div></div>' : "") +
     '<div class="sh-sec"><h4>기간별 수익률</h4><div class="sh-grid">' +

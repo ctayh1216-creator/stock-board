@@ -67,7 +67,10 @@ jobs:
           python src/live.py --market kr || echo "시세(kr) 실패"
 
       - name: Build page
-        run: python src/build_discover.py && python src/check_page.py
+        run: |
+          python src/build_discover.py
+          python src/check_page.py
+          python src/signal_parity_test.py
 
       - name: Assemble site
         run: |

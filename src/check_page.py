@@ -15,7 +15,7 @@ REQUIRED_FN = ["recordHtml", "renderStrategies", "renderCats", "catCard", "rende
                "mergeLive", "marketStatus", "btCaveatHtml", "mainLabel", "price",
                "sigChip", "sigLevels", "sigRecord", "sigRules",
                "renderChanges", "chgHtml", "renderRecord", "rankRow", "epsTable",
-               "catCount"]
+               "catCount", "sigState", "refreshSignals", "sigLabel", "sigWhy"]
 REQUIRED_CSS = [".mkts{", ".rec{", ".cat{", ".top{", ".pick{", ".na{", ".hold{", ".cats{",
                 ".sig{", ".sig-lv{", ".top-sig{", ".rk-item{", ".eps{"]
 REQUIRED_ID = ["cats", "strats", "mkt", "mkts", "newsList", "pfHero", "uniBody", "status",

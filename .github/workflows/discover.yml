@@ -88,7 +88,10 @@ jobs:
         run: python src/news.py --if-stale 2 || python src/news.py --if-stale 2 || echo "news failed; keeping previous"
 
       - name: Build page
-        run: python src/build_discover.py && python src/check_page.py
+        run: |
+          python src/build_discover.py
+          python src/check_page.py
+          python src/signal_parity_test.py
 
       - name: Commit & push
         run: |

@@ -55,6 +55,18 @@ SIGNAL_LEVELS = [
     "목표가는 52주 최고가예요. 이미 최고가면 목표가를 두지 않아요",
 ]
 SIGNAL_LABEL = {"buy": "매수 구간", "watch": "관망", "exit": "청산 구간"}
+# 판정 이유는 코드로 내려보내고 문구는 여기 한 군데에만 둔다. 화면은 코드로 찾아 쓴다 —
+# 규칙을 화면에서도 다시 계산해야 하는데(시세는 3분, 이 파일은 하루 1회 갱신),
+# 문구까지 양쪽에 두면 언젠가 서로 다른 말을 하게 된다.
+SIGNAL_REASON = {
+    "below_s50":  "50일 평균선 아래로 내려왔어요",
+    "trend":      "1년 평균과 한 달 평균 위에 있고, 아직 과열도 아니에요",
+    "below_s200": "아직 1년 평균 아래에 있어요",
+    "hot":        "단기 과열이라 규칙이 기다리라고 해요",
+    "below_s20":  "한 달 평균 아래로 내려왔어요",
+}
+RSI_MAX = 70          # 이 위는 과열로 본다. 화면도 이 값을 받아서 쓴다.
+SPLIT_LO, SPLIT_HI = 0.65, 1.55   # split_gap 판정 경계 — 화면과 공유한다.
 
 
 def split_gap(r) -> bool:
@@ -68,7 +80,7 @@ def split_gap(r) -> bool:
     last, prev = r.get("last"), r.get("prev_close")
     if not (last and prev) or prev <= 0:
         return False
-    return not 0.65 < last / prev < 1.55
+    return not SPLIT_LO < last / prev < SPLIT_HI
 
 
 def signal_for(r):
@@ -82,27 +94,27 @@ def signal_for(r):
     if split_gap(r):
         return None
 
-    if last < s50:
-        state, why = "exit", "50일 평균선 아래로 내려왔어요"
-    elif last > s200 and last > s20 and rsi < 70:
-        state, why = "buy", "1년 평균과 한 달 평균 위에 있고, 아직 과열도 아니에요"
-    elif last <= s200:
-        state, why = "watch", "아직 1년 평균 아래에 있어요"
-    elif rsi >= 70:
-        state, why = "watch", "단기 과열이라 규칙이 기다리라고 해요"
-    else:
-        state, why = "watch", "한 달 평균 아래로 내려왔어요"
-
-    out = {
-        "state": state, "label": SIGNAL_LABEL[state], "why": why,
-        "stop": f(s50, 2), "stop_pct": f((s50 / last - 1) * 100, 1),
-        "target": None, "target_pct": None,
+    state, reason = signal_state(last, s20, s50, s200, rsi)
+    # 기준선을 같이 실어 보낸다. 화면은 3분마다 들어오는 시세로 이 선들과 다시 견줘
+    # 상태를 고쳐 잡는다 — 이 파일은 하루 한 번만 도는데 값은 계속 움직이기 때문이다.
+    return {
+        "state": state, "reason": reason,
+        "stop": f(s50, 2), "s20": f(s20, 2), "s200": f(s200, 2),
+        "rsi": f(rsi, 1), "hi": f(hi, 2), "prev": f(r.get("prev_close"), 2),
     }
-    # 이미 52주 최고가면 위쪽에 규칙이 정한 자리가 없다 — 없는 값을 지어내지 않는다.
-    if hi is not None and hi > last:
-        out["target"] = f(hi, 2)
-        out["target_pct"] = f((hi / last - 1) * 100, 1)
-    return out
+
+
+def signal_state(last, s20, s50, s200, rsi):
+    """규칙 본체. 화면(discover_template.html sigState)이 이 순서를 그대로 따라간다."""
+    if last < s50:
+        return "exit", "below_s50"
+    if last > s200 and last > s20 and rsi < RSI_MAX:
+        return "buy", "trend"
+    if last <= s200:
+        return "watch", "below_s200"
+    if rsi >= RSI_MAX:
+        return "watch", "hot"
+    return "watch", "below_s20"
 
 
 def market_date(market: str) -> str:
@@ -787,7 +799,9 @@ def main():
         "universe_size": len(rows),
         "disclaimer": DISCLAIMER,
         "signal": {"rules": SIGNAL_RULES, "levels": SIGNAL_LEVELS, "tally": tally,
-                   "changes": changes, "since": since},
+                   "changes": changes, "since": since,
+                   "labels": SIGNAL_LABEL, "reasons": SIGNAL_REASON,
+                   "rsi_max": RSI_MAX, "split": [SPLIT_LO, SPLIT_HI]},
         "strategies": strategies,
         "table": table,
     }
