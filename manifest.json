@@ -1,0 +1,20 @@
+{
+  "name": "종목 상황실 — 주식 추천과 뉴스",
+  "short_name": "종목 상황실",
+  "description": "규칙으로 걸러낸 오늘의 종목과 한국어 뉴스",
+  "start_url": "./discover.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b0e16",
+  "theme_color": "#0b0e16",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

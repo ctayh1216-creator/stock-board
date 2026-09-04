@@ -1,0 +1,114 @@
+# 규칙 기반 스크리너 자동 갱신 워크플로.
+# - 장중(UTC 13-21시) 15분 간격으로 실행하되, 비공개 저장소의 퍼블리시 워크플로(*/15)와
+#   겹치지 않도록 7분 오프셋(7,22,37,52분)을 둔다. 장 마감 후 21:40 UTC에 1회 더 실행.
+# - data/universe_sp500.json 은 커밋된 소스 데이터이며, 이 워크플로는 절대 재생성하지 않는다.
+#   갱신이 필요하면 로컬에서 src/fetch_universe.py 를 실행해 커밋한다.
+name: discover
+
+# 무거운 재계산(기술지표·재무·스크리닝·백테스트·로고)만 하루 1회 돌려 커밋한다.
+# 시세와 뉴스는 deploy.yml 이 커밋 없이 만들어 Pages 로 바로 올린다.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 12 * * *"   # 매일 1회 — 무거운 재계산과 커밋은 여기서만
+
+permissions:
+  contents: write
+
+concurrency:
+  group: discover
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Technicals (2 retries)
+        run: |
+          set -o pipefail
+          ok=0
+          for attempt in 1 2 3; do
+            echo "technicals attempt ${attempt}" >&2
+            if python src/technicals.py; then ok=1; break; fi
+            echo "technicals attempt ${attempt} failed" >&2
+            sleep 20
+          done
+          [ "${ok}" = "1" ] || { echo "technicals failed after 3 attempts" >&2; exit 1; }
+
+      - name: Fundamentals if stale (1 retry)
+        run: |
+          set -o pipefail
+          ok=0
+          for attempt in 1 2; do
+            echo "fundamentals attempt ${attempt}" >&2
+            if python src/fundamentals_daily.py --if-stale 20; then ok=1; break; fi
+            echo "fundamentals attempt ${attempt} failed" >&2
+            sleep 20
+          done
+          [ "${ok}" = "1" ] || { echo "fundamentals failed after 2 attempts" >&2; exit 1; }
+
+      - name: Logos (신규 종목만)
+        run: python src/logos.py || echo "로고 수집 실패 — 기존 파일 유지"
+
+      - name: Screen
+        run: python src/discover.py
+
+      - name: Korea pipeline
+        run: |
+          python src/technicals.py --market kr || echo "기술지표(kr) 실패"
+          python src/fundamentals_daily.py --market kr --if-stale 20 || echo "펀더멘털(kr) 실패"
+          python src/discover.py --market kr || echo "스크리닝(kr) 실패"
+          python src/news.py --market kr --if-stale 2 || echo "뉴스(kr) 실패"
+
+      - name: Backtest (하루 1회)
+        run: |
+          python src/backtest.py || echo "백테스트(us) 실패 — 이전 결과 유지"
+          python src/backtest.py --market kr || echo "백테스트(kr) 실패 — 이전 결과 유지"
+
+      - name: News (skip if younger than 2h)
+        run: python src/news.py --if-stale 2 || python src/news.py --if-stale 2 || echo "news failed; keeping previous"
+
+      - name: Build page
+        run: python src/build_discover.py && python src/check_page.py
+
+      - name: Commit & push
+        run: |
+          git config user.name "stock-bot"
+          git config user.email "bot@users.noreply.github.com"
+          for f in data/technicals.json data/fundamentals.json data/discover.json data/news.json data/news_kr.json data/backtest.json data/backtest_kr.json data/universe_kr.json \
+                    data/technicals_kr.json data/fundamentals_kr.json data/discover_kr.json \
+                    data/signal_state.json data/signal_state_kr.json \
+                    index.html discover.html assets/logos; do
+            [ -f "$f" ] && git add -- "$f"
+          done
+          if git diff --cached --quiet; then
+            echo "no staged changes; skipping commit"
+            exit 0
+          fi
+          git commit -m "data: discover update $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # 다른 퍼블리셔(비공개 저장소 워크플로)와 푸시가 경합할 수 있으므로
+          # 리베이스를 끼워 넣은 3회 재시도 루프로 푸시한다.
+          pushed=0
+          for attempt in 1 2 3; do
+            echo "push attempt ${attempt}" >&2
+            if git push origin main; then pushed=1; break; fi
+            echo "push attempt ${attempt} failed; rebasing onto origin/main" >&2
+            git pull --rebase origin main
+          done
+          [ "${pushed}" = "1" ] || { echo "push failed after 3 attempts" >&2; exit 1; }

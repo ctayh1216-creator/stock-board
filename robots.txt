@@ -1,0 +1,8 @@
+# 검색에 노출하지 않는다 (2026-09-05).
+# 크롤링 자체는 열어둔다 — 여기서 막아버리면 페이지의 noindex 태그를
+# 검색엔진이 읽지 못해 오히려 색인이 남는다. 빼는 지시는 index.html 의
+# <meta name="robots" content="noindex,nofollow"> 가 한다.
+User-agent: *
+Allow: /
+Disallow: /me/
+Disallow: /data/

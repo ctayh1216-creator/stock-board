@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbfbfd"/>
+  <g transform="translate(96,150)">
+    <circle cx="34" cy="34" r="30" fill="none" stroke="#d2d2d7" stroke-width="3"/>
+    <circle cx="34" cy="34" r="15" fill="none" stroke="#d2d2d7" stroke-width="3"/>
+    <path d="M34 34 L60 17" stroke="#0071e3" stroke-width="4.5" stroke-linecap="round"/>
+    <text x="86" y="46" font-family="-apple-system,BlinkMacSystemFont,Helvetica,sans-serif"
+          font-size="30" font-weight="600" fill="#6e6e73" letter-spacing="-0.5">종목 상황실</text>
+  </g>
+  <text x="96" y="330" font-family="-apple-system,BlinkMacSystemFont,Helvetica,sans-serif"
+        font-size="78" font-weight="600" fill="#1d1d1f" letter-spacing="-3">오늘 주목할 종목</text>
+  <text x="96" y="404" font-family="-apple-system,BlinkMacSystemFont,Helvetica,sans-serif"
+        font-size="34" font-weight="400" fill="#6e6e73" letter-spacing="-0.8">500여 종목을 일곱 가지 기준으로 나눠 보여드려요</text>
+  <rect x="96" y="466" width="1008" height="1" fill="#d2d2d7"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,Helvetica,sans-serif" font-size="26" fill="#86868b">
+    <text x="96" y="524">잘 오르는 주식</text>
+    <text x="340" y="524">배당 주는 회사</text>
+    <text x="580" y="524">덜 흔들리는 안정형</text>
+    <text x="860" y="524">빠르게 크는 회사</text>
+  </g>
+</svg>

@@ -1,0 +1,96 @@
+name: deploy
+
+# 사이트를 저장소에 커밋하지 않고 Pages 로 바로 배포한다.
+#
+# 예전에는 3분마다 데이터 파일을 커밋했는데, discover.json(766KB)·technicals.json(320KB)이
+# 매번 통째로 바뀌어 히스토리가 하루 2MB씩 불었다. 이제 시세는 워크플로 안에서만 만들고
+# 결과물만 Pages 로 올린다 — 저장소는 커지지 않는다.
+#
+# 주기는 cron 이 아니라 "자기 자신을 다시 부르는" 사슬로 만든다(무료 cron 은 지연·누락이 심함).
+# 사슬이 끊기면 30분 예약이 다시 이어 붙인다.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: write        # 사슬: 자기 자신을 다시 호출하려면 필요하다
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Compute cache key (hour)
+        id: k
+        run: echo "hour=$(date -u +%Y%m%d%H)" >> "$GITHUB_OUTPUT"
+
+      # 뉴스는 1시간이면 충분하다. 저장소 대신 Actions 캐시에 둔다.
+      - name: Restore news cache
+        id: newscache
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/news.json
+            data/news_kr.json
+          key: news-${{ steps.k.outputs.hour }}
+
+      - name: Refresh news (cache miss only)
+        if: steps.newscache.outputs.cache-hit != 'true'
+        run: |
+          python src/news.py || echo "뉴스(us) 실패 — 이전 결과 유지"
+          python src/news.py --market kr || echo "뉴스(kr) 실패 — 이전 결과 유지"
+
+      - name: Live prices
+        run: |
+          python src/live.py || echo "시세(us) 실패"
+          python src/live.py --market kr || echo "시세(kr) 실패"
+
+      - name: Build page
+        run: python src/build_discover.py && python src/check_page.py
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          # 정적 파일 + 데이터 + 개인 콘솔(/me/, 비공개 저장소가 커밋해 둔 것)
+          cp index.html discover.html og.svg icon.svg manifest.json robots.txt sitemap.xml _site/ 2>/dev/null || true
+          cp -r data assets _site/ 2>/dev/null || true
+          [ -d me ] && cp -r me _site/ || echo "me/ 없음 — 콘솔이 아직 게시하지 않음"
+          touch _site/.nojekyll
+          echo "--- 배포 내용 ---"; find _site -maxdepth 2 -type f | head -20
+          du -sh _site
+
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+
+      - id: pages
+        uses: actions/deploy-pages@v4
+
+      # 다음 실행을 스스로 예약한다 (사슬)
+      - name: Chain next run
+        if: github.event_name != 'schedule' || success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 150
+          gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" || echo "다음 실행 예약 실패 — 30분 예약이 이어받음"

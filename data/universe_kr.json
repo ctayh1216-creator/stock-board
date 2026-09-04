@@ -1,0 +1,818 @@
+{
+ "fetched_at": "2026-09-03T18:48:40+00:00",
+ "market": "KR",
+ "currency": "KRW",
+ "count": 162,
+ "rows": [
+  {
+   "ticker": "000100.KS",
+   "name": "유한양행",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "000150.KS",
+   "name": "두산",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "000270.KS",
+   "name": "기아",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "000660.KS",
+   "name": "SK하이닉스",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "000720.KS",
+   "name": "현대건설",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "000810.KS",
+   "name": "삼성화재",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "000990.KS",
+   "name": "DB하이텍",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "001040.KS",
+   "name": "CJ",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "001450.KS",
+   "name": "현대해상",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "001570.KS",
+   "name": "금양",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "003230.KS",
+   "name": "삼양식품",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "003490.KS",
+   "name": "대한항공",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "003670.KS",
+   "name": "포스코퓨처엠",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "004020.KS",
+   "name": "현대제철",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "004170.KS",
+   "name": "신세계",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "004370.KS",
+   "name": "농심",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "005300.KS",
+   "name": "롯데칠성",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "005380.KS",
+   "name": "현대차",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "005490.KS",
+   "name": "POSCO홀딩스",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "005830.KS",
+   "name": "DB손해보험",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "005930.KS",
+   "name": "삼성전자",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "006260.KS",
+   "name": "LS",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "006360.KS",
+   "name": "GS건설",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "006400.KS",
+   "name": "삼성SDI",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "006800.KS",
+   "name": "미래에셋증권",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "007070.KS",
+   "name": "GS리테일",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "007310.KS",
+   "name": "오뚜기",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "008770.KS",
+   "name": "호텔신라",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "009150.KS",
+   "name": "삼성전기",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "009540.KS",
+   "name": "HD한국조선해양",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "009830.KS",
+   "name": "한화솔루션",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "010120.KS",
+   "name": "LS ELECTRIC",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "010130.KS",
+   "name": "고려아연",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "010140.KS",
+   "name": "삼성중공업",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "010950.KS",
+   "name": "S-Oil",
+   "sector": "Energy"
+  },
+  {
+   "ticker": "011170.KS",
+   "name": "롯데케미칼",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "011200.KS",
+   "name": "HMM",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "011790.KS",
+   "name": "SKC",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "012330.KS",
+   "name": "현대모비스",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "012450.KS",
+   "name": "한화에어로스페이스",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "014680.KS",
+   "name": "한솔케미칼",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "015760.KS",
+   "name": "한국전력",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "016360.KS",
+   "name": "삼성증권",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "017670.KS",
+   "name": "SK텔레콤",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "018260.KS",
+   "name": "삼성에스디에스",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "018880.KS",
+   "name": "한온시스템",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "020560.KS",
+   "name": "아시아나항공",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "023530.KS",
+   "name": "롯데쇼핑",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "024110.KS",
+   "name": "기업은행",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "028050.KS",
+   "name": "삼성E&A",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "028260.KS",
+   "name": "삼성물산",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "029780.KS",
+   "name": "삼성카드",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "030000.KS",
+   "name": "제일기획",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "030200.KS",
+   "name": "KT",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "032830.KS",
+   "name": "삼성생명",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "033780.KS",
+   "name": "KT&G",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "034020.KS",
+   "name": "두산에너빌리티",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "034220.KS",
+   "name": "LG디스플레이",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "034230.KQ",
+   "name": "파라다이스",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "034730.KS",
+   "name": "SK",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "035250.KS",
+   "name": "강원랜드",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "035420.KS",
+   "name": "NAVER",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "035720.KS",
+   "name": "카카오",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "035900.KQ",
+   "name": "JYP Ent.",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "036460.KS",
+   "name": "한국가스공사",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "036570.KS",
+   "name": "엔씨소프트",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "036930.KQ",
+   "name": "주성엔지니어링",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "039030.KQ",
+   "name": "이오테크닉스",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "039490.KS",
+   "name": "키움증권",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "041510.KQ",
+   "name": "에스엠",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "042660.KS",
+   "name": "한화오션",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "042700.KS",
+   "name": "한미반도체",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "047040.KS",
+   "name": "대우건설",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "047050.KS",
+   "name": "포스코인터내셔널",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "047810.KS",
+   "name": "한국항공우주",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "051600.KS",
+   "name": "한전KPS",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "051900.KS",
+   "name": "LG생활건강",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "051910.KS",
+   "name": "LG화학",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "052690.KS",
+   "name": "한전기술",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "053270.KQ",
+   "name": "구영테크",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "053800.KQ",
+   "name": "안랩",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "055550.KS",
+   "name": "신한지주",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "058470.KQ",
+   "name": "리노공업",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "064350.KS",
+   "name": "현대로템",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "066570.KS",
+   "name": "LG전자",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "068270.KS",
+   "name": "셀트리온",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "068760.KQ",
+   "name": "셀트리온제약",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "069620.KS",
+   "name": "대웅제약",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "069960.KS",
+   "name": "현대백화점",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "071050.KS",
+   "name": "한국금융지주",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "073240.KS",
+   "name": "금호타이어",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "079550.KS",
+   "name": "LIG넥스원",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "084370.KQ",
+   "name": "유진테크",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "086280.KS",
+   "name": "현대글로비스",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "086520.KQ",
+   "name": "에코프로",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "086790.KS",
+   "name": "하나금융지주",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "088350.KS",
+   "name": "한화생명",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "088980.KS",
+   "name": "맥쿼리인프라",
+   "sector": "Real Estate"
+  },
+  {
+   "ticker": "090430.KS",
+   "name": "아모레퍼시픽",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "091990.KQ",
+   "name": "셀트리온헬스케어",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "095340.KQ",
+   "name": "ISC",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "095660.KQ",
+   "name": "네오위즈",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "096770.KS",
+   "name": "SK이노베이션",
+   "sector": "Energy"
+  },
+  {
+   "ticker": "097950.KS",
+   "name": "CJ제일제당",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "098460.KQ",
+   "name": "고영",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "103140.KS",
+   "name": "풍산",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "105560.KS",
+   "name": "KB금융",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "108320.KQ",
+   "name": "LX세미콘",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "112040.KQ",
+   "name": "위메이드",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "112610.KS",
+   "name": "씨에스윈드",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "114090.KQ",
+   "name": "GKL",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "120110.KS",
+   "name": "코오롱인더",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "122870.KQ",
+   "name": "와이지엔터테인먼트",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "128940.KS",
+   "name": "한미약품",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "138040.KS",
+   "name": "메리츠금융지주",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "139480.KS",
+   "name": "이마트",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "140860.KQ",
+   "name": "파크시스템스",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "145020.KQ",
+   "name": "휴젤",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "161390.KS",
+   "name": "한국타이어앤테크놀로지",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "161890.KS",
+   "name": "한국콜마",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "178920.KQ",
+   "name": "PI첨단소재",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "180640.KS",
+   "name": "한진칼",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "192820.KS",
+   "name": "코스맥스",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "194480.KQ",
+   "name": "데브시스터즈",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "196170.KQ",
+   "name": "알테오젠",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "204320.KS",
+   "name": "HL만도",
+   "sector": "Consumer Cyclical"
+  },
+  {
+   "ticker": "207940.KS",
+   "name": "삼성바이오로직스",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "214320.KQ",
+   "name": "이노션",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "214450.KQ",
+   "name": "파마리서치",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "222080.KQ",
+   "name": "씨아이에스",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "237880.KQ",
+   "name": "클리오",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "240810.KQ",
+   "name": "원익IPS",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "241560.KS",
+   "name": "두산밥캣",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "241710.KQ",
+   "name": "코스메카코리아",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "247540.KQ",
+   "name": "에코프로비엠",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "251270.KS",
+   "name": "넷마블",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "259960.KS",
+   "name": "크래프톤",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "263750.KQ",
+   "name": "펄어비스",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "267250.KS",
+   "name": "HD현대",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "267260.KS",
+   "name": "HD현대일렉트릭",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "267290.KS",
+   "name": "경동도시가스",
+   "sector": "Utilities"
+  },
+  {
+   "ticker": "271560.KS",
+   "name": "오리온",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "280360.KS",
+   "name": "롯데웰푸드",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "282330.KS",
+   "name": "BGF리테일",
+   "sector": "Consumer Defensive"
+  },
+  {
+   "ticker": "285130.KS",
+   "name": "SK케미칼",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "293490.KQ",
+   "name": "카카오게임즈",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "293940.KS",
+   "name": "신한알파리츠",
+   "sector": "Real Estate"
+  },
+  {
+   "ticker": "298050.KS",
+   "name": "효성첨단소재",
+   "sector": "Basic Materials"
+  },
+  {
+   "ticker": "302440.KS",
+   "name": "SK바이오사이언스",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "316140.KS",
+   "name": "우리금융지주",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "323410.KS",
+   "name": "카카오뱅크",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "326030.KS",
+   "name": "SK바이오팜",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "328130.KQ",
+   "name": "루닛",
+   "sector": "Healthcare"
+  },
+  {
+   "ticker": "329180.KS",
+   "name": "HD현대중공업",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "352820.KS",
+   "name": "하이브",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "357780.KQ",
+   "name": "솔브레인",
+   "sector": "Technology"
+  },
+  {
+   "ticker": "365550.KS",
+   "name": "ESR켄달스퀘어리츠",
+   "sector": "Real Estate"
+  },
+  {
+   "ticker": "373220.KS",
+   "name": "LG에너지솔루션",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "375500.KS",
+   "name": "DL이앤씨",
+   "sector": "Industrials"
+  },
+  {
+   "ticker": "376300.KQ",
+   "name": "디어유",
+   "sector": "Communication Services"
+  },
+  {
+   "ticker": "377300.KS",
+   "name": "카카오페이",
+   "sector": "Financial Services"
+  },
+  {
+   "ticker": "456040.KS",
+   "name": "OCI",
+   "sector": "Basic Materials"
+  }
+ ]
+}

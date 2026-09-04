@@ -1,0 +1,91 @@
+# 개발 기록
+
+> 2026-09-04에 저장소 히스토리를 한 커밋으로 정리하면서, 그때까지의 커밋 메시지를
+> 여기에 남긴다. 자동 갱신 커밋(beat/update/data)은 제외하고 사람이 결정한 것만 적는다.
+
+- **2026-08-29** seed board
+- **2026-08-29** feat: S&P 500 discovery machine — technicals/fundamentals pipelines, 4 rule-based strategies, discover page, self-publishing CI
+- **2026-08-29** design: market band + movers tape + 3m sparklines + entrance motion
+- **2026-08-29** seo: open discover page to search engines (meta/OG/JSON-LD, sitemap, robots split; portfolio stays noindexed)
+- **2026-08-29** feat: local-only portfolio tracker (browser storage), USD/KRW feed, related-news section
+- **2026-08-29** feat: Korean-first news (Google News RSS + ko name map, EN fallback, market headlines)
+- **2026-09-02** feat: true live pricing via long-running job (bypasses cron throttling)
+- **2026-09-01** live 2026-09-01 18:43Z
+- **2026-09-02** security: remove stale plaintext portfolio data (superseded by data.enc)
+- **2026-09-01** live 2026-09-01 18:46Z
+- **2026-09-01** live 2026-09-01 18:49Z
+- **2026-09-01** live 2026-09-01 18:51Z
+- **2026-09-01** live 2026-09-01 18:54Z
+- **2026-09-01** live 2026-09-01 18:57Z
+- **2026-09-01** live 2026-09-01 19:00Z
+- **2026-09-01** live 2026-09-01 19:03Z
+- **2026-09-01** live 2026-09-01 19:06Z
+- **2026-09-01** live 2026-09-01 19:09Z
+- **2026-09-01** live 2026-09-01 19:13Z
+- **2026-09-01** live 2026-09-01 19:15Z
+- **2026-09-01** live 2026-09-01 19:18Z
+- **2026-09-01** live 2026-09-01 19:21Z
+- **2026-09-01** live 2026-09-01 19:24Z
+- **2026-09-01** live 2026-09-01 19:27Z
+- **2026-09-01** live 2026-09-01 19:30Z
+- **2026-09-01** live 2026-09-01 19:33Z
+- **2026-09-01** live 2026-09-01 19:36Z
+- **2026-09-01** live 2026-09-01 19:39Z
+- **2026-09-02** design: rebuild as a consumer app — 3 tabs (picks/news/portfolio), card list over tables
+- **2026-09-01** live 2026-09-01 19:43Z
+- **2026-09-01** live 2026-09-01 19:46Z
+- **2026-09-01** live 2026-09-01 19:49Z
+- **2026-09-01** live 2026-09-01 19:52Z
+- **2026-09-01** live 2026-09-01 19:55Z
+- **2026-09-01** live 2026-09-01 19:58Z
+- **2026-09-01** live 2026-09-01 20:01Z
+- **2026-09-01** live 2026-09-01 20:04Z
+- **2026-09-01** live 2026-09-01 20:07Z
+- **2026-09-01** live 2026-09-01 20:10Z
+- **2026-09-01** live 2026-09-01 20:13Z
+- **2026-09-01** live 2026-09-01 20:16Z
+- **2026-09-01** live 2026-09-01 20:19Z
+- **2026-09-01** live 2026-09-01 20:22Z
+- **2026-09-01** live 2026-09-01 20:25Z
+- **2026-09-01** live 2026-09-01 20:28Z
+- **2026-09-01** live 2026-09-01 20:31Z
+- **2026-09-01** live 2026-09-01 20:33Z
+- **2026-09-01** live 2026-09-01 20:36Z
+- **2026-09-01** live 2026-09-01 20:39Z
+- **2026-09-01** live 2026-09-01 20:43Z
+- **2026-09-01** live 2026-09-01 20:46Z
+- **2026-09-01** live 2026-09-01 20:49Z
+- **2026-09-01** live 2026-09-01 20:52Z
+- **2026-09-01** live 2026-09-01 20:55Z
+- **2026-09-01** live 2026-09-01 20:57Z
+- **2026-09-01** live 2026-09-01 21:00Z
+- **2026-09-01** live 2026-09-01 21:03Z
+- **2026-09-01** live 2026-09-01 21:06Z
+- **2026-09-01** live 2026-09-01 21:09Z
+- **2026-09-02** ux: show next market open instead of a stale 'N hours ago' when closed
+- **2026-09-02** design: Apple-style system — typography-led hierarchy, hairlines over cards
+- **2026-09-02** content: plain-Korean strategy copy; site moves to root, console to /me/
+- **2026-09-02** fix: news was tied to US market hours, freezing through the Korean day
+- **2026-09-04** feat: seven investor-intent categories, picker UI, #1 pick hero card
+- **2026-09-04** feat: company logos, fetched once at build and served from the repo
+- **2026-09-04** docs: design guide (tokens, type scale, copy rules, what not to do)
+- **2026-09-04** design: adopt the 플랜비 common guide as canon
+- **2026-09-04** feat: walk-forward backtest and a record board per category
+- **2026-09-04** feat: Korean market alongside US, slimmer footer, 내 종목 rename
+- **2026-09-04** design: category picker becomes a card rail
+- **2026-09-04** feat: per-category headline stat, stock detail sheet, Korean news
+- **2026-09-04** feat: 빅테크 category, sports-style record, state badges; rename to 종목 상황실
+- **2026-09-04** feat: 빅테크 becomes 시총 1~10위
+- **2026-09-04** feat: Korean backtest, metric glossary, matching layout across markets
+- **2026-09-04** design: larger category cards
+- **2026-09-05** design: fix alignment and overflow across breakpoints
+- **2026-09-05** feat: 매매 신호 — 매수·관망·청산 구간과 목표가·손절선
+- **2026-09-05** feat: 오늘 바뀐 신호 + 분할로 어긋난 종목은 판단하지 않는다
+- **2026-09-05** infra: publish to Pages from Actions, stop committing derived data
+- **2026-09-05** fix: grant actions:write so the deploy chain can re-dispatch itself
+- **2026-09-05** seo: 검색에서 뺀다 — noindex
+
+---
+
+전체 커밋 668개 중 사람이 만든 것만 추렸다.
+이전 히스토리는 정리 시점에 삭제되었으며, 각 결정의 근거는 `DESIGN.md`와 코드 주석에도 남아 있다.
