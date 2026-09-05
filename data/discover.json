@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T15:28:29+00:00",
+ "generated_at": "2026-09-05T16:35:16+00:00",
  "fx": {
   "rate": 1351.1,
   "prev": 1355.41,
@@ -116,6 +116,50 @@
  "currency": "USD",
  "universe_size": 500,
  "disclaimer": "투자 자문이 아닙니다. 데이터 출처는 Yahoo Finance 이며 지연·오류가 있을 수 있습니다. 투자 판단과 책임은 이용자 본인에게 있습니다.",
+ "earnings_soon": [
+  {
+   "ticker": "CASY",
+   "date": "2026-09-08",
+   "days": 3,
+   "beats4": 4,
+   "surprise_last": 32.1
+  },
+  {
+   "ticker": "COO",
+   "date": "2026-09-09",
+   "days": 4,
+   "beats4": 4,
+   "surprise_last": 10.5
+  },
+  {
+   "ticker": "ADBE",
+   "date": "2026-09-10",
+   "days": 5,
+   "beats4": 4,
+   "surprise_last": 2.5
+  },
+  {
+   "ticker": "CPRT",
+   "date": "2026-09-10",
+   "days": 5,
+   "beats4": 3,
+   "surprise_last": 5.7
+  },
+  {
+   "ticker": "ORCL",
+   "date": "2026-09-10",
+   "days": 5,
+   "beats4": 3,
+   "surprise_last": 7.5
+  },
+  {
+   "ticker": "KR",
+   "date": "2026-09-11",
+   "days": 6,
+   "beats4": 3,
+   "surprise_last": -0.8
+  }
+ ],
  "signal": {
   "rules": [
    "50일 평균선 아래로 내려오면 청산 구간이에요",

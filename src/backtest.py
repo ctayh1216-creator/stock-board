@@ -159,6 +159,10 @@ def run(px: pd.DataFrame, picker, label: str) -> dict | None:
         bench = (px.loc[b, BENCH] / px.loc[a, BENCH] - 1) * 100
         rows.append({"month": b.strftime("%Y-%m"), "n": int(len(rets)),
                      "ret": f(rets.mean()), "bench": f(bench)})
+    return summarize(rows, label)
+
+
+def summarize(rows: list[dict], label: str) -> dict | None:
     if len(rows) < 3:
         return None
 
@@ -178,6 +182,59 @@ def run(px: pd.DataFrame, picker, label: str) -> dict | None:
         "cumulative": f(cum, 1), "bench_cumulative": f(cumb, 1),
         "monthly": rows,
     }
+
+
+def signal_state_map(px: pd.DataFrame, t: pd.Timestamp) -> dict[str, str]:
+    """그 시점 종목별 구간. discover.signal_state() 와 같은 순서다."""
+    hist = px.loc[:t]
+    if len(hist) < LOOKBACK:
+        return {}
+    cand = pd.DataFrame({
+        "px": hist.iloc[-1],
+        "s20": hist.tail(20).mean(),
+        "s50": hist.tail(50).mean(),
+        "s200": hist.tail(200).mean(),
+        "rsi": wilder_rsi(hist).iloc[-1],
+    }).dropna().drop(index=[BENCH], errors="ignore")
+    st = pd.Series("watch", index=cand.index)
+    st[(cand["px"] >= cand["s50"]) & (cand["px"] > cand["s200"]) &
+       (cand["px"] > cand["s20"]) & (cand["rsi"] < 70)] = "buy"
+    st[cand["px"] < cand["s50"]] = "exit"      # 청산이 먼저다
+    return st.to_dict()
+
+
+def run_transitions(px: pd.DataFrame, to_state: str, label: str) -> dict | None:
+    """구간이 «바뀐» 종목만 담았을 때의 다음 달.
+
+    화면이 내세우는 건 «오늘 바뀐 신호» 인데 정작 재는 건 «매수 구간에 있는 종목 전부»
+    였다. 파는 것과 재는 것이 달랐다. 여기서는 바뀐 종목만 골라 그 다음 달을 본다.
+    """
+    ends = month_ends(px.index, LOOKBACK)
+    if len(ends) < 5:
+        return None
+    maps = {t: signal_state_map(px, t) for t in ends}
+    rows = []
+    for i in range(1, len(ends) - 1):
+        prev, cur = maps[ends[i - 1]], maps[ends[i]]
+        a, b = ends[i], ends[i + 1]
+        names = [t for t, st in cur.items()
+                 if st == to_state and prev.get(t) and prev[t] != st]
+        if not names:
+            continue
+        seg = px.loc[[a, b]]
+        rets = (seg.loc[b, names] / seg.loc[a, names] - 1) * 100
+        rets = rets.dropna()
+        if rets.empty:
+            continue
+        bench = (px.loc[b, BENCH] / px.loc[a, BENCH] - 1) * 100
+        rows.append({"month": b.strftime("%Y-%m"), "n": int(len(rets)),
+                     "ret": f(rets.mean()), "bench": f(bench)})
+    out = summarize(rows, label)
+    if out:
+        # 청산 전환은 «지수보다 못하면» 규칙이 맞은 것이다. 방향을 데이터에 실어 보낸다.
+        out["good_when"] = "below" if to_state == "exit" else "above"
+        out["avg_n"] = round(sum(x["n"] for x in rows) / len(rows), 1)
+    return out
 
 
 NOT_BACKTESTED = {
@@ -230,6 +287,14 @@ def main() -> int:
             if key == "oversold":
                 res["partial"] = "가격 조건만 재현했습니다. 실제 화면은 수익성 조건이 하나 더 붙습니다."
             out["strategies"][key] = res
+
+    tr = {}
+    for st, lab in (("buy", "매수로 바뀐 종목"), ("exit", "청산으로 바뀐 종목")):
+        r = run_transitions(px, st, lab)
+        if r:
+            tr[st] = r
+    if tr:
+        out["transitions"] = tr
 
     sig = run(px, pick_signal, "매매 신호 (매수 구간)")
     if sig:

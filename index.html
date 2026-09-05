@@ -336,6 +336,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .eps th:first-child,.eps td:first-child{padding-left:0}
 .eps th:last-child,.eps td:last-child{padding-right:0}
 
+.earn-d{font-size:13.5px;font-weight:700;color:var(--ink);flex:0 0 auto}
 .chg-was{font-size:13.5px;color:var(--t3);flex:0 0 auto}
 .chg-ar{font-size:13.5px;color:var(--t3);flex:0 0 auto;margin:0 -3px}
 .sig-sum{margin:16px 0 0;font-size:14.5px;color:var(--t2);line-height:1.65}
@@ -502,6 +503,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
     <p class="sig-sum" id="sigSum"></p>
     <div class="cats" id="cats"></div>
     <section id="chg"></section>
+    <section id="earn"></section>
     <div id="strats"></div>
     <details class="all" id="allBox">
       <summary>S&amp;P 500 전체 종목 표 보기</summary>
@@ -930,6 +932,37 @@ function renderChanges(){
     (list.length > 12 ? '<p class="hint">외 ' + (list.length - 12) + '종목이 더 바뀌었어요.</p>' : "");
 }
 
+/* 곧 실적을 발표하는 종목. next_earnings 는 이미 받아놓고 상세 시트 한 줄로만 쓰고 있었다. */
+function earnHtml(e){
+  var r = findRow(e.ticker);
+  if (!r) return "";
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(e.date || "");
+  var when = m ? (+m[2]) + "월 " + (+m[3]) + "일" : esc(e.date || "");
+  var d = e.days === 0 ? "오늘" : e.days === 1 ? "내일" : e.days + "일 뒤";
+  var past = has(e.beats4) ? "최근 4번 중 " + e.beats4 + "번 기대를 넘겼어요" : "";
+  return '<div class="pick" data-tk="' + esc(r.ticker) + '" role="button" tabindex="0">' +
+    '<div class="pick-top">' +
+      logoHtml(r.ticker, 28, r.name) +
+      '<span class="pick-tk">' + esc(mainLabel(r)) + '</span>' +
+      '<span class="pick-nm">' + esc(subLabel(r)) + '</span>' +
+      '<span class="pick-px"><div class="p num">' + price(r.last) + '</div>' +
+        '<div class="c num ' + cls(r.day_pct) + '">' + pct1(r.day_pct) + '</div></span>' +
+    '</div>' +
+    '<div class="pick-bot"><span class="earn-d">' + when + ' · ' + d + '</span>' +
+      (past ? '<div class="why"><span>' + past + '</span></div>' : '<div class="why"></div>') +
+      '<span class="pick-sp">' + sparkSvg(r.spark, 56, 20) + '</span></div>' +
+  '</div>';
+}
+function renderEarnings(){
+  var box = $("earn");
+  if (!box) return;
+  var list = (D && D.earnings_soon) || [];
+  if (!list.length || cat !== "all"){ box.innerHTML = ""; return; }
+  box.innerHTML = '<div class="sec-h"><h2>이번 주 실적 발표</h2>' +
+      '<span class="n">' + list.length + '종목</span></div>' +
+    list.slice(0, 12).map(earnHtml).join("");
+}
+
 function pickHtml(r, rank){
   var why = (r.why || []).slice(0, 2).map(function(w){
     return '<span>' + esc(w) + '</span>'; }).join("");
@@ -1092,6 +1125,39 @@ function rankRow(x, i){
       '<span>최악의 달 <b class="num ' + cls(b.worst) + '">' + pct0(b.worst) + '</b></span>' +
     '</div></div>';
 }
+/* 화면이 내세우는 건 «바뀐 신호» 인데 재는 건 «매수 구간 전부» 였다.
+   바뀐 순간만 따로 재서 파는 것과 재는 것을 맞춘다. */
+function transHtml(){
+  var t = BT && BT.transitions;
+  if (!t) return "";
+  var row = function(k, name){
+    var x = t[k];
+    if (!x || !x.backtested) return "";
+    var w = sigWins(x), l = x.months - w;
+    var beat = x.avg_monthly > x.bench_avg_monthly;
+    var down = x.good_when === "below";
+    /* 청산 쪽은 «지수보다 덜 오른 달» 이 이긴 달이다. 안 뒤집으면
+       «7승 16패 · 규칙이 맞은 쪽» 처럼 서로 어긋난 말이 나란히 붙는다. */
+    if (down){ var t2 = w; w = l; l = t2; }
+    var ok = down ? !beat : beat;
+    return '<div class="rk-item"><div class="rk-row">' +
+      '<span class="rk-name">' + esc(name) + '</span>' +
+      '<span class="rk-cnt">한 달 평균 ' + x.avg_n + '종목</span>' +
+      '<span class="rk-wl num">' + w + '승 ' + l + '패</span></div>' +
+      '<div class="rk-sub">' +
+        '<span>다음 달 <b class="num ' + cls(x.avg_monthly) + '">' + pct1(x.avg_monthly) +
+          '</b> <span class="num">(' + esc(benchName()) + ' ' + pct1(x.bench_avg_monthly) + ')</span></span>' +
+        '<span>' + (down ? "지수보다 덜 오른 달" : "지수를 이긴 달") + '을 셉니다</span>' +
+        '<span><b>' + (ok ? "규칙이 맞은 쪽" : "규칙이 틀린 쪽") + '</b></span>' +
+      '</div></div>';
+  };
+  var body = row("buy", "매수로 바뀐 종목") + row("exit", "청산으로 바뀐 종목");
+  if (!body) return "";
+  return '<div class="sec-h"><h2>신호가 바뀐 순간</h2></div>' +
+    '<p class="sec-d">바뀐 종목만 담았을 때 그 다음 한 달입니다. ' +
+    '청산으로 바뀐 쪽은 지수보다 못해야 규칙이 맞은 것입니다.</p>' +
+    '<div class="rk">' + body + '</div>';
+}
 function renderRecord(){
   var box = $("recBoard");
   if (!box) return;
@@ -1101,7 +1167,9 @@ function renderRecord(){
     return;
   }
   var i = 0;
-  box.innerHTML = '<div class="rk">' + list.map(function(x){
+  box.innerHTML = transHtml() +
+    '<div class="sec-h"><h2>기준별 전적</h2></div>' +
+    '<div class="rk">' + list.map(function(x){
       return rankRow(x, x.bt ? i++ : -1); }).join("") + '</div>' +
     btCaveatHtml();
 }
@@ -1431,7 +1499,7 @@ function setView(v){
 function renderAll(){
   paintStatus();
   setView(view); renderMarket(); renderSignalSummary(); renderCats();
-  renderChanges(); renderStrategies(); renderRecord();
+  renderChanges(); renderEarnings(); renderStrategies(); renderRecord();
   rebuildSectors(); renderTable();
   renderNews(); renderPortfolio();
   $("status").innerHTML = "";
@@ -1524,7 +1592,7 @@ $("cats").addEventListener("click", function(e){
   var b = e.target.closest ? e.target.closest("[data-cat]") : null;
   if (!b) return;
   cat = b.getAttribute("data-cat");
-  renderCats(); renderChanges(); renderStrategies(); animateIn();
+  renderCats(); renderChanges(); renderEarnings(); renderStrategies(); animateIn();
   window.scrollTo({top:0, behavior:"smooth"});
 });
 $("strats").addEventListener("click", function(e){

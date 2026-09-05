@@ -166,6 +166,24 @@ def signal_changes(table, market: str):
     return changes, base_date
 
 
+def earnings_soon(rows, days: int = 7):
+    """곧 실적을 발표하는 종목.
+
+    next_earnings 는 이미 499/500 종목치를 받아놓고 상세 시트 맨 아래 한 줄로만
+    쓰고 있었다. 날짜순으로 추려 목록으로 낸다 — 매일 들러서 볼 거리가 된다.
+    """
+    out = []
+    for r in rows:
+        d = days_until(r.get("next_earnings"))
+        if d is None or not 0 <= d <= days:
+            continue
+        out.append({"ticker": r["ticker"], "date": str(r["next_earnings"])[:10], "days": d,
+                    "beats4": r.get("beats4"),
+                    "surprise_last": f(r.get("surprise_last"), 1)})
+    out.sort(key=lambda x: (x["days"], x["ticker"]))
+    return out
+
+
 # ---------------------------------------------------------------- helpers
 def f(x, nd=None):
     """NaN/None/inf 를 None 으로 정규화."""
@@ -774,6 +792,9 @@ def main():
     print(f"[info] 신호: 매수 {tally['buy']} · 관망 {tally['watch']} · "
           f"청산 {tally['exit']} · 판단불가 {tally['none']}", file=sys.stderr)
 
+    soon = earnings_soon(rows)
+    print(f"[info] 7일 내 실적 발표 {len(soon)}종목", file=sys.stderr)
+
     changes, since = signal_changes(table, opts.market)
     print(f"[info] 오늘 바뀐 신호 {len(changes)}종목 (기준 {since or '없음'})", file=sys.stderr)
 
@@ -806,6 +827,7 @@ def main():
         "currency": CURRENCY,
         "universe_size": len(rows),
         "disclaimer": DISCLAIMER,
+        "earnings_soon": soon,
         "signal": {"rules": SIGNAL_RULES, "levels": SIGNAL_LEVELS, "tally": tally,
                    "changes": changes, "since": since,
                    "labels": SIGNAL_LABEL, "reasons": SIGNAL_REASON,
