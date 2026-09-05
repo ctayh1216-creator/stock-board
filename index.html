@@ -20,7 +20,7 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0C0C10">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="종목 상황실">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -35,33 +35,35 @@
 /* 다크 기본. 세무 사업용 흰 가이드를 그대로 쓰다가 «토토 보드 + 토스» 로 방향을 잡았다.
    OS 가 라이트여도 흰 화면으로 넘어가지 않는다 — 라이트는 ◐ 로 직접 켤 때만.
    제품 고유 확장은 --up / --down (한국 관행: 상승 빨강 / 하락 파랑). */
+/* 카드 골격은 목업 D 그대로 두고 바탕만 밝게 돌렸다 — «너무 다크하다» 는 말을 듣고.
+   기본은 라이트 하나로 고정한다. OS 설정을 따라가면 사람마다 다른 화면을 보게 된다.
+   다크는 ◐ 로 직접 켤 때만. 제품 확장은 --up / --down (상승 빨강 / 하락 파랑). */
 :root{
-  color-scheme:dark;
-  --ground:#0C0C10;  --surface:#17171C;  --surface-2:#1E1E24;
-  --line:#26262C;    --line-strong:#4A4A55;
-  --ink:#F5F5F7;     --ink-2:#C6C6CC;    --ink-3:#9A9AA4;   --ink-4:#7D7D87;
-  --accent:#8E9BFF;  --accent-hover:#A5B0FF;  --accent-rgb:142 155 255;
-  --accent-soft:rgb(var(--accent-rgb) / .14);
-  --ok:#30DB5B;  --warn:#FFB340;  --danger:#FF6961;
-  /* 제품 확장 — 시세 등락. 한국 관행에 따라 상승 빨강 / 하락 파랑. */
-  --up:#FF4D4F;  --down:#4C8DFF;
+  color-scheme:light;
+  --ground:#FFFFFF;  --surface:#F4F5F7;  --surface-2:#EDEEF1;
+  --line:#E7E8EB;    --line-strong:#8B95A9;
+  --ink:#191F28;     --ink-2:#4E5968;    --ink-3:#6B7684;   --ink-4:#8B95A1;
+  --accent:#3182F6;  --accent-hover:#1B64DA;  --accent-rgb:49 130 246;
+  --accent-soft:rgb(var(--accent-rgb) / .10);
+  --ok:#248A3D;  --warn:#C93400;  --danger:#F04452;
+  --up:#F04452;  --down:#3182F6;
   --sans:'Pretendard Variable',Pretendard,'Noto Sans KR','Apple SD Gothic Neo',system-ui,sans-serif;
   --display:var(--sans);
-  /* 기존 클래스 호환 별칭 */
   --bg:var(--ground); --t1:var(--ink); --t2:var(--ink-3); --t3:var(--ink-4);
   --line-2:var(--line); --sunk:var(--surface); --card:var(--surface);
-  --up-bg:rgb(255 90 82 / .13); --down-bg:rgb(90 160 255 / .13); --accent-bg:var(--accent-soft);
-  --shadow:none; --r:22px;
+  --up-bg:rgb(240 68 82 / .09); --down-bg:rgb(49 130 246 / .09); --accent-bg:var(--accent-soft);
+  --shadow:none; --r:22px; --hd-veil:90%;
 }
-:root[data-theme="light"]{
-  color-scheme:light;
-  --ground:#FFFFFF; --surface:#F5F5F7; --surface-2:#FAFAFB;
-  --line:#E5E5EA; --line-strong:#8B95A9;
-  --ink:#1D1D1F; --ink-2:#494950; --ink-3:#6E6E73; --ink-4:#86868B;
-  --accent:#4659EF; --accent-hover:#3847CF; --accent-soft:rgb(70 89 239 / .08);
-  --ok:#248A3D; --warn:#C93400; --danger:#D70015;
-  --up:#D70015; --down:#0B5FD0;
-  --up-bg:rgb(215 0 21 / .07); --down-bg:rgb(11 95 208 / .07);
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#16161B; --surface:#212128; --surface-2:#2A2A33;
+  --line:#31313A; --line-strong:#5A5A64;
+  --ink:#F4F4F7; --ink-2:#C6C6CC; --ink-3:#A6A6B0; --ink-4:#8A8A94;
+  --accent:#8E9BFF; --accent-hover:#A5B0FF; --accent-soft:rgb(142 155 255 / .14);
+  --ok:#30DB5B; --warn:#FFB340; --danger:#FF6961;
+  --up:#FF5A52; --down:#5AA0FF;
+  --up-bg:rgb(255 90 82 / .13); --down-bg:rgb(90 160 255 / .13);
+  --hd-veil:78%;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
@@ -76,7 +78,7 @@ button{font:inherit;color:inherit}
 
 /* ---------- nav (애플식 얇은 상단바) ---------- */
 .hd{position:sticky;top:0;z-index:40;
-  background:color-mix(in srgb,var(--bg) 72%,transparent);
+  background:color-mix(in srgb,var(--bg) var(--hd-veil),transparent);
   -webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid var(--line-2);padding-top:env(safe-area-inset-top)}
 .hd-in{max-width:980px;margin:0 auto;padding:0 22px;height:52px;display:flex;align-items:center;gap:24px}
@@ -514,7 +516,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
       </div>
       <span class="mstate"><span class="led" id="led"></span><span id="mstatTxt">—</span></span>
       <button class="iconbtn" id="refreshBtn" type="button" aria-label="새로고침" title="새로고침">↻</button>
-      <button class="iconbtn" id="themeBtn" type="button" aria-label="테마 전환" title="테마 전환">◐</button>
+      <button class="iconbtn" id="themeBtn" type="button" aria-label="어둡게 보기" title="어둡게 보기">☾</button>
     </div>
   </div>
 </header>
@@ -1809,21 +1811,28 @@ $("pfImport").addEventListener("click", function(){
   } catch(e){ $("pfNote").textContent = "가져오기 실패 — 백업 코드 형식이 아닙니다."; }
 });
 
-/* 테마: 시스템 → 라이트 → 다크 */
-var THEMES = ["", "light", "dark"], ICON = {"":"◐", light:"☀", dark:"☾"};
+/* 테마: 라이트(기본) ↔ 다크.
+   예전엔 시스템 설정을 따라가는 칸이 하나 더 있었는데, 기본이 라이트가 되면서
+   «시스템»과 «라이트»가 같은 화면이 돼 한 번 눌러도 아무 일이 없는 칸이 생겼다.
+   버튼에는 «지금 모드»가 아니라 «누르면 갈 곳»을 그린다. */
 (function(){
-  var cur = "";
-  try { cur = localStorage.getItem("sb_theme") || ""; } catch(e){}
-  var apply = function(t){
-    if (t) document.documentElement.setAttribute("data-theme", t);
+  var dark = false;
+  try { dark = localStorage.getItem("sb_theme") === "dark"; } catch(e){}
+  var apply = function(){
+    if (dark) document.documentElement.setAttribute("data-theme", "dark");
     else document.documentElement.removeAttribute("data-theme");
-    $("themeBtn").textContent = ICON[t];
+    var b = $("themeBtn");
+    b.textContent = dark ? "\u2600" : "\u263e";
+    b.setAttribute("aria-label", dark ? "밝게 보기" : "어둡게 보기");
+    b.setAttribute("title", dark ? "밝게 보기" : "어둡게 보기");
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute("content", dark ? "#16161B" : "#FFFFFF");
   };
-  apply(cur);
+  apply();
   $("themeBtn").addEventListener("click", function(){
-    cur = THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length];
-    try { localStorage.setItem("sb_theme", cur); } catch(e){}
-    apply(cur);
+    dark = !dark;
+    try { localStorage.setItem("sb_theme", dark ? "dark" : "light"); } catch(e){}
+    apply();
   });
 })();
 
