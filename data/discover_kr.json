@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T16:36:45+00:00",
+ "generated_at": "2026-09-05T16:57:14+00:00",
  "fx": {
   "rate": 1351.1,
   "prev": 1355.41,
@@ -117,6 +117,24 @@
  "universe_size": 158,
  "disclaimer": "투자 자문이 아닙니다. 데이터 출처는 Yahoo Finance 이며 지연·오류가 있을 수 있습니다. 투자 판단과 책임은 이용자 본인에게 있습니다.",
  "earnings_soon": [],
+ "extremes": {
+  "high": [
+   {
+    "ticker": "003490.KS",
+    "level": 30200.0
+   },
+   {
+    "ticker": "010950.KS",
+    "level": 157300.0
+   }
+  ],
+  "low": [
+   {
+    "ticker": "376300.KQ",
+    "level": 17770.0
+   }
+  ]
+ },
  "signal": {
   "rules": [
    "50일 평균선 아래로 내려오면 청산 구간이에요",

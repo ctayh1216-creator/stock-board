@@ -166,6 +166,25 @@ def signal_changes(table, market: str):
     return changes, base_date
 
 
+def extremes(rows, edge: float = 1.0):
+    """52주 최고·최저를 새로 쓴 종목.
+
+    pos52w 는 52주 범위 안에서 지금 어디쯤인지(0~100)다. 100 에 붙었으면 오늘이
+    그 1년의 꼭대기, 0 이면 바닥이다. hi52/lo52 와 따로 비교할 필요가 없다.
+    """
+    hi, lo = [], []
+    for r in rows:
+        pos = r.get("pos52w")
+        if pos is None:
+            continue
+        if pos >= 100 - edge:
+            hi.append({"ticker": r["ticker"], "level": f(r.get("hi52"), 2)})
+        elif pos <= edge:
+            lo.append({"ticker": r["ticker"], "level": f(r.get("lo52"), 2)})
+    key = lambda x: x["ticker"]
+    return {"high": sorted(hi, key=key), "low": sorted(lo, key=key)}
+
+
 def earnings_soon(rows, days: int = 7):
     """곧 실적을 발표하는 종목.
 
@@ -792,6 +811,9 @@ def main():
     print(f"[info] 신호: 매수 {tally['buy']} · 관망 {tally['watch']} · "
           f"청산 {tally['exit']} · 판단불가 {tally['none']}", file=sys.stderr)
 
+    ext = extremes(rows)
+    print(f"[info] 52주 신고가 {len(ext['high'])} · 신저가 {len(ext['low'])}종목", file=sys.stderr)
+
     soon = earnings_soon(rows)
     print(f"[info] 7일 내 실적 발표 {len(soon)}종목", file=sys.stderr)
 
@@ -828,6 +850,7 @@ def main():
         "universe_size": len(rows),
         "disclaimer": DISCLAIMER,
         "earnings_soon": soon,
+        "extremes": ext,
         "signal": {"rules": SIGNAL_RULES, "levels": SIGNAL_LEVELS, "tally": tally,
                    "changes": changes, "since": since,
                    "labels": SIGNAL_LABEL, "reasons": SIGNAL_REASON,

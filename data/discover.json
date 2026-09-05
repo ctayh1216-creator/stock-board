@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T16:35:16+00:00",
+ "generated_at": "2026-09-05T16:57:13+00:00",
  "fx": {
   "rate": 1351.1,
   "prev": 1355.41,
@@ -160,6 +160,84 @@
    "surprise_last": -0.8
   }
  ],
+ "extremes": {
+  "high": [
+   {
+    "ticker": "BBY",
+    "level": 90.27
+   },
+   {
+    "ticker": "BNY",
+    "level": 164.84
+   },
+   {
+    "ticker": "DELL",
+    "level": 524.14
+   },
+   {
+    "ticker": "HPQ",
+    "level": 32.64
+   },
+   {
+    "ticker": "MPC",
+    "level": 388.9
+   },
+   {
+    "ticker": "PSX",
+    "level": 256.09
+   },
+   {
+    "ticker": "STT",
+    "level": 194.26
+   },
+   {
+    "ticker": "TECH",
+    "level": 72.47
+   },
+   {
+    "ticker": "VLO",
+    "level": 370.72
+   }
+  ],
+  "low": [
+   {
+    "ticker": "FICO",
+    "level": 922.37
+   },
+   {
+    "ticker": "LHX",
+    "level": 256.45
+   },
+   {
+    "ticker": "LULU",
+    "level": 100.61
+   },
+   {
+    "ticker": "MCD",
+    "level": 255.69
+   },
+   {
+    "ticker": "PNR",
+    "level": 59.84
+   },
+   {
+    "ticker": "ROL",
+    "level": 35.71
+   },
+   {
+    "ticker": "TXT",
+    "level": 79.07
+   },
+   {
+    "ticker": "VICI",
+    "level": 25.42
+   },
+   {
+    "ticker": "XYL",
+    "level": 105.52
+   }
+  ]
+ },
  "signal": {
   "rules": [
    "50일 평균선 아래로 내려오면 청산 구간이에요",

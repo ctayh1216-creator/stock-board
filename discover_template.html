@@ -291,6 +291,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   display:block;padding:0 4px;color:var(--ink-3);font-size:13.5px;font-weight:600}
 .lead-cat .n{color:var(--t4);font-weight:400;margin-left:4px}
 .lead .rank{display:none}   /* 한 줄뿐이라 순위 번호가 뜻이 없다 */
+#watch .rank{display:none}  /* 관심종목에도 순위가 없다 */
 @media(hover:hover){.lead-cat:hover{color:var(--accent)}}
 
 /* ---------- 매매 신호 ---------- */
@@ -337,6 +338,11 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .eps th:last-child,.eps td:last-child{padding-right:0}
 
 .earn-d{font-size:13.5px;font-weight:700;color:var(--ink);flex:0 0 auto}
+.wbtn{appearance:none;border:0;cursor:pointer;font-family:inherit;font-size:14px;
+  font-weight:600;padding:11px 16px;border-radius:980px;margin-top:14px;
+  background:var(--surface);color:var(--ink);transition:background .18s}
+@media(hover:hover){.wbtn:hover{background:var(--line)}}
+.wbtn.on{background:var(--ink);color:var(--ground)}
 .chg-was{font-size:13.5px;color:var(--t3);flex:0 0 auto}
 .chg-ar{font-size:13.5px;color:var(--t3);flex:0 0 auto;margin:0 -3px}
 .sig-sum{margin:16px 0 0;font-size:14.5px;color:var(--t2);line-height:1.65}
@@ -502,8 +508,10 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   <section class="view" id="v-picks">
     <p class="sig-sum" id="sigSum"></p>
     <div class="cats" id="cats"></div>
+    <section id="watch"></section>
     <section id="chg"></section>
     <section id="earn"></section>
+    <section id="ext"></section>
     <div id="strats"></div>
     <details class="all" id="allBox">
       <summary>S&amp;P 500 전체 종목 표 보기</summary>
@@ -932,6 +940,63 @@ function renderChanges(){
     (list.length > 12 ? '<p class="hint">외 ' + (list.length - 12) + '종목이 더 바뀌었어요.</p>' : "");
 }
 
+/* 관심종목 — 수량·평단 없이 티커만. 이 기기에만 남는다. */
+var WATCH_KEY = "sb_watch";
+function watchLoad(){
+  try { var v = JSON.parse(localStorage.getItem(WATCH_KEY) || "[]");
+        return Array.isArray(v) ? v.filter(function(x){ return typeof x === "string"; }) : []; }
+  catch(e){ return []; }
+}
+var WATCH = watchLoad();
+function watchHas(t){ return WATCH.indexOf(t) >= 0; }
+function watchToggle(t){
+  var i = WATCH.indexOf(t);
+  if (i >= 0) WATCH.splice(i, 1); else WATCH.push(t);
+  try { localStorage.setItem(WATCH_KEY, JSON.stringify(WATCH)); } catch(e){}
+  renderWatch(); renderNews();
+}
+function renderWatch(){
+  var box = $("watch");
+  if (!box) return;
+  if (!WATCH.length || cat !== "all"){ box.innerHTML = ""; return; }
+  var rows = WATCH.map(findRow).filter(Boolean);
+  if (!rows.length){ box.innerHTML = ""; return; }
+  box.innerHTML = '<div class="sec-h"><h2>내 관심종목</h2>' +
+      '<span class="n">' + rows.length + '종목</span></div>' +
+    rows.map(function(r){ return pickHtml(r, ""); }).join("");
+}
+
+/* 52주 꼭대기·바닥을 오늘 밟은 종목. */
+function extHtml(r, kind){
+  return '<div class="pick" data-tk="' + esc(r.ticker) + '" role="button" tabindex="0">' +
+    '<div class="pick-top">' +
+      logoHtml(r.ticker, 28, r.name) +
+      '<span class="pick-tk">' + esc(mainLabel(r)) + '</span>' +
+      '<span class="pick-nm">' + esc(subLabel(r)) + '</span>' +
+      '<span class="pick-px"><div class="p num">' + price(r.last) + '</div>' +
+        '<div class="c num ' + cls(r.day_pct) + '">' + pct1(r.day_pct) + '</div></span>' +
+    '</div>' +
+    '<div class="pick-bot">' +
+      '<span class="sig ' + (kind === "high" ? "buy" : "exit") + '"><i></i>' +
+        (kind === "high" ? "52주 최고" : "52주 최저") + '</span>' +
+      '<div class="why"><span>1년 만에 ' + (kind === "high" ? "가장 높아요" : "가장 낮아요") + '</span></div>' +
+      '<span class="pick-sp">' + sparkSvg(r.spark, 56, 20) + '</span></div>' +
+  '</div>';
+}
+function renderExtremes(){
+  var box = $("ext");
+  if (!box) return;
+  var e = D && D.extremes;
+  if (!e || cat !== "all"){ box.innerHTML = ""; return; }
+  var hi = (e.high || []).map(function(x){ return findRow(x.ticker); }).filter(Boolean);
+  var lo = (e.low || []).map(function(x){ return findRow(x.ticker); }).filter(Boolean);
+  if (!hi.length && !lo.length){ box.innerHTML = ""; return; }
+  box.innerHTML = '<div class="sec-h"><h2>오늘 52주 최고·최저</h2>' +
+      '<span class="n">' + (hi.length + lo.length) + '종목</span></div>' +
+    hi.slice(0, 8).map(function(r){ return extHtml(r, "high"); }).join("") +
+    lo.slice(0, 8).map(function(r){ return extHtml(r, "low"); }).join("");
+}
+
 /* 곧 실적을 발표하는 종목. next_earnings 는 이미 받아놓고 상세 시트 한 줄로만 쓰고 있었다. */
 function earnHtml(e){
   var r = findRow(e.ticker);
@@ -1253,6 +1318,8 @@ function openSheet(ticker){
       return (a.length || b2.length)
         ? '<div class="sh-tags">' + a.join("") + b2.join("") + '</div>' : "";
     })() +
+    '<button class="wbtn' + (watchHas(r.ticker) ? ' on' : '') + '" type="button" data-watch="' +
+      esc(r.ticker) + '">' + (watchHas(r.ticker) ? '관심종목에서 빼기' : '관심종목에 담기') + '</button>' +
     (r.signal ? '<div class="sh-sec"><h4>매매 신호</h4>' +
         '<div class="top-sig" style="margin-top:0;padding-top:0;border-top:0">' +
           sigChip(r.signal) + '<span class="w">' + esc(sigWhy(r.signal)) + '</span></div>' +
@@ -1388,6 +1455,7 @@ function renderNews(){
   if (!NEWS) { $("newsList").innerHTML = '<p class="empty">뉴스를 불러오는 중입니다.</p>'; return; }
   var mine = {};
   PF.forEach(function(h){ mine[h.t] = 1; });
+  WATCH.forEach(function(t){ mine[t] = 1; });
   var items = [];
   (NEWS.market || []).forEach(function(n){
     items.push({ t:"시장", pri:1, cls:"mkt", title:n.title, url:n.url, pub:n.publisher, at:n.at, lang:n.lang }); });
@@ -1499,7 +1567,8 @@ function setView(v){
 function renderAll(){
   paintStatus();
   setView(view); renderMarket(); renderSignalSummary(); renderCats();
-  renderChanges(); renderEarnings(); renderStrategies(); renderRecord();
+  renderWatch(); renderChanges(); renderEarnings(); renderExtremes();
+  renderStrategies(); renderRecord();
   rebuildSectors(); renderTable();
   renderNews(); renderPortfolio();
   $("status").innerHTML = "";
@@ -1592,12 +1661,24 @@ $("cats").addEventListener("click", function(e){
   var b = e.target.closest ? e.target.closest("[data-cat]") : null;
   if (!b) return;
   cat = b.getAttribute("data-cat");
-  renderCats(); renderChanges(); renderEarnings(); renderStrategies(); animateIn();
+  renderCats(); renderWatch(); renderChanges(); renderEarnings(); renderExtremes();
+  renderStrategies(); animateIn();
   window.scrollTo({top:0, behavior:"smooth"});
 });
-$("strats").addEventListener("click", function(e){
+/* 핸들러가 #strats 에만 걸려 있어서, 나중에 붙인 «오늘 바뀐 신호»·«실적 발표» 행은
+   눌러도 아무 일이 없었다. 추천 탭 전체(#v-picks)로 올려 모든 목록이 열리게 한다. */
+$("v-picks").addEventListener("click", function(e){
   var card = e.target.closest ? e.target.closest("[data-tk]") : null;
   if (card){ openSheet(card.getAttribute("data-tk")); return; }
+});
+/* 담기 버튼은 시트 안에 있다 — 시트는 #v-picks 바깥이라 따로 받는다. */
+$("sheet").addEventListener("click", function(e){
+  var wb = e.target.closest ? e.target.closest("[data-watch]") : null;
+  if (!wb) return;
+  var tk = wb.getAttribute("data-watch");
+  watchToggle(tk);
+  wb.classList.toggle("on", watchHas(tk));
+  wb.textContent = watchHas(tk) ? "관심종목에서 빼기" : "관심종목에 담기";
 });
 $("allBox").addEventListener("toggle", function(){ if ($("allBox").open) renderTable(); });
 $("uniBody").addEventListener("click", function(e){
