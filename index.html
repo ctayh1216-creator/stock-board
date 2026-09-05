@@ -175,9 +175,9 @@ details.rules[open] summary::after{content:" ⌃"}
 .pf-hero .c{font-size:19px;font-weight:700;margin-top:10px}
 .pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:38px;
   border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
-.pf-grid div{background:none;border-radius:0;padding:20px 12px;text-align:center;
+.pf-grid>div{background:none;border-radius:0;padding:20px 12px;text-align:center;
   border-right:1px solid var(--line-2)}
-.pf-grid div:last-child{border-right:0}
+.pf-grid>div:last-child{border-right:0}
 .pf-grid .l{font-size:13px;color:var(--t3)}
 .pf-grid .v{font-size:21px;font-weight:700;margin-top:5px}
 .hold{display:flex;align-items:center;gap:12px;padding:20px 12px;border-bottom:1px solid var(--line-2);margin:0 -8px}
@@ -453,8 +453,8 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   .why{gap:5px;flex-direction:column} .why span{font-size:13px;white-space:normal}
   .why span+span{padding-left:0} .why span+span::before{display:none}
   .na{padding:15px 8px;margin:0 -6px} .na h3{font-size:17px}
-  .pf-grid{grid-template-columns:1fr 1fr} .pf-grid div:nth-child(2){border-right:0}
-  .pf-grid div:nth-child(-n+2){border-bottom:1px solid var(--line-2)}
+  .pf-grid{grid-template-columns:1fr 1fr} .pf-grid>div:nth-child(2){border-right:0}
+  .pf-grid>div:nth-child(-n+2){border-bottom:1px solid var(--line-2)}
   .form{grid-template-columns:1fr} .btn{width:100%;text-align:center}
   .btn-row{gap:18px} .note{padding:30px 16px 44px}
   th{top:48px}
