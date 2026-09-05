@@ -57,10 +57,8 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-family:var(--sans);
   font-size:17px;line-height:1.59;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(1100px 480px at 72% -12%, var(--glow), transparent 70%)}
 .mono,.num{font-family:var(--sans);
   font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
 .up{color:var(--up)} .down{color:var(--down)} .muted{color:var(--ink-2)} .dim{color:var(--ink-3)}
@@ -70,34 +68,38 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);
   background:color-mix(in srgb, var(--bg) 72%, transparent);
   -webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5)}
-.hbar{max-width:1280px;margin:0 auto;padding:20px 20px 0;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:flex-end}
-.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-bottom:6px}
+.hd-top{max-width:1280px;margin:0 auto;padding:14px 20px 0;display:flex;align-items:baseline;gap:10px}
+.brand{font-size:19px;font-weight:700}
+.brand-sub{font-size:13px;color:var(--ink-3)}
+.hd-link{margin-left:auto;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none}
+.hbar{max-width:1280px;margin:0 auto;padding:14px 20px 0;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:flex-end}
+.eyebrow{font-size:13px;color:var(--ink-3);font-weight:500;margin-bottom:6px}
 .hero-val{font-family:var(--sans);font-size:clamp(30px,4.6vw,46px);
   font-weight:800;line-height:1;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
 .hero-sub{font-size:13px;margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .hero-sub>.dim{display:none}
-.hero-sub .num{padding:4px 11px;border-radius:999px;font-weight:700;font-size:12.5px;
-  background:color-mix(in srgb, currentColor 13%, transparent)}
-.hero-sub .muted{padding:4px 11px;border-radius:999px;background:var(--surface-2);
-  border:1px solid var(--line);font-size:12.5px}
-.hero-sub .muted .num,.hero-sub .muted b{padding:0;background:none;font-size:inherit}
+.hero-sub{font-size:14.5px;color:var(--ink-3)}
+.hero-sub .num{font-weight:700;font-size:15px}
+.hero-sub>.dim{display:inline;color:var(--ink-4)}
+.hero-sub .muted{color:var(--ink-3)}
+.hero-sub .muted b{font-weight:700;color:var(--ink)}
 .kv{display:flex;flex-direction:column;gap:3px;background:var(--surface);
-  border:1px solid var(--line);border-radius:14px;padding:11px 15px;box-shadow:var(--shadow)}
+  border-radius:14px;padding:11px 15px}
 .kv .v{font-family:var(--sans);font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15}
-.kv .l{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+.kv .l{font-size:12.5px;color:var(--ink-3);font-weight:400}
 .spacer{flex:1 1 auto}
 .stamp{font-size:11px;color:var(--ink-3);text-align:right;line-height:1.6}
 .stamp b{color:var(--ink-2);font-weight:500}
 
 /* ---------- tabs ---------- */
-nav{max-width:1280px;margin:0 auto;padding:16px 20px 14px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
+nav{max-width:1280px;margin:0 auto;padding:14px 20px 18px;display:flex;flex-wrap:wrap;gap:8px}
 nav::-webkit-scrollbar{display:none}
-.tab{appearance:none;border:1px solid transparent;background:none;font:inherit;font-size:13px;font-weight:500;
-  color:var(--ink-2);padding:8px 15px;cursor:pointer;border-radius:999px;white-space:nowrap;
-  transition:color .12s, background .12s}
-.tab:hover{color:var(--ink);background:var(--surface-2)}
-.tab[aria-selected="true"]{color:var(--ink);background:var(--surface);border-color:var(--line-strong);
-  font-weight:700;box-shadow:var(--shadow)}
+.tab{appearance:none;border:0;background:var(--surface);font:inherit;font-size:14px;font-weight:600;
+  color:var(--ink);padding:10px 14px;cursor:pointer;border-radius:980px;white-space:nowrap;
+  transition:background .18s cubic-bezier(.28,.11,.32,1)}
+@media(hover:hover){.tab:hover{background:var(--line)}}
+.tab:active{transform:scale(.97)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--ground)}
 .tab:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 
 /* ---------- cards ---------- */
@@ -105,8 +107,7 @@ nav::-webkit-scrollbar{display:none}
 .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;
-  padding:20px 22px 22px;box-shadow:var(--shadow)}
+.card{background:var(--surface);border-radius:18px;padding:20px 22px 22px}
 .card>h3{margin:0 0 4px;font-size:15px;font-weight:700;}
 .card>.hint{margin:0 0 16px;font-size:12px;color:var(--ink-2);line-height:1.65}
 .card.flush{padding:20px 0 6px}
@@ -193,6 +194,11 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
 </style>
 
 <header>
+  <div class="hd-top">
+    <span class="brand">종목 상황실</span>
+    <span class="brand-sub">포트폴리오 콘솔</span>
+    <a class="hd-link" href="https://ctayh1216-creator.github.io/stock-board/">공개 보드 →</a>
+  </div>
   <div class="hbar">
     <div>
       <div class="eyebrow">총 평가액 · 원화</div>
@@ -209,7 +215,7 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
     <div class="kv"><span class="l">USD/KRW</span><span class="v" id="fxNow">—</span><span class="dim" style="font-size:11px" id="fxSub">—</span></div>
     <div class="kv"><span class="l">평균 매입환율</span><span class="v muted" id="fxAvg">—</span><span class="dim" style="font-size:11px">체결 가중</span></div>
     <div class="kv"><span class="l">환율 손익분기</span><span class="v" id="fxBe">—</span><span class="dim" style="font-size:11px" id="fxBeSub">—</span></div>
-    <div class="stamp"><a href="https://ctayh1216-creator.github.io/stock-board/discover.html" style="color:var(--accent);text-decoration:none;font-weight:700">종목 발굴 →</a><br>갱신 <b id="genAt">—</b><br>시세 기준일 <b id="barDate">—</b></div>
+    <div class="stamp">갱신 <b id="genAt">—</b><br>시세 기준일 <b id="barDate">—</b></div>
   </div>
   <nav id="tabs" role="tablist"></nav>
 </header>
@@ -219,18 +225,16 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
     <div class="grid g2">
       <div class="card">
         <h3>수익의 출처 — 주가인가, 환율인가</h3>
-        <p class="hint">원화 손익을 세 갈래로 분해했습니다. 주가효과는 매입 당시 환율로 환산한 달러 손익, 환율효과는 원금에 붙은 환차손익, 교차항은 둘이 겹친 부분입니다.</p>
         <div id="attribChart"></div>
       </div>
       <div class="card flush">
         <h3>1년 성과</h3>
-        <p class="hint">현재 보유 수량을 1년 전부터 그대로 들고 있었다고 가정한 궤적입니다. 원화선과 달러선의 간격이 곧 환율이 가져간 몫입니다.</p>
+        <p class="hint">지금 수량을 1년 전부터 들고 있었다고 가정한 궤적입니다. 두 선의 간격이 환율이 가져간 몫입니다.</p>
         <div id="perfChart"></div>
       </div>
     </div>
     <div class="card flush" style="margin-top:14px">
       <h3>보유 종목</h3>
-      <p class="hint">달러 손익과 원화 손익을 나란히 둡니다. 종목마다 매입환율이 다르기 때문에 두 값의 차이도 종목마다 다릅니다.</p>
       <div class="scroll"><table id="holdTable"></table></div>
     </div>
     <div id="overviewNotes"></div>
@@ -242,7 +246,7 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
     <div class="grid g2">
       <div class="card flush">
         <h3>환율 시나리오</h3>
-        <p class="hint">주가를 현재가로 묶어두고 환율만 움직였을 때의 원화 손익입니다. 실제로는 주가와 환율이 함께 움직이므로 민감도를 보는 용도입니다.</p>
+        <p class="hint">주가를 묶어두고 환율만 움직였을 때의 원화 손익입니다.</p>
         <div id="fxChart"></div>
       </div>
       <div class="card flush">
@@ -258,7 +262,7 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
     <div class="grid g2">
       <div class="card flush">
         <h3>종목 간 상관계수</h3>
-        <p class="hint">최근 1년 일간수익률 기준. 값이 높을수록 같이 움직입니다 — 분산이 덜 되었다는 뜻입니다.</p>
+        <p class="hint">최근 1년 일간수익률 기준. 높을수록 같이 움직입니다.</p>
         <div id="corrChart"></div>
       </div>
       <div class="card flush">
@@ -289,7 +293,7 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
   <section class="panel" id="p-div">
     <div class="card flush">
       <h3>분산 후보 상관 스크린</h3>
-      <p class="hint">투자 권유가 아닙니다. 현재 포트폴리오의 일간수익률과 각 자산의 상관계수를 최근 1년 기준으로 계산한 비교표입니다. 상관이 낮을수록 같은 방향으로 덜 움직였다는 과거 기록일 뿐, 앞으로도 그러리라는 보장은 없습니다.</p>
+      <p class="hint">최근 1년 일간수익률 상관계수입니다. 과거 기록일 뿐 앞으로를 보장하지 않습니다.</p>
       <div class="scroll"><table id="divTable"></table></div>
     </div>
     <div id="divNotes"></div>
