@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T19:01:39+00:00",
+ "generated_at": "2026-09-05T15:32:53+00:00",
  "benchmark": "코스피 200",
  "top_n": 20,
  "caveats": [
@@ -11,14 +11,14 @@
  "strategies": {
   "momentum": {
    "backtested": true,
-   "months": 22,
-   "avg_monthly": 3.09,
-   "bench_avg_monthly": 4.9,
-   "win_rate": 40.9,
+   "months": 23,
+   "avg_monthly": 2.83,
+   "bench_avg_monthly": 4.62,
+   "win_rate": 39.1,
    "best": 36.37,
    "worst": -28.82,
-   "cumulative": 60.0,
-   "bench_cumulative": 140.8,
+   "cumulative": 55.5,
+   "bench_cumulative": 136.6,
    "monthly": [
     {
      "month": "2024-10",
@@ -151,19 +151,25 @@
      "n": 20,
      "ret": 7.82,
      "bench": -1.11
+    },
+    {
+     "month": "2026-09",
+     "n": 20,
+     "ret": -2.8,
+     "bench": -1.76
     }
    ]
   },
   "oversold": {
    "backtested": true,
-   "months": 17,
-   "avg_monthly": 0.45,
-   "bench_avg_monthly": 6.32,
-   "win_rate": 41.2,
+   "months": 18,
+   "avg_monthly": 0.42,
+   "bench_avg_monthly": 5.87,
+   "win_rate": 44.4,
    "best": 17.67,
    "worst": -18.82,
    "cumulative": 2.4,
-   "bench_cumulative": 132.7,
+   "bench_cumulative": 128.6,
    "monthly": [
     {
      "month": "2024-10",
@@ -266,6 +272,12 @@
      "n": 2,
      "ret": -9.85,
      "bench": -1.11
+    },
+    {
+     "month": "2026-09",
+     "n": 1,
+     "ret": 0.0,
+     "bench": -1.76
     }
    ],
    "partial": "가격 조건만 재현했습니다. 실제 화면은 수익성 조건이 하나 더 붙습니다."
@@ -293,14 +305,14 @@
  },
  "signal": {
   "backtested": true,
-  "months": 23,
-  "avg_monthly": 2.96,
-  "bench_avg_monthly": 6.13,
-  "win_rate": 47.8,
+  "months": 24,
+  "avg_monthly": 2.81,
+  "bench_avg_monthly": 5.8,
+  "win_rate": 50.0,
   "best": 31.04,
   "worst": -25.12,
-  "cumulative": 68.1,
-  "bench_cumulative": 220.4,
+  "cumulative": 67.1,
+  "bench_cumulative": 214.8,
   "monthly": [
    {
     "month": "2024-10",
@@ -439,9 +451,15 @@
     "n": 11,
     "ret": 11.8,
     "bench": -1.11
+   },
+   {
+    "month": "2026-09",
+    "n": 41,
+    "ret": -0.62,
+    "bench": -1.76
    }
   ],
-  "hold_all_avg_monthly": 2.89,
-  "hold_all_cumulative": 84.7
+  "hold_all_avg_monthly": 2.81,
+  "hold_all_cumulative": 81.3
  }
 }

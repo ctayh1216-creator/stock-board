@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T19:01:24+00:00",
+ "generated_at": "2026-09-05T15:32:39+00:00",
  "benchmark": "S&P 500",
  "top_n": 20,
  "caveats": [
@@ -12,12 +12,12 @@
   "momentum": {
    "backtested": true,
    "months": 24,
-   "avg_monthly": 4.53,
+   "avg_monthly": 4.54,
    "bench_avg_monthly": 1.38,
    "win_rate": 75.0,
    "best": 23.93,
    "worst": -26.96,
-   "cumulative": 152.0,
+   "cumulative": 152.9,
    "bench_cumulative": 37.0,
    "monthly": [
     {
@@ -89,7 +89,7 @@
     {
      "month": "2025-09",
      "n": 20,
-     "ret": 12.11,
+     "ret": 12.12,
      "bench": 3.56
     },
     {
@@ -161,7 +161,7 @@
     {
      "month": "2026-09",
      "n": 20,
-     "ret": 1.05,
+     "ret": 1.42,
      "bench": 0.41
     }
    ]
@@ -300,7 +300,7 @@
     {
      "month": "2026-09",
      "n": 16,
-     "ret": 1.12,
+     "ret": 1.24,
      "bench": 0.41
     }
    ],
@@ -330,12 +330,12 @@
  "signal": {
   "backtested": true,
   "months": 24,
-  "avg_monthly": 1.38,
+  "avg_monthly": 1.37,
   "bench_avg_monthly": 1.38,
   "win_rate": 37.5,
   "best": 9.82,
   "worst": -6.42,
-  "cumulative": 36.7,
+  "cumulative": 36.4,
   "bench_cumulative": 37.0,
   "monthly": [
    {
@@ -479,11 +479,11 @@
    {
     "month": "2026-09",
     "n": 144,
-    "ret": -0.64,
+    "ret": -0.79,
     "bench": 0.41
    }
   ],
   "hold_all_avg_monthly": 1.31,
-  "hold_all_cumulative": 34.8
+  "hold_all_cumulative": 34.9
  }
 }
