@@ -20,8 +20,7 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#151517" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0C0C10">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="종목 상황실">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -33,36 +32,27 @@
  "isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}}
 </script>
 <style>
-/* 플랜비 공통 디자인 가이드(docs/디자인_가이드__공통_.md) 토큰.
-   이 제품 고유 확장은 --up / --down (시세 등락) 뿐이다. */
+/* 다크 기본. 세무 사업용 흰 가이드를 그대로 쓰다가 «토토 보드 + 토스» 로 방향을 잡았다.
+   OS 가 라이트여도 흰 화면으로 넘어가지 않는다 — 라이트는 ◐ 로 직접 켤 때만.
+   제품 고유 확장은 --up / --down (한국 관행: 상승 빨강 / 하락 파랑). */
 :root{
   color-scheme:dark;
-  --ground:#0E0E11;  --surface:#17171B;  --surface-2:#1C1C21;
-  --line:#2A2A31;    --line-strong:#4A4A55;
-  --ink:#F2F2F4;     --ink-2:#C6C6CC;    --ink-3:#96969E;   --ink-4:#7B7B85;
+  --ground:#0C0C10;  --surface:#17171C;  --surface-2:#1E1E24;
+  --line:#26262C;    --line-strong:#4A4A55;
+  --ink:#F5F5F7;     --ink-2:#C6C6CC;    --ink-3:#9A9AA4;   --ink-4:#7D7D87;
   --accent:#8E9BFF;  --accent-hover:#A5B0FF;  --accent-rgb:142 155 255;
   --accent-soft:rgb(var(--accent-rgb) / .14);
   --ok:#30DB5B;  --warn:#FFB340;  --danger:#FF6961;
   /* 제품 확장 — 시세 등락. 한국 관행에 따라 상승 빨강 / 하락 파랑. */
-  --up:#FF5A52;  --down:#5AA0FF;
+  --up:#FF4D4F;  --down:#4C8DFF;
   --sans:'Pretendard Variable',Pretendard,'Noto Sans KR','Apple SD Gothic Neo',system-ui,sans-serif;
   --display:var(--sans);
   /* 기존 클래스 호환 별칭 */
   --bg:var(--ground); --t1:var(--ink); --t2:var(--ink-3); --t3:var(--ink-4);
   --line-2:var(--line); --sunk:var(--surface); --card:var(--surface);
   --up-bg:rgb(255 90 82 / .13); --down-bg:rgb(90 160 255 / .13); --accent-bg:var(--accent-soft);
-  --shadow:none; --r:18px;
+  --shadow:none; --r:22px;
 }
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
-  color-scheme:light;
-  --ground:#FFFFFF; --surface:#F5F5F7; --surface-2:#FAFAFB;
-  --line:#E5E5EA; --line-strong:#8B95A9;
-  --ink:#1D1D1F; --ink-2:#494950; --ink-3:#6E6E73; --ink-4:#86868B;
-  --accent:#4659EF; --accent-hover:#3847CF; --accent-soft:rgb(70 89 239 / .08);
-  --ok:#248A3D; --warn:#C93400; --danger:#D70015;
-  --up:#D70015; --down:#0B5FD0;
-  --up-bg:rgb(215 0 21 / .07); --down-bg:rgb(11 95 208 / .07);
-}}
 :root[data-theme="light"]{
   color-scheme:light;
   --ground:#FFFFFF; --surface:#F5F5F7; --surface-2:#FAFAFB;
@@ -114,15 +104,18 @@ button{font:inherit;color:inherit}
 .hero p{margin:14px auto 0;max-width:620px;font-size:17px;color:var(--ink-3);
   line-height:1.59;text-wrap:balance}
 .hero .stamp{margin-top:20px;font-size:13px;color:var(--t3)}
+.hero.slim{padding:12px 22px 0;text-align:left}
+.hero.slim h1,.hero.slim p{display:none}
+.hero.slim .stamp{margin-top:0}
 
 /* ---------- layout ---------- */
 main{max-width:980px;margin:0 auto;padding:0 22px 40px}
 .view[hidden]{display:none}
 .card{background:transparent;border-radius:0;box-shadow:none;padding:0;margin:0}
-.sec-h{display:flex;align-items:baseline;gap:12px;margin:76px 0 6px;padding-top:0}
-.sec-h h2{margin:0;font-size:clamp(24px,3.4vw,34px);font-weight:700;line-height:1.3}
+.sec-h{display:flex;align-items:baseline;gap:10px;margin:34px 0 10px;padding-top:0}
+.sec-h h2{margin:0;font-size:22px;font-weight:800;line-height:1.3}
 .sec-h .n{font-size:14px;color:var(--t3);font-weight:400}
-.sec-d{margin:0 0 22px;font-size:17px;color:var(--ink-3);line-height:1.59}
+.sec-d{margin:-4px 0 12px;font-size:14.5px;color:var(--ink-3);line-height:1.55}
 
 /* ---------- 시장 지표 (히어로 하단 인라인) ---------- */
 
@@ -295,6 +288,27 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 #watch .rank{display:none}  /* 관심종목에도 순위가 없다 */
 @media(hover:hover){.lead-cat:hover{color:var(--accent)}}
 
+/* ---------- 카드 (토토 보드 + 토스) ----------
+   목록을 헤어라인으로 늘어놓는 대신 둥근 카드 안에 담는다. 카드 하나에 한 가지. */
+.cardlist{background:var(--surface);border-radius:var(--r);overflow:hidden;margin-top:2px}
+.cardlist .pick{margin:0;padding:16px 20px;border-bottom:0}
+.cardlist .pick + .pick{border-top:1px solid var(--line)}
+.cardlist .pick:hover{background:var(--surface-2)}
+.cardlist .lead{padding:0}
+.cardlist .lead + .lead{border-top:1px solid var(--line)}
+.lead-cat{padding:16px 20px 0}
+
+/* 큰 숫자 카드 — 첫 화면에서 말하는 것은 둘뿐이다. */
+.big{background:var(--surface);border-radius:var(--r);padding:24px 22px;margin-top:12px}
+.big .k{font-size:14.5px;color:var(--ink-3)}
+.big .v{font-size:clamp(38px,10vw,46px);font-weight:800;line-height:1.05;margin-top:8px;
+  letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.big .v em{font-style:normal;color:var(--up)}
+.big .v small{font-size:.55em;font-weight:800;color:var(--ink-4)}
+.big .n{margin-top:13px;font-size:14.5px;color:var(--ink-3);line-height:1.55}
+.big .bar{display:flex;height:10px;border-radius:5px;overflow:hidden;margin-top:16px;background:var(--line)}
+.big .bar i{display:block;height:100%}
+
 /* ---------- 매매 신호 ---------- */
 /* 상태는 색과 형태(점)를 같이 쓴다. 면을 칠하지 않는다 — 공통 가이드 §3 */
 .sig{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;
@@ -445,8 +459,9 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   .mkts{margin-right:2px} .mkts button{font-size:12px;padding:5px 10px}
   .mstate{display:none}
   .hero{padding:20px 16px 12px}
+  .hero.slim{padding:10px 16px 0}
   main{padding:0 16px 30px}
-  .sec-h{margin:52px 0 6px} .sec-d{font-size:15px;margin-bottom:14px}
+  .sec-h{margin:30px 0 9px} .sec-d{font-size:14px;margin-bottom:10px}
   .top{padding:22px 18px}
   .top-tk{font-size:27px} .top-px .p{font-size:21px} .top-nm{font-size:14px}
   .top-why span:first-child{font-size:19px}
@@ -883,13 +898,21 @@ function renderSignalSummary(){
   if (!box) return;
   if (!g || !g.tally){ box.innerHTML = ""; return; }
   var t = g.tally;
-  /* 숫자를 늘어놓기보다 한 문장으로 말하고, 나머지는 아래 작은 줄로 내린다. */
-  var txt = '지금 <b>살 때인 종목 ' + t.buy + '개</b>' +
-            '<span class="sig-sub">기다릴 때 ' + t.watch + ' · 팔 때 ' + t.exit;
+  /* 첫 화면에서 말하는 것은 둘뿐이다 — 오늘 몇 개가 살 때인지, 이 신호가 얼마나 맞았는지. */
+  var html = '<div class="big"><div class="k">오늘 살 때인 종목</div>' +
+    '<div class="v"><em>' + t.buy + '</em>개</div>' +
+    '<div class="n">기다릴 때 ' + t.watch + ' · 팔 때 ' + t.exit + '</div></div>';
   if (s && s.backtested && has(s.win_rate)){
-    txt += ' · 이 신호는 ' + s.months + '번 중 ' + sigWins(s) + '번 맞았어요';
+    var w = sigWins(s), l = s.months - w, pct = s.win_rate;
+    html += '<div class="big"><div class="k">이 신호 성적</div>' +
+      '<div class="v">' + w + '<small>승</small> ' + l + '<small>패</small></div>' +
+      '<div class="bar"><i style="width:' + pct + '%;background:var(--up)"></i>' +
+        '<i style="width:' + (100 - pct) + '%;background:var(--down)"></i></div>' +
+      '<div class="n">' + s.months + '번 붙어서 ' + w + '번 이겼어요' +
+      (Math.abs(s.cumulative - s.bench_cumulative) < 3
+        ? '. 지수와 거의 같았어요' : '') + '</div></div>';
   }
-  box.innerHTML = txt + '</span>';
+  box.innerHTML = html;
 }
 function sigRules(){
   var g = D && D.signal;
@@ -939,7 +962,7 @@ function renderChanges(){
     box.innerHTML = head + (since ? '<p class="rec-none">오늘은 구간이 바뀐 종목이 없어요.</p>' : "");
     return;
   }
-  box.innerHTML = head + list.slice(0, 12).map(chgHtml).join("") +
+  box.innerHTML = head + '<div class="cardlist">' + list.slice(0, 12).map(chgHtml).join("") + '</div>' +
     (list.length > 12 ? '<p class="hint">외 ' + (list.length - 12) + '종목이 더 바뀌었어요.</p>' : "");
 }
 
@@ -966,7 +989,7 @@ function renderWatch(){
   if (!rows.length){ box.innerHTML = ""; return; }
   box.innerHTML = '<div class="sec-h"><h2>내 관심종목</h2>' +
       '<span class="n">' + rows.length + '종목</span></div>' +
-    rows.map(function(r){ return pickHtml(r, ""); }).join("");
+    '<div class="cardlist">' + rows.map(function(r){ return pickHtml(r, ""); }).join("") + '</div>';
 }
 
 /* 52주 꼭대기·바닥을 오늘 밟은 종목. */
@@ -996,8 +1019,9 @@ function renderExtremes(){
   if (!hi.length && !lo.length){ box.innerHTML = ""; return; }
   box.innerHTML = '<div class="sec-h"><h2>1년 만에 최고 · 최저</h2>' +
       '<span class="n">' + (hi.length + lo.length) + '종목</span></div>' +
-    hi.slice(0, 8).map(function(r){ return extHtml(r, "high"); }).join("") +
-    lo.slice(0, 8).map(function(r){ return extHtml(r, "low"); }).join("");
+    '<div class="cardlist">' +
+      hi.slice(0, 8).map(function(r){ return extHtml(r, "high"); }).join("") +
+      lo.slice(0, 8).map(function(r){ return extHtml(r, "low"); }).join("") + '</div>';
 }
 
 /* 곧 실적을 발표하는 종목. next_earnings 는 이미 받아놓고 상세 시트 한 줄로만 쓰고 있었다. */
@@ -1028,7 +1052,7 @@ function renderEarnings(){
   if (!list.length || cat !== "all"){ box.innerHTML = ""; return; }
   box.innerHTML = '<div class="sec-h"><h2>이번 주 실적 발표</h2>' +
       '<span class="n">' + list.length + '종목</span></div>' +
-    list.slice(0, 12).map(earnHtml).join("");
+    '<div class="cardlist">' + list.slice(0, 12).map(earnHtml).join("") + '</div>';
 }
 
 function pickHtml(r, rank){
@@ -1366,14 +1390,14 @@ function renderStrategies(){
   var all = D.strategies || [];
   /* 전체 보기: 기준마다 1위 한 종목씩만. 아홉 섹션을 통째로 펼치면 15,000px 이 된다. */
   if (cat === "all"){
-    $("strats").innerHTML = all.map(function(s){
+    $("strats").innerHTML = '<div class="cardlist">' + all.map(function(s){
       var top = (s.rows || [])[0];
       return '<div class="lead">' +
         '<button class="lead-cat" type="button" data-cat="' + esc(s.key) + '">' +
           esc(s.name || s.key) + ' <span class="n">' + (s.rows || []).length + '</span></button>' +
         (top ? pickHtml(top, 1) : '<p class="empty">오늘은 걸린 종목이 없어요.</p>') +
       '</div>';
-    }).join("");
+    }).join("") + '</div>';
     return;
   }
   $("strats").innerHTML = all.filter(function(s){ return s.key === cat; }).map(function(s){
@@ -1557,8 +1581,11 @@ function setView(v){
   view = v;
   var h = HERO[v] || HERO.picks;
   $("heroT").textContent = h[0];
-  /* 추천 탭은 설명을 두지 않는다 — 아래가 바로 종목이라 한 줄도 자리를 뺏는다. */
+  /* 추천 탭은 제목도 설명도 두지 않는다 — 첫 카드가 곧 제목이다.
+     장 상태·환율 한 줄만 남긴다. 다른 탭은 제목이 있어야 어디인지 안다. */
   $("heroD").textContent = (v === "picks") ? "" : h[1];
+  var hero = document.querySelector(".hero");
+  if (hero) hero.classList.toggle("slim", v === "picks");
   ["picks", "record", "news", "mine"].forEach(function(k){ $("v-" + k).hidden = (k !== v); });
   $("seg").querySelectorAll("[data-v]").forEach(function(b){
     b.setAttribute("aria-selected", b.getAttribute("data-v") === v ? "true" : "false"); });
