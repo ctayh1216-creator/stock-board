@@ -18,7 +18,7 @@ REQUIRED_FN = ["recordHtml", "renderStrategies", "renderCats", "catCard", "rende
                "sigState", "refreshSignals", "sigLabel", "sigWhy",
                "renderEarnings", "earnHtml", "transHtml",
                "renderWatch", "watchToggle", "renderExtremes", "extHtml",
-               "renderSignalRecord"]
+               "renderSignalRecord", "btCaveatCard"]
 REQUIRED_CSS = [".mkts{", ".rec{", ".cat{", ".top{", ".pick{", ".na{", ".hold{", ".cats{",
                 ".sig{", ".sig-lv{", ".top-sig{", ".rk-item{", ".eps{"]
 REQUIRED_ID = ["cats", "strats", "mkts", "newsList", "pfHero", "uniBody", "status",

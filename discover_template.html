@@ -329,9 +329,14 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .sh-rule li{margin:3px 0}
 .sh-record{margin-top:10px;font-size:14px;color:var(--t2);line-height:1.6}
 .sh-record b{font-weight:700;color:var(--ink)}
+.note-card{background:var(--surface);border-radius:var(--r);padding:20px 22px;
+  margin-top:26px;font-size:13px;color:var(--ink-3);line-height:1.7}
+.note-card b{display:block;margin-bottom:8px;font-size:14.5px;color:var(--ink)}
 /* ---------- 전적 판 ---------- */
-.rk-item{padding:20px 4px;border-bottom:1px solid var(--line-2)}
-.rk-item:last-child{border-bottom:0}
+/* 추천 탭과 같은 카드 골격. 헤어라인 나열 대신 둥근 카드 안에 담는다. */
+.rk{background:var(--surface);border-radius:var(--r);overflow:hidden;margin-top:2px}
+.rk-item{padding:18px 20px}
+.rk-item + .rk-item{border-top:1px solid var(--line)}
 .rk-row{display:flex;align-items:baseline;gap:10px}
 .rk-n{font-size:14px;color:var(--t3);min-width:16px;flex:0 0 auto;
   font-variant-numeric:tabular-nums}
@@ -339,7 +344,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .rk-cnt{font-size:13px;color:var(--t3);flex:0 0 auto}
 .rk-wl{margin-left:auto;font-size:17px;font-weight:700;flex:0 0 auto;
   font-variant-numeric:tabular-nums}
-.rk-item .rec-bar{margin-top:10px}
+.rk-item .rec-bar{margin-top:11px}
 .rk-sub{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;
   font-size:13.5px;color:var(--t3)}
 .rk-sub b{font-weight:700;color:var(--ink)}
@@ -1191,7 +1196,7 @@ function recordList(){
   });
   var sg = BT && BT.signal;
   if (sg && sg.backtested){
-    out.push({name: "매매 신호 · 매수 구간", n: null, bt: sg, why: null});
+    out.push({name: "살 때 신호 전체", n: null, bt: sg, why: null});
   }
   out.sort(function(a, c){
     if (!!a.bt !== !!c.bt) return a.bt ? -1 : 1;
@@ -1267,7 +1272,7 @@ function renderRecord(){
     '<div class="sec-h"><h2>기준별로 보면</h2></div>' +
     '<div class="rk">' + list.map(function(x){
       return rankRow(x, x.bt ? i++ : -1); }).join("") + '</div>' +
-    btCaveatHtml();
+    btCaveatCard();
 }
 
 /* ============ 종목 상세 시트 ============ */
@@ -1480,6 +1485,11 @@ function btCaveatHtml(){
   if (!BT || !BT.caveats) return "";
   return '<br><br><b>과거 성적 표시에 대해</b><br>' +
     BT.caveats.map(function(c){ return "· " + esc(c); }).join("<br>");
+}
+/* 전적 탭 하단 주의사항은 카드 안에 담아 목록과 같은 결로 맞춘다. */
+function btCaveatCard(){
+  var h = btCaveatHtml();
+  return h ? '<div class="note-card">' + h.replace(/^<br><br>/, "") + '</div>' : "";
 }
 
 function renderNews(){
