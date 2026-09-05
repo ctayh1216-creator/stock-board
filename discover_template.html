@@ -107,7 +107,7 @@ button{font:inherit;color:inherit}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
 /* ---------- hero ---------- */
-.hero{max-width:980px;margin:0 auto;padding:46px 22px 28px;text-align:center}
+.hero{max-width:980px;margin:0 auto;padding:34px 22px 20px;text-align:center}
 .hero h1{margin:0;font-size:clamp(30px,5vw,46px);font-weight:800;
   line-height:1.18;text-wrap:balance}
 .hero p{margin:14px auto 0;max-width:620px;font-size:17px;color:var(--ink-3);
@@ -124,7 +124,7 @@ main{max-width:980px;margin:0 auto;padding:0 22px 40px}
 .sec-d{margin:0 0 22px;font-size:17px;color:var(--ink-3);line-height:1.59}
 
 /* ---------- 시장 지표 (히어로 하단 인라인) ---------- */
-.mkt{display:flex;gap:0;justify-content:center;margin:34px 0 0;
+.mkt{display:flex;gap:0;justify-content:center;margin:22px 0 0;
   border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
 .mkt>div{flex:1;max-width:220px;background:none;border-radius:0;box-shadow:none;
   padding:22px 10px;text-align:center;border-right:1px solid var(--line-2)}
@@ -154,8 +154,6 @@ main{max-width:980px;margin:0 auto;padding:0 22px 40px}
 .why span+span::before{content:"";position:absolute;left:0;top:50%;width:3px;height:3px;
   border-radius:50%;background:var(--line);transform:translateY(-50%)}
 .pick-sp{margin-left:auto;flex:0 0 auto;opacity:.6}
-.more{display:inline-block;width:auto;appearance:none;border:0;background:none;color:var(--accent);
-  font-size:17px;font-weight:400;padding:22px 4px 0;cursor:pointer;}
 .more:hover{color:var(--accent-hover);text-decoration:underline}
 .empty{font-size:17px;color:var(--t3);padding:26px 4px;}
 details.rules{margin-top:20px;border-top:1px solid var(--line-2);padding-top:16px}
@@ -262,30 +260,17 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .rec-bar{display:flex;height:5px;border-radius:3px;overflow:hidden;margin-top:7px;background:var(--line)}
 .rec-bar i{display:block;height:100%}
 
-/* ---------- 카테고리 카드 ---------- */
-.cats{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;
-  padding:20px 22px 30px;margin:0 -22px;scroll-snap-type:x mandatory;
-  scroll-padding-left:22px}
-.cats::-webkit-scrollbar{display:none}
-.cat{flex:0 0 auto;width:208px;scroll-snap-align:start;appearance:none;border:0;cursor:pointer;
-  background:var(--surface);border-radius:20px;padding:22px 20px 20px;text-align:left;
-  display:flex;flex-direction:column;color:var(--ink);font-family:inherit;
-  transition:background .22s cubic-bezier(.28,.11,.32,1), transform .22s cubic-bezier(.28,.11,.32,1)}
-@media(hover:hover){.cat:hover{background:var(--surface-2);transform:translateY(-3px)}}
+/* ---------- 카테고리 칩 ---------- */
+/* 가로 스크롤 카드였다가 되돌렸다. 아홉 개를 훑어보는 데 큰 숫자는 필요 없었고,
+   카드 높이 226px 탓에 한 화면에 1.5개밖에 안 들어왔다. */
+.cats{display:flex;flex-wrap:wrap;gap:8px;padding:14px 0 20px}
+.cat{appearance:none;border:0;cursor:pointer;background:var(--surface);color:var(--ink);
+  font-family:inherit;font-size:14.5px;font-weight:600;line-height:1;
+  padding:11px 16px;border-radius:980px;white-space:nowrap;
+  transition:background .18s cubic-bezier(.28,.11,.32,1)}
+@media(hover:hover){.cat:hover{background:var(--line)}}
 .cat:active{transform:scale(.97)}
 .cat[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
-.cat-n{font-size:17px;font-weight:700;line-height:1.35;min-height:2.7em}
-.cat-v{font-size:38px;font-weight:800;line-height:1;margin-top:18px;font-variant-numeric:tabular-nums;
-  letter-spacing:-.01em}
-.cat-l{font-size:13px;color:var(--ink-4);margin-top:8px;line-height:1.45}
-.cat[aria-pressed="true"] .cat-l{color:var(--ground);opacity:.65}
-.cat-f{display:flex;align-items:center;gap:7px;margin-top:18px;padding-top:15px;
-  border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-3)}
-.cat[aria-pressed="true"] .cat-f{border-color:var(--ground);opacity:.75;color:var(--ground)}
-.cat-f b{font-weight:700}
-.cat-all{width:126px;justify-content:center;align-items:center;text-align:center;padding:22px 14px}
-.cat-all .cat-n{min-height:0;font-size:18px}
-.cat-all .cat-l{margin-top:8px}
 
 /* ---------- 1위 카드 ---------- */
 .top{display:block;padding:26px 22px;border:0;border-radius:18px;margin-bottom:10px;
@@ -305,6 +290,15 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .top-why span:first-child{border-top:0;padding-top:0;color:var(--ink);font-size:22px;font-weight:700;line-height:1.35}
 .top-sp{margin-top:16px}
 .top-sp svg{display:block;width:100%;height:64px}
+
+/* ---------- 기준별 1위 (전체 보기) ---------- */
+.lead{padding-top:14px}
+.lead + .lead{border-top:1px solid var(--line-2)}
+.lead-cat{appearance:none;border:0;background:none;cursor:pointer;font-family:inherit;
+  display:block;padding:0 4px;color:var(--ink-3);font-size:13.5px;font-weight:600}
+.lead-cat .n{color:var(--t4);font-weight:400;margin-left:4px}
+.lead .rank{display:none}   /* 한 줄뿐이라 순위 번호가 뜻이 없다 */
+@media(hover:hover){.lead-cat:hover{color:var(--accent)}}
 
 /* ---------- 매매 신호 ---------- */
 /* 상태는 색과 형태(점)를 같이 쓴다. 면을 칠하지 않는다 — 공통 가이드 §3 */
@@ -441,7 +435,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   .hd-in{padding:0 16px;gap:14px;height:48px}
   .brand{font-size:17px} .seg{gap:16px} .seg button{font-size:13px}
   .mstate{display:none}
-  .hero{padding:30px 16px 20px}
+  .hero{padding:20px 16px 12px}
   main{padding:0 16px 30px}
   .sec-h{margin:52px 0 6px} .sec-d{font-size:15px;margin-bottom:14px}
   .mkt{flex-wrap:wrap} .mkt>div{max-width:none;min-width:33%;padding:16px 6px}
@@ -457,7 +451,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   .pick-tk{font-size:18px} .pick-nm{font-size:13.5px}
   .pick-px{gap:8px;flex-direction:column;align-items:flex-end}
   .pick-px .p{font-size:17px} .pick-px .c{font-size:14px}
-  .cats{padding:16px 16px 26px;margin:0 -16px;scroll-padding-left:16px}
+  .cats{padding:12px 0 16px}
   .top-sp svg{height:52px}
   .why{gap:5px;flex-direction:column} .why span{font-size:13px;white-space:normal}
   .why span+span{padding-left:0} .why span+span::before{display:none}
@@ -489,7 +483,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 
 <section class="hero">
   <h1 id="heroT">오늘 주목할 종목</h1>
-  <p id="heroD">S&amp;P 500 500여 종목을 규칙으로 나눴습니다.</p>
+  <p id="heroD"></p>
   <div class="stamp"><span id="mstatTxt2">—</span> · <span class="num" id="fresh">—</span></div>
 </section>
 
@@ -726,7 +720,6 @@ function shortKR(t){ return String(t).replace(/\.(KS|KQ)$/, ""); }
 function mainLabel(r){ return isKR() ? (r.name || shortKR(r.ticker)) : r.ticker; }
 function subLabel(r){ return isKR() ? shortKR(r.ticker) : (r.name || ""); }
 var view = "picks";
-var expanded = {};
 var cat = "all";
 var tblState = { q:"", sector:"", sortK:"composite", dir:"desc" };
 var TBL = {};
@@ -1024,40 +1017,18 @@ var GLOSSARY = {
   "1년": ["최근 1년 수익률", ""]
 };
 function perText(v){ return !has(v) ? NB : (v <= 0 ? "적자" : num1(v)); }
-function fmtHead(h){
-  if (!h || !has(h.value)) return NB;
-  if (h.fmt === "pct")   return pct0(h.value);
-  if (h.fmt === "pct0")  return num1(h.value) + "%";
-  if (h.fmt === "count") return num1(h.value) + "번";
-  return num1(h.value);
-}
-
 function catCard(st){
-  var b = catStat(st.key);
-  var top = (st.rows && st.rows[0]) ? st.rows[0] : null;
-  var val, lab;
-  if (b){
-    var w = Math.round(b.win_rate * b.months / 100);
-    val = w + "승 " + (b.months - w) + "패";
-    lab = benchName() + "과 " + b.months + "번 붙은 성적";
-  }
-  else  { val = fmtHead(st.headline); lab = st.headline ? st.headline.label : (st.rows||[]).length + "종목"; }
+  /* 카드에 큰 숫자를 넣었더니 226px 짜리가 아홉 개 되어 옆으로 계속 스크롤해야 했다.
+     고를 때 필요한 건 이름뿐이라 칩으로 되돌린다 — 아홉 개가 두 줄에 다 보인다. */
   return '<button class="cat" type="button" data-cat="' + esc(st.key) + '" aria-pressed="' +
-    (cat === st.key ? "true" : "false") + '">' +
-    '<span class="cat-n">' + esc(st.name || st.key) + '</span>' +
-    '<span class="cat-v num">' + val + '</span>' +
-    '<span class="cat-l">' + esc(lab) + '</span>' +
-    '<span class="cat-f">' + (top ? '<b>1위</b> ' + esc(mainLabel(top)) : "해당 종목 없음") + '</span>' +
-  '</button>';
+    (cat === st.key ? "true" : "false") + '">' + esc(st.short || st.name || st.key) + '</button>';
 }
 
 function renderCats(){
-  var list = D.strategies || [];
   $("cats").innerHTML =
     '<button class="cat cat-all" type="button" data-cat="all" aria-pressed="' +
-      (cat === "all" ? "true" : "false") + '"><span class="cat-n">전체</span>' +
-      '<span class="cat-l">' + list.length + '가지 기준</span></button>' +
-    list.map(catCard).join("");
+      (cat === "all" ? "true" : "false") + '">전체</button>' +
+    (D.strategies || []).map(catCard).join("");
 }
 
 function recordHtml(key){
@@ -1084,11 +1055,6 @@ function recordHtml(key){
 /* ============ 전적 ============
    기준마다 지수와 붙은 성적을 한 판에 세운다. 성적 있는 것을 승률 순으로 위에 놓고,
    잴 수 없는 기준은 왜 못 재는지 적어 아래에 그대로 남긴다 — 빼면 골라 보여준 게 된다. */
-var NUM_KO = ["", "한", "두", "세", "네", "다섯", "여섯", "일곱", "여덟", "아홉", "열", "열한", "열두"];
-function catCount(){
-  var n = (D && D.strategies || []).length;
-  return (NUM_KO[n] || n) + " 가지";
-}
 function recordList(){
   var out = (D && D.strategies || []).map(function(s){
     var b = BT && BT.strategies && BT.strategies[s.key];
@@ -1261,20 +1227,25 @@ function closeSheet(){
 }
 
 function renderStrategies(){
-  var list = (D.strategies || []).filter(function(s){ return cat === "all" || s.key === cat; });
-  var solo = cat !== "all";
-  $("strats").innerHTML = list.map(function(s){
+  var all = D.strategies || [];
+  /* 전체 보기: 기준마다 1위 한 종목씩만. 아홉 섹션을 통째로 펼치면 15,000px 이 된다. */
+  if (cat === "all"){
+    $("strats").innerHTML = all.map(function(s){
+      var top = (s.rows || [])[0];
+      return '<div class="lead">' +
+        '<button class="lead-cat" type="button" data-cat="' + esc(s.key) + '">' +
+          esc(s.name || s.key) + ' <span class="n">' + (s.rows || []).length + '</span></button>' +
+        (top ? pickHtml(top, 1) : '<p class="empty">오늘은 걸린 종목이 없어요.</p>') +
+      '</div>';
+    }).join("");
+    return;
+  }
+  $("strats").innerHTML = all.filter(function(s){ return s.key === cat; }).map(function(s){
     var rows = s.rows || [];
-    /* 전체 보기에서는 카테고리당 5개, 하나만 볼 때는 전부 */
-    var open = solo || expanded[s.key];
-    var rest = open ? rows.slice(1) : rows.slice(1, 5);
     var body = rows.length
       ? topHtml(rows[0]) +
-        (rest.length ? '<div class="picks">' + rest.map(function(r, i){
-            return pickHtml(r, i + 2); }).join("") + '</div>' : "") +
-        (!open && rows.length > 5
-          ? '<button class="more" type="button" data-exp="' + esc(s.key) + '">' +
-            rows.length + '개 모두 보기</button>' : "")
+        (rows.length > 1 ? '<div class="picks">' + rows.slice(1).map(function(r, i){
+            return pickHtml(r, i + 2); }).join("") + '</div>' : "")
       : '<p class="empty">오늘은 이 조건을 만족한 종목이 없습니다. 규칙이 걸러낸 결과이며 오류가 아닙니다.</p>';
     var rules = (s.rules || []).map(function(x){ return '<span>' + esc(x) + '</span>'; }).join("");
     return '<div class="sec-h">' +
@@ -1450,11 +1421,8 @@ function setView(v){
   view = v;
   var h = HERO[v] || HERO.picks;
   $("heroT").textContent = h[0];
-  $("heroD").textContent = (v === "picks")
-    ? (market === "kr"
-        ? "코스피·코스닥 주요 160여 종목을 " + catCount() + " 기준으로 나눴습니다."
-        : "S&P 500 500여 종목을 " + catCount() + " 기준으로 나눴습니다.")
-    : h[1];
+  /* 추천 탭은 설명을 두지 않는다 — 아래가 바로 종목이라 한 줄도 자리를 뺏는다. */
+  $("heroD").textContent = (v === "picks") ? "" : h[1];
   ["picks", "record", "news", "mine"].forEach(function(k){ $("v-" + k).hidden = (k !== v); });
   $("seg").querySelectorAll("[data-v]").forEach(function(b){
     b.setAttribute("aria-selected", b.getAttribute("data-v") === v ? "true" : "false"); });
@@ -1549,7 +1517,7 @@ $("mkts").addEventListener("click", function(e){
   market = mk;
   $("mkts").querySelectorAll("[data-mk]").forEach(function(x){
     x.setAttribute("aria-selected", x.getAttribute("data-mk") === mk ? "true" : "false"); });
-  cat = "all"; expanded = {};
+  cat = "all";
   var c = CACHE[mk];
   if (c && c.D){ D = c.D; LIVE = c.LIVE; NEWS = c.NEWS; mergeLive(); renderAll(); }
   else { D = null; LIVE = null; NEWS = null; load(); }
@@ -1565,11 +1533,6 @@ $("cats").addEventListener("click", function(e){
 $("strats").addEventListener("click", function(e){
   var card = e.target.closest ? e.target.closest("[data-tk]") : null;
   if (card){ openSheet(card.getAttribute("data-tk")); return; }
-  var b = e.target.closest ? e.target.closest("[data-exp]") : null;
-  if (!b) return;
-  var k = b.getAttribute("data-exp");
-  expanded[k] = !expanded[k];
-  renderStrategies();
 });
 $("allBox").addEventListener("toggle", function(){ if ($("allBox").open) renderTable(); });
 $("uniBody").addEventListener("click", function(e){

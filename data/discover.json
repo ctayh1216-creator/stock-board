@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T13:48:47+00:00",
+ "generated_at": "2026-09-05T14:04:42+00:00",
  "fx": {
   "rate": 1351.1,
   "prev": 1355.41,
@@ -722,7 +722,8 @@
     "label": "시장에서 차지하는 비중",
     "value": 41.3,
     "fmt": "pct0"
-   }
+   },
+   "short": "시총 1~10위"
   },
   {
    "key": "momentum",
@@ -1701,7 +1702,8 @@
     "label": "평균 6개월 수익률",
     "value": 115.5,
     "fmt": "pct"
-   }
+   },
+   "short": "잘 오르는 중"
   },
   {
    "key": "earnings",
@@ -2680,7 +2682,8 @@
     "label": "4번 중 기대 상회",
     "value": 3.9,
     "fmt": "count"
-   }
+   },
+   "short": "실적 좋은"
   },
   {
    "key": "growth",
@@ -3653,7 +3656,8 @@
     "label": "평균 매출 성장",
     "value": 151.8,
     "fmt": "pct"
-   }
+   },
+   "short": "빠르게 크는"
   },
   {
    "key": "value_quality",
@@ -4632,7 +4636,8 @@
     "label": "평균 선행 PER",
     "value": 9.8,
     "fmt": "num"
-   }
+   },
+   "short": "싸고 잘 버는"
   },
   {
    "key": "dividend",
@@ -5610,7 +5615,8 @@
     "label": "평균 배당수익률",
     "value": 5.0,
     "fmt": "pct0"
-   }
+   },
+   "short": "배당"
   },
   {
    "key": "stable",
@@ -6588,7 +6594,8 @@
     "label": "평균 변동성",
     "value": 22.9,
     "fmt": "pct0"
-   }
+   },
+   "short": "덜 흔들리는"
   },
   {
    "key": "oversold",
@@ -6894,7 +6901,8 @@
     "label": "평균 RSI",
     "value": 29.7,
     "fmt": "num"
-   }
+   },
+   "short": "많이 떨어진"
   },
   {
    "key": "earnings_miss",
@@ -7871,7 +7879,8 @@
     "label": "직전 실적 중간값",
     "value": -10.4,
     "fmt": "pct"
-   }
+   },
+   "short": "실적 어긋난"
   }
  ],
  "table": [

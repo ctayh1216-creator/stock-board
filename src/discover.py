@@ -49,6 +49,20 @@ SIGNAL_RULES = [
     "둘 다 아니면 관망이에요",
 ]
 SIGNAL_LEVELS = ["목표가는 52주 최고가, 손절선은 50일 평균선이에요"]
+# 칩에 쓰는 짧은 이름. 「실적이 계속 잘 나오는 회사」를 칩에 그대로 넣었더니
+# 모바일에서 칩이 네 줄(251px)을 먹었다. 섹션 제목은 긴 이름 그대로 쓴다.
+SHORT_NAME = {
+    "bigcap":        "시총 1~10위",
+    "momentum":      "잘 오르는 중",
+    "earnings":      "실적 좋은",
+    "growth":        "빠르게 크는",
+    "value_quality": "싸고 잘 버는",
+    "dividend":      "배당",
+    "stable":        "덜 흔들리는",
+    "oversold":      "많이 떨어진",
+    "earnings_miss": "실적 어긋난",
+}
+
 SIGNAL_LABEL = {"buy": "매수 구간", "watch": "관망", "exit": "청산 구간"}
 # 판정 이유는 코드로 내려보내고 문구는 여기 한 군데에만 둔다. 화면은 코드로 찾아 쓴다 —
 # 규칙을 화면에서도 다시 계산해야 하는데(시세는 3분, 이 파일은 하루 1회 갱신),
@@ -745,6 +759,7 @@ def main():
                         (build_oversold, (rows,)),
                         (build_earnings_miss, (rows,))):
         st, n = build(*args)
+        st["short"] = SHORT_NAME.get(st["key"], st["name"])
         strategies.append(st)
         counts[st["key"]] = n
         print(f"[info] {st['key']}: {n}종목 충족", file=sys.stderr)
