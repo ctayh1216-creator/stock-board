@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-05T15:32:53+00:00",
+ "generated_at": "2026-09-05T16:06:59+00:00",
  "benchmark": "코스피 200",
  "top_n": 20,
  "caveats": [
@@ -281,6 +281,14 @@
     }
    ],
    "partial": "가격 조건만 재현했습니다. 실제 화면은 수익성 조건이 하나 더 붙습니다."
+  },
+  "bigcap": {
+   "backtested": false,
+   "reason": "과거 시점의 시가총액 순위를 알 수 없어 그때 어느 열 종목이었을지 재현할 수 없습니다."
+  },
+  "earnings_miss": {
+   "backtested": false,
+   "reason": "과거 실적 서프라이즈 이력이 없어 재현할 수 없습니다."
   },
   "value_quality": {
    "backtested": false,
