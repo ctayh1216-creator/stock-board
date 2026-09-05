@@ -366,7 +366,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .sig-sub{display:block;margin-top:3px;font-size:13.5px;color:var(--t3)}
 .sig-sum:empty{display:none}
 /* 칩 바로 다음 섹션은 칩 줄이 이미 구분을 해준다 — 76px 여백까지 두면 빈 띠가 생긴다. */
-#chg .sec-h{margin-top:34px}
+#chg .sec-h{margin-top:28px}
 .rank{display:inline-block;min-width:22px;font-size:14px;color:var(--t3);font-variant-numeric:tabular-nums}
 
 /* ---------- 종목 상세 시트 ---------- */
@@ -525,11 +525,12 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 
   <section class="view" id="v-picks">
     <p class="sig-sum" id="sigSum"></p>
-    <div class="cats" id="cats"></div>
-    <section id="watch"></section>
     <section id="chg"></section>
+    <section id="watch"></section>
+    <section id="sigRec"></section>
     <section id="earn"></section>
     <section id="ext"></section>
+    <div class="cats" id="cats"></div>
     <div id="strats"></div>
     <details class="all" id="allBox">
       <summary>S&amp;P 500 전체 종목 표 보기</summary>
@@ -894,25 +895,28 @@ function sigRecord(){
 }
 /* 배지만 보고 믿는 일이 없도록, 목록 위에 집계와 판정을 같이 둔다. */
 function renderSignalSummary(){
-  var g = D && D.signal, s = BT && BT.signal, box = $("sigSum");
+  var g = D && D.signal, box = $("sigSum");
   if (!box) return;
   if (!g || !g.tally){ box.innerHTML = ""; return; }
   var t = g.tally;
-  /* 첫 화면에서 말하는 것은 둘뿐이다 — 오늘 몇 개가 살 때인지, 이 신호가 얼마나 맞았는지. */
-  var html = '<div class="big"><div class="k">오늘 살 때인 종목</div>' +
+  /* 첫 화면은 이 카드 하나 + 오늘 바뀐 신호 뿐이다. 나머지는 전부 아래로 내렸다. */
+  box.innerHTML = '<div class="big"><div class="k">오늘 살 때인 종목</div>' +
     '<div class="v"><em>' + t.buy + '</em>개</div>' +
     '<div class="n">기다릴 때 ' + t.watch + ' · 팔 때 ' + t.exit + '</div></div>';
-  if (s && s.backtested && has(s.win_rate)){
-    var w = sigWins(s), l = s.months - w, pct = s.win_rate;
-    html += '<div class="big"><div class="k">이 신호 성적</div>' +
-      '<div class="v">' + w + '<small>승</small> ' + l + '<small>패</small></div>' +
-      '<div class="bar"><i style="width:' + pct + '%;background:var(--up)"></i>' +
-        '<i style="width:' + (100 - pct) + '%;background:var(--down)"></i></div>' +
-      '<div class="n">' + s.months + '번 붙어서 ' + w + '번 이겼어요' +
-      (Math.abs(s.cumulative - s.bench_cumulative) < 3
-        ? '. 지수와 거의 같았어요' : '') + '</div></div>';
-  }
-  box.innerHTML = html;
+}
+/* 신호 성적은 첫 화면에서 자리를 다투지 않게 «오늘 바뀐 신호» 아래로 내린다. */
+function renderSignalRecord(){
+  var s = BT && BT.signal, box = $("sigRec");
+  if (!box) return;
+  if (!s || !s.backtested || !has(s.win_rate) || cat !== "all"){ box.innerHTML = ""; return; }
+  var w = sigWins(s), l = s.months - w, pct = s.win_rate;
+  box.innerHTML = '<div class="big"><div class="k">이 신호 성적</div>' +
+    '<div class="v">' + w + '<small>승</small> ' + l + '<small>패</small></div>' +
+    '<div class="bar"><i style="width:' + pct + '%;background:var(--up)"></i>' +
+      '<i style="width:' + (100 - pct) + '%;background:var(--down)"></i></div>' +
+    '<div class="n">' + s.months + '번 붙어서 ' + w + '번 이겼어요' +
+    (Math.abs(s.cumulative - s.bench_cumulative) < 3 ? '. 지수와 거의 같았어요' : '') +
+    '</div></div>';
 }
 function sigRules(){
   var g = D && D.signal;
@@ -1597,8 +1601,8 @@ function setView(v){
 function renderAll(){
   paintStatus();
   setView(view); renderMarket(); renderSignalSummary(); renderCats();
-  renderWatch(); renderChanges(); renderEarnings(); renderExtremes();
-  renderStrategies(); renderRecord();
+  renderChanges(); renderWatch(); renderSignalRecord(); renderEarnings();
+  renderExtremes(); renderStrategies(); renderRecord();
   rebuildSectors(); renderTable();
   renderNews(); renderPortfolio();
   $("status").innerHTML = "";
@@ -1691,8 +1695,8 @@ $("cats").addEventListener("click", function(e){
   var b = e.target.closest ? e.target.closest("[data-cat]") : null;
   if (!b) return;
   cat = b.getAttribute("data-cat");
-  renderCats(); renderWatch(); renderChanges(); renderEarnings(); renderExtremes();
-  renderStrategies(); animateIn();
+  renderCats(); renderChanges(); renderWatch(); renderSignalRecord();
+  renderEarnings(); renderExtremes(); renderStrategies(); animateIn();
   window.scrollTo({top:0, behavior:"smooth"});
 });
 /* 핸들러가 #strats 에만 걸려 있어서, 나중에 붙인 «오늘 바뀐 신호»·«실적 발표» 행은
