@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.parse
@@ -19,8 +20,6 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-
-import yfinance as yf
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -55,6 +54,18 @@ def targets(sfx: str = "") -> list[tuple[str, str]]:
     return out[:MAX_TICKERS]
 
 
+HANGUL = re.compile(r"[가-힣]")
+
+
+def is_korean(title: str) -> bool:
+    """제목에 한글이 하나도 없으면 한국어 기사가 아니다.
+
+    구글 RSS 를 hl=ko 로 불러도 영문 매체 기사가 섞여 들어온다(실측 19건).
+    lang 필드만 믿으면 «국내 언론이 다룬 기사» 라는 화면 설명과 어긋난다.
+    """
+    return bool(HANGUL.search(title or ""))
+
+
 def google_rss(query: str, limit: int) -> list[dict]:
     url = ("https://news.google.com/rss/search?q=" + urllib.parse.quote(query)
            + "&hl=ko&gl=KR&ceid=KR:ko")
@@ -78,7 +89,10 @@ def google_rss(query: str, limit: int) -> list[dict]:
         pub = src.text if src is not None else None
         if pub and title.endswith(" - " + pub):
             title = title[: -len(" - " + pub)]
-        rows.append({"title": title.strip(), "publisher": pub, "url": link,
+        title = title.strip()
+        if not is_korean(title):
+            continue
+        rows.append({"title": title, "publisher": pub, "url": link,
                      "at": at.isoformat() if at else None, "lang": "ko"})
         if len(rows) >= limit:
             break
@@ -95,29 +109,6 @@ def ko_headlines(ticker: str, name: str, kr_market: bool = False) -> list[dict]:
         return google_rss(query, PER_TICKER)
     except Exception:
         return []
-
-
-def en_headlines(ticker: str) -> list[dict]:
-    try:
-        items = yf.Ticker(ticker).news or []
-    except Exception:
-        return []
-    rows = []
-    for it in items:
-        c = it.get("content") or it
-        title = c.get("title")
-        url = ((c.get("canonicalUrl") or {}).get("url")
-               or (c.get("clickThroughUrl") or {}).get("url") or c.get("link"))
-        if not title or not url:
-            continue
-        rows.append({"title": title.strip(),
-                     "publisher": ((c.get("provider") or {}).get("displayName")
-                                   or c.get("publisher")),
-                     "url": url, "at": c.get("pubDate") or c.get("displayTime"),
-                     "lang": "en"})
-        if len(rows) >= PER_TICKER:
-            break
-    return rows
 
 
 def main() -> int:
@@ -144,19 +135,14 @@ def main() -> int:
 
     ts = targets(sfx)
     print(f"[news] {len(ts)}종목 (한국어 우선) 수집", file=sys.stderr)
-    by, ko_n, en_n = {}, 0, 0
+    by, ko_n = {}, 0
     for i, (t, name) in enumerate(ts):
         rows = ko_headlines(t, name, kr)
         if rows:
             ko_n += 1
-        elif not kr:
-            rows = en_headlines(t)
-            if rows:
-                en_n += 1
-        if rows:
             by[t] = rows
         if i % 20 == 19:
-            print(f"[news] {i + 1}/{len(ts)} (ko {ko_n} / en {en_n})", file=sys.stderr)
+            print(f"[news] {i + 1}/{len(ts)} (한국어 {ko_n}종목)", file=sys.stderr)
         time.sleep(0.25)
 
     market = []
@@ -169,7 +155,7 @@ def main() -> int:
            "tickers": len(by), "market": market, "by_ticker": by}
     DATA.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n")
-    print(f"[news] wrote {OUT} — 한국어 {ko_n} / 영어폴백 {en_n} / 시장 {len(market)}건",
+    print(f"[news] wrote {OUT} — 한국어 {ko_n}종목 / 시장 {len(market)}건",
           file=sys.stderr)
     return 0
 

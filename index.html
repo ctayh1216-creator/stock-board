@@ -159,14 +159,14 @@ details.rules[open] summary::after{content:" ⌃"}
 
 /* ---------- 뉴스 ---------- */
 .news{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
-.na{display:block;padding:26px 12px;border-bottom:1px solid var(--line-2);text-decoration:none;
+.na{display:block;padding:17px 12px;border-bottom:1px solid var(--line-2);text-decoration:none;
   margin:0 -8px;transition:background .18s}
 .na:hover{background:var(--surface-2)}
 .na .tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:0;border-radius:0;
   background:none;color:var(--t3);margin-bottom:8px;letter-spacing:.02em;text-transform:uppercase}
 .na .tag.mine{color:var(--accent)}
-.na h3{margin:0;font-size:20px;font-weight:700;line-height:1.35}
-.na .meta{margin-top:9px;font-size:14px;color:var(--t3)}
+.na h3{margin:0;font-size:18px;font-weight:700;line-height:1.4}
+.na .meta{margin-top:6px;font-size:13.5px;color:var(--t3)}
 
 /* ---------- 내 자산 ---------- */
 .pf-hero{text-align:center;padding:22px 0 6px}
@@ -452,7 +452,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   .top-sp svg{height:52px}
   .why{gap:5px;flex-direction:column} .why span{font-size:13px;white-space:normal}
   .why span+span{padding-left:0} .why span+span::before{display:none}
-  .na{padding:20px 8px;margin:0 -6px} .na h3{font-size:18px}
+  .na{padding:15px 8px;margin:0 -6px} .na h3{font-size:17px}
   .pf-grid{grid-template-columns:1fr 1fr} .pf-grid div:nth-child(2){border-right:0}
   .pf-grid div:nth-child(-n+2){border-bottom:1px solid var(--line-2)}
   .form{grid-template-columns:1fr} .btn{width:100%;text-align:center}
@@ -1337,7 +1337,7 @@ function renderNews(){
     return '<a class="na" href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' +
       '<span class="tag ' + n.cls + '">' +
         (n.t !== "시장" ? logoHtml(n.t, 16) + " " : "") +
-        esc(n.t) + (n.lang === "en" ? " · EN" : "") + "</span>" +
+        esc(n.t) + "</span>" +
       "<h3>" + esc(n.title) + "</h3>" +
       '<div class="meta">' + esc(n.pub || "") + " · " + relTime(n.at) + "</div></a>";
   }).join("") || '<p class="empty">표시할 뉴스가 없습니다.</p>';
@@ -1410,8 +1410,7 @@ var HERO = {
   picks: ["오늘 주목할 종목", ""],
   record:["전적",
           "기준마다 지수와 붙은 성적."],
-  news:  ["오늘의 시장 뉴스",
-          "국내 언론이 다룬 미국 증시·종목 기사를 모았습니다. 제목을 누르면 원문으로 이동합니다."],
+  news:  ["오늘의 시장 뉴스", "국내 언론이 다룬 기사예요. 제목을 누르면 원문으로 갑니다."],
   mine:  ["내 종목",
           "보유 종목을 넣으면 지금 시세로 계산합니다. 입력한 내용은 이 기기에만 저장됩니다."]
 };
