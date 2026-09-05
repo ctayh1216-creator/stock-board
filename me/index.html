@@ -29,20 +29,10 @@
   --line-strong-alias:var(--line-strong);
   --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
   --grid:var(--line); --glow:transparent;
-  --shadow:0 1px 2px rgb(0 0 0 / .04), 0 10px 30px -18px rgb(0 0 0 / .18);
+  --r:22px;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  color-scheme:dark;
-  --ground:#151517; --surface:#1F1F22; --surface-2:#1A1A1C;
-  --line:#33333A; --line-strong:#5A5A64;
-  --ink:#F2F2F4; --ink-2:#C6C6CC; --ink-3:#96969E; --ink-4:#86868B;
-  --accent:#8E9BFF; --accent-hover:#A5B0FF; --accent-soft:rgba(142,155,255,.12);
-  --ok:#30DB5B; --warn:#FFB340; --danger:#FF6961;
-  --up:#FF6961; --down:#6FA8FF;
-  --up-soft:rgb(255 105 97 / .12); --down-soft:rgb(111 168 255 / .12);
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
-  --shadow:0 1px 2px rgb(0 0 0 / .3), 0 10px 30px -18px rgb(0 0 0 / .6);
-}}
+/* OS 다크 설정은 따라가지 않는다. 공개 보드를 라이트 하나로 고정하면서,
+   맥이 다크면 콘솔만 검게 뜨는 어긋남이 생겼다. 아래 블록은 토글용으로 남겨 둔다. */
 :root[data-theme="dark"]{
   color-scheme:dark;
   --ground:#151517; --surface:#1F1F22; --surface-2:#1A1A1C;
@@ -53,7 +43,6 @@
   --up:#FF6961; --down:#6FA8FF;
   --up-soft:rgb(255 105 97 / .12); --down-soft:rgb(111 168 255 / .12);
   --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
-  --shadow:0 1px 2px rgb(0 0 0 / .3), 0 10px 30px -18px rgb(0 0 0 / .6);
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -66,7 +55,7 @@ body{margin:0;background:var(--bg);color:var(--ink);
 
 /* ---------- header ---------- */
 header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);
-  background:color-mix(in srgb, var(--bg) 72%, transparent);
+  background:color-mix(in srgb, var(--bg) 90%, transparent);
   -webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5)}
 .hd-top{max-width:1280px;margin:0 auto;padding:14px 20px 0;display:flex;align-items:baseline;gap:10px}
 .brand{font-size:19px;font-weight:700}
@@ -76,15 +65,14 @@ header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);
 .eyebrow{font-size:13px;color:var(--ink-3);font-weight:500;margin-bottom:6px}
 .hero-val{font-family:var(--sans);font-size:clamp(30px,4.6vw,46px);
   font-weight:800;line-height:1;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
-.hero-sub{font-size:13px;margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.hero-sub>.dim{display:none}
-.hero-sub{font-size:14.5px;color:var(--ink-3)}
+.hero-sub{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;
+  font-size:14.5px;color:var(--ink-3)}
 .hero-sub .num{font-weight:700;font-size:15px}
-.hero-sub>.dim{display:inline;color:var(--ink-4)}
+.hero-sub>.dim{color:var(--ink-4)}
 .hero-sub .muted{color:var(--ink-3)}
 .hero-sub .muted b{font-weight:700;color:var(--ink)}
 .kv{display:flex;flex-direction:column;gap:3px;background:var(--surface);
-  border-radius:14px;padding:11px 15px}
+  border-radius:16px;padding:12px 16px}
 .kv .v{font-family:var(--sans);font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15}
 .kv .l{font-size:12.5px;color:var(--ink-3);font-weight:400}
 .spacer{flex:1 1 auto}
@@ -103,41 +91,41 @@ nav::-webkit-scrollbar{display:none}
 .tab:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 
 /* ---------- cards ---------- */
-.grid{display:grid;gap:16px;margin-top:20px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:20px}
 .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}}
-.card{background:var(--surface);border-radius:18px;padding:20px 22px 22px}
-.card>h3{margin:0 0 4px;font-size:15px;font-weight:700;}
-.card>.hint{margin:0 0 16px;font-size:12px;color:var(--ink-2);line-height:1.65}
+@media(max-width:900px){.g2,.g3{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface);border-radius:var(--r);padding:20px 22px 22px;min-width:0}
+.card>h3{margin:0 0 4px;font-size:16px;font-weight:700}
+.card>.hint{margin:0 0 16px;font-size:13.5px;color:var(--ink-3);line-height:1.6}
 .card.flush{padding:20px 0 6px}
 .card.flush>h3,.card.flush>.hint{padding:0 22px}
 
 /* ---------- tables ---------- */
 .scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:12.5px}
-th,td{padding:9px 10px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
-th{font-size:10.5px;letter-spacing:.03em;color:var(--ink-3);font-weight:700;
-  border-bottom:1px solid var(--line-strong);position:sticky;top:0;background:var(--surface);z-index:1}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:11px 10px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+th{font-size:12.5px;color:var(--ink-3);font-weight:600;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:1}
 th:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:6px}
 th:first-child,td:first-child{text-align:left;padding-left:22px}
 th:last-child,td:last-child{padding-right:22px}
 tbody tr:hover{background:var(--surface-2)}
 tbody tr:last-child td{border-bottom:0}
-td.tk{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.01em}
-tr.total td{border-top:1px solid var(--line-strong);font-weight:700;background:var(--sunk)}
+td.tk{font-family:var(--sans);font-weight:700;font-size:13.5px}
+tr.total td{border-top:1px solid var(--line);font-weight:700}
 
 /* ---------- bits ---------- */
 .chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;padding:3.5px 10px;
   border-radius:999px;border:1px solid transparent;letter-spacing:.01em;line-height:1.5}
 .chip.hot{color:var(--up);background:var(--up-soft)}
 .chip.cold{color:var(--down);background:var(--down-soft)}
-.chip.flat{color:var(--ink-2);border-color:var(--line);background:var(--surface-2)}
+.chip.flat{color:var(--ink-2);background:var(--surface-2)}
 button.chip{cursor:pointer;font:inherit;font-size:11px;font-weight:700}
 button.chip:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .bar-track{height:7px;background:color-mix(in srgb, var(--ink) 9%, transparent);border-radius:4px;overflow:hidden;min-width:56px}
 .bar-fill{height:100%;border-radius:4px}
-.note{font-size:11.5px;color:var(--ink-3);line-height:1.7;margin:12px 22px 0;padding:11px 0 14px;border-top:1px solid var(--line)}
+.note{font-size:12.5px;color:var(--ink-4);line-height:1.7;margin:12px 22px 0;padding:12px 0 14px;border-top:1px solid var(--line)}
 .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--ink-2);margin:0 0 12px;align-items:center}
 .legend i{width:16px;height:0;border-top-width:3px;border-top-style:solid;border-radius:2px;
   display:inline-block;vertical-align:middle;margin-right:6px}
@@ -149,13 +137,13 @@ svg{display:block;max-width:100%}
 .dlabel{font-family:var(--sans);font-size:10.5px;font-weight:700}
 .tip{position:fixed;pointer-events:none;background:color-mix(in srgb, var(--surface) 92%, transparent);
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
-  border:1px solid var(--line-strong);border-radius:12px;padding:10px 12px;font-size:11.5px;
-  box-shadow:var(--shadow);z-index:60;opacity:0;transition:opacity .1s;min-width:160px}
+  border:1px solid var(--line);border-radius:14px;padding:11px 13px;font-size:12.5px;
+  box-shadow:0 8px 30px -10px rgb(0 0 0 / .25);z-index:60;opacity:0;transition:opacity .1s;min-width:160px}
 .tip .r{display:flex;justify-content:space-between;gap:16px}
 .tip .h{font-weight:700;margin-bottom:6px;font-family:var(--sans);font-size:11px;color:var(--ink-2)}
-.banner{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);
-  border-left:3px solid var(--warn);border-radius:14px;padding:14px 18px;font-size:12.5px;
-  color:var(--ink-2);line-height:1.7;margin-top:16px;box-shadow:var(--shadow)}
+.banner{display:flex;gap:12px;align-items:flex-start;background:var(--surface);
+  border-radius:var(--r);padding:18px 22px;font-size:13.5px;
+  color:var(--ink-3);line-height:1.7;margin-top:16px}
 .banner b{color:var(--ink);font-weight:700}
 .panel{display:none} .panel.on{display:block}
 .pos-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:2px}
@@ -163,9 +151,11 @@ svg{display:block;max-width:100%}
 .pos-head .n{font-size:12px;color:var(--ink-2)}
 .pos-head .p{margin-left:auto;font-family:var(--sans);font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}
 .mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px;margin-top:14px}
-.mini div{background:var(--sunk);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
-.mini .l{font-size:9.5px;letter-spacing:.06em;color:var(--ink-3);font-weight:700}
-.mini .v{font-family:var(--sans);font-size:14.5px;font-weight:700;margin-top:3px;font-variant-numeric:tabular-nums}
+/* 자손이 아니라 자식으로 — .mini div 는 안쪽 .l/.v 까지 잡아 라벨이 제 상자 안에
+   또 상자로 들어가며 칸이 세로로 늘어져 있었다 (.pf-grid·.sh-grid 와 같은 건). */
+.mini>div{background:var(--surface-2);border-radius:14px;padding:11px 13px}
+.mini .l{font-size:12px;color:var(--ink-3);font-weight:400}
+.mini .v{font-family:var(--sans);font-size:16px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
 .sigrow{display:flex;gap:6px;flex-wrap:wrap;margin-top:13px}
 footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px solid var(--line);
   font-size:11.5px;color:var(--ink-3);line-height:1.75;position:relative;z-index:1}
@@ -173,15 +163,15 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
 #gate::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(900px 420px at 50% -10%, var(--glow), transparent 70%)}
 #gate[hidden]{display:none}
-.gate-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:20px;
-  box-shadow:var(--shadow);padding:32px 30px;width:100%;max-width:350px}
-.gate-card h2{margin:4px 0 8px;font-size:20px;font-weight:800;}
-.gate-card p{margin:0 0 18px;font-size:12.5px;color:var(--ink-2);line-height:1.65}
-.gate-card input[type=password]{width:100%;font:inherit;font-family:var(--sans);font-size:14px;
-  padding:11px 13px;border:1px solid var(--line-strong);border-radius:12px;background:var(--sunk);color:var(--ink)}
+.gate-card{position:relative;background:var(--surface);border-radius:var(--r);
+  padding:32px 30px;width:100%;max-width:350px}
+.gate-card h2{margin:4px 0 8px;font-size:21px;font-weight:800}
+.gate-card p{margin:0 0 18px;font-size:13.5px;color:var(--ink-3);line-height:1.6}
+.gate-card input[type=password]{width:100%;font:inherit;font-family:var(--sans);font-size:15px;
+  padding:13px 14px;border:0;border-radius:14px;background:var(--ground);color:var(--ink)}
 .gate-card input[type=password]:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .gate-card label{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-2);margin:12px 0 16px;cursor:pointer}
-.gate-card button{width:100%;font:inherit;font-weight:700;font-size:14px;padding:12px;border:0;border-radius:12px;
+.gate-card button{width:100%;font:inherit;font-weight:700;font-size:15px;padding:14px;border:0;border-radius:14px;
   background:var(--accent);color:#fff;cursor:pointer}
 .gate-card button:hover{filter:brightness(1.08)}
 .gate-card button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -190,6 +180,32 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
   font:inherit;font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;cursor:pointer;margin-top:6px}
 .refresh-btn:hover{filter:brightness(1.1)}
 .refresh-btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+@media(max-width:734px){
+  /* 390px 에서 머리말만 900px 을 넘게 먹어 내용이 한 화면 아래로 밀려 있었다. */
+  .hd-top,.hbar,nav{padding-left:16px;padding-right:16px}
+  .wrap{padding-left:16px;padding-right:16px}
+  /* 값 칸 셋을 3열로 눕힌다. inline-block 으로 하면 태그 사이 공백까지 폭에 들어가
+     한 칸이 다음 줄로 떨어진다 — 격자로 잡는 편이 정확하다. */
+  .hbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding-bottom:4px}
+  .hbar>div:first-child,.stamp{grid-column:1/-1}
+  .spacer{display:none}
+  .hbar .kv{padding:11px 13px}
+  .hbar .kv .v{font-size:16px}
+  .hbar .kv .l{font-size:11.5px}
+  .stamp{text-align:left}
+  /* 줄이 접히면 가운뎃점만 앞 줄 끝에 남는다. 좁을 땐 간격으로만 나눈다. */
+  .hero-sub{gap:4px 12px}
+  .hero-sub>.dim{display:none}
+  /* 탭은 두 줄로 접히기보다 옆으로 굴러야 자리를 안 뺏는다 (nav 는 원래 그 뜻으로 만들었다). */
+  nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-top:12px;padding-bottom:14px}
+  .card{padding:18px 18px 20px}
+  .card.flush{padding:18px 0 6px}
+  .card.flush>h3,.card.flush>.hint{padding:0 18px}
+  th:first-child,td:first-child{padding-left:18px}
+  th:last-child,td:last-child{padding-right:18px}
+  .note{margin-left:18px;margin-right:18px}
+  footer{padding-left:16px;padding-right:16px}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
