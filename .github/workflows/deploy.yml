@@ -46,6 +46,10 @@ jobs:
         run: echo "hour=$(date -u +%Y%m%d%H)" >> "$GITHUB_OUTPUT"
 
       # 뉴스는 1시간이면 충분하다. 저장소 대신 Actions 캐시에 둔다.
+      #
+      # 키에 수집 코드의 해시를 섞는다. 시간만 키로 쓰면, 캐시가 살아 있는 동안
+      # news.py 를 고쳐도 예전 결과가 체크아웃한 파일 위에 복원돼 바뀐 게 안 나온다
+      # (2026-09-05 영문 제목 필터를 넣고도 라이브에 그대로 남아 있었다).
       - name: Restore news cache
         id: newscache
         uses: actions/cache@v4
@@ -53,7 +57,7 @@ jobs:
           path: |
             data/news.json
             data/news_kr.json
-          key: news-${{ steps.k.outputs.hour }}
+          key: news-${{ steps.k.outputs.hour }}-${{ hashFiles('src/news.py') }}
 
       - name: Refresh news (cache miss only)
         if: steps.newscache.outputs.cache-hit != 'true'
