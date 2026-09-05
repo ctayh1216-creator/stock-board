@@ -154,49 +154,51 @@ details.rules[open] summary::after{content:" ⌃"}
   padding:7px 13px;border-radius:980px}
 
 /* ---------- 뉴스 ---------- */
-.news{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
-.na{display:block;padding:17px 12px;border-bottom:1px solid var(--line-2);text-decoration:none;
-  margin:0 -8px;transition:background .18s}
+/* 추천·전적과 같은 결로 — 헤어라인 목록이 아니라 카드 안의 줄이다.
+   묶는 일은 카드가 하므로 줄에는 바깥 테두리를 두지 않는다. */
+.na{display:block;padding:16px 20px;text-decoration:none;transition:background .18s}
+.na + .na{border-top:1px solid var(--line)}
 .na:hover{background:var(--surface-2)}
-.na .tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:0;border-radius:0;
-  background:none;color:var(--t3);margin-bottom:8px;letter-spacing:.02em;text-transform:uppercase}
+.na .tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;
+  color:var(--t3);margin-bottom:7px;letter-spacing:.02em;text-transform:uppercase}
 .na .tag.mine{color:var(--accent)}
-.na h3{margin:0;font-size:18px;font-weight:700;line-height:1.4}
-.na .meta{margin-top:6px;font-size:13.5px;color:var(--t3)}
+.na h3{margin:0;font-size:16.5px;font-weight:700;line-height:1.45}
+.na .meta{margin-top:6px;font-size:13px;color:var(--t3)}
 
 /* ---------- 내 자산 ---------- */
-.pf-hero{text-align:center;padding:22px 0 6px}
-.pf-hero .l{font-size:15px;color:var(--t2)}
-.pf-hero .v{font-size:clamp(38px,6.6vw,52px);font-weight:800;margin-top:8px;line-height:1.16}
-.pf-hero .c{font-size:19px;font-weight:700;margin-top:10px}
-.pf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:38px;
-  border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
-.pf-grid>div{background:none;border-radius:0;padding:20px 12px;text-align:center;
-  border-right:1px solid var(--line-2)}
-.pf-grid>div:last-child{border-right:0}
-.pf-grid .l{font-size:13px;color:var(--t3)}
-.pf-grid .v{font-size:21px;font-weight:700;margin-top:5px}
-.hold{display:flex;align-items:center;gap:12px;padding:20px 12px;border-bottom:1px solid var(--line-2);margin:0 -8px}
-.hold .tk{font-size:18px;font-weight:700}
-.hold .qt{font-size:14px;color:var(--t3);margin-top:3px}
+/* 총 평가액은 「오늘 살 때인 종목 129개」와 같은 .big 카드를 쓴다 — 한 카드 한 숫자.
+   4칸 격자는 390px 에서 글자가 눌려 읽히지 않아 이름-값 줄로 폈다. */
+.pf-empty{padding:26px 22px}
+.pf-empty .t{font-size:20px;font-weight:800;line-height:1.35}
+.pf-empty .d{margin-top:10px;font-size:14.5px;color:var(--ink-3);line-height:1.6}
+.pf-empty .d b{color:var(--ink-2);font-weight:600}
+.kv{display:flex;align-items:baseline;gap:12px;padding:15px 20px}
+.kv + .kv{border-top:1px solid var(--line)}
+.kv .l{font-size:15px;color:var(--ink-3)}
+.kv .v{margin-left:auto;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+.hold{display:flex;align-items:center;gap:12px;padding:16px 20px}
+.hold + .hold{border-top:1px solid var(--line)}
+.hold .tk{font-size:17px;font-weight:700}
+.hold .qt{font-size:13.5px;color:var(--t3);margin-top:3px}
 .hold .r{margin-left:auto;text-align:right}
 .hold .r .a{font-size:17px;font-weight:700}
-.hold .r .b{font-size:14px;font-weight:700;margin-top:3px}
-.hold .x{appearance:none;border:0;background:none;color:var(--t3);cursor:pointer;padding:8px;
-  font-size:16px;border-radius:50%;flex:0 0 auto}
+.hold .r .b{font-size:13.5px;font-weight:700;margin-top:3px}
+.hold .x{appearance:none;border:0;background:none;color:var(--t4);cursor:pointer;padding:8px;
+  margin-right:-8px;border-radius:50%;font-size:15px;line-height:1;flex:0 0 auto}
 .hold .x:hover{color:var(--up);background:var(--up-bg)}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
-.form input{font:inherit;font-size:17px;color:var(--ink);background:var(--ground);
-  border:1px solid var(--line-strong);border-radius:12px;padding:11px 14px;width:100%;min-height:44px}
-.form input:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+.fcard{background:var(--surface);border-radius:var(--r);padding:20px;margin-top:2px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form input{font:inherit;font-size:16px;color:var(--ink);background:var(--ground);
+  border:0;border-radius:12px;padding:14px 14px;width:100%;min-width:0}
+.form input:focus{outline:none;box-shadow:0 0 0 2px var(--accent)}
 .form input::placeholder{color:var(--t3)}
-.btn{appearance:none;border:0;background:var(--accent);color:#fff;font-size:16px;font-weight:600;
-  padding:13px 26px;border-radius:980px;cursor:pointer;width:auto;margin-top:20px;}
+.btn{appearance:none;border:0;background:var(--accent);color:#fff;font-size:16px;font-weight:700;
+  border-radius:14px;padding:15px 20px;width:100%;margin-top:12px;cursor:pointer;transition:background .18s}
 .btn:hover{background:var(--accent-hover)}
-.btn.sub{background:none;color:var(--accent);padding:13px 0;margin-top:12px;font-size:15px}
-.btn.sub:hover{text-decoration:underline;filter:none}
-.btn-row{display:flex;gap:26px}
-.hint{font-size:15px;color:var(--t3);line-height:1.6;margin:18px 0 0;}
+.btn.sub{background:none;color:var(--accent);padding:12px 0;margin-top:6px;font-size:14.5px;width:auto}
+.btn.sub:hover{text-decoration:underline;background:none}
+.btn-row{display:flex;gap:22px}
+.hint{font-size:13.5px;color:var(--t3);line-height:1.6;margin:12px 0 0}
 .hint b{color:var(--t2);font-weight:600}
 
 /* ---------- 전체 표 ---------- */
@@ -308,6 +310,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .big .v em{font-style:normal;color:var(--up)}
 .big .v small{font-size:.55em;font-weight:800;color:var(--ink-4)}
 .big .n{margin-top:13px;font-size:14.5px;color:var(--ink-3);line-height:1.55}
+.big .n b{font-weight:700;font-size:16px}
 .big .bar{display:flex;height:10px;border-radius:5px;overflow:hidden;margin-top:16px;background:var(--line)}
 .big .bar i{display:block;height:100%}
 
@@ -497,6 +500,11 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   .brand{font-size:14px}
   .seg{gap:10px} .seg button{font-size:12px}
   .mkts button{padding:5px 7px;font-size:11.5px}
+  /* clamp 의 최솟값 38px 이 320px 화면에선 커서 «22,105,374 / 원» 으로 끊긴다. */
+  .big{padding:20px 18px} .big .v{font-size:32px}
+  .cardlist .na,.kv,.hold{padding-left:16px;padding-right:16px}
+  .hold .qt{white-space:nowrap}
+  .fcard{padding:16px}
 }
 </style>
 
@@ -550,7 +558,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   </section>
 
   <section class="view" id="v-news" hidden>
-    <div class="news" id="newsList"></div>
+    <div id="newsList"></div>
   </section>
 
   <section class="view" id="v-record" hidden>
@@ -558,26 +566,28 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   </section>
 
   <section class="view" id="v-mine" hidden>
-    <div class="pf-hero" id="pfHero"></div>
-    <div class="pf-grid" id="pfGrid" hidden></div>
+    <div id="pfHero"></div>
+    <div class="cardlist" id="pfGrid" hidden></div>
     <div id="pfHoldCard" hidden>
       <div class="sec-h"><h2>보유 종목</h2></div>
-      <div id="pfHolds"></div>
+      <div class="cardlist" id="pfHolds"></div>
     </div>
     <div>
       <div class="sec-h"><h2>종목 추가</h2></div>
-      <div class="form">
-        <input id="pfTicker" list="tickerList" placeholder="티커 (NVDA)" aria-label="티커" autocapitalize="characters">
-        <input id="pfQty" type="number" inputmode="decimal" min="0" step="any" placeholder="수량" aria-label="수량">
-        <input id="pfCost" type="number" inputmode="decimal" min="0" step="any" placeholder="평단 $" aria-label="평단 달러">
-        <input id="pfFx" type="number" inputmode="decimal" min="0" step="any" placeholder="매입환율 (선택)" aria-label="매입환율">
+      <div class="fcard">
+        <div class="form">
+          <input id="pfTicker" list="tickerList" placeholder="티커 (NVDA)" aria-label="티커" autocapitalize="characters">
+          <input id="pfQty" type="number" inputmode="decimal" min="0" step="any" placeholder="수량" aria-label="수량">
+          <input id="pfCost" type="number" inputmode="decimal" min="0" step="any" placeholder="평단 $" aria-label="평단 달러">
+          <input id="pfFx" type="number" inputmode="decimal" min="0" step="any" placeholder="매입환율 (선택)" aria-label="매입환율">
+        </div>
+        <button class="btn" id="pfAdd" type="button">추가하기</button>
+        <div class="btn-row">
+          <button class="btn sub" id="pfExport" type="button">백업 코드 복사</button>
+          <button class="btn sub" id="pfImport" type="button">가져오기</button>
+        </div>
+        <p class="hint" id="pfNote"></p>
       </div>
-      <button class="btn" id="pfAdd" type="button">추가하기</button>
-      <div class="btn-row">
-        <button class="btn sub" id="pfExport" type="button">백업 코드 복사</button>
-        <button class="btn sub" id="pfImport" type="button">가져오기</button>
-      </div>
-      <p class="hint" id="pfNote"></p>
       <datalist id="tickerList"></datalist>
     </div>
   </section>
@@ -643,6 +653,7 @@ function num1(v){ return has(v) ? v.toFixed(1) : NB; }
 function pct1(v){ return has(v) ? (v > 0 ? "+" : "") + v.toFixed(1) + "%" : NB; }
 function pct0(v){ return has(v) ? (v > 0 ? "+" : "") + Math.round(v) + "%" : NB; }
 function won0(v){ return has(v) ? Math.round(v).toLocaleString("ko-KR") : NB; }
+function susd(v, d){ return has(v) ? (v > 0 ? "+$" : v < 0 ? "\u2212$" : "$") + usd(Math.abs(v), d) : NB; }
 function swon(v){ return has(v) ? (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(Math.round(v)).toLocaleString("ko-KR") : NB; }
 function eok(v){ if (!has(v)) return NB; var a = Math.abs(v);
   if (a >= 1e8) return (v / 1e8).toFixed(a >= 1e9 ? 0 : 1) + "억";
@@ -1494,6 +1505,21 @@ function btCaveatCard(){
   return h ? '<div class="note-card">' + h.replace(/^<br><br>/, "") + '</div>' : "";
 }
 
+function newsRow(n){
+  return '<a class="na" href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' +
+    '<span class="tag ' + n.cls + '">' +
+      (n.t !== "시장" ? logoHtml(n.t, 16) + " " : "") + esc(n.t) + "</span>" +
+    "<h3>" + esc(n.title) + "</h3>" +
+    '<div class="meta">' + esc(n.pub || "") + " · " + relTime(n.at) + "</div></a>";
+}
+function newsGroup(title, items, desc){
+  if (!items.length) return "";
+  return '<div class="sec-h"><h2>' + title + '</h2><span class="n">' + items.length + '건</span></div>' +
+    (desc ? '<p class="sec-d">' + desc + "</p>" : "") +
+    '<div class="cardlist">' + items.map(newsRow).join("") + "</div>";
+}
+/* 한 덩어리 40건을 시간순으로 늘어놓으면 내 종목 소식이 남의 소식에 묻힌다.
+   내 것 → 시장 → 나머지 로 나눠 카드 세 장으로 만든다. */
 function renderNews(){
   if (!NEWS) { $("newsList").innerHTML = '<p class="empty">뉴스를 불러오는 중입니다.</p>'; return; }
   var mine = {};
@@ -1508,18 +1534,13 @@ function renderNews(){
                    title:n.title, url:n.url, pub:n.publisher, at:n.at, lang:n.lang }); }); });
   var seen = {};
   items = items.filter(function(n){ if (seen[n.title]) return false; seen[n.title] = 1; return true; });
-  items.sort(function(a, b){
-    if (a.pri !== b.pri) return a.pri - b.pri;
-    return new Date(b.at || 0) - new Date(a.at || 0);
-  });
-  $("newsList").innerHTML = items.slice(0, 40).map(function(n){
-    return '<a class="na" href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' +
-      '<span class="tag ' + n.cls + '">' +
-        (n.t !== "시장" ? logoHtml(n.t, 16) + " " : "") +
-        esc(n.t) + "</span>" +
-      "<h3>" + esc(n.title) + "</h3>" +
-      '<div class="meta">' + esc(n.pub || "") + " · " + relTime(n.at) + "</div></a>";
-  }).join("") || '<p class="empty">표시할 뉴스가 없습니다.</p>';
+  var byTime = function(a, b){ return new Date(b.at || 0) - new Date(a.at || 0); };
+  var of = function(pri){ return items.filter(function(n){ return n.pri === pri; }).sort(byTime); };
+  var html =
+    newsGroup("내 종목 소식", of(0).slice(0, 15), "보유·관심 종목에 나온 기사예요.") +
+    newsGroup("시장 소식", of(1).slice(0, 10)) +
+    newsGroup("그 밖의 소식", of(2).slice(0, 20));
+  $("newsList").innerHTML = html || '<p class="empty">표시할 뉴스가 없습니다.</p>';
 }
 
 /* ============ 내 자산 탭 ============ */
@@ -1553,26 +1574,27 @@ function renderPortfolio(){
     return '<option value="' + esc(r.ticker) + '">' + esc(r.name || "") + "</option>"; }).join("");
 
   if (!PF.length){
-    $("pfHero").innerHTML = '<div class="l">아직 등록한 종목이 없어요</div>' +
-      '<div class="v" style="font-size:22px;margin-top:10px">내 주식을 넣어보세요</div>' +
-      '<p class="hint" style="max-width:430px;margin:14px auto 0">아래에서 티커·수량·평단만 넣으면 지금 시세로 평가액과 손익을 계산합니다. ' +
-      '<b>입력한 내용은 이 기기에만 저장되고 서버로 전송되지 않습니다.</b></p>';
+    $("pfHero").innerHTML = '<div class="big pf-empty">' +
+      '<div class="t">내 주식을 넣어보세요</div>' +
+      '<div class="d">티커·수량·평단만 넣으면 지금 시세로 평가액과 손익을 계산해요.</div></div>';
     $("pfGrid").hidden = true; $("pfHoldCard").hidden = true;
     return;
   }
   var c = pfCompute();
   var pnlKrw = c.mvKrw - c.costKrw, pnlUsd = c.mvUsd - c.costUsd;
-  $("pfHero").innerHTML = '<div class="l">총 평가액</div>' +
+  $("pfHero").innerHTML = '<div class="big">' +
+    '<div class="k">총 평가액</div>' +
     '<div class="v num">' + (c.fx ? won0(c.mvKrw) + "원" : "$" + usd(c.mvUsd, 0)) + "</div>" +
-    '<div class="c num ' + cls(c.fx ? pnlKrw : pnlUsd) + '">' +
-      (c.fx ? swon(pnlKrw) + "원" : "$" + usd(pnlUsd, 0)) +
-      (c.costUsd ? " (" + pct1(pnlUsd / c.costUsd * 100) + ")" : "") + "</div>";
-  var g = function(l, v, k){ return '<div><div class="l">' + l + '</div><div class="v num ' + (k || "") + '">' + v + "</div></div>"; };
+    '<div class="n">지금까지 <b class="num ' + cls(c.fx ? pnlKrw : pnlUsd) + '">' +
+      (c.fx ? swon(pnlKrw) + "원" : susd(pnlUsd, 0)) +
+      (c.costUsd ? " (" + pct1(pnlUsd / c.costUsd * 100) + ")" : "") + "</b></div></div>";
+  var g = function(l, v, k){
+    return '<div class="kv"><span class="l">' + l + '</span><span class="v num ' + (k || "") + '">' + v + "</span></div>"; };
   $("pfGrid").innerHTML =
-    g("오늘 변동", "$" + usd(c.dayUsd, 0), cls(c.dayUsd)) +
+    g("오늘 변동", susd(c.dayUsd, 0), cls(c.dayUsd)) +
     g("달러 기준 손익", pct1(c.costUsd ? pnlUsd / c.costUsd * 100 : null), cls(pnlUsd)) +
-    g("환율", c.fx ? usd(c.fx, 1) : NB) +
-    g("전량 매도 시 세금", c.fx ? eok(pfTax(pnlKrw)) + "원" : NB);
+    g("환율", c.fx ? usd(c.fx, 1) + "원" : NB) +
+    g("전량 팔면 낼 세금", c.fx ? eok(pfTax(pnlKrw)) + "원" : NB);
   $("pfGrid").hidden = false;
   $("pfHolds").innerHTML = c.rows.map(function(r, i){
     return '<div class="hold">' + logoHtml(r.t, 32) + '<div><div class="tk">' + esc(r.t) + "</div>" +
@@ -1589,9 +1611,8 @@ var HERO = {
   picks: ["오늘 주목할 종목", ""],
   record:["얼마나 맞았나",
           "지수랑 붙어서 몇 번 이겼는지."],
-  news:  ["오늘의 시장 뉴스", "국내 언론이 다룬 기사예요. 제목을 누르면 원문으로 갑니다."],
-  mine:  ["내 종목",
-          "보유 종목을 넣으면 지금 시세로 계산합니다. 입력한 내용은 이 기기에만 저장됩니다."]
+  news:  ["오늘의 시장 뉴스", "누르면 원문으로 가요."],
+  mine:  ["내 종목", "넣은 내용은 이 기기에만 저장돼요."]
 };
 function setView(v){
   view = v;
