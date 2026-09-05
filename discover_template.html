@@ -557,7 +557,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 </aside>
 
 <div class="note">
-  <span class="note-line">사람이 아니라 규칙이 말하는 구간입니다 · 규칙과 그 성적을 그대로 공개합니다</span>
+  <span class="note-line">투자 자문이 아닙니다</span>
   <details class="note-more"><summary>자세히</summary>
     <div id="noteBody"></div>
   </details>
@@ -864,28 +864,14 @@ function sigLevels(sg, last){
       '<div class="d num ' + cls(sp) + '">' + pct1(sp) + '</div></div>' +
   '</div>';
 }
-/* 판정도 규칙으로 낸다 — 좋게 보이도록 말을 고르지 않는다.
-   시트와 첫 화면이 다른 말을 하면 안 되므로 판정은 여기 한 군데서만 만든다. */
-function sigVerdict(s){
-  var edge = s.cumulative - s.bench_cumulative;
-  if (Math.abs(edge) < 3) return '이 규칙은 ' + benchName() + '과 거의 다르지 않았어요';
-  return edge > 0 ? '이 규칙이 ' + benchName() + '보다 나았어요'
-                  : '이 규칙은 ' + benchName() + '보다 못했어요';
-}
 function sigWins(s){ return Math.round(s.months * s.win_rate / 100); }
 /* 이 규칙이 과거에 어땠는지. 좋게 나오든 나쁘게 나오든 같은 자리에 같은 문장으로 적는다. */
 function sigRecord(){
   var s = BT && BT.signal;
   if (!s || !s.backtested || !has(s.win_rate)) return "";
   var w = sigWins(s);
-  var t = '<b>' + sigVerdict(s) + '.</b> ' +
-          w + '승 ' + (s.months - w) + '패 · ' + s.months + '번 붙어서 ' +
-          '누적 ' + pct1(s.cumulative) + ' (' + benchName() + ' ' +
-          pct1(s.bench_cumulative) + ')';
-  if (has(s.hold_all_cumulative)){
-    t += '. 같은 종목을 신호 없이 그냥 들고 있었을 때는 ' + pct1(s.hold_all_cumulative);
-  }
-  return '<p class="sh-record">' + t + '.</p>';
+  return '<p class="sh-record"><b>' + w + '승 ' + (s.months - w) + '패</b> · 누적 ' +
+    pct1(s.cumulative) + ' (' + esc(benchName()) + ' ' + pct1(s.bench_cumulative) + ')</p>';
 }
 /* 배지만 보고 믿는 일이 없도록, 목록 위에 집계와 판정을 같이 둔다. */
 function renderSignalSummary(){
@@ -894,12 +880,10 @@ function renderSignalSummary(){
   if (!g || !g.tally){ box.innerHTML = ""; return; }
   var t = g.tally;
   /* 숫자 뒤에 조사를 붙이지 않는다 — 끝자리에 따라 «으로/로»가 갈려 틀린 문장이 나온다. */
-  var txt = '가격 규칙 하나가 지금 이렇게 나눴어요 — <b>매수 ' + t.buy + '</b> · 관망 ' +
-            t.watch + ' · 청산 ' + t.exit + '.';
+  var txt = '<b>매수 ' + t.buy + '</b> · 관망 ' + t.watch + ' · 청산 ' + t.exit;
   if (s && s.backtested && has(s.win_rate)){
     var w = sigWins(s);
-    txt += ' <b>' + sigVerdict(s) + '</b> — ' + w + '승 ' + (s.months - w) +
-           '패. 종목을 눌러 규칙과 성적을 볼 수 있어요.';
+    txt += ' · 이 규칙 <b>' + w + '승 ' + (s.months - w) + '패</b>';
   }
   box.innerHTML = txt;
 }
@@ -945,7 +929,7 @@ function renderChanges(){
   var head = '<div class="sec-h"><h2>오늘 바뀐 신호</h2>' +
       (list.length ? '<span class="n">' + list.length + '종목</span>' : "") + '</div>' +
     '<p class="sec-d">' + (since ? since + ' 마지막 상태와 견줬어요.'
-                                 : '견줄 지난 기록이 아직 없어요. 내일부터 보여드릴게요.') + '</p>';
+                                 : '내일부터 보여드릴게요.') + '</p>';
   if (!list.length){
     /* 견줄 기록이 없는 날은 «바뀐 종목이 없다»고 말하면 안 된다 — 견주지도 않았다. */
     box.innerHTML = head + (since ? '<p class="rec-none">오늘은 구간이 바뀐 종목이 없어요.</p>' : "");
@@ -1155,8 +1139,6 @@ function renderRecord(){
   var i = 0;
   box.innerHTML = '<div class="rk">' + list.map(function(x){
       return rankRow(x, x.bt ? i++ : -1); }).join("") + '</div>' +
-    '<p class="hint">' + esc(benchName()) + '과 매달 붙여 이긴 달을 셉니다. ' +
-    '지난 성적이 앞으로를 말해주지 않고, 아래 주의사항도 그대로 적용됩니다.</p>' +
     btCaveatHtml();
 }
 
@@ -1178,8 +1160,7 @@ function epsTable(h){
   }).join("");
   return '<table class="eps"><thead><tr><th>분기</th><th>예상 EPS</th><th>실제 EPS</th>' +
     '<th>기대 대비</th></tr></thead><tbody>' + rows + '</tbody></table>' +
-    (hid ? '<p class="hint">예상 EPS가 0 근처인 분기는 몇 % 빗나갔는지가 뜻을 잃어 비워뒀어요. ' +
-           '예상과 실제 숫자로 봐주세요.</p>' : "");
+    (hid ? '<p class="hint">예상 EPS가 0 근처인 분기는 %가 뜻을 잃어 비워뒀어요.</p>' : "");
 }
 function findRow(ticker){
   var t = (D.table || []).find(function(r){ return r.ticker === ticker; });
@@ -1459,7 +1440,7 @@ function renderPortfolio(){
 var HERO = {
   picks: ["오늘 주목할 종목", ""],
   record:["전적",
-          "기준마다 지수와 몇 번 붙어서 몇 번 이겼는지. 진 것도 그대로 올립니다."],
+          "기준마다 지수와 붙은 성적."],
   news:  ["오늘의 시장 뉴스",
           "국내 언론이 다룬 미국 증시·종목 기사를 모았습니다. 제목을 누르면 원문으로 이동합니다."],
   mine:  ["내 종목",
@@ -1490,11 +1471,7 @@ function renderAll(){
   renderNews(); renderPortfolio();
   $("status").innerHTML = "";
   $("noteBody").innerHTML =
-    '미리 정해둔 가격 규칙이 각 종목을 매수·관망·청산 중 어느 구간이라고 부르는지, ' +
-    '그 규칙이 정한 목표가와 손절선이 얼마인지를 그대로 보여줍니다. 사람의 판단은 들어가지 ' +
-    '않습니다. 규칙과 그 규칙의 과거 성적은 이긴 달과 진 달을 모두 화면에 공개합니다.<br><br>' +
-    '투자자문업 등록 사업자가 아니며, 이용자 개인의 사정에 맞춘 조언이 아닙니다. ' +
-    '규칙은 과거 가격만 봅니다 — 실적·뉴스·업황은 보지 않습니다. ' +
+    '투자자문업 등록 사업자가 아니며, 개인에게 맞춘 조언이 아닙니다. ' +
     '투자 판단과 책임은 이용자 본인에게 있습니다.<br><br>' +
     '시세·재무 데이터 출처는 Yahoo Finance이며 지연될 수 있습니다. 뉴스는 각 언론사의 제목과 ' +
     '링크만 전달합니다. 내 종목에 입력한 내용은 이 기기에만 저장되고 어디로도 전송되지 않습니다.' +
