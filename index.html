@@ -124,14 +124,6 @@ main{max-width:980px;margin:0 auto;padding:0 22px 40px}
 .sec-d{margin:0 0 22px;font-size:17px;color:var(--ink-3);line-height:1.59}
 
 /* ---------- 시장 지표 (히어로 하단 인라인) ---------- */
-.mkt{display:flex;gap:0;justify-content:center;margin:22px 0 0;
-  border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
-.mkt>div{flex:1;max-width:220px;background:none;border-radius:0;box-shadow:none;
-  padding:22px 10px;text-align:center;border-right:1px solid var(--line-2)}
-.mkt>div:last-child{border-right:0}
-.mkt .l{font-size:13px;color:var(--t3)}
-.mkt .v{font-size:30px;font-weight:800;margin-top:5px}
-.mkt .s{font-size:13px;color:var(--t3);font-weight:400;margin-left:3px}
 
 /* ---------- 종목 행 ---------- */
 .picks{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
@@ -241,10 +233,11 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 
 /* ---------- 카테고리 선택 ---------- */
 /* ---------- 시장 토글 ---------- */
-.mkts{display:inline-flex;gap:3px;padding:3px;background:var(--surface);border-radius:980px;
-  margin:0 0 20px}
-.mkts button{appearance:none;border:0;background:none;font-size:14.5px;font-weight:600;
-  color:var(--ink-3);padding:8px 22px;border-radius:980px;cursor:pointer;transition:all .18s}
+.mkts{display:inline-flex;gap:2px;padding:2px;background:var(--surface);border-radius:980px;
+  margin:0 6px 0 0;flex:0 0 auto}
+.mkts button{appearance:none;border:0;background:none;font-size:13px;font-weight:600;
+  color:var(--ink-3);padding:6px 12px;border-radius:980px;cursor:pointer;transition:all .18s;
+  font-family:inherit;white-space:nowrap}
 .mkts button:hover{color:var(--ink)}
 .mkts button[aria-selected="true"]{background:var(--ink);color:var(--ground)}
 
@@ -348,6 +341,8 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .sig-sum{margin:16px 0 0;font-size:14.5px;color:var(--t2);line-height:1.65}
 .sig-sum b{font-weight:700;color:var(--ink)}
 .sig-sum:empty{display:none}
+/* 칩 바로 다음 섹션은 칩 줄이 이미 구분을 해준다 — 76px 여백까지 두면 빈 띠가 생긴다. */
+#chg .sec-h{margin-top:34px}
 .rank{display:inline-block;min-width:22px;font-size:14px;color:var(--t3);font-variant-numeric:tabular-nums}
 
 /* ---------- 종목 상세 시트 ---------- */
@@ -432,14 +427,16 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
   .rise{opacity:1;transform:none}}
 @media(max-width:734px){
-  .hd-in{padding:0 16px;gap:14px;height:48px}
-  .brand{font-size:17px} .seg{gap:16px} .seg button{font-size:13px}
+  /* 시장 토글이 헤더로 들어오며 폭이 모자라 탭 글자가 «추/천» 으로 쪼개졌다.
+     사이트 이름은 바로 아래 히어로에 크게 있으니 모바일에서는 헤더에서 뺀다. */
+  .hd-in{padding:0 12px;gap:10px;height:48px}
+  .brand{display:none}
+  .seg{gap:14px;margin-left:0} .seg button{font-size:13px;white-space:nowrap}
+  .mkts{margin-right:2px} .mkts button{font-size:12px;padding:5px 10px}
   .mstate{display:none}
   .hero{padding:20px 16px 12px}
   main{padding:0 16px 30px}
   .sec-h{margin:52px 0 6px} .sec-d{font-size:15px;margin-bottom:14px}
-  .mkt{flex-wrap:wrap} .mkt>div{max-width:none;min-width:33%;padding:16px 6px}
-  .mkt .v{font-size:23px}
   .top{padding:22px 18px}
   .top-tk{font-size:27px} .top-px .p{font-size:21px} .top-nm{font-size:14px}
   .top-why span:first-child{font-size:19px}
@@ -462,6 +459,13 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   .btn-row{gap:18px} .note{padding:30px 16px 44px}
   th{top:48px}
 }
+/* 320px 짜리 옛 기기에서는 위 값으로도 15px 넘친다. 한 단계 더 줄인다. */
+@media(max-width:374px){
+  .hd-in{gap:7px;padding:0 10px}
+  .brand{font-size:14px}
+  .seg{gap:10px} .seg button{font-size:12px}
+  .mkts button{padding:5px 7px;font-size:11.5px}
+}
 </style>
 
 <header class="hd">
@@ -474,6 +478,10 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
       <button role="tab" data-v="mine"  aria-selected="false">내 종목</button>
     </nav>
     <div class="hd-act">
+      <div class="mkts" id="mkts" role="tablist" aria-label="시장 선택">
+        <button role="tab" data-mk="us" aria-selected="true">미국</button>
+        <button role="tab" data-mk="kr" aria-selected="false">한국</button>
+      </div>
       <span class="mstate"><span class="led" id="led"></span><span id="mstatTxt">—</span></span>
       <button class="iconbtn" id="refreshBtn" type="button" aria-label="새로고침" title="새로고침">↻</button>
       <button class="iconbtn" id="themeBtn" type="button" aria-label="테마 전환" title="테마 전환">◐</button>
@@ -484,18 +492,13 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 <section class="hero">
   <h1 id="heroT">오늘 주목할 종목</h1>
   <p id="heroD"></p>
-  <div class="stamp"><span id="mstatTxt2">—</span> · <span class="num" id="fresh">—</span></div>
+  <div class="stamp"><span id="mstatTxt2">—</span> · <span class="num" id="fresh">—</span><span id="fxTag"></span></div>
 </section>
 
 <main>
   <div id="status"></div>
 
   <section class="view" id="v-picks">
-    <div class="mkts" id="mkts" role="tablist" aria-label="시장 선택">
-      <button role="tab" data-mk="us" aria-selected="true">미국</button>
-      <button role="tab" data-mk="kr" aria-selected="false">한국</button>
-    </div>
-    <div class="mkt" id="mkt"></div>
     <p class="sig-sum" id="sigSum"></p>
     <div class="cats" id="cats"></div>
     <section id="chg"></section>
@@ -777,17 +780,12 @@ function paintStatus(){
 
 /* ============ 추천 탭 ============ */
 function renderMarket(){
-  var m = D.market;
-  if (!m) { $("mkt").innerHTML = ""; return; }
-  var fx = (!isKR() && D.fx) ? D.fx.rate : null;
-  var cell = function(l, v, s, k){
-    return '<div><div class="l">' + l + '</div><div class="v ' + (k || "") + '">' + v +
-      (s ? '<span class="s">' + s + '</span>' : '') + '</div></div>'; };
-  $("mkt").innerHTML =
-    cell("오늘 오른 종목", has(m.advancers) ? m.advancers : NB, "개", "up") +
-    cell("내린 종목", has(m.decliners) ? m.decliners : NB, "개", "down") +
-    (fx ? cell("환율", usd(fx, 0), "원")
-        : cell("종목 수", D.universe_size, "개"));
+  /* 오늘 오른/내린 3칸은 걷어냈다 — 첫 화면에서 96px 을 쓰면서
+     아래 신호 집계와 하는 말이 겹쳤다. 환율만 히어로 줄 끝에 붙인다. */
+  var el = $("fxTag");
+  if (!el) return;
+  var fx = (!isKR() && D && D.fx) ? D.fx.rate : null;
+  el.innerHTML = fx ? ' · 환율 <span class="num">' + usd(fx, 0) + '</span>원' : "";
 }
 
 /* ============ 매매 신호 ============
