@@ -325,6 +325,8 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
   margin-top:16px;padding-top:15px;border-top:1px solid var(--line-2)}
 .top-sig .sig{font-size:16px}
 .top-sig .w{font-size:15px;color:var(--t2)}
+.sh-card .top-sig{display:block}
+.sh-card .top-sig .w{display:block;margin-top:7px;line-height:1.5}
 .sig-lv{display:flex;gap:22px;margin-top:12px}
 .sig-lv>div{flex:0 1 auto;min-width:0}
 .sig-lv .k{font-size:12.5px;color:var(--t3)}
@@ -365,7 +367,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .earn-d{font-size:13.5px;font-weight:700;color:var(--ink);flex:0 0 auto}
 .wbtn{appearance:none;border:0;cursor:pointer;font-family:inherit;font-size:14px;
   font-weight:600;padding:11px 16px;border-radius:980px;margin-top:14px;
-  background:var(--surface);color:var(--ink);transition:background .18s}
+  background:var(--surface-2);color:var(--ink);transition:background .18s}
 @media(hover:hover){.wbtn:hover{background:var(--line)}}
 .wbtn.on{background:var(--ink);color:var(--ground)}
 .chg-was{font-size:13.5px;color:var(--t3);flex:0 0 auto}
@@ -386,7 +388,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .sheet-bg.on{opacity:1}
 .sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;background:var(--ground);
   border-radius:22px 22px 0 0;max-height:88vh;overflow-y:auto;
-  padding:0 22px calc(28px + env(safe-area-inset-bottom));
+  padding:0 14px calc(24px + env(safe-area-inset-bottom));
   transform:translateY(100%);transition:transform .34s cubic-bezier(.22,1,.36,1);
   box-shadow:0 -8px 40px rgb(0 0 0 / .35)}
 .sheet.on{transform:none}
@@ -398,46 +400,54 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 }
 .sheet-grip{position:sticky;top:0;background:var(--ground);padding:12px 0 6px;text-align:center;z-index:2}
 .sheet-grip i{display:inline-block;width:38px;height:4px;border-radius:2px;background:var(--line-strong)}
-.sh-h{display:flex;align-items:center;gap:12px;padding:8px 0 4px}
-.sh-tk{font-size:26px;font-weight:800;line-height:1.1}
-.sh-nm{font-size:14px;color:var(--ink-3)}
+/* 시트도 나머지 탭과 같은 결로 — 바닥은 --ground, 구획마다 --surface 카드 한 장.
+   머리(로고·가격·태그·버튼)도 카드에 넣어야 본문 글자와 왼쪽 선이 맞는다. */
+.sh-card{background:var(--surface);border-radius:var(--r);padding:18px 20px;margin-top:10px}
+.sh-h{display:flex;align-items:center;gap:12px}
+.sh-tk{font-size:24px;font-weight:800;line-height:1.1}
+.sh-nm{font-size:13.5px;color:var(--ink-3);margin-top:3px}
 .sh-px{margin-left:auto;text-align:right}
-.sh-px .p{font-size:24px;font-weight:700}
-.sh-px .c{font-size:15px;font-weight:700;margin-top:2px}
-.sh-tags{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 2px}
-.sh-tags span{font-size:12px;font-weight:600;color:var(--ink-3);background:var(--surface);
+.sh-px .p{font-size:23px;font-weight:700;font-variant-numeric:tabular-nums}
+.sh-px .c{font-size:14.5px;font-weight:700;margin-top:2px;font-variant-numeric:tabular-nums}
+.sh-tags{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 0}
+.sh-tags span{font-size:12px;font-weight:600;color:var(--ink-3);background:var(--surface-2);
   padding:6px 11px;border-radius:980px}
 .sh-tags .st-hot{color:var(--up);background:var(--up-bg)}
 .sh-tags .st-cold{color:var(--down);background:var(--down-bg)}
 .sh-tags .st-warn{color:var(--warn);background:rgb(255 179 64 / .13)}
-.sh-sec{margin-top:22px}
-.sh-sec h4{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--ink-4)}
+.sh-sec h4{margin:0 0 12px;font-size:14.5px;font-weight:700;color:var(--ink-3)}
+/* 한 카드 안에서 구획을 한 번 더 나눌 때 (수익률 / 지표 처럼) */
+.sh-sec h4.sub{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
 .sh-sec svg{display:block;width:100%;height:90px}
 .sh-why{display:flex;flex-direction:column;gap:0}
-.sh-why span{font-size:16px;padding:11px 0;border-top:1px solid var(--line);line-height:1.45}
-.sh-why span:first-child{border-top:0;font-weight:700}
-.sh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
-  border-radius:14px;overflow:hidden}
-.sh-grid div{background:var(--ground);padding:12px 10px;text-align:center}
-.sh-grid .l{font-size:11px;color:var(--ink-4)}
-.sh-grid .v{font-size:17px;font-weight:700;margin-top:3px;font-variant-numeric:tabular-nums}
+.sh-why span{font-size:15.5px;padding:11px 0;border-top:1px solid var(--line);line-height:1.45}
+.sh-why span:first-child{border-top:0;padding-top:0;font-weight:700}
+/* 자손이 아니라 자식으로 — .sh-grid div 는 안쪽 라벨·값 div 까지 잡아
+   칸마다 패딩이 세 겹 먹으며 세로로 늘어져 있었다 (.pf-grid 에서 겪은 것과 같은 건). */
+.sh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 12px}
+.sh-grid>div{min-width:0}
+.sh-grid .l{font-size:12.5px;color:var(--ink-4)}
+.sh-grid .v{font-size:18px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
 .sh-grid .has-g{cursor:pointer}
 .sh-grid .gq{display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;
   border-radius:50%;background:var(--line);color:var(--ink-4);font-size:9px;font-style:normal;
   margin-left:4px;vertical-align:1px}
+.gbox{background:var(--surface-2)}
 .gbox{margin-top:14px;padding:14px 16px;background:var(--surface);border-radius:14px;
   font-size:14px;line-height:1.6;color:var(--ink)}
 .gbox b{font-weight:700}
 .gbox span{color:var(--ink-3);font-size:13.5px}
 .sh-range{margin-top:8px}
-.sh-range .bar{height:6px;border-radius:3px;background:var(--surface);position:relative;margin:9px 0 6px}
+.sh-range .bar{height:6px;border-radius:3px;background:var(--surface-2);position:relative;margin:9px 0 6px}
 .sh-range .bar i{position:absolute;top:-3px;width:12px;height:12px;border-radius:50%;
   background:var(--accent);transform:translateX(-50%);transition:left .5s cubic-bezier(.22,1,.36,1)}
 .sh-range .ends{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-4)}
 .sh-news a{display:block;padding:11px 0;border-top:1px solid var(--line);text-decoration:none;
   font-size:15px;line-height:1.4}
-.sh-news a:first-child{border-top:0}
+.sh-news a:first-child{border-top:0;padding-top:0}
 .sh-news .m{font-size:11.5px;color:var(--ink-4);margin-top:4px}
+/* 카드 밖 각주 — 왼쪽 선은 카드 글자에 맞춘다. */
+.sh-foot{margin:14px 0 0;padding:0 20px;font-size:13px;color:var(--ink-4)}
 .pick,.top{cursor:pointer}
 
 /* ---------- misc ---------- */
@@ -673,6 +683,10 @@ function relFresh(iso){
   if (s < 3600) return Math.round(s / 60) + "분 전";
   if (s < 86400) return Math.round(s / 3600) + "시간 전";
   return Math.round(s / 86400) + "일 전";
+}
+function koDate(iso){
+  var d = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+  return d ? (+d[2]) + "월 " + (+d[3]) + "일" : "";
 }
 function relTime(iso){
   if (!iso) return "";
@@ -946,10 +960,6 @@ function sigRules(){
 
 /* 오늘 구간이 바뀐 종목 — 매일 들러서 볼 거리.
    안 바뀌었으면 «없어요»라고 적는다. 억지로 채우면 매일 보는 의미가 없어진다. */
-function mdText(iso){
-  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
-  return m ? (+m[2]) + "월 " + (+m[3]) + "일" : "";
-}
 function chgHtml(c){
   var r = findRow(c.ticker);
   if (!r) return "";
@@ -974,7 +984,7 @@ function renderChanges(){
   var g = D && D.signal;
   if (!g || cat !== "all"){ box.innerHTML = ""; return; }   /* 한 기준만 볼 땐 숨긴다 */
   var list = g.changes || [];
-  var since = mdText(g.since);
+  var since = koDate(g.since);
   var head = '<div class="sec-h"><h2>오늘 바뀐 신호</h2>' +
       (list.length ? '<span class="n">' + list.length + '종목</span>' : "") + '</div>' +
     '<p class="sec-d">' + (since ? since + ' 마지막 상태와 견줬어요.'
@@ -1050,8 +1060,7 @@ function renderExtremes(){
 function earnHtml(e){
   var r = findRow(e.ticker);
   if (!r) return "";
-  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(e.date || "");
-  var when = m ? (+m[2]) + "월 " + (+m[3]) + "일" : esc(e.date || "");
+  var when = koDate(e.date) || esc(e.date || "");
   var d = e.days === 0 ? "오늘" : e.days === 1 ? "내일" : e.days + "일 뒤";
   var past = has(e.beats4) ? "최근 4번 중 " + e.beats4 + "번 기대를 넘겼어요" : "";
   return '<div class="pick" data-tk="' + esc(r.ticker) + '" role="button" tabindex="0">' +
@@ -1334,6 +1343,7 @@ function openSheet(ticker){
     (st.rows || []).forEach(function(x){ if (x.ticker === ticker && x.why) why = why.concat(x.why); }); });
   var seen = {}; why = why.filter(function(w){ if (seen[w]) return false; seen[w] = 1; return true; });
 
+  var sec = function(h, body){ return '<div class="sh-card sh-sec"><h4>' + h + '</h4>' + body + '</div>'; };
   var cell = function(l, v, k){
     var g = GLOSSARY[l];
     return '<div' + (g ? ' class="has-g" data-g="' + esc(l) + '" role="button" tabindex="0"' : '') + '>' +
@@ -1342,45 +1352,49 @@ function openSheet(ticker){
 
   var pos = has(r.pos52w) ? Math.max(0, Math.min(100, r.pos52w)) : null;
   var range = pos === null ? "" :
-    '<div class="sh-sec"><h4>52주 가격 범위</h4><div class="sh-range">' +
+    '<h4 class="' + (r.spark ? "sub" : "") + '">1년 가격 범위</h4><div class="sh-range">' +
       '<div class="bar"><i style="left:' + pos + '%"></i></div>' +
       '<div class="ends"><span>' + price(r.lo52) + '</span><span>' + price(r.hi52) + '</span></div>' +
-    '</div></div>';
+    '</div>';
 
   var news = sheetNews(ticker);
-  var newsHtml = news.length ? '<div class="sh-sec"><h4>관련 뉴스</h4><div class="sh-news">' +
+  var newsHtml = news.length ? sec("관련 뉴스", '<div class="sh-news">' +
     news.slice(0, 3).map(function(n){
       return '<a href="' + esc(n.url) + '" target="_blank" rel="noopener noreferrer">' +
         esc(n.title) + '<div class="m">' + esc(n.publisher || "") + ' · ' + relTime(n.at) + '</div></a>';
-    }).join("") + '</div></div>' : "";
+    }).join("") + '</div>') : "";
+
+  /* 가격 그림(3개월 선 + 1년 범위)은 한 카드에 묶는다 — 따로 두면 카드만 늘어난다. */
+  var shape = (r.spark ? '<h4>최근 3개월</h4>' + sparkSvg(r.spark, 460, 90) : "") + range;
 
   $("sheetBody").innerHTML =
-    '<div class="sh-h">' + logoHtml(r.ticker, 44, r.name) +
-      '<div><div class="sh-tk">' + esc(mainLabel(r)) + '</div>' +
-      '<div class="sh-nm">' + esc(subLabel(r)) + (r.sector ? ' · ' + esc(r.sector) : "") + '</div></div>' +
-      '<div class="sh-px"><div class="p num">' + price(r.last) + '</div>' +
-        '<div class="c num ' + cls(r.day_pct) + '">' + pct1(r.day_pct) + '</div></div></div>' +
-    (function(){
-      var tg = stateTags(r);
-      var a = cats.map(function(c){ return '<span>' + esc(c.name) + '</span>'; });
-      var b2 = tg.map(function(x){ return '<span class="st-' + x[1] + '">' + esc(x[0]) + '</span>'; });
-      return (a.length || b2.length)
-        ? '<div class="sh-tags">' + a.join("") + b2.join("") + '</div>' : "";
-    })() +
-    '<button class="wbtn' + (watchHas(r.ticker) ? ' on' : '') + '" type="button" data-watch="' +
-      esc(r.ticker) + '">' + (watchHas(r.ticker) ? '관심종목에서 빼기' : '관심종목에 담기') + '</button>' +
-    (r.signal ? '<div class="sh-sec"><h4>매매 신호</h4>' +
+    '<div class="sh-card">' +
+      '<div class="sh-h">' + logoHtml(r.ticker, 44, r.name) +
+        '<div><div class="sh-tk">' + esc(mainLabel(r)) + '</div>' +
+        '<div class="sh-nm">' + esc(subLabel(r)) + (r.sector ? ' · ' + esc(r.sector) : "") + '</div></div>' +
+        '<div class="sh-px"><div class="p num">' + price(r.last) + '</div>' +
+          '<div class="c num ' + cls(r.day_pct) + '">' + pct1(r.day_pct) + '</div></div></div>' +
+      (function(){
+        var tg = stateTags(r);
+        var a = cats.map(function(c){ return '<span>' + esc(c.name) + '</span>'; });
+        var b2 = tg.map(function(x){ return '<span class="st-' + x[1] + '">' + esc(x[0]) + '</span>'; });
+        return (a.length || b2.length)
+          ? '<div class="sh-tags">' + a.join("") + b2.join("") + '</div>' : "";
+      })() +
+      '<button class="wbtn' + (watchHas(r.ticker) ? ' on' : '') + '" type="button" data-watch="' +
+        esc(r.ticker) + '">' + (watchHas(r.ticker) ? '관심종목에서 빼기' : '관심종목에 담기') + '</button>' +
+    '</div>' +
+    (r.signal ? sec("매매 신호",
         '<div class="top-sig" style="margin-top:0;padding-top:0;border-top:0">' +
           sigChip(r.signal) + '<span class="w">' + esc(sigWhy(r.signal)) + '</span></div>' +
-        sigLevels(r.signal, r.last) + sigRules() + sigRecord() + '</div>' : "") +
-    (why.length ? '<div class="sh-sec"><h4>이 종목이 걸린 이유</h4><div class="sh-why">' +
-        why.map(function(w){ return '<span>' + esc(w) + '</span>'; }).join("") + '</div></div>' : "") +
-    '<div class="sh-sec"><h4>기간별 수익률</h4><div class="sh-grid">' +
+        sigLevels(r.signal, r.last) + sigRules() + sigRecord()) : "") +
+    (why.length ? sec("이 종목이 걸린 이유", '<div class="sh-why">' +
+        why.map(function(w){ return '<span>' + esc(w) + '</span>'; }).join("") + '</div>') : "") +
+    '<div class="sh-card sh-sec"><h4>기간별 수익률</h4><div class="sh-grid">' +
       cell("1개월", pct0(r.ret_1m), cls(r.ret_1m)) +
       cell("6개월", pct0(r.ret_6m), cls(r.ret_6m)) +
       cell("1년", pct0(r.ret_12m), cls(r.ret_12m)) +
-    '</div></div>' +
-    '<div class="sh-sec"><h4>지표</h4><div class="sh-grid">' +
+    '</div><h4 class="sub">지표</h4><div class="sh-grid">' +
       cell("RSI", num1(r.rsi14)) +
       cell("선행 PER", perText(r.pe_fwd)) +
       cell("배당", has(r.div_yield) ? num1(r.div_yield) + "%" : NB) +
@@ -1388,13 +1402,13 @@ function openSheet(ticker){
       cell("변동성", has(r.vol_ann) ? num1(r.vol_ann) + "%" : NB) +
       cell("목표가 대비", pct0(r.upside), cls(r.upside)) +
     '</div></div>' +
-    (r.eps_hist && r.eps_hist.length
-      ? '<div class="sh-sec"><h4>분기별 실적</h4>' + epsTable(r.eps_hist) + '</div>' : "") +
     '<div class="gbox" id="gbox" hidden></div>' +
-    range +
-    (r.spark ? '<div class="sh-sec"><h4>최근 3개월</h4>' + sparkSvg(r.spark, 460, 90) + '</div>' : "") +
+    (r.eps_hist && r.eps_hist.length ? sec("분기별 실적", epsTable(r.eps_hist)) : "") +
+    (shape ? '<div class="sh-card sh-sec">' + shape + '</div>' : "") +
     newsHtml +
-    (r.next_earnings ? '<p class="hint">다음 실적 발표 ' + esc(r.next_earnings) + '</p>' : "");
+    (r.next_earnings
+      ? '<p class="sh-foot">다음 실적 발표는 ' + (koDate(r.next_earnings) || esc(r.next_earnings)) + '이에요.</p>'
+      : "");
 
   $("sheetBg").hidden = false; $("sheet").hidden = false;
   requestAnimationFrame(function(){
