@@ -18,9 +18,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ctayh1216-creator.github.io/stock-board/og.svg">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0E0E11">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151517" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="종목 상황실">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -346,7 +347,9 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
 .chg-was{font-size:13.5px;color:var(--t3);flex:0 0 auto}
 .chg-ar{font-size:13.5px;color:var(--t3);flex:0 0 auto;margin:0 -3px}
 .sig-sum{margin:16px 0 0;font-size:14.5px;color:var(--t2);line-height:1.65}
+.sig-sum{font-size:17px;color:var(--ink)}
 .sig-sum b{font-weight:700;color:var(--ink)}
+.sig-sub{display:block;margin-top:3px;font-size:13.5px;color:var(--t3)}
 .sig-sum:empty{display:none}
 /* 칩 바로 다음 섹션은 칩 줄이 이미 구분을 해준다 — 76px 여백까지 두면 빈 띠가 생긴다. */
 #chg .sec-h{margin-top:34px}
@@ -856,7 +859,7 @@ function sigLevels(sg, last){
       '<div class="d num up">' + pct1(gap(sg.hi)) + '</div>'
     : '<div class="v num">' + NB + '</div><div class="d">이미 52주 최고가예요</div>';
   /* 청산 구간이면 손절선이 현재가 위에 있다 — 이미 뚫고 내려왔다는 뜻이라 이름을 바꾼다. */
-  var stopK = sg.state === "exit" ? "청산선 · 이미 아래" : "손절선";
+  var stopK = sg.state === "exit" ? "손절선 · 이미 아래" : "손절선";
   var sp = gap(sg.stop);
   return '<div class="sig-lv">' +
     '<div><div class="k">목표가</div>' + tgt + '</div>' +
@@ -880,13 +883,13 @@ function renderSignalSummary(){
   if (!box) return;
   if (!g || !g.tally){ box.innerHTML = ""; return; }
   var t = g.tally;
-  /* 숫자 뒤에 조사를 붙이지 않는다 — 끝자리에 따라 «으로/로»가 갈려 틀린 문장이 나온다. */
-  var txt = '<b>매수 ' + t.buy + '</b> · 관망 ' + t.watch + ' · 청산 ' + t.exit;
+  /* 숫자를 늘어놓기보다 한 문장으로 말하고, 나머지는 아래 작은 줄로 내린다. */
+  var txt = '지금 <b>살 때인 종목 ' + t.buy + '개</b>' +
+            '<span class="sig-sub">기다릴 때 ' + t.watch + ' · 팔 때 ' + t.exit;
   if (s && s.backtested && has(s.win_rate)){
-    var w = sigWins(s);
-    txt += ' · 이 규칙 <b>' + w + '승 ' + (s.months - w) + '패</b>';
+    txt += ' · 이 신호는 ' + s.months + '번 중 ' + sigWins(s) + '번 맞았어요';
   }
-  box.innerHTML = txt;
+  box.innerHTML = txt + '</span>';
 }
 function sigRules(){
   var g = D && D.signal;
@@ -978,7 +981,7 @@ function extHtml(r, kind){
     '</div>' +
     '<div class="pick-bot">' +
       '<span class="sig ' + (kind === "high" ? "buy" : "exit") + '"><i></i>' +
-        (kind === "high" ? "52주 최고" : "52주 최저") + '</span>' +
+        (kind === "high" ? "1년 최고" : "1년 최저") + '</span>' +
       '<div class="why"><span>1년 만에 ' + (kind === "high" ? "가장 높아요" : "가장 낮아요") + '</span></div>' +
       '<span class="pick-sp">' + sparkSvg(r.spark, 56, 20) + '</span></div>' +
   '</div>';
@@ -991,7 +994,7 @@ function renderExtremes(){
   var hi = (e.high || []).map(function(x){ return findRow(x.ticker); }).filter(Boolean);
   var lo = (e.low || []).map(function(x){ return findRow(x.ticker); }).filter(Boolean);
   if (!hi.length && !lo.length){ box.innerHTML = ""; return; }
-  box.innerHTML = '<div class="sec-h"><h2>오늘 52주 최고·최저</h2>' +
+  box.innerHTML = '<div class="sec-h"><h2>1년 만에 최고 · 최저</h2>' +
       '<span class="n">' + (hi.length + lo.length) + '종목</span></div>' +
     hi.slice(0, 8).map(function(r){ return extHtml(r, "high"); }).join("") +
     lo.slice(0, 8).map(function(r){ return extHtml(r, "low"); }).join("");
@@ -1207,20 +1210,20 @@ function transHtml(){
     var ok = down ? !beat : beat;
     return '<div class="rk-item"><div class="rk-row">' +
       '<span class="rk-name">' + esc(name) + '</span>' +
-      '<span class="rk-cnt">한 달 평균 ' + x.avg_n + '종목</span>' +
+      '<span class="rk-cnt">한 번에 ' + Math.round(x.avg_n) + '개쯤</span>' +
       '<span class="rk-wl num">' + w + '승 ' + l + '패</span></div>' +
       '<div class="rk-sub">' +
         '<span>다음 달 <b class="num ' + cls(x.avg_monthly) + '">' + pct1(x.avg_monthly) +
           '</b> <span class="num">(' + esc(benchName()) + ' ' + pct1(x.bench_avg_monthly) + ')</span></span>' +
-        '<span>' + (down ? "지수보다 덜 오른 달" : "지수를 이긴 달") + '을 셉니다</span>' +
-        '<span><b>' + (ok ? "규칙이 맞은 쪽" : "규칙이 틀린 쪽") + '</b></span>' +
+        '<span>' + (down ? "지수보다 덜 오른 달" : "지수를 이긴 달") + '</span>' +
+        '<span><b>' + (ok ? "맞았어요" : "틀렸어요") + '</b></span>' +
       '</div></div>';
   };
-  var body = row("buy", "매수로 바뀐 종목") + row("exit", "청산으로 바뀐 종목");
+  var body = row("buy", "「살 때」로 바뀐 종목") + row("exit", "「팔 때」로 바뀐 종목");
   if (!body) return "";
-  return '<div class="sec-h"><h2>신호가 바뀐 순간</h2></div>' +
-    '<p class="sec-d">바뀐 종목만 담았을 때 그 다음 한 달입니다. ' +
-    '청산으로 바뀐 쪽은 지수보다 못해야 규칙이 맞은 것입니다.</p>' +
+  return '<div class="sec-h"><h2>신호가 바뀐 뒤</h2></div>' +
+    '<p class="sec-d">신호가 바뀐 종목만 사서 한 달 뒤에 본 결과예요. ' +
+    '「팔 때」로 바뀐 쪽은 지수보다 덜 올라야 맞은 거예요.</p>' +
     '<div class="rk">' + body + '</div>';
 }
 function renderRecord(){
@@ -1233,7 +1236,7 @@ function renderRecord(){
   }
   var i = 0;
   box.innerHTML = transHtml() +
-    '<div class="sec-h"><h2>기준별 전적</h2></div>' +
+    '<div class="sec-h"><h2>기준별로 보면</h2></div>' +
     '<div class="rk">' + list.map(function(x){
       return rankRow(x, x.bt ? i++ : -1); }).join("") + '</div>' +
     btCaveatHtml();
@@ -1544,8 +1547,8 @@ function renderPortfolio(){
 /* ============ 뷰 전환 ============ */
 var HERO = {
   picks: ["오늘 주목할 종목", ""],
-  record:["전적",
-          "기준마다 지수와 붙은 성적."],
+  record:["얼마나 맞았나",
+          "지수랑 붙어서 몇 번 이겼는지."],
   news:  ["오늘의 시장 뉴스", "국내 언론이 다룬 기사예요. 제목을 누르면 원문으로 갑니다."],
   mine:  ["내 종목",
           "보유 종목을 넣으면 지금 시세로 계산합니다. 입력한 내용은 이 기기에만 저장됩니다."]

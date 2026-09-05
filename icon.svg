@@ -1,9 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0b0e16"/>
-  <circle cx="32" cy="32" r="21" fill="none" stroke="#2b3550" stroke-width="2"/>
-  <circle cx="32" cy="32" r="11" fill="none" stroke="#2b3550" stroke-width="2"/>
-  <path d="M32 32 L50 20" stroke="#4b93ff" stroke-width="3" stroke-linecap="round"/>
-  <rect x="18" y="30" width="5" height="14" rx="2" fill="#ff5d73"/>
-  <rect x="29" y="24" width="5" height="20" rx="2" fill="#4b93ff"/>
-  <rect x="40" y="34" width="5" height="10" rx="2" fill="#ff5d73"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="종목 상황실">
+  <!-- 사이트 전체가 스파크라인으로 되어 있어 마크도 같은 선 하나로 간다.
+       16px 에서도 읽히도록 꺾임은 셋, 선은 두껍게. 색은 액센트 #4659EF. -->
+  <rect width="64" height="64" rx="15" fill="#4659EF"/>
+  <path d="M14 43 L26 31 L36 38 L50 19" fill="none" stroke="#fff"
+        stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
