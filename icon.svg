@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="종목 상황실">
-  <!-- 사이트 전체가 스파크라인으로 되어 있어 마크도 같은 선 하나로 간다.
-       16px 에서도 읽히도록 꺾임은 셋, 선은 두껍게. 색은 액센트 #4659EF. -->
-  <rect width="64" height="64" rx="15" fill="#4659EF"/>
-  <path d="M14 43 L26 31 L36 38 L50 19" fill="none" stroke="#fff"
-        stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="종목 상황실">
+  <rect width="512" height="512" rx="112" fill="#191F28"/>
+  <path d="M136 336 216 272 288 304 376 184" fill="none" stroke="#FFFFFF" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="376" cy="184" r="44" fill="#F04452"/>
 </svg>
