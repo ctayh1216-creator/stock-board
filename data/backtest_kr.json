@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-08T16:56:03+00:00",
+ "generated_at": "2026-09-09T16:53:04+00:00",
  "benchmark": "코스피 200",
  "top_n": 20,
  "caveats": [
@@ -745,7 +745,7 @@
     "bench": -1.11
    }
   ],
-  "hold_all_avg_monthly": 2.9,
-  "hold_all_cumulative": 85.1
+  "hold_all_avg_monthly": 2.87,
+  "hold_all_cumulative": 83.8
  }
 }
