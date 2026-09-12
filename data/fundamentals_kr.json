@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-11T16:41:33.269832+00:00",
+ "generated_at": "2026-09-12T15:45:48.356711+00:00",
  "count": 162,
  "failed": [],
  "rows": {
   "000100.KS": {
    "mcap": 5845093449728.0,
-   "pe_fwd": 28.439924,
+   "pe_fwd": 29.34472,
    "peg": null,
    "ps": 2.5610335,
    "roe": 9.507,
@@ -13,9 +13,9 @@
    "rev_g": 10.4,
    "eps_g": 54.900000000000006,
    "fcf": -76003835904.0,
-   "upside": 51.27343828715365,
-   "consensus": "none",
-   "n_analysts": 18,
+   "upside": 47.57741813602014,
+   "consensus": "buy",
+   "n_analysts": 17,
    "next_earnings": null,
    "surprise_last": 56.85,
    "beats4": 4,
@@ -57,7 +57,7 @@
    "roe": 5.072,
    "margin": 1.77,
    "rev_g": 4.8,
-   "eps_g": 349.0,
+   "eps_g": 263.09999999999997,
    "fcf": 289775386624.0,
    "upside": 55.2974336283186,
    "consensus": "strong_buy",
@@ -91,13 +91,13 @@
      "pct": -10.5
     }
    ],
-   "div_yield": 0.45,
+   "div_yield": 0.44,
    "beta": 2.048,
    "debt_eq": 77.729
   },
   "000270.KS": {
    "mcap": 49203854180352.0,
-   "pe_fwd": 5.3174596,
+   "pe_fwd": 5.32673,
    "peg": 0.42,
    "ps": 0.41239408,
    "roe": 11.598,
@@ -105,7 +105,7 @@
    "rev_g": 12.6,
    "eps_g": 3.2,
    "fcf": 2845027336192.0,
-   "upside": 72.42522116903633,
+   "upside": 71.66080568720379,
    "consensus": "strong_buy",
    "n_analysts": 31,
    "next_earnings": "2026-10-23",
@@ -137,14 +137,14 @@
      "pct": -2.6
     }
    ],
-   "div_yield": 5.35,
+   "div_yield": 5.37,
    "beta": 1.01,
    "debt_eq": 3.484
   },
   "000660.KS": {
    "mcap": 1286257074241536.0,
    "pe_fwd": 3.8352716,
-   "peg": 0.1985,
+   "peg": 0.1941,
    "ps": 6.799455,
    "roe": 354.055,
    "margin": 85.619,
@@ -229,21 +229,21 @@
      "pct": -2.8
     }
    ],
-   "div_yield": 0.61,
+   "div_yield": 0.59,
    "beta": 1.457,
    "debt_eq": 40.117
   },
   "000810.KS": {
    "mcap": 30300287533056.0,
-   "pe_fwd": 10.534076,
+   "pe_fwd": 10.484042,
    "peg": null,
    "ps": 1.4210883,
    "roe": 8.123,
    "margin": 10.0600004,
    "rev_g": -11.700000000000001,
-   "eps_g": 15.7,
+   "eps_g": 8.4,
    "fcf": -22318617198592.0,
-   "upside": 11.070618075801741,
+   "upside": 11.556523323615163,
    "consensus": "buy",
    "n_analysts": 18,
    "next_earnings": "2026-11-12",
@@ -269,7 +269,7 @@
      "pct": -4.8
     }
    ],
-   "div_yield": 3.01,
+   "div_yield": 2.84,
    "beta": 0.417,
    "debt_eq": 0.875
   },
@@ -290,7 +290,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 0.7,
+   "div_yield": 0.77,
    "beta": 2.363,
    "debt_eq": 12.224
   },
@@ -311,7 +311,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.58,
+   "div_yield": 2.57,
    "beta": 0.614,
    "debt_eq": 110.7
   },
@@ -326,7 +326,7 @@
    "eps_g": 37.9,
    "fcf": 2957850443776.0,
    "upside": -0.24079922027290257,
-   "consensus": "buy",
+   "consensus": "none",
    "n_analysts": 17,
    "next_earnings": "2026-11-12",
    "surprise_last": 16.350001,
@@ -383,10 +383,10 @@
    "debt_eq": 71.082
   },
   "003230.KS": {
-   "mcap": 9531487682560.0,
+   "mcap": 9627193311232.0,
    "pe_fwd": 14.073707,
-   "peg": 0.4461,
-   "ps": 3.4604473,
+   "peg": 0.451,
+   "ps": 3.4951937,
    "roe": 38.342997000000004,
    "margin": 17.703,
    "rev_g": 39.300000000000004,
@@ -424,7 +424,7 @@
      "pct": 7.6
     }
    ],
-   "div_yield": 0.46,
+   "div_yield": 0.5,
    "beta": 0.082,
    "debt_eq": 43.468
   },
@@ -445,7 +445,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.54,
+   "div_yield": 2.59,
    "beta": 0.834,
    "debt_eq": 228.945
   },
@@ -460,7 +460,7 @@
    "eps_g": null,
    "fcf": -958186323968.0,
    "upside": -0.18188343227198978,
-   "consensus": "hold",
+   "consensus": "none",
    "n_analysts": 27,
    "next_earnings": "2026-11-02",
    "surprise_last": 2264.7200000000003,
@@ -503,7 +503,7 @@
    "roe": -0.044000000000000004,
    "margin": -0.079,
    "rev_g": 2.7,
-   "eps_g": -75.1,
+   "eps_g": -75.2,
    "fcf": 638008164352.0,
    "upside": 23.086741071428563,
    "consensus": "buy",
@@ -531,7 +531,7 @@
      "pct": -38.5
     }
    ],
-   "div_yield": 1.48,
+   "div_yield": 1.49,
    "beta": 1.459,
    "debt_eq": 53.2
   },
@@ -546,7 +546,7 @@
    "eps_g": null,
    "fcf": 725840035840.0,
    "upside": 85.03937007874016,
-   "consensus": "none",
+   "consensus": "strong_buy",
    "n_analysts": 18,
    "next_earnings": null,
    "surprise_last": 34.599999999999994,
@@ -577,14 +577,14 @@
      "pct": 34.6
     }
    ],
-   "div_yield": 2.02,
+   "div_yield": 2.05,
    "beta": 1.14,
    "debt_eq": 65.968
   },
   "004370.KS": {
    "mcap": 2418270797824.0,
    "pe_fwd": 12.014708,
-   "peg": 1.4256,
+   "peg": 1.4326,
    "ps": 0.6636953,
    "roe": 6.94,
    "margin": 5.4029997000000005,
@@ -635,7 +635,7 @@
    "roe": 4.473,
    "margin": 1.619,
    "rev_g": 2.4,
-   "eps_g": 3.2,
+   "eps_g": -4.7,
    "fcf": 130112094208.0,
    "upside": 56.85543032786884,
    "consensus": "none",
@@ -644,21 +644,21 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 3.49,
+   "div_yield": 3.48,
    "beta": 0.173,
    "debt_eq": 101.139
   },
   "005380.KS": {
    "mcap": 100151532191744.0,
-   "pe_fwd": 7.871985,
+   "pe_fwd": 7.8941965,
    "peg": 4.13,
    "ps": 0.5307047,
    "roe": 7.165000000000001,
    "margin": 4.3169998000000005,
    "rev_g": 1.9,
-   "eps_g": -16.400000000000002,
+   "eps_g": -35.4,
    "fcf": -3920452911104.0,
-   "upside": 71.42261437908498,
+   "upside": 70.76901960784315,
    "consensus": "buy",
    "n_analysts": 32,
    "next_earnings": "2026-10-29",
@@ -690,7 +690,7 @@
      "pct": -9.2
     }
    ],
-   "div_yield": 2.57,
+   "div_yield": 2.61,
    "beta": 1.728,
    "debt_eq": 140.659
   },
@@ -736,13 +736,13 @@
      "pct": 85.3
     }
    ],
-   "div_yield": 2.36,
+   "div_yield": 2.4,
    "beta": 1.659,
    "debt_eq": 49.601
   },
   "005830.KS": {
    "mcap": 11625352396800.0,
-   "pe_fwd": 6.35612,
+   "pe_fwd": 6.3041015,
    "peg": null,
    "ps": 0.56167346,
    "roe": 15.828999999999999,
@@ -750,7 +750,7 @@
    "rev_g": -3.1,
    "eps_g": 30.8,
    "fcf": -7557668143104.0,
-   "upside": 20.592837767344818,
+   "upside": 21.359968701095468,
    "consensus": "strong_buy",
    "n_analysts": 17,
    "next_earnings": "2026-11-13",
@@ -782,19 +782,19 @@
      "pct": 38.5
     }
    ],
-   "div_yield": 4.08,
+   "div_yield": 3.96,
    "beta": 0.271,
    "debt_eq": 32.317
   },
   "005930.KS": {
    "mcap": 1704023174414336.0,
    "pe_fwd": 3.670939,
-   "peg": 0.1222,
+   "peg": 0.1179,
    "ps": 3.51148,
    "roe": 30.794,
    "margin": 30.842000000000002,
    "rev_g": 130.0,
-   "eps_g": 1355.8999999999999,
+   "eps_g": 1191.7,
    "fcf": 69550825537536.0,
    "upside": 83.90711753371869,
    "consensus": "strong_buy",
@@ -828,7 +828,7 @@
      "pct": -1.7
     }
    ],
-   "div_yield": 0.56,
+   "div_yield": 0.58,
    "beta": 1.544,
    "debt_eq": 3.868
   },
@@ -864,7 +864,7 @@
    "eps_g": null,
    "fcf": 150852026368.0,
    "upside": -3.035714285714286,
-   "consensus": "none",
+   "consensus": "buy",
    "n_analysts": 16,
    "next_earnings": null,
    "surprise_last": -59.38999700000001,
@@ -883,13 +883,13 @@
      "pct": -59.4
     }
    ],
-   "div_yield": 1.34,
+   "div_yield": 1.3,
    "beta": 0.855,
    "debt_eq": 114.968
   },
   "006400.KS": {
    "mcap": 42888029274112.0,
-   "pe_fwd": 29.517738,
+   "pe_fwd": 29.51621,
    "peg": 12.29,
    "ps": 3.0084896,
    "roe": 0.202,
@@ -897,7 +897,7 @@
    "rev_g": 18.5,
    "eps_g": null,
    "fcf": -1432064229376.0,
-   "upside": 31.5300366972477,
+   "upside": 32.00355963302752,
    "consensus": "buy",
    "n_analysts": 31,
    "next_earnings": "2026-10-28",
@@ -935,16 +935,16 @@
   },
   "006800.KS": {
    "mcap": 19461004328960.0,
-   "pe_fwd": 8.879899,
+   "pe_fwd": 9.001773,
    "peg": null,
    "ps": 0.4522778,
    "roe": 26.691,
    "margin": 8.831,
    "rev_g": 275.9,
-   "eps_g": 380.1,
+   "eps_g": 269.4,
    "fcf": null,
-   "upside": 76.63178475336323,
-   "consensus": "none",
+   "upside": 73.14399999999999,
+   "consensus": "buy",
    "n_analysts": 12,
    "next_earnings": null,
    "surprise_last": 75.24,
@@ -969,7 +969,7 @@
      "pct": 75.2
     }
    ],
-   "div_yield": 0.86,
+   "div_yield": 0.9,
    "beta": 1.431,
    "debt_eq": 664.12
   },
@@ -981,7 +981,7 @@
    "roe": 4.5,
    "margin": 1.0570001,
    "rev_g": 6.7,
-   "eps_g": 328.6,
+   "eps_g": 328.5,
    "fcf": 665919160320.0,
    "upside": 27.702495009980034,
    "consensus": "buy",
@@ -1015,7 +1015,7 @@
      "pct": 2.8
     }
    ],
-   "div_yield": 2.39,
+   "div_yield": 2.4,
    "beta": 0.326,
    "debt_eq": 72.569
   },
@@ -1036,7 +1036,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.67,
+   "div_yield": 2.71,
    "beta": 0.132,
    "debt_eq": 42.212
   },
@@ -1094,7 +1094,7 @@
    "roe": 10.578,
    "margin": 8.088,
    "rev_g": 24.2,
-   "eps_g": 143.4,
+   "eps_g": 134.1,
    "fcf": -447686868992.0,
    "upside": 68.86242857142857,
    "consensus": "strong_buy",
@@ -1143,7 +1143,7 @@
    "eps_g": 261.2,
    "fcf": 2573530824704.0,
    "upside": 48.80073871409027,
-   "consensus": "strong_buy",
+   "consensus": "none",
    "n_analysts": 15,
    "next_earnings": "2026-11-02",
    "surprise_last": 53.23,
@@ -1174,7 +1174,7 @@
      "pct": 53.2
     }
    ],
-   "div_yield": 4.44,
+   "div_yield": 4.27,
    "beta": 1.196,
    "debt_eq": 18.303
   },
@@ -1281,13 +1281,13 @@
    "eps_g": -6.2,
    "fcf": -1638079004672.0,
    "upside": 38.507209499575914,
-   "consensus": "strong_buy",
+   "consensus": "none",
    "n_analysts": 5,
    "next_earnings": null,
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.45,
+   "div_yield": 2.54,
    "beta": 0.698,
    "debt_eq": 66.242
   },
@@ -1299,7 +1299,7 @@
    "roe": 13.370999999999999,
    "margin": 4.8699997,
    "rev_g": 20.4,
-   "eps_g": 5.2,
+   "eps_g": 5.1,
    "fcf": 3042812100608.0,
    "upside": 63.55140186915889,
    "consensus": "buy",
@@ -1379,7 +1379,7 @@
      "pct": -14.1
     }
    ],
-   "div_yield": 0.52,
+   "div_yield": 0.53,
    "beta": 0.75,
    "debt_eq": 90.048
   },
@@ -1425,7 +1425,7 @@
      "pct": 533.4
     }
    ],
-   "div_yield": 1.52,
+   "div_yield": 1.53,
    "beta": 1.238,
    "debt_eq": 67.809
   },
@@ -1544,7 +1544,7 @@
   },
   "012450.KS": {
    "mcap": 55616139689984.0,
-   "pe_fwd": 18.221766,
+   "pe_fwd": 18.245659,
    "peg": null,
    "ps": 1.8568665,
    "roe": 20.808001,
@@ -1552,9 +1552,9 @@
    "rev_g": 47.3,
    "eps_g": 218.8,
    "fcf": -1182086856704.0,
-   "upside": 53.982007400555034,
+   "upside": 54.04607770582794,
    "consensus": "strong_buy",
-   "n_analysts": 22,
+   "n_analysts": 21,
    "next_earnings": "2026-10-30",
    "surprise_last": 18.08,
    "beats4": 1,
@@ -1584,7 +1584,7 @@
      "pct": 18.1
     }
    ],
-   "div_yield": 0.66,
+   "div_yield": 0.65,
    "beta": 0.833,
    "debt_eq": 78.703
   },
@@ -1630,15 +1630,15 @@
      "pct": 17.5
     }
    ],
-   "div_yield": 1.29,
+   "div_yield": 1.3,
    "beta": 1.448,
    "debt_eq": 25.752
   },
   "015760.KS": {
-   "mcap": 21249010958336.0,
+   "mcap": null,
    "pe_fwd": 2.7484145,
    "peg": null,
-   "ps": 0.21777649,
+   "ps": null,
    "roe": 16.595,
    "margin": 8.035,
    "rev_g": -0.1,
@@ -1647,42 +1647,17 @@
    "upside": 46.45374622356495,
    "consensus": "buy",
    "n_analysts": 21,
-   "next_earnings": "2026-11-12",
-   "surprise_last": -73.99,
-   "beats4": 2,
-   "eps_hist": [
-    {
-     "q": "2025-09-30",
-     "est": 4639.867,
-     "act": 5850.0,
-     "pct": 26.1
-    },
-    {
-     "q": "2025-12-31",
-     "est": 2272.349,
-     "act": 2063.0,
-     "pct": -9.2
-    },
-    {
-     "q": "2026-03-31",
-     "est": 3743.287,
-     "act": 3883.0,
-     "pct": 3.7
-    },
-    {
-     "q": "2026-06-30",
-     "est": 1599.338,
-     "act": 416.0,
-     "pct": -74.0
-    }
-   ],
-   "div_yield": 4.71,
+   "next_earnings": null,
+   "surprise_last": null,
+   "beats4": null,
+   "eps_hist": null,
+   "div_yield": 4.66,
    "beta": 0.808,
    "debt_eq": 263.19
   },
   "016360.KS": {
    "mcap": 7804820127744.0,
-   "pe_fwd": 5.484868,
+   "pe_fwd": 5.391983,
    "peg": null,
    "ps": 0.3680155,
    "roe": 18.110001,
@@ -1690,8 +1665,8 @@
    "rev_g": 159.1,
    "eps_g": 108.1,
    "fcf": null,
-   "upside": 70.48054919908466,
-   "consensus": "none",
+   "upside": 73.56099542334096,
+   "consensus": "buy",
    "n_analysts": 13,
    "next_earnings": "2026-11-11",
    "surprise_last": null,
@@ -1704,7 +1679,7 @@
   "017670.KS": {
    "mcap": 19367060307968.0,
    "pe_fwd": 14.322697,
-   "peg": 0.458,
+   "peg": 0.4605,
    "ps": 1.1353582,
    "roe": 5.189,
    "margin": 4.381,
@@ -1743,7 +1718,7 @@
      "pct": 36.8
     }
    ],
-   "div_yield": 3.67,
+   "div_yield": 3.65,
    "beta": 0.712,
    "debt_eq": 66.084
   },
@@ -1789,7 +1764,7 @@
      "pct": -6.5
     }
    ],
-   "div_yield": 1.41,
+   "div_yield": 1.43,
    "beta": 1.276,
    "debt_eq": 18.155
   },
@@ -1862,7 +1837,7 @@
   },
   "023530.KS": {
    "mcap": 3166311809024.0,
-   "pe_fwd": 7.9255595,
+   "pe_fwd": 7.8462467,
    "peg": null,
    "ps": 0.2261892,
    "roe": 1.329,
@@ -1871,7 +1846,7 @@
    "eps_g": null,
    "fcf": 326304301056.0,
    "upside": 52.49999999999999,
-   "consensus": "none",
+   "consensus": "buy",
    "n_analysts": 15,
    "next_earnings": "2026-11-06",
    "surprise_last": -107.91999999999999,
@@ -1884,7 +1859,7 @@
      "pct": -107.9
     }
    ],
-   "div_yield": 3.67,
+   "div_yield": 3.66,
    "beta": 0.548,
    "debt_eq": 83.212
   },
@@ -1899,7 +1874,7 @@
    "eps_g": -2.6,
    "fcf": null,
    "upside": 15.77404796163069,
-   "consensus": "hold",
+   "consensus": "none",
    "n_analysts": 18,
    "next_earnings": "2026-10-29",
    "surprise_last": null,
@@ -1930,7 +1905,7 @@
      "pct": null
     }
    ],
-   "div_yield": 6.14,
+   "div_yield": 6.03,
    "beta": 0.398,
    "debt_eq": null
   },
@@ -1976,7 +1951,7 @@
      "pct": -5.5
     }
    ],
-   "div_yield": 1.57,
+   "div_yield": 1.55,
    "beta": 1.228,
    "debt_eq": 1.907
   },
@@ -1988,7 +1963,7 @@
    "roe": 5.742,
    "margin": 6.43,
    "rev_g": 19.7,
-   "eps_g": 68.8,
+   "eps_g": 67.30000000000001,
    "fcf": 1918768381952.0,
    "upside": 36.56034604904632,
    "consensus": "strong_buy",
@@ -2022,7 +1997,7 @@
      "pct": 16.4
     }
    ],
-   "div_yield": 0.74,
+   "div_yield": 0.76,
    "beta": 1.29,
    "debt_eq": 3.488
   },
@@ -2040,17 +2015,10 @@
    "consensus": "none",
    "n_analysts": 4,
    "next_earnings": "2026-10-30",
-   "surprise_last": -1.2999999,
-   "beats4": 0,
-   "eps_hist": [
-    {
-     "q": "2026-06-30",
-     "est": 1464.09,
-     "act": 1445.0,
-     "pct": -1.3
-    }
-   ],
-   "div_yield": 6.14,
+   "surprise_last": null,
+   "beats4": null,
+   "eps_hist": null,
+   "div_yield": 6.15,
    "beta": 0.223,
    "debt_eq": 261.057
   },
@@ -2065,13 +2033,13 @@
    "eps_g": 24.7,
    "fcf": 109115514880.0,
    "upside": 29.46492860920147,
-   "consensus": "strong_buy",
+   "consensus": "none",
    "n_analysts": 11,
    "next_earnings": null,
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 6.52,
+   "div_yield": 6.5,
    "beta": 0.132,
    "debt_eq": 19.647
   },
@@ -2117,7 +2085,7 @@
      "pct": 18.5
     }
    ],
-   "div_yield": 4.62,
+   "div_yield": 4.55,
    "beta": 0.092,
    "debt_eq": 61.744
   },
@@ -2131,7 +2099,7 @@
    "rev_g": 63.3,
    "eps_g": -9.1,
    "fcf": -133065988898816.0,
-   "upside": 28.69918699186993,
+   "upside": 29.241190243902437,
    "consensus": "buy",
    "n_analysts": 18,
    "next_earnings": "2026-11-12",
@@ -2163,7 +2131,7 @@
      "pct": -5.1
     }
    ],
-   "div_yield": 1.71,
+   "div_yield": 1.72,
    "beta": 1.057,
    "debt_eq": 21.298
   },
@@ -2209,7 +2177,7 @@
      "pct": 36.0
     }
    ],
-   "div_yield": 3.9,
+   "div_yield": 3.84,
    "beta": 0.2,
    "debt_eq": 20.337
   },
@@ -2337,7 +2305,7 @@
    "eps_g": 987.2,
    "fcf": -821655764992.0,
    "upside": 41.80263931623931,
-   "consensus": "none",
+   "consensus": "buy",
    "n_analysts": 11,
    "next_earnings": "2026-11-13",
    "surprise_last": 456.37999999999994,
@@ -2362,21 +2330,21 @@
      "pct": 456.4
     }
    ],
-   "div_yield": 1.31,
+   "div_yield": 1.37,
    "beta": 1.603,
    "debt_eq": 65.47
   },
   "035250.KS": {
    "mcap": 2933268414464.0,
-   "pe_fwd": 9.883385,
+   "pe_fwd": 10.065575,
    "peg": null,
    "ps": 1.9897993,
    "roe": 8.5889995,
    "margin": 22.406000000000002,
    "rev_g": -4.2,
-   "eps_g": 76.7,
+   "eps_g": 77.0,
    "fcf": 70531768320.0,
-   "upside": 30.04504054054056,
+   "upside": 28.693689189189197,
    "consensus": "buy",
    "n_analysts": 15,
    "next_earnings": "2026-11-04",
@@ -2408,7 +2376,7 @@
      "pct": 50.3
     }
    ],
-   "div_yield": 6.47,
+   "div_yield": 6.42,
    "beta": 0.439,
    "debt_eq": 1.323
   },
@@ -2454,7 +2422,7 @@
      "pct": 24.1
     }
    ],
-   "div_yield": 1.26,
+   "div_yield": 1.27,
    "beta": 1.196,
    "debt_eq": 18.159
   },
@@ -2500,7 +2468,7 @@
      "pct": 1.4
     }
    ],
-   "div_yield": 0.21,
+   "div_yield": 0.22,
    "beta": 1.141,
    "debt_eq": 20.724
   },
@@ -2515,7 +2483,7 @@
    "eps_g": -40.1,
    "fcf": 95026888704.0,
    "upside": 69.95975603557815,
-   "consensus": "none",
+   "consensus": "buy",
    "n_analysts": 24,
    "next_earnings": null,
    "surprise_last": -52.11,
@@ -2546,7 +2514,7 @@
      "pct": -52.1
     }
    ],
-   "div_yield": 2.24,
+   "div_yield": 2.23,
    "beta": 0.314,
    "debt_eq": 1.324
   },
@@ -2567,7 +2535,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 3.16,
+   "div_yield": 3.12,
    "beta": 0.561,
    "debt_eq": 293.726
   },
@@ -2613,7 +2581,7 @@
      "pct": 13.2
     }
    ],
-   "div_yield": 0.55,
+   "div_yield": 0.56,
    "beta": 0.973,
    "debt_eq": 10.226
   },
@@ -2655,22 +2623,22 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 0.26,
+   "div_yield": 0.27,
    "beta": 1.431,
    "debt_eq": 0.945
   },
   "039490.KS": {
    "mcap": 7286849798144.0,
-   "pe_fwd": 4.9545517,
+   "pe_fwd": 4.9396205,
    "peg": null,
-   "ps": 0.23389272,
+   "ps": 0.23677024,
    "roe": 25.374999999999996,
    "margin": 5.605,
    "rev_g": 347.3,
    "eps_g": 118.9,
    "fcf": null,
-   "upside": 72.08633093525181,
-   "consensus": "none",
+   "upside": 70.16786330935251,
+   "consensus": "strong_buy",
    "n_analysts": 15,
    "next_earnings": null,
    "surprise_last": 43.419999999999995,
@@ -2695,15 +2663,15 @@
      "pct": 43.4
     }
    ],
-   "div_yield": 4.19,
+   "div_yield": 4.14,
    "beta": 1.213,
    "debt_eq": 626.619
   },
   "041510.KQ": {
-   "mcap": 1923153920000.0,
+   "mcap": null,
    "pe_fwd": 12.50021,
    "peg": null,
-   "ps": 1.5150878,
+   "ps": null,
    "roe": 10.762998999999999,
    "margin": 10.3719994,
    "rev_g": 15.4,
@@ -2712,42 +2680,17 @@
    "upside": 36.11111428571427,
    "consensus": "buy",
    "n_analysts": 21,
-   "next_earnings": "2026-11-04",
-   "surprise_last": -66.150004,
-   "beats4": 2,
-   "eps_hist": [
-    {
-     "q": "2025-09-30",
-     "est": 1368.066,
-     "act": 1737.0,
-     "pct": 27.0
-    },
-    {
-     "q": "2025-12-31",
-     "est": 153.781,
-     "act": 1308.0,
-     "pct": 750.6
-    },
-    {
-     "q": "2026-03-31",
-     "est": 1434.775,
-     "act": 1419.0,
-     "pct": -1.1
-    },
-    {
-     "q": "2026-06-30",
-     "est": 3801.835,
-     "act": 1287.0,
-     "pct": -66.2
-    }
-   ],
-   "div_yield": 2.0,
+   "next_earnings": null,
+   "surprise_last": null,
+   "beats4": null,
+   "eps_hist": null,
+   "div_yield": 1.93,
    "beta": 0.266,
    "debt_eq": 7.772
   },
   "042660.KS": {
    "mcap": 26224227254272.0,
-   "pe_fwd": 13.313086,
+   "pe_fwd": 13.476807,
    "peg": 0.4378,
    "ps": 1.7483493,
    "roe": 32.529,
@@ -2756,7 +2699,7 @@
    "eps_g": 366.2,
    "fcf": -502539681792.0,
    "upside": 56.1526518691589,
-   "consensus": "none",
+   "consensus": "buy",
    "n_analysts": 21,
    "next_earnings": "2026-10-26",
    "surprise_last": 35.08,
@@ -2793,8 +2736,8 @@
   },
   "042700.KS": {
    "mcap": 21911041998848.0,
-   "pe_fwd": 43.78086,
-   "peg": 0.9576,
+   "pe_fwd": 44.041813,
+   "peg": 0.8743,
    "ps": 39.74355,
    "roe": 33.244,
    "margin": 40.273997,
@@ -2833,13 +2776,13 @@
      "pct": 14.1
     }
    ],
-   "div_yield": 0.32,
+   "div_yield": 0.35,
    "beta": 2.149,
    "debt_eq": 0.305
   },
   "047040.KS": {
    "mcap": 8172516933632.0,
-   "pe_fwd": 16.651987,
+   "pe_fwd": 16.5412,
    "peg": null,
    "ps": 1.0614283,
    "roe": -14.000000000000002,
@@ -2847,8 +2790,8 @@
    "rev_g": -10.100000000000001,
    "eps_g": null,
    "fcf": -1090126348288.0,
-   "upside": -4.435942684766214,
-   "consensus": "none",
+   "upside": -2.888964303670194,
+   "consensus": "buy",
    "n_analysts": 13,
    "next_earnings": "2026-11-06",
    "surprise_last": null,
@@ -2866,22 +2809,22 @@
    "roe": 11.88,
    "margin": 2.4260001,
    "rev_g": 18.4,
-   "eps_g": 165.5,
+   "eps_g": 165.39999999999998,
    "fcf": -147917930496.0,
    "upside": 54.93934142114385,
-   "consensus": "strong_buy",
+   "consensus": "none",
    "n_analysts": 10,
    "next_earnings": null,
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 4.33,
+   "div_yield": 4.3,
    "beta": 1.53,
    "debt_eq": 99.954
   },
   "047810.KS": {
    "mcap": 12720500899840.0,
-   "pe_fwd": 28.852915,
+   "pe_fwd": 28.491283,
    "peg": 0.47,
    "ps": 2.871855,
    "roe": 9.575,
@@ -2889,9 +2832,9 @@
    "rev_g": 41.0,
    "eps_g": -36.3,
    "fcf": -1096985018368.0,
-   "upside": 38.58784674329503,
+   "upside": 39.731800766283534,
    "consensus": "buy",
-   "n_analysts": 21,
+   "n_analysts": 20,
    "next_earnings": null,
    "surprise_last": -41.11,
    "beats4": 0,
@@ -2933,7 +2876,7 @@
    "roe": 9.951,
    "margin": 7.99,
    "rev_g": -3.5000000000000004,
-   "eps_g": -24.8,
+   "eps_g": -24.7,
    "fcf": 70590267392.0,
    "upside": 24.469851926977682,
    "consensus": "none",
@@ -2942,7 +2885,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 3.38,
+   "div_yield": 3.35,
    "beta": 0.625,
    "debt_eq": 0.614
   },
@@ -2988,7 +2931,7 @@
      "pct": -6.7
     }
    ],
-   "div_yield": 0.85,
+   "div_yield": 0.86,
    "beta": 0.706,
    "debt_eq": 4.026
   },
@@ -3034,7 +2977,7 @@
      "pct": 336.2
     }
    ],
-   "div_yield": 0.71,
+   "div_yield": 0.73,
    "beta": 1.465,
    "debt_eq": 82.507
   },
@@ -3046,7 +2989,7 @@
    "roe": 4.729,
    "margin": 4.907,
    "rev_g": -2.7,
-   "eps_g": 700.0,
+   "eps_g": 736.0,
    "fcf": 31717269504.0,
    "upside": 21.83013815789474,
    "consensus": "none",
@@ -3080,7 +3023,7 @@
      "pct": -6.7
     }
    ],
-   "div_yield": 0.93,
+   "div_yield": 0.89,
    "beta": 1.035,
    "debt_eq": 0.375
   },
@@ -3122,7 +3065,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.45,
+   "div_yield": 2.36,
    "beta": 0.813,
    "debt_eq": 0.736
   },
@@ -3168,7 +3111,7 @@
      "pct": 10.5
     }
    ],
-   "div_yield": 2.68,
+   "div_yield": 2.62,
    "beta": 0.65,
    "debt_eq": null
   },
@@ -3183,7 +3126,7 @@
    "eps_g": -23.599999999999998,
    "fcf": 14388182016.0,
    "upside": 55.22805722891566,
-   "consensus": "buy",
+   "consensus": "none",
    "n_analysts": 14,
    "next_earnings": null,
    "surprise_last": 25.180000000000003,
@@ -3214,7 +3157,7 @@
      "pct": 25.2
     }
    ],
-   "div_yield": 1.15,
+   "div_yield": 1.2,
    "beta": 0.321,
    "debt_eq": null
   },
@@ -3272,7 +3215,7 @@
    "roe": 5.284,
    "margin": 1.1159999999999999,
    "rev_g": 14.899999999999999,
-   "eps_g": 10.9,
+   "eps_g": 0.3,
    "fcf": 1215334187008.0,
    "upside": 10.082902255639103,
    "consensus": "buy",
@@ -3306,7 +3249,7 @@
      "pct": -20.8
     }
    ],
-   "div_yield": 0.65,
+   "div_yield": 0.68,
    "beta": 2.08,
    "debt_eq": 44.485
   },
@@ -3373,7 +3316,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 0.5,
+   "div_yield": 0.51,
    "beta": 0.92,
    "debt_eq": 63.335
   },
@@ -3394,7 +3337,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 0.53,
+   "div_yield": 0.54,
    "beta": 0.026,
    "debt_eq": 77.636
   },
@@ -3446,17 +3389,17 @@
   },
   "071050.KS": {
    "mcap": 10210176401408.0,
-   "pe_fwd": 4.749045,
+   "pe_fwd": 4.589124,
    "peg": null,
    "ps": 0.38651356,
    "roe": 24.308,
    "margin": 11.106,
    "rev_g": 87.8,
-   "eps_g": 84.7,
+   "eps_g": 66.8,
    "fcf": null,
-   "upside": 64.12706611570246,
-   "consensus": "none",
-   "n_analysts": 12,
+   "upside": 69.37453512396694,
+   "consensus": "strong_buy",
+   "n_analysts": 11,
    "next_earnings": null,
    "surprise_last": null,
    "beats4": null,
@@ -3528,7 +3471,7 @@
      "pct": -12.7
     }
    ],
-   "div_yield": 0.43,
+   "div_yield": 0.44,
    "beta": 0.755,
    "debt_eq": 106.362
   },
@@ -3620,7 +3563,7 @@
      "pct": -10.8
     }
    ],
-   "div_yield": 2.84,
+   "div_yield": 2.78,
    "beta": 1.015,
    "debt_eq": 39.981
   },
@@ -3687,7 +3630,7 @@
      "pct": -4.9
     }
    ],
-   "div_yield": 3.41,
+   "div_yield": 3.35,
    "beta": 0.703,
    "debt_eq": null
   },
@@ -3760,7 +3703,7 @@
   },
   "090430.KS": {
    "mcap": 9684210679808.0,
-   "pe_fwd": 20.427042,
+   "pe_fwd": 20.447157,
    "peg": null,
    "ps": 2.155908,
    "roe": 5.4,
@@ -3768,9 +3711,9 @@
    "rev_g": 17.0,
    "eps_g": 146.6,
    "fcf": 367669182464.0,
-   "upside": 26.088142348754452,
+   "upside": 26.57651245551602,
    "consensus": "strong_buy",
-   "n_analysts": 26,
+   "n_analysts": 25,
    "next_earnings": "2026-10-29",
    "surprise_last": -3.2099999999999995,
    "beats4": 0,
@@ -3800,7 +3743,7 @@
      "pct": -3.2
     }
    ],
-   "div_yield": 0.9,
+   "div_yield": 0.88,
    "beta": 0.982,
    "debt_eq": 5.822
   },
@@ -3906,10 +3849,10 @@
    "debt_eq": null
   },
   "096770.KS": {
-   "mcap": 24520853291008.0,
+   "mcap": 24358879756288.0,
    "pe_fwd": 16.716648,
    "peg": null,
-   "ps": 0.26339838,
+   "ps": 0.2616585,
    "roe": -7.9959996,
    "margin": -1.254,
    "rev_g": 49.9,
@@ -3952,10 +3895,10 @@
    "debt_eq": 105.032
   },
   "097950.KS": {
-   "mcap": 2879366103040.0,
+   "mcap": 2641029234688.0,
    "pe_fwd": 6.6921673,
    "peg": null,
-   "ps": 0.101423904,
+   "ps": 0.093028635,
    "roe": -2.568,
    "margin": -2.3929998,
    "rev_g": 9.5,
@@ -3993,7 +3936,7 @@
      "pct": -112.7
     }
    ],
-   "div_yield": 3.32,
+   "div_yield": 3.34,
    "beta": 0.132,
    "debt_eq": 105.578
   },
@@ -4014,7 +3957,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 0.48,
+   "div_yield": 0.51,
    "beta": 1.74,
    "debt_eq": 4.029
   },
@@ -4035,7 +3978,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.16,
+   "div_yield": 2.19,
    "beta": 1.201,
    "debt_eq": 51.755
   },
@@ -4081,7 +4024,7 @@
      "pct": 7.8
     }
    ],
-   "div_yield": 2.66,
+   "div_yield": 2.6,
    "beta": 0.634,
    "debt_eq": null
   },
@@ -4169,7 +4112,7 @@
      "pct": -5.8
     }
    ],
-   "div_yield": 1.96,
+   "div_yield": 1.89,
    "beta": 0.922,
    "debt_eq": 91.977
   },
@@ -4202,7 +4145,7 @@
    "roe": 3.599,
    "margin": 2.7279999999999998,
    "rev_g": 7.8,
-   "eps_g": 199.10000000000002,
+   "eps_g": 182.8,
    "fcf": 48408014848.0,
    "upside": 70.29616724738676,
    "consensus": "none",
@@ -4211,7 +4154,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.92,
+   "div_yield": 2.79,
    "beta": 0.954,
    "debt_eq": 61.595
   },
@@ -4257,13 +4200,13 @@
      "pct": 0.8
     }
    ],
-   "div_yield": 0.71,
+   "div_yield": 0.69,
    "beta": 0.617,
    "debt_eq": 1.875
   },
   "128940.KS": {
    "mcap": 5883619180544.0,
-   "pe_fwd": 26.161028,
+   "pe_fwd": 25.960938,
    "peg": null,
    "ps": 3.5540292,
    "roe": 16.358,
@@ -4271,20 +4214,20 @@
    "rev_g": 29.299999999999997,
    "eps_g": 115.10000000000001,
    "fcf": 48711905280.0,
-   "upside": 38.2902370689655,
+   "upside": 39.547413793103445,
    "consensus": "buy",
    "n_analysts": 12,
    "next_earnings": "2026-10-29",
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 0.42,
+   "div_yield": 0.43,
    "beta": 0.564,
    "debt_eq": 26.295
   },
   "138040.KS": {
    "mcap": 21157004705792.0,
-   "pe_fwd": 7.124984,
+   "pe_fwd": 7.0999193,
    "peg": null,
    "ps": 0.99265844,
    "roe": 20.456,
@@ -4292,9 +4235,9 @@
    "rev_g": 35.199999999999996,
    "eps_g": 15.6,
    "fcf": null,
-   "upside": 10.72170560747665,
-   "consensus": "none",
-   "n_analysts": 6,
+   "upside": 7.78816199376946,
+   "consensus": "hold",
+   "n_analysts": 5,
    "next_earnings": null,
    "surprise_last": 13.270001,
    "beats4": 3,
@@ -4370,7 +4313,7 @@
      "pct": -129.3
     }
    ],
-   "div_yield": 3.38,
+   "div_yield": 3.39,
    "beta": 0.406,
    "debt_eq": 80.762
   },
@@ -4378,7 +4321,7 @@
    "mcap": 1751916609536.0,
    "pe_fwd": 26.942835,
    "peg": null,
-   "ps": 8.991072,
+   "ps": 8.993659,
    "roe": 8.472,
    "margin": 11.906,
    "rev_g": 1.4000000000000001,
@@ -4474,7 +4417,7 @@
    "roe": 8.306,
    "margin": 5.547,
    "rev_g": 5.800000000000001,
-   "eps_g": 53.400000000000006,
+   "eps_g": 53.300000000000004,
    "fcf": -147500744704.0,
    "upside": 37.439807383627596,
    "consensus": "strong_buy",
@@ -4508,7 +4451,7 @@
      "pct": -15.2
     }
    ],
-   "div_yield": 3.8,
+   "div_yield": 3.85,
    "beta": 0.537,
    "debt_eq": 43.351
   },
@@ -4542,7 +4485,7 @@
      "pct": 220.6
     }
    ],
-   "div_yield": 0.62,
+   "div_yield": 0.61,
    "beta": 0.773,
    "debt_eq": 73.425
   },
@@ -4568,10 +4511,10 @@
    "debt_eq": null
   },
   "180640.KS": {
-   "mcap": 9387314774016.0,
+   "mcap": 9313337737216.0,
    "pe_fwd": null,
    "peg": null,
-   "ps": 30.668879,
+   "ps": 30.42719,
    "roe": -0.787,
    "margin": -9.955,
    "rev_g": 1.0999999999999999,
@@ -4596,7 +4539,7 @@
    "roe": 32.057,
    "margin": 6.9180004,
    "rev_g": 27.500000000000004,
-   "eps_g": 132.8,
+   "eps_g": 132.7,
    "fcf": -70220447744.0,
    "upside": 0.820702402957485,
    "consensus": "buy",
@@ -4630,7 +4573,7 @@
      "pct": 13.8
     }
    ],
-   "div_yield": 1.25,
+   "div_yield": 1.22,
    "beta": 0.801,
    "debt_eq": 153.066
   },
@@ -4657,7 +4600,7 @@
   },
   "196170.KQ": {
    "mcap": 18642930499584.0,
-   "pe_fwd": 49.13305,
+   "pe_fwd": 49.16035,
    "peg": null,
    "ps": 73.39369,
    "roe": 35.599,
@@ -4665,7 +4608,7 @@
    "rev_g": 269.5,
    "eps_g": null,
    "fcf": -61308276736.0,
-   "upside": 42.55644776119405,
+   "upside": 47.24454477611941,
    "consensus": "buy",
    "n_analysts": 6,
    "next_earnings": null,
@@ -4697,7 +4640,7 @@
      "pct": 100.8
     }
    ],
-   "div_yield": 0.1,
+   "div_yield": 0.11,
    "beta": 1.004,
    "debt_eq": 1.087
   },
@@ -4709,7 +4652,7 @@
    "roe": 6.8309999999999995,
    "margin": 1.763,
    "rev_g": 3.9,
-   "eps_g": 1103.2,
+   "eps_g": 1102.5,
    "fcf": 106718330880.0,
    "upside": 40.16234371859297,
    "consensus": "none",
@@ -4743,14 +4686,14 @@
      "pct": 4.6
     }
    ],
-   "div_yield": 1.49,
+   "div_yield": 1.51,
    "beta": 0.848,
    "debt_eq": 70.235
   },
   "207940.KS": {
    "mcap": 65501698981888.0,
    "pe_fwd": 28.831303,
-   "peg": 1.763,
+   "peg": 1.7531,
    "ps": 12.790255,
    "roe": 18.526,
    "margin": 38.747,
@@ -4816,7 +4759,7 @@
   },
   "214450.KQ": {
    "mcap": 3553259683840.0,
-   "pe_fwd": 14.433438,
+   "pe_fwd": 14.426567,
    "peg": null,
    "ps": 5.887006,
    "roe": 27.339000000000002,
@@ -4824,7 +4767,7 @@
    "rev_g": 27.1,
    "eps_g": 18.7,
    "fcf": 88129273856.0,
-   "upside": 51.357555555555564,
+   "upside": 52.81954385964913,
    "consensus": "none",
    "n_analysts": 14,
    "next_earnings": null,
@@ -4856,7 +4799,7 @@
      "pct": 21.0
     }
    ],
-   "div_yield": 1.06,
+   "div_yield": 1.08,
    "beta": 0.48,
    "debt_eq": 27.899
   },
@@ -4898,7 +4841,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.07,
+   "div_yield": 2.01,
    "beta": 0.45,
    "debt_eq": 3.368
   },
@@ -4944,7 +4887,7 @@
      "pct": 271.9
     }
    ],
-   "div_yield": 0.17,
+   "div_yield": 0.18,
    "beta": 1.501,
    "debt_eq": 0.351
   },
@@ -4965,7 +4908,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.54,
+   "div_yield": 2.6,
    "beta": 0.895,
    "debt_eq": 23.208
   },
@@ -4999,15 +4942,15 @@
      "pct": -47.4
     }
    ],
-   "div_yield": 0.31,
+   "div_yield": 0.29,
    "beta": 1.071,
    "debt_eq": 69.623
   },
   "247540.KQ": {
-   "mcap": 10946597617664.0,
+   "mcap": 10790052560896.0,
    "pe_fwd": 150.63713,
    "peg": null,
-   "ps": 4.750829,
+   "ps": 4.6828885,
    "roe": 3.909,
    "margin": 1.8980000000000001,
    "rev_g": -26.0,
@@ -5045,7 +4988,7 @@
      "pct": -56.0
     }
    ],
-   "div_yield": 0.08,
+   "div_yield": 0.09,
    "beta": 1.211,
    "debt_eq": 138.137
   },
@@ -5097,7 +5040,7 @@
   },
   "259960.KS": {
    "mcap": 9583142633472.0,
-   "pe_fwd": 8.533614,
+   "pe_fwd": 8.353401,
    "peg": null,
    "ps": 2.1525638,
    "roe": 11.7089994,
@@ -5105,7 +5048,7 @@
    "rev_g": 94.89999999999999,
    "eps_g": null,
    "fcf": 836545282048.0,
-   "upside": 68.21892705882351,
+   "upside": 66.78670588235293,
    "consensus": "buy",
    "n_analysts": 23,
    "next_earnings": "2026-11-03",
@@ -5137,7 +5080,7 @@
      "pct": -117.8
     }
    ],
-   "div_yield": 1.07,
+   "div_yield": 1.05,
    "beta": 0.709,
    "debt_eq": 7.318
   },
@@ -5198,13 +5141,13 @@
    "eps_g": 997.8,
    "fcf": 3197229334528.0,
    "upside": 52.020202020202014,
-   "consensus": "none",
+   "consensus": "strong_buy",
    "n_analysts": 4,
    "next_earnings": null,
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.12,
+   "div_yield": 2.1,
    "beta": 1.089,
    "debt_eq": 53.284
   },
@@ -5250,7 +5193,7 @@
      "pct": -11.3
     }
    ],
-   "div_yield": 1.05,
+   "div_yield": 1.04,
    "beta": 1.181,
    "debt_eq": 8.069
   },
@@ -5271,7 +5214,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 3.92,
+   "div_yield": 3.94,
    "beta": 0.397,
    "debt_eq": 3.387
   },
@@ -5317,7 +5260,7 @@
      "pct": -9.0
     }
    ],
-   "div_yield": 4.37,
+   "div_yield": 4.4,
    "beta": 0.273,
    "debt_eq": 3.577
   },
@@ -5338,7 +5281,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.28,
+   "div_yield": 2.31,
    "beta": 0.167,
    "debt_eq": 66.586
   },
@@ -5353,7 +5296,7 @@
    "eps_g": 7.6,
    "fcf": 1018650689536.0,
    "upside": 23.946358620689658,
-   "consensus": "strong_buy",
+   "consensus": "none",
    "n_analysts": 18,
    "next_earnings": null,
    "surprise_last": -5.050000000000001,
@@ -5384,15 +5327,15 @@
      "pct": -5.1
     }
    ],
-   "div_yield": 2.77,
+   "div_yield": 2.83,
    "beta": -0.144,
    "debt_eq": 2.598
   },
   "285130.KS": {
-   "mcap": 1048453644288.0,
+   "mcap": 934245105664.0,
    "pe_fwd": 7.819049,
    "peg": null,
-   "ps": 0.398245,
+   "ps": 0.354864,
    "roe": -0.65499996,
    "margin": 0.27899999999999997,
    "rev_g": 24.8,
@@ -5405,7 +5348,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 2.82,
+   "div_yield": 2.87,
    "beta": 0.872,
    "debt_eq": 64.258
   },
@@ -5420,7 +5363,7 @@
    "eps_g": null,
    "fcf": -72963940352.0,
    "upside": 4.008667388949072,
-   "consensus": "hold",
+   "consensus": "none",
    "n_analysts": 8,
    "next_earnings": "2026-11-04",
    "surprise_last": null,
@@ -5447,7 +5390,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 6.88,
+   "div_yield": 6.77,
    "beta": 0.102,
    "debt_eq": 284.978
   },
@@ -5468,7 +5411,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 1.46,
+   "div_yield": 1.45,
    "beta": 1.298,
    "debt_eq": 277.142
   },
@@ -5476,12 +5419,12 @@
    "mcap": 2922506616832.0,
    "pe_fwd": -38.536366,
    "peg": null,
-   "ps": 4.3919654,
-   "roe": -4.344,
-   "margin": -12.516,
-   "rev_g": 9.1,
+   "ps": 4.4329653,
+   "roe": -4.245,
+   "margin": -12.847,
+   "rev_g": -3.8,
    "eps_g": null,
-   "fcf": -314999472128.0,
+   "fcf": -281675726848.0,
    "upside": -12.751677852348998,
    "consensus": "none",
    "n_analysts": 4,
@@ -5515,8 +5458,8 @@
     }
    ],
    "div_yield": null,
-   "beta": 0.951,
-   "debt_eq": 26.586
+   "beta": 0.88,
+   "debt_eq": 27.075
   },
   "316140.KS": {
    "mcap": 25554052972544.0,
@@ -5560,7 +5503,7 @@
      "pct": -10.6
     }
    ],
-   "div_yield": 4.12,
+   "div_yield": 3.99,
    "beta": 0.519,
    "debt_eq": null
   },
@@ -5572,7 +5515,7 @@
    "roe": 8.182999500000001,
    "margin": 29.902,
    "rev_g": 13.200000000000001,
-   "eps_g": null,
+   "eps_g": 11.4,
    "fcf": null,
    "upside": 28.935723653395783,
    "consensus": "none",
@@ -5618,7 +5561,7 @@
    "roe": 47.915,
    "margin": 46.550000000000004,
    "rev_g": 40.300000000000004,
-   "eps_g": 158.6,
+   "eps_g": 158.4,
    "fcf": 112032751616.0,
    "upside": 64.14777833753149,
    "consensus": "buy",
@@ -5679,7 +5622,7 @@
   },
   "329180.KS": {
    "mcap": 50262798499840.0,
-   "pe_fwd": 13.418581,
+   "pe_fwd": 13.427459,
    "peg": null,
    "ps": 2.5547247,
    "roe": 24.551001,
@@ -5687,8 +5630,8 @@
    "rev_g": 54.800000000000004,
    "eps_g": 130.29999999999998,
    "fcf": 1406698127360.0,
-   "upside": 71.69291440501044,
-   "consensus": "none",
+   "upside": 71.9776096033403,
+   "consensus": "strong_buy",
    "n_analysts": 22,
    "next_earnings": "2026-10-29",
    "surprise_last": 3.32,
@@ -5719,13 +5662,13 @@
      "pct": 3.3
     }
    ],
-   "div_yield": 2.22,
+   "div_yield": 2.1,
    "beta": 1.08,
    "debt_eq": 6.612
   },
   "352820.KS": {
    "mcap": 7363556802560.0,
-   "pe_fwd": 18.614635,
+   "pe_fwd": 18.596104,
    "peg": null,
    "ps": 2.0500145,
    "roe": -10.290000000000001,
@@ -5733,7 +5676,7 @@
    "rev_g": 105.5,
    "eps_g": 450.90000000000003,
    "fcf": 273635737600.0,
-   "upside": 95.32754913294796,
+   "upside": 93.64161849710983,
    "consensus": "strong_buy",
    "n_analysts": 24,
    "next_earnings": null,
@@ -5771,7 +5714,7 @@
   },
   "357780.KQ": {
    "mcap": 2527356518400.0,
-   "pe_fwd": 12.759314,
+   "pe_fwd": 12.606225,
    "peg": null,
    "ps": 2.5849583,
    "roe": 7.979,
@@ -5779,9 +5722,9 @@
    "rev_g": 25.900000000000002,
    "eps_g": 17.8,
    "fcf": 2078353536.0,
-   "upside": 56.19834242424244,
-   "consensus": "none",
-   "n_analysts": 11,
+   "upside": 54.79798181818183,
+   "consensus": "strong_buy",
+   "n_analysts": 12,
    "next_earnings": null,
    "surprise_last": 37.79,
    "beats4": 1,
@@ -5811,7 +5754,7 @@
      "pct": 37.8
     }
    ],
-   "div_yield": 0.69,
+   "div_yield": 0.71,
    "beta": 1.458,
    "debt_eq": 5.356
   },
@@ -5832,7 +5775,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 8.91,
+   "div_yield": 8.73,
    "beta": 0.397,
    "debt_eq": 117.432
   },
@@ -5846,7 +5789,7 @@
    "rev_g": 28.299999999999997,
    "eps_g": null,
    "fcf": -5886154113024.0,
-   "upside": 36.10153611111111,
+   "upside": 36.77202777777777,
    "consensus": "buy",
    "n_analysts": 29,
    "next_earnings": "2026-11-05",
@@ -5883,14 +5826,14 @@
    "debt_eq": 96.268
   },
   "375500.KS": {
-   "mcap": 3569552457728.0,
+   "mcap": 3396026499072.0,
    "pe_fwd": 7.3085737,
    "peg": null,
-   "ps": 0.50056964,
+   "ps": 0.47623557,
    "roe": 11.8640006,
    "margin": 8.716,
    "rev_g": -9.5,
-   "eps_g": 1498.5,
+   "eps_g": 1498.7,
    "fcf": 35888668672.0,
    "upside": 6.1438578088578,
    "consensus": "none",
@@ -5899,7 +5842,7 @@
    "surprise_last": null,
    "beats4": null,
    "eps_hist": null,
-   "div_yield": 1.06,
+   "div_yield": 1.04,
    "beta": 0.634,
    "debt_eq": 18.987
   },
@@ -5945,7 +5888,7 @@
      "pct": -40.9
     }
    ],
-   "div_yield": 1.8,
+   "div_yield": 1.77,
    "beta": 0.759,
    "debt_eq": 2.088
   },
@@ -5960,7 +5903,7 @@
    "eps_g": 214.9,
    "fcf": 1962133422080.0,
    "upside": 13.967567567567563,
-   "consensus": "none",
+   "consensus": "hold",
    "n_analysts": 10,
    "next_earnings": "2026-11-03",
    "surprise_last": 8.92,
