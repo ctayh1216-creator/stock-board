@@ -1,57 +1,57 @@
 {
- "generated_at": "2026-09-12T15:48:13+00:00",
- "tickers": 61,
+ "generated_at": "2026-09-13T16:33:58+00:00",
+ "tickers": 59,
  "market": [
   {
-   "title": "[EBN 데이터센터] 미국 증시, 기술주 강세에 일제히 상승 마감…필라델피아 반도체 1.81% 올라",
-   "publisher": "ebn.co.kr",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1GcFNCcDg3Z2VhYjdIQ3ZKNUZKbkdtalRLYW9nWHZaSlFqOWZtT0FEX243ajBWSHRTN3pvWUZUai1tWE5ycGtJRXFiTVM4MW44cnF4Nmc1YTgwd0ZRRldzSWI0a2toWVo5?oc=5",
-   "at": "2026-09-12T02:01:57+00:00",
-   "lang": "ko"
-  },
-  {
-   "title": "[서울데이터랩]미국 증시, 기술주 강세에 일제히 상승 마감…반도체지수 1%대 상승",
-   "publisher": "서울신문",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBXZmxscmppYmNhV1g0VEpsNXMxc3lEQWl4SXRxVllrdUJfWktUekZWMHFmTzFvSmlfZlBrdDFXR3I2YjRTRUZIcTE1bXFVQjE2ZmFPb2NMN002Qk9YSDdSNkxBQmNoT3BwM2RQR3Vtdw?oc=5",
-   "at": "2026-09-11T21:21:48+00:00",
-   "lang": "ko"
-  },
-  {
-   "title": "[미국 특징주] 미국 증시서 자금 이탈 가속…BofA \"변동성 확대 경고\"",
-   "publisher": "뉴스핌",
-   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5mb1dkakdOT0lXb2pRYWl1bzdYbTFjMXBmVjZ5d3J3TURCS0MzSHVfMW9DT1Z3SFJWNWhfd05NY0VFdFdKTVdsV19aOG5lLS13MVVRVnJqdDJRcm53?oc=5",
-   "at": "2026-09-11T16:15:00+00:00",
-   "lang": "ko"
-  },
-  {
-   "title": "미국 증시 선물, 주요 인플레이션 데이터 앞두고 혼조세",
+   "title": "연준 금리 인상 전망에 미국 주식 ETF서 45억 달러 유출",
    "publisher": "Investing.com 한국어",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9HQmVvanRIaUd4YThYa003WElSbXMwam1qWEs2ZV9TOTZ6SDVkdmNSdXFMRVlrRmZTNEdJMVd4NXpLWHMwUm11RWRFYUxhV1J6TTlGd21vY3RSN1NyQjR2QXNha042YTVSZUE2R3RhbDU?oc=5",
-   "at": "2026-09-10T00:50:00+00:00",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9kbktPZnZhNnhidGdxV05zbXZYYWhjdU1OcEZvRVZEbFQ4QzVWbzdjSlprNm9CUkpiSWMtd3RjdFJnYkxzZmZSYi1ud0laSjhwMk4tSnc0UVhwTndHYWhZMDhmazBxUVBHYmlRem1sUzg?oc=5",
+   "at": "2026-09-13T12:37:00+00:00",
+   "lang": "ko"
+  },
+  {
+   "title": "[미국 주식 돋보기] 국제유가 100달러 시대 … 美정유주 신고가 행진",
+   "publisher": "매일경제 마켓",
+   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4tUUpWcEk3RFdXRnpBM1Q3R2Fjbm1PTTZyaHZocnN5YTBjY2l0V0ViV2xjd18zY3E3UUJtOTd0TnNZbFpHcTVvWThJazFsMDRPMXc?oc=5",
+   "at": "2026-09-13T08:42:10+00:00",
+   "lang": "ko"
+  },
+  {
+   "title": "\"환율 강세라고 무조건 미국 주식? 그러다 큰코다친다\"…증시 전문가 경고",
+   "publisher": "뉴시스",
+   "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBZUFc2Wkd3QWNQYkVWaFNhUzhTc2VCZGViTDN2Y1IxS1pyMFZkdkpxNnB6bi1YTkpIdW9mTlNVczVuOGNiWWRKZWdhRzllZEdTeGd5RVJjaE5Uc1FqY0FWatIBeEFVX3lxTE9yMFdiVlJRN3M3R3ZiR1I2M2UxVHhlX2ZNWVJzNGZKT1ZCM1Ewc2tfSlNTcnY1Z05QTnYxZVVTbFZuSU1CLUVBUDlNMTM2Q2NVb1BGeXdTNjNWNmF5eXV1dFdkZzhlaVgxOUgxeWR1VVl0elo5WHhjVg?oc=5",
+   "at": "2026-09-13T10:41:00+00:00",
+   "lang": "ko"
+  },
+  {
+   "title": "[밤 8시 증시 시대] KRX 애프터마켓 출범…유동성 확대 시험대",
+   "publisher": "전자신문",
+   "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5kRDNkb1RMbS14T2tTSm1aV3pHNWpZaUc5SnVxZlp4SnF3Qk5wbVhEQlkzSXdzaFJXMjl4Z0UwTzFjQk0xN210cF9VZGx5dw?oc=5",
+   "at": "2026-09-13T06:00:00+00:00",
    "lang": "ko"
   }
  ],
  "by_ticker": {
   "NVDA": [
    {
-    "title": "엔비디아 투자한 반도체 주식, 왜 50% 폭락했나",
-    "publisher": "네이버 프리미엄콘텐츠",
-    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUkVKeldZdS0zRTRZZE5FSE5iZUg5MTU3Slk5eXh0TkotQnd0WmNzT0oyemFfQ3NBRnhTOFpHYzktV2RkODN1VXpBamp0U1Z3MkRsVUsyaEM0Q01xaGpfQVpmU1poRzAzN0plOUFiYmdibDc5WGNzOXZzNnh1bXhmQmJoYWdZcVRCeWJv?oc=5",
-    "at": "2026-09-12T11:00:00+00:00",
-    "lang": "ko"
-   },
-   {
     "title": "젠슨 황 ‘AGI 도래’ 선언에도 엔비디아 주가는 2% 하락",
-    "publisher": "글로벌이코노믹",
+    "publisher": "g-enews.com",
     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPWGZZTVRDMWZnVUxEOG5SaFlTR3lRNDhnZDU0QWE1MDlrdmNSMGx6cUtibGN6LWNLeUJBb0p6QU1oWFBiSkIzbjU0YzJUaXJxbDZGMmZGRHJJUXYySmhCQkh1Sk1uMTZCd0lyNnhCb29fdGVyWkgyLVk0Ykk4cDRLMFlrUDc2Sndv?oc=5",
     "at": "2026-09-09T23:34:22+00:00",
     "lang": "ko"
    },
    {
-    "title": "엔비디아 새 랠리 시작되나…베라 루빈 올가을 출하가 주가 변수",
-    "publisher": "코인리더스",
-    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1PcnJDYW1QQktyNmxWa2xRZ2t3bnAxM1F1SmVwN0VyVkVITXk5aFVwOHg3bWFuUkExNmoxVUFseUgyRkg0Q3k3Ukln?oc=5",
-    "at": "2026-09-12T09:09:00+00:00",
+    "title": "빅쇼트 '마이클 버리' 백기? 엔비디아·팔란티어 공매도 축소",
+    "publisher": "theguru.co.kr",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9sakgzc1ZKeUlCcmpEelFBZ2hBX2Y4SkRYWThsNDJQa1hnMjdjZHFxMWZrcHFFOFo3WTlBVE5ZTkVFcG5WVWRNaUlZRzdMUzJPc3JRSXFyMms1SlNsbkE?oc=5",
+    "at": "2026-09-11T02:04:52+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "랙스페이스 주가, 엔비디아 파트너십 발표에 13% 급등",
+    "publisher": "Investing.com 한국어",
+    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE02Rk5FeFZBaHdrR3llc1hiZ0FxOUdvT19zc3VuTGdjeldLSk1IOWJHdG9NcUM1VUh6Z0tDalpVbmItc0xCR08wZmJWdk0yTXFMdmtlWXdYX20tX092TzZvRFd2U3hrdUZwWElHOS1vdGg1U2ZmUHRv?oc=5",
+    "at": "2026-09-10T11:32:00+00:00",
     "lang": "ko"
    }
   ],
@@ -80,47 +80,47 @@
   ],
   "GOOGL": [
    {
-    "title": "버크셔의 AI 투자로 인해 알파벳(GOOGL) 주가가 32% 저평가되었을 수 있다",
+    "title": "알파벳(GOOGL) 미티 랩스 탄소배출권 계약 체결, 지금 주가는 이미 충분히 반영됐나?",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVkExcllHbU8yZE9uSng4QXB1Q3E4QWdWUDJHNVhzVGRmOU1OQU9nS2VFaWpSMlY5TEtLR3VHeENVeEQ3a2stb09SVng3LThjdUgtbXd2TVRpeGhsemQ1T0FyWExyM3k5U2ZGdkJiRkthNmlyZzJ0RG95NG5xNXFNcHlidm93WXhlS3RjMdIBkgFBVV95cUxPNzNFZ3N1WHdfV29UUlFpSXl6Q0VEZ3E1cFEwV0ZFcDdMaC05UTlJUjdjRFJWQV9oMlA0TU1Mb1JzMFIyM3hMbVlUV3VTYV85NHlCV2J4TEFZcUN1ZmFpRF91UXpEemhZXzhKd01IZlZQYXVxMGxlM2hocnJhdkozSER6QkEyeG9aaTRRV09RaDUzZw?oc=5",
-    "at": "2026-09-11T11:24:14+00:00",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPT2h5MnY4UGE3MkRzdThoaE1KMkxuTlpMNWVkX1RCcXoxTkRuUldYVGhOZElzRmhGX0Y0cERvZWowczV2aGJwT1Rpa3NRY3d5T1Q5WHJRdkI1QTktdUMwNHlOTU5pM0hfZG51MkcxZjQ3U3ZPVkZudlJtY1JRbHVDVjJNYURRUjVKVzVjOdIBkgFBVV95cUxNNDRRTVp1bjRNcUVfZk84MUNpOGZoUFhBV1FJMjIyNnpxTUMzbjh4MDJzZkpVVElXRF85cGw0UXVkUFI5Mm5hQkh2TkZuSkl0TWFvc3BDVnE2ZVFKcnA3YXVhVnIyRTk5UFNlXzhNOElfbW51U3NhcmNOcURVWGMxam12c3hxeUdnTnAzRjZrWUVUdw?oc=5",
+    "at": "2026-09-13T06:26:03+00:00",
     "lang": "ko"
    },
    {
-    "title": "[美특징주]구글, 유럽서 AI 인프라 151억달러 투자…주가는 하락",
-    "publisher": "edaily.co.kr",
-    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVmJqdG82Q051UnVCWnpvT1hqMC1oMVBOUjZDZ0VwTEZ1LTVVaGtFVFZUdjA5OS03Y1hxdmQ0d3NsdVZKdGpMY1RFQlRQblJId0s0R0lIbWRacWRqOWlrMDZ3RFdrcWpSVDdmMW0zR2pXUVNyLVluZ2ZTd1BuUHhjSA?oc=5",
-    "at": "2026-09-09T16:15:08+00:00",
+    "title": "잘나가던 알파벳을 왜 던졌나…억만장자 투자자는 조용히 ‘이것’ 샀다 [재테크+]",
+    "publisher": "서울신문",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9aMWFGaE9BTlNDQjh0SkhjNTA0dl9XdGl5eS1EVnVPRU5jcnUzNWlRNE51ckVITXBGMzc1bGpsQzMyMjJEOGVINzJoUDk3MXB2OGR4NE5JNXNvbVFWQnVaWVM4UEtYcHBQT3ZjWURSdw?oc=5",
+    "at": "2026-09-08T14:30:00+00:00",
     "lang": "ko"
    },
    {
-    "title": "캐시 우드, 메타 주식 2,810만달러 매수·알파벳 매도···’초지능’ 전략에 투자 확대",
-    "publisher": "Benzinga",
-    "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNc2QwbmRGMDA4RG80MGNTZVhkUVB3NEtkNUJWckoza0JpbzdLYk5aRkwzYTE0bk9PZ3BuX1h3bVdpdG5UTnYwZzhFRk9CeUNIUzhCVXVDMkQzaUFPVmUwTTFERllaX3hjZmlPRDFaMFp2eTVmdVd1cWw3NTBmM1JSeVQxeVFNc1hoaEZJeElRQ2c0SWNHX3dLSEhIOUNwN0pkZ2d2dEhUSmE0SnR6V0FBdjg2Z2NNMGFVa3VvaHFUY29EdnhJYl9OUTFmZXdHQ2VDbURjUXhubFBUUHVBOF9FeGlmUWhJVGNoeHBOUHBJTFphWlZxdjh2NlFsMjhITXhsb25UV0FKcm8weXJBUTNyYl81TU5jRFZpUzRlemV2Nk1CTHNsaXRBOS0zZF9jT3hKV1BvTDRmZGtfbnBlamUxX2NtWQ?oc=5",
-    "at": "2026-09-10T03:35:11+00:00",
+    "title": "빌 애크먼, 10% 뛴 알파벳(GOOGL) 던지고 '넷플릭스(NFLX)'로 갈아타기",
+    "publisher": "코인리더스",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE92MWFGckc0dmh4MUpCWGNLTzhaTVFGZ3czZEVhaEtGd09saTgxUXhFSFNiNkhCMWlLMEJoMzFkdTl0SU1RTTFkVFVR?oc=5",
+    "at": "2026-09-09T11:00:00+00:00",
     "lang": "ko"
    }
   ],
   "GOOG": [
    {
-    "title": "버크셔의 AI 투자로 인해 알파벳(GOOGL) 주가가 32% 저평가되었을 수 있다",
+    "title": "알파벳(GOOGL) 미티 랩스 탄소배출권 계약 체결, 지금 주가는 이미 충분히 반영됐나?",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVkExcllHbU8yZE9uSng4QXB1Q3E4QWdWUDJHNVhzVGRmOU1OQU9nS2VFaWpSMlY5TEtLR3VHeENVeEQ3a2stb09SVng3LThjdUgtbXd2TVRpeGhsemQ1T0FyWExyM3k5U2ZGdkJiRkthNmlyZzJ0RG95NG5xNXFNcHlidm93WXhlS3RjMdIBkgFBVV95cUxPNzNFZ3N1WHdfV29UUlFpSXl6Q0VEZ3E1cFEwV0ZFcDdMaC05UTlJUjdjRFJWQV9oMlA0TU1Mb1JzMFIyM3hMbVlUV3VTYV85NHlCV2J4TEFZcUN1ZmFpRF91UXpEemhZXzhKd01IZlZQYXVxMGxlM2hocnJhdkozSER6QkEyeG9aaTRRV09RaDUzZw?oc=5",
-    "at": "2026-09-11T11:24:14+00:00",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPT2h5MnY4UGE3MkRzdThoaE1KMkxuTlpMNWVkX1RCcXoxTkRuUldYVGhOZElzRmhGX0Y0cERvZWowczV2aGJwT1Rpa3NRY3d5T1Q5WHJRdkI1QTktdUMwNHlOTU5pM0hfZG51MkcxZjQ3U3ZPVkZudlJtY1JRbHVDVjJNYURRUjVKVzVjOdIBkgFBVV95cUxNNDRRTVp1bjRNcUVfZk84MUNpOGZoUFhBV1FJMjIyNnpxTUMzbjh4MDJzZkpVVElXRF85cGw0UXVkUFI5Mm5hQkh2TkZuSkl0TWFvc3BDVnE2ZVFKcnA3YXVhVnIyRTk5UFNlXzhNOElfbW51U3NhcmNOcURVWGMxam12c3hxeUdnTnAzRjZrWUVUdw?oc=5",
+    "at": "2026-09-13T06:26:03+00:00",
     "lang": "ko"
    },
    {
-    "title": "[美특징주]구글, 유럽서 AI 인프라 151억달러 투자…주가는 하락",
-    "publisher": "edaily.co.kr",
-    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVmJqdG82Q051UnVCWnpvT1hqMC1oMVBOUjZDZ0VwTEZ1LTVVaGtFVFZUdjA5OS03Y1hxdmQ0d3NsdVZKdGpMY1RFQlRQblJId0s0R0lIbWRacWRqOWlrMDZ3RFdrcWpSVDdmMW0zR2pXUVNyLVluZ2ZTd1BuUHhjSA?oc=5",
-    "at": "2026-09-09T16:15:08+00:00",
+    "title": "잘나가던 알파벳을 왜 던졌나…억만장자 투자자는 조용히 ‘이것’ 샀다 [재테크+]",
+    "publisher": "서울신문",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9aMWFGaE9BTlNDQjh0SkhjNTA0dl9XdGl5eS1EVnVPRU5jcnUzNWlRNE51ckVITXBGMzc1bGpsQzMyMjJEOGVINzJoUDk3MXB2OGR4NE5JNXNvbVFWQnVaWVM4UEtYcHBQT3ZjWURSdw?oc=5",
+    "at": "2026-09-08T14:30:00+00:00",
     "lang": "ko"
    },
    {
-    "title": "캐시 우드, 메타 주식 2,810만달러 매수·알파벳 매도···’초지능’ 전략에 투자 확대",
-    "publisher": "Benzinga",
-    "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNc2QwbmRGMDA4RG80MGNTZVhkUVB3NEtkNUJWckoza0JpbzdLYk5aRkwzYTE0bk9PZ3BuX1h3bVdpdG5UTnYwZzhFRk9CeUNIUzhCVXVDMkQzaUFPVmUwTTFERllaX3hjZmlPRDFaMFp2eTVmdVd1cWw3NTBmM1JSeVQxeVFNc1hoaEZJeElRQ2c0SWNHX3dLSEhIOUNwN0pkZ2d2dEhUSmE0SnR6V0FBdjg2Z2NNMGFVa3VvaHFUY29EdnhJYl9OUTFmZXdHQ2VDbURjUXhubFBUUHVBOF9FeGlmUWhJVGNoeHBOUHBJTFphWlZxdjh2NlFsMjhITXhsb25UV0FKcm8weXJBUTNyYl81TU5jRFZpUzRlemV2Nk1CTHNsaXRBOS0zZF9jT3hKV1BvTDRmZGtfbnBlamUxX2NtWQ?oc=5",
-    "at": "2026-09-10T03:35:11+00:00",
+    "title": "빌 애크먼, 10% 뛴 알파벳(GOOGL) 던지고 '넷플릭스(NFLX)'로 갈아타기",
+    "publisher": "코인리더스",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE92MWFGckc0dmh4MUpCWGNLTzhaTVFGZ3czZEVhaEtGd09saTgxUXhFSFNiNkhCMWlLMEJoMzFkdTl0SU1RTTFkVFVR?oc=5",
+    "at": "2026-09-09T11:00:00+00:00",
     "lang": "ko"
    }
   ],
@@ -133,17 +133,17 @@
     "lang": "ko"
    },
    {
-    "title": "마이크로소프트, AI 컴퓨팅 부족에 사업 기회 놓쳐···이제 컴퓨팅 파워 3배 확대 추진",
-    "publisher": "Benzinga",
-    "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxNX0d5MDlDdmJiczFOMkkyUGRJd08zTWdsM29ISEpzS3RWSE9wbUdiLUJrOUZQRFV4aHptMGdXMjR5Mm8wVXk0TW5od2lBb0lfZHJrTlNvRkJ1MlgwWndIRG9MR0dUenE5ekhuUE9FYVg1TmtfaWJ2VTJQZlhzMGpPd3EzUmJySk5aZ1d5bTRJbUoxNE1JdDg0dlNBaTZiQ1RCSm9SOHp5TDhKRXFUUmJvX2dLT1pRbDU5MkVycEppWk9TVnVnS0lCS3kyZ2FtQ3huY3lhNjNXaVdQN0hJX1VJd054V29WbHdFNy1jUThVVTFYY3FqclJRVDdNRk13a2ZaOVZBbFQyZWNTS2VYdW1pN0thLVZETlpmazBrSkwxQ3QzaDZ0TW1zN013MUpuMW52S2pmb2lGbzJUWW93WWlLd0t3?oc=5",
-    "at": "2026-09-12T02:03:12+00:00",
-    "lang": "ko"
-   },
-   {
     "title": "RBC 캐피탈, 마이크로소프트 주식 등급 재확인…애저(Azure) 성장 견인",
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5OVDlyemRaSjlPd3J3S2pEZmtWQmpjRG81b3p6N1pRbWRaNWlMa25KdVJtWXl4b0h1RTB6bFhIMXFWMDliS2FJN2dXWUNlWGJmMW10S2lBOElJV0MwY0h3VVRGcXhKX3M3azlxUWEtOUVtZEFz?oc=5",
     "at": "2026-09-10T14:11:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "마이크로소프트, AI 컴퓨팅 부족에 사업 기회 놓쳐···이제 컴퓨팅 파워 3배 확대 추진",
+    "publisher": "Benzinga",
+    "url": "https://news.google.com/rss/articles/CBMiwgJBVV95cUxNX0d5MDlDdmJiczFOMkkyUGRJd08zTWdsM29ISEpzS3RWSE9wbUdiLUJrOUZQRFV4aHptMGdXMjR5Mm8wVXk0TW5od2lBb0lfZHJrTlNvRkJ1MlgwWndIRG9MR0dUenE5ekhuUE9FYVg1TmtfaWJ2VTJQZlhzMGpPd3EzUmJySk5aZ1d5bTRJbUoxNE1JdDg0dlNBaTZiQ1RCSm9SOHp5TDhKRXFUUmJvX2dLT1pRbDU5MkVycEppWk9TVnVnS0lCS3kyZ2FtQ3huY3lhNjNXaVdQN0hJX1VJd054V29WbHdFNy1jUThVVTFYY3FqclJRVDdNRk13a2ZaOVZBbFQyZWNTS2VYdW1pN0thLVZETlpmazBrSkwxQ3QzaDZ0TW1zN013MUpuMW52S2pmb2lGbzJUWW93WWlLd0t3?oc=5",
+    "at": "2026-09-12T02:03:12+00:00",
     "lang": "ko"
    }
   ],
@@ -172,13 +172,6 @@
   ],
   "AVGO": [
    {
-    "title": "브로드컴, 실적 호조에도 가이던스 실망…시간외서 주가 급락(상보)",
-    "publisher": "연합인포맥스",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5VVER6bkxDVVIzMFBFZ0xxa09lUHlLME9GbkxHOWp6RVc1ZGR2LWtwcWtLUnQtVkFSTUxldXB0dmM3OUJseXFFbG5jRGNCQ3UzdlMwUHllQ3VKNEgtUW1QM2FvZk5qSTBvRlJwc3lPV2I?oc=5",
-    "at": "2026-09-03T07:00:00+00:00",
-    "lang": "ko"
-   },
-   {
     "title": "파이퍼 샌들러, 브로드컴 투자의견 ’비중확대’ 제시",
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5OZWluM2dJbUhWWU5pUnhlbFljTFR1djA2Y2hhczZWRFYxaWw5ZW1IaUltc1ZWYnozMVlXd19WeDBCZjBEZ0dKN3hSeUtyUXZmTmI3SDNfbGZLUFhmbXN5am04aV9xRk1XZHFrdUZkQ0hfaHkx?oc=5",
@@ -186,26 +179,33 @@
     "lang": "ko"
    },
    {
-    "title": "브로드컴(AVGO), 엇갈린 실적 전망 발표 이후에도 기업 가치 우위를 유지할 수 있을까?",
+    "title": "브로드컴(AVGO) 골드만삭스 컨퍼런스를 앞두고 지금 주가는 아직 저평가일까?",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMVBKdjdQd2VVUUN2QVVNb3cwR0VqaEdsdXl3ME9DSk4yWURjZTdHQ1pTZGo3dllaZTZmTU1tZTIxQ281ODdNaGFPeGRKcHg0V284eEx0bHREeFBmYVhQNUdDd2hMZkg1S1FQZmlLbzl4LXcxUU9wV2FBMDRpZlRUZUZpaFdYOG1TeFFydG9JclNSb0ttTk9zNUFHVXjSAZwBQVVfeXFMTTFQSnY3UHdlVVFDdkFVTW93MEdFamhHbHV5dzBPQ0pOMllEY2U3R0NaU2RqN3ZZWmU2Zk1NbWUyMUNvNTg3TWhhT3hkSnB4NFdvOHhMdGx0RHhQZmFYUDVHQ3doTGZINUtRUGZpS285eC13MVFPcFdhQTA0aWZUVGVGaWhXWDhtU3hRcnRvSXJTUm9LbU5PczVBR1V4?oc=5",
-    "at": "2026-09-08T12:23:40+00:00",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNZml2ZHRWZjJNa3Vja0NZMWhueDNTdzBMcU8tQ2gtN1FzMklQSFRJdXZEQ0FpV2txdUZRQVV2QmRSbkQyLXY5SWJldkNiRmFCNzFTa0ZwTkR6QXhXYzlhMnE2ZlBjUUxQdE5PdTduT1JUUjBYX1dOVkRJNW9pUmNLY0hWRUJ2akdqVTM3b3pYeFpib0Zncm1R0gGcAUFVX3lxTFBVS1o1MThjcU1WVnVYM3BnMlZOMnd3R2ozdUF0ZzZBY1VIc0Z3c3BXUEl0ZUV0TXk2Q3dVWEE0ZmZ1d3ZvTm0yTUtZMXJOcmZka052dDVYN3k0Z05wdHdQdjhKUFMzaTZua2lTSjZ4T3loVV9CbC1fNmN5emZyT3FFcDc3Q2VobkR0cDdtMEhLdGd6bkZFdXQ2SHZ3eA?oc=5",
+    "at": "2026-09-10T07:00:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "매그니피센트7 말고 브로드컴?···게리 블랙 “이 기술주가 더 싸다”",
+    "publisher": "Benzinga",
+    "url": "https://news.google.com/rss/articles/CBMivgJBVV95cUxPRDF0VWRfZWlLZS1KSzNENnR3aVFhek9VbnloWTBPbzQ4aUhTMzVYYS1yMENJTHlQamYtd3dIdUdEMGVIN3V2Mkt2Y3htU1I3d2FVS1BLQWhRM1YxVVNxdUNzbWhWX1dXRDZObTFWelpsSUROZG9vRG54VTZTMUNaaTBWTjBLdHZ1M2ZoZFNCVmgzYlVtbzdldWQ4UXZhMndoY0NPTTcwdWE0b1hsX2xUOUdpTG51YndYVjJ1bFZyXzZGMlNrS1hMUUZ3Z0dVNGJ0dVZkekgzRlh6R1JhcWt2emR3NVlNUGprMXJWVk1pV09mSWMzek9RdUk2Q0tFSDhHcE9vN2ZBRV9XM3hDMEFjN0FDdkY3WnpKdjU1MTAxMG9uRWhTVkg2WjBPMXBibHpKZGt0TVpESWdZUGJOMEE?oc=5",
+    "at": "2026-09-11T05:35:48+00:00",
     "lang": "ko"
    }
   ],
   "META": [
    {
-    "title": "메타 플랫폼스(META)의 주가는 여전히 공정가치 대비 할인된 수준에서 거래되고 있는가?",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeTZScmZEUTY1ODQ0eVQ4OExjbE44UDhEY3B4Rm5hZi1nN2N2LUIzLWFZRF9PeXhEbGs4UXVuM1JwVXo4X3AyRXZmLWFOeWcxVDI0WXFzN0hfWVNEazk4Tm91dkp1UVRBa2ZnRU5FZWVvVE9GX3RSeHRfa3lJeVBnLWd5UVhzUDJqS2xHc2lxdm5CUXfSAZgBQVVfeXFMTkg0NEpxUVdEbEg0V2h5cXRXOGNmLVRseVBaaGZxMkxJNmd6cFZ3dGxDdEJrRFdFTUplUzgyVHFtZmx3dGVxYzNKT29DQUJtSEVlWjYtbktmZ2x3ZTMxcDdJc25TcFZ6aUYxYjRDTmZHWkFkRXF2SlNOMkRfcm15NUN1TGxEclRkQkg2RDZ0Q0JYMndwUmdoeTQ?oc=5",
-    "at": "2026-09-11T11:02:35+00:00",
-    "lang": "ko"
-   },
-   {
     "title": "메타 플랫폼스 COO 하비에르 올리반, 330만 달러 상당 주식 매도",
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE93RUdwdlc1NWVlQTU5OENkYkpnUFc4S0NtMF83cW9kY1Q1ajZtZ3d3bllxVFRrZ21wbUptSlRBUjNQYVRIekV4dG5mcHlFNlVuaU04THBsZ2w4WndIc1U3VFk2ZUtWYXFvS1JDMDBHWmVmdXg1UUVWVExCcw?oc=5",
     "at": "2026-09-11T00:02:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "메타 플랫폼스(META)의 주가는 여전히 공정가치 대비 할인된 수준에서 거래되고 있는가?",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSDQ0SnFRV0RsSDRXaHlxdFc4Y2YtVGx5UFpoZnEyTEk2Z3pwVnd0bEN0QmtEV0VNSmVTODJUcW1mbHd0ZXFjM0pPb0NBQm1IRWVaNi1uS2ZnbHdlMzFwN0lzblNwVnppRjFiNENOZkdaQWRFcXZKU04yRF9ybXk1Q3VMbERyVGRCSDZENnRDQlgyd3BSZ2h5NNIBmAFBVV95cUxOSDQ0SnFRV0RsSDRXaHlxdFc4Y2YtVGx5UFpoZnEyTEk2Z3pwVnd0bEN0QmtEV0VNSmVTODJUcW1mbHd0ZXFjM0pPb0NBQm1IRWVaNi1uS2ZnbHdlMzFwN0lzblNwVnppRjFiNENOZkdaQWRFcXZKU04yRF9ybXk1Q3VMbERyVGRCSDZENnRDQlgyd3BSZ2h5NA?oc=5",
+    "at": "2026-09-11T11:03:29+00:00",
     "lang": "ko"
    },
    {
@@ -225,28 +225,21 @@
     "lang": "ko"
    },
    {
-    "title": "테슬라, 스페이스X 상장 후 주가 부진…'머스크 프리미엄' 분산되나",
-    "publisher": "블로터",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9KZWE4ZnFUclExaU1iMjRwb2RSZFBxeWVSb3F6UGozanlORXhwcTh6ZVVWOFppalhieE5TUGpZSVVlWDg1bC1KdlhxUENsLU9RdE5QY2l3MEdhRUtYLTFwSmI5RkJzdHdW0gFsQVVfeXFMT091Nk9lcG8wLVNCamUyOWUyWE1Xa0I3aUhub3VycmdOZ19GVFFucmJud3FOLTVxWXpWeWVlNWN4T1pPSHNBLWJUbE0zN0Fkd2Y5SEcxVTc3T2EwM0daRW9LOG1jMC1Ub1VRRXRh?oc=5",
-    "at": "2026-09-12T06:00:00+00:00",
-    "lang": "ko"
-   },
-   {
     "title": "테슬라 주가 오늘 급락 이유: 사이버캡 논란",
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5adEVWaDFUZERBTlZMSXQ4V0lBb1dPUDlndjJ2a3h6Mkh0SnowTGlldDdTRm1fbERRXzUwd0M0ekxpVTBUZGY1QjItRmJvanNjV2JsY3p4ZnBabi1pdTVOUDRWV1M1cUZxLXNqblYySlMydTRhWndR?oc=5",
-    "at": "2026-09-04T12:05:00+00:00",
+    "at": "2026-09-04T07:00:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "사이버캡 출시 행사의 미스터리 '셋'…테슬라 주가 더 떨어지나[오미주] - 머니투데이",
+    "publisher": "머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1mSXJTSEg1WVFaZi1mV0g2TGROem5wZmpzazctRHZtT3hKbERnUnBNLURWakxKVzBSZzlwRHRQYzZSNXFyTlJKRjRQS2NOa080UHRGSGdNdDdXUS1jZGRCaFZBSUxXMWZq0gFuQVVfeXFMTVNGQ01vc2FLNlhEUHFuRE4tLUNPV1VtYUpDN2xvNDI0Y2pDMXhpemtEbHlRRnRnc1o3NUJ0NV94NmVpdGo2QjdHcnNvbGEtb0ViY29qSktlR3hkcHJzdi1pUWxkdUF0RFZmbjdVcmc?oc=5",
+    "at": "2026-09-08T09:17:12+00:00",
     "lang": "ko"
    }
   ],
   "MU": [
-   {
-    "title": "AI 다음 병목은 메모리…마이크론 주가 2.6배 뛸 수 있다는 이유",
-    "publisher": "코인리더스",
-    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9Ec05ESk92VnVEUHdDMTd0cmhxSHM1Tk9rUUNPSGNFMjYxMjhGbzBWSDZUVGJheUZENk1SbmRqTlBKa1NhMzFDMTd3?oc=5",
-    "at": "2026-09-12T09:07:00+00:00",
-    "lang": "ko"
-   },
    {
     "title": "마이크론 테크놀로지(MU) 경영진 재편에 주목, 지금 주가는 비싼가?",
     "publisher": "simplywall.st",
@@ -255,19 +248,26 @@
     "lang": "ko"
    },
    {
-    "title": "마이크론 테크놀로지 MU 주가와 핵심 뉴스 | 리틀빗",
-    "publisher": "데일리바이트(DAILY BYTE)",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1rTnlDX1FsZ0hmVEZiQWRPRkU0UlM4SkNPVnkwQkZIT09obFJOYXpwNmNGZy1RUkhjMVM0eW9CS0I3dlVJazdmYTVjMjJzb2FlZHRTVEhjS0RoZ0Z3bVp5Q29IT0FXV2Mz?oc=5",
-    "at": "2026-09-12T09:01:48+00:00",
+    "title": "마이크론 주가는 왜 $1,000 아래로 떨어졌나? 여러 리스크가 메모리 반도체 랠리를 시험하다",
+    "publisher": "TradingKey",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQaW1JN3Z6Zy1WSnNBLUZBRWV3M2M4R1dmZkZKOEdwbWdzcEJrUE1rMFZ4eXM4Tk9BeHdLRGxtNzJpb29mVmtOOE9DNHBpN2RXNTh1SXNKZi1za3hZcURKQXY5aG1LZ2IxS0YxU1VlZ282aVlMRkZ5NVFPSDBzSVZfa29hZlVCUXFzZTNVZ2tiWjNoakdXOTUxU2RlWVNHc3FzSDJGM2ZQU0U1RnQxRzEzSzBLcTB3dw?oc=5",
+    "at": "2026-09-10T16:42:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "AI 다음 병목은 메모리…마이크론 주가 2.6배 뛸 수 있다는 이유",
+    "publisher": "코인리더스",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9Ec05ESk92VnVEUHdDMTd0cmhxSHM1Tk9rUUNPSGNFMjYxMjhGbzBWSDZUVGJheUZENk1SbmRqTlBKa1NhMzFDMTd3?oc=5",
+    "at": "2026-09-12T09:07:00+00:00",
     "lang": "ko"
    }
   ],
   "DELL": [
    {
-    "title": "델(DELL) 주가는 공정가치보다 낮은 것으로 보이지만, 현금 흐름을 고려하면 적정 가격으로 평가된다",
+    "title": "Dell Technologies의 내부자 판매를 무시하지 마십시오.",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNN1g5eVNMaHNzd25nUjByci16X2ZEVDlvampPUndPM3Y0R2xGbVpmeDNmQTUzUVNYS0RJeXpTSDF1VklZZXVTVzFyME44R0ZNT20xLTQxYUhoT1RZVVB3Z05jZWZfUnBEQmkxNC1kcWVQZUdHMXdqNVRDU0RUWDMxc1JsemZYQW5MQUVXVXJyQ0VVTGVvbXNndtIBmAFBVV95cUxNN1g5eVNMaHNzd25nUjByci16X2ZEVDlvampPUndPM3Y0R2xGbVpmeDNmQTUzUVNYS0RJeXpTSDF1VklZZXVTVzFyME44R0ZNT20xLTQxYUhoT1RZVVB3Z05jZWZfUnBEQmkxNC1kcWVQZUdHMXdqNVRDU0RUWDMxc1JsemZYQW5MQUVXVXJyQ0VVTGVvbXNndg?oc=5",
-    "at": "2026-09-12T08:20:35+00:00",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOVnRxV3N3dmNGY3J4Q0xxcnQ1OWFPUDVwQ0t2MFZBd09peXZPQnJVcTNfNGpFX3BaLUoxMjhGWkRFM3VqSjBxdEQ4eEd4NnJrLVQ4VjU3dGdSWTFtbk45ZWJlVmtQdE00bkNSNVBsaWVFSVhodWlFQk5rN1c3cFIwR1pwWm12Vk5rNmppYlZEOTBKUl9GYUh6LdIBmAFBVV95cUxOVnRxV3N3dmNGY3J4Q0xxcnQ1OWFPUDVwQ0t2MFZBd09peXZPQnJVcTNfNGpFX3BaLUoxMjhGWkRFM3VqSjBxdEQ4eEd4NnJrLVQ4VjU3dGdSWTFtbk45ZWJlVmtQdE00bkNSNVBsaWVFSVhodWlFQk5rN1c3cFIwR1pwWm12Vk5rNmppYlZEOTBKUl9GYUh6LQ?oc=5",
+    "at": "2026-09-13T13:28:35+00:00",
     "lang": "ko"
    },
    {
@@ -287,17 +287,17 @@
   ],
   "MRNA": [
    {
-    "title": "모더나 주가가 5.4% 상승한 이유와 흑색종 백신 성공 이후의 전망",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNY2xCbnRtLWJvbFdSQk9nVDZ3R3l6MXI3b0JzNUJQNjhjM3ZKTi1ZSHBKM1dBQkJmQ202aU9rdXVEWUhmTFRVaGdHYzV3aEhsM0FwY0owVC01RVdTUFpUT3Rhdm4zSDVrcjg5UVdzeEFGdkR0TzVnOUNsQTNUSl9SVzdBMGlIVTBlWnNhZ3BoVmw5clhLZTVpUF93ak85Vm9hWHfSAacBQVVfeXFMTXZBeXA3aWw0WktPaEVVNUxHcHpUTllValFjM09SWko1OHdScU5oRmtCTmZ6SHlSeWJzcHJZTE1Tc0xoSkRaUllFT0I3M0lXYWxTOEpPUzhnLVVtU0c1VkM2R2ZyMDhnNmFHQzM0dXcwVVRGdjJENzFtbkNkRGE5cDRlcnpGZzhTb0YxRE1uSzFXSzc5U0dURUFHVTg3aWcxLUlJcy1FbGM?oc=5",
-    "at": "2026-09-12T08:20:16+00:00",
-    "lang": "ko"
-   },
-   {
     "title": "모더나 주식, 오늘 급등하는 이유는?",
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE45STh6ZHdpMU15MkVnZjJZSVo0WFoyZmRPbWs4R2NFN2drak1QTEQxU2F3WFpKc1NKWDl1aXo0S1MwOFNfTFI1SjlXRXVjODNUTTRxSUNvamdWbmtKb09FMTVjZUpJYW5VVFNKUmt6N29YbVRuQ19Z?oc=5",
     "at": "2026-09-11T14:33:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "모더나 주가가 5.4% 상승한 이유와 흑색종 백신 성공 이후의 전망",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdkF5cDdpbDRaS09oRVU1TEdwelROWVVqUWMzT1JaSjU4d1JxTmhGa0JOZnpIeVJ5YnNwcllMTVNzTGhKRFpSWUVPQjczSVdhbFM4Sk9TOGctVW1TRzVWQzZHZnIwOGc2YUdDMzR1dzBVVEZ2MkQ3MW1uQ2REYTlwNGVyekZnOFNvRjFETW5LMVdLNzlTR1RFQUdVODdpZzEtSUlzLUVsY9IBpwFBVV95cUxNdkF5cDdpbDRaS09oRVU1TEdwelROWVVqUWMzT1JaSjU4d1JxTmhGa0JOZnpIeVJ5YnNwcllMTVNzTGhKRFpSWUVPQjczSVdhbFM4Sk9TOGctVW1TRzVWQzZHZnIwOGc2YUdDMzR1dzBVVEZ2MkQ3MW1uQ2REYTlwNGVyekZnOFNvRjFETW5LMVdLNzlTR1RFQUdVODdpZzEtSUlzLUVsYw?oc=5",
+    "at": "2026-09-12T09:52:08+00:00",
     "lang": "ko"
    },
    {
@@ -310,10 +310,10 @@
   ],
   "SNDK": [
    {
-    "title": "샌디스크 최고법률책임자 셰크, 408만 달러 상당 주식 매각",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9DTlViNWU0OU50Vll1dHNmUVgzendzVlNVSG9DWElqYlZwcjZHSnFtUkhwemVNNUJMOGNQbDRhUU1sS29VMkUzT2paVEFydzlQSk5GaERQOGp0ZXF0Vy1jbG9sbGtFT2RQM0dhWE11NWVPQVg5YktaeWliaw?oc=5",
-    "at": "2026-09-09T02:32:00+00:00",
+    "title": "왜 샌디스크(SNDK)에 SEC 조사 이후 다시 옵션 베팅이 붙었나?",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRUY5MTQ2cFVwMVF4bXdtcUh0MTlMQlMyUUlKODZJWEdPMTJCTEJBX3ZFTV9YMl93a1hzZlBwWWVseS1Gamc4OHUwekdZV3BvclVTaDQ1cnJtTURNZjhVU0JJTkY1QkRLTmlmRzZyR2EtR05kOXZNcUpMblVKU1k5TWpwTG5fbkhBN1hYQnhR0gGOAUFVX3lxTE9FRjkxNDZwVXAxUXhtd21xSHQxOUxCUzJRSUo4NklYR08xMkJMQkFfdkVNX1gyX3drWHNmUHBZZWx5LUZqZzg4dTB6R1lXcG9yVVNoNDVycm1NRE1mOFVTQklORjVCREtOaWZHNnJHYS1HTmQ5dk1xSkxuVUpTWTlNanBMbl9uSEE3WFhCeFE?oc=5",
+    "at": "2026-09-12T21:10:05+00:00",
     "lang": "ko"
    },
    {
@@ -324,33 +324,33 @@
     "lang": "ko"
    },
    {
-    "title": "샌디스크(SNDK) 주가, 호실적에도 불구하고 공정가치 이상으로 평가",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNWTZNcHlGWVZsVWhjYXlMcmZOY1Z5a1FqUGxnUWJ3Q2FKWUsya3VZb01OYTFmeHNfc0g4bzQwQndrWVI4ejdTMjNERXFGN3VScE1wY1R0djl2X1RPaDVJQkI2OXJnOGoxYkpBUmpVVXg5d3lGOEJsc1RGYlpTVG15T05QUjVhZk5C0gGOAUFVX3lxTFBMN0IyTGFHcGNydXRqc2p3ZjJXZUt5emdBSEhCMHJ2VzhVNXlMQXZZYUNuM20tRGJGcTNsb2NDcVB1R250YS1QT2hOdWtrTnZDSTZLVFZZUUdBb2hQRS0zSGdicGo2emF4MUJKN2dlSW1FLXc4OG50M0RXUmN1UjdJZDNmdU1faDZHOXNlWkE?oc=5",
-    "at": "2026-09-06T23:20:39+00:00",
+    "title": "샌디스크 최고법률책임자 셰크, 408만 달러 상당 주식 매각",
+    "publisher": "Investing.com 한국어",
+    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9DTlViNWU0OU50Vll1dHNmUVgzendzVlNVSG9DWElqYlZwcjZHSnFtUkhwemVNNUJMOGNQbDRhUU1sS29VMkUzT2paVEFydzlQSk5GaERQOGp0ZXF0Vy1jbG9sbGtFT2RQM0dhWE11NWVPQVg5YktaeWliaw?oc=5",
+    "at": "2026-09-09T02:32:00+00:00",
     "lang": "ko"
    }
   ],
   "HPE": [
    {
+    "title": "오라클 AI 투자에 … 델·HPE 12% 급등",
+    "publisher": "매일경제 마켓",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB4OVRybFhZUHVDS0hKN1ZVZHYyRS1OVlBzLTFfY1lTS0JHYTBPRG1jNi1xZ1hYMHJpTXBWaHhmeHhlUGpEWkFPdW9KTDNyendKTEE?oc=5",
+    "at": "2026-09-13T08:42:11+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "AI 전망이 밝아지면서 휴렛 팩커드 엔터프라이즈(HPE) 주가가 32% 저평가되었을 수 있다",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQVJNaGs5bWU0d3lnNmVfR0liemFrdTZKNWZkVEVkMzhPU1Zjc2dvaExTclR6LUM3YjFJY2MzQ3RxNE1uMlFDLXRWQW1KbG9yMG5pOTZ6Z2o3c3pXMHV3b05xTzhpQUZEbExzSWI0QlJFY1RrSFlKTFJrTkZ3VnRiZkU3QUl0UXpEdHBwVjhHQmJuSDFTUkdta0pNaFJlSnpqbmlz0gGjAUFVX3lxTE9BUk1oazltZTR3eWc2ZV9HSWJ6YWt1Nko1ZmRURWQzOE9TVmNzZ29oTFNyVHotQzdiMUljYzNDdHE0TW4yUUMtdFZBbUpsb3Iwbmk5NnpnajdzelcwdXdvTnFPOGlBRkRsTHNJYjRCUkVjVGtIWUpMUmtORndWdGJmRTdBSXRRekR0cHBWOEdCYm5IMVNSR21rSk1oUmVKempuaXM?oc=5",
+    "at": "2026-09-12T03:01:04+00:00",
+    "lang": "ko"
+   },
+   {
     "title": "Hewlett Packard Enterprise Co (HPE) 주식 움직였습니다 상승 9.69%에 9월11일: 핵심 원인 공개",
     "publisher": "TradingKey",
     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVThsWkVmSE5CdEUxdGY5dFdJejQ0XzZxdXNJRWVOanFVTjJEekRuTzJfSWxkSDRKNkFOZWVJU3YxWGdhQjNaSFlTZHVGZUVZUEtmU0tQM192Y09uMDY3RDFKYnBrWVRXUHBWVU9Pbk43TEZnOF9KX050YWh1b0R3RnI2TkNrMWNoaEJnY2V3?oc=5",
     "at": "2026-09-11T17:16:04+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "HPE 주가, 실적 전망 상향 조정으로 상승세",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdlUxc1RkU0dKMHNqb3Z1cGJDaG9DaUhZVF96YXV1WFB4S2hqT29YbW4xcThSUjB5cHNELU1NZGlLVFVaXzdUX3dIU19ZVlFOaHpiX0lieW56OFh6RkgyVXFCd2tEM3pOVkZMOUhVRDFIUnFrUzhKaGEtVGZRa0o2bEpsN21CT1lpM0ZRcmt1ZHhkVXhCd1pteHlmaHBoQdIBowFBVV95cUxQTjZJdG8ybHhtZDI1WjJNWGx2WGYxS3Q3V0xVTmVUTS1sUEg0UmdxM1VkTVFrVVl0bzdtNHltMWJlUm1wUGdteVIxVVdpMTlFQWRKdmRFN05UdWt0SzJJM3JXS1pnMnJVdmtVT2NJQ0RkaE5NR3BpUGRCend4N1VDMjRkckJlYUc3X1Q0cUxFYTRrQVVIbTU3SFZ6SDRCQ3g3NjFn?oc=5",
-    "at": "2026-09-08T23:49:10+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "[美증시 특징주] 델·HPE 서버수주 폭발에 폭등…오라클발 서버 수요 가속화",
-    "publisher": "미디어펜",
-    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1XUmt6cFpoRjhfSHNVNlNXSE55MmhLaUlDeDJSSHdDYlVvQmoxUEpnQ3FrV2g2WVJPc0g2T0hVMUFwQXVzVUN4YXRsUGlzQnE5d19uc9IBWEFVX3lxTE03cUNyZGlKSURVYmNfclE5N3A2SEZvaTVfMlNRWTdsN2ZGbTVrN0xhM2xjS05CdXZCemhPWlhRck1ORmJSb29jcGhYSHVkS2JWRnVYU3V1Yk4?oc=5",
-    "at": "2026-09-11T19:02:26+00:00",
     "lang": "ko"
    }
   ],
@@ -409,17 +409,17 @@
     "lang": "ko"
    },
    {
+    "title": "[마켓인사이드] 트럼프 정부의 인텔 투자, 1년 만에 400% 넘는 평가차익",
+    "publisher": "뉴스투데이",
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9yZnk0U19uQ3pvWXB1NUpUbDNTd29La1BwaFJQOU5mTmpCajdWMVVPeW9BaVlxaFRJVlRqakRuTFZXbFZNbWZ0eGIwN0w3R0c5YzJlM2dNUnJLVWNhRmc?oc=5",
+    "at": "2026-09-13T12:08:00+00:00",
+    "lang": "ko"
+   },
+   {
     "title": "인텔 주가 급등…머스크 테라팹 수혜 기대",
     "publisher": "연합뉴스",
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAzbzJSOE9veUh0dzlxMGVVVUlIYWV1aTZGdFNyTHhzWFIzdGhJNWMtWHFsY1VmQXFGMlR2TjhDcUtpbk42ZjNWRGNla3RnbW8tMlZiNlpwSjQxSzjSAWBBVV95cUxQZWk2d2t2cUpIWGNhb1ROV0dKb2RHeHVjVk41Q0p4NDVxUGFvTUw3NDdOZE5RanJieF9ZZW9hckFzVDNIQUNhamJZNnlPc3VaVnAzamZaeFJRU0pKQ3VQMk4?oc=5",
     "at": "2026-09-08T21:53:47+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "미즈호, 인텔 목표주가 하향…\"현재 주가 적정 수준\"",
-    "publisher": "연합인포맥스",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9KaVlXNW1KOC1LeXpfdkczeHA1TV9RSnJFeExLd0x1cnVjempfRVZkU2duYXdXVTdSdkdHSWxaemRoU01KNDdQeGxZbnNUY1JLVktYUk80NnVleDBJejF6V2gtZHJjMTVHMDFRdDdRTWY?oc=5",
-    "at": "2026-09-08T05:38:15+00:00",
     "lang": "ko"
    }
   ],
@@ -439,14 +439,21 @@
     "lang": "ko"
    },
    {
-    "title": "Seagate Technology Holdings PLC (STX) 주식 움직였습니다 상승 3.95%에 9월8일: 어떤 신호인가요?",
+    "title": "Seagate Technology Holdings PLC (STX) 주식 움직였습니다 하락 4.84%에 9월11일: 투자자가 알아야 할 정보",
     "publisher": "TradingKey",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOYkxqY09JREFUNzJLYkJjbGVZd3dVTXpPTFQwVVNWQjNMbVBPcnlKMXBLN2pXMkpVeEU0WGcxOHdyYWJjVkFiQVNQV3FBTVAzWk5zRUZLOUdZUkNHY2xROFhzN3lXa1NNbEk2OWpBY3dsbW03QzRVOFZBVUtTR3ZCSWJZQ1BtZlQyLWVMX2pR?oc=5",
-    "at": "2026-09-08T15:16:27+00:00",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNRm9vZmFWbVNiTEFFS2VQRElCWXpiYkluc29fc1A1eHZKQVlTRkRLVUhPYWlVVldwYkRtd0Npb2ZTVlFTRWw5RjA4UHNMb1YtaE9sS0ROWkp2SDEyMjRjWXNhd2NGNFBnaXN2Vkx4TEpkemJXOTBLYnlqZGoxOHUtckdqS1RyZE1TSmZBWWR3?oc=5",
+    "at": "2026-09-11T15:16:20+00:00",
     "lang": "ko"
    }
   ],
   "MPC": [
+   {
+    "title": "마라톤 페트롤리엄(MPC) 최근 조정 후에도 주가는 여전히 고평가 구간일까?",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQY2V3Z3A4c0t6UVNieUtDUmZqaXJMbWdZaTFveHYxaFc2QlFoRGVXejdKb29TWVY3S29XVzhBcGt1TklaOEpqYXBvdm5UekJBbGsxSVdKdTY2NXVhcE1HMTZnSV82TkM1bVZsbVNfS1l2dmZ2UnpLRnZKX25MSmI5cTdaeGo2TWw2LW5QVkF6UzFnNVFhOTFyU0tIUdIBmwFBVV95cUxQY2V3Z3A4c0t6UVNieUtDUmZqaXJMbWdZaTFveHYxaFc2QlFoRGVXejdKb29TWVY3S29XVzhBcGt1TklaOEpqYXBvdm5UekJBbGsxSVdKdTY2NXVhcE1HMTZnSV82TkM1bVZsbVNfS1l2dmZ2UnpLRnZKX25MSmI5cTdaeGo2TWw2LW5QVkF6UzFnNVFhOTFyU0tIUQ?oc=5",
+    "at": "2026-09-13T09:52:18+00:00",
+    "lang": "ko"
+   },
    {
     "title": "UBS, 정제 마진 전망에 마라톤 페트롤리엄 목표주가 상향",
     "publisher": "Investing.com 한국어",
@@ -459,22 +466,6 @@
     "publisher": "simplywall.st",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNE10U1dLdWNpMXRVY3g3aHM0UHJKYm9ZckpfSTZfbndHb0pGclN0QzZpMzd3TUsyTWRxOEpXa2xxUUNBRnZ4N0lVRWVlbmtLS3BSTjFIRnF5UTFDa3oyYjhDVTJiRHVFME1HamJoYURjM09ZWURkUTF4U1RZSHhDQWVmb2tpOEIzaTV1RFV4LUZiT0x0T3NqNXh1MNIBmwFBVV95cUxNNE10U1dLdWNpMXRVY3g3aHM0UHJKYm9ZckpfSTZfbndHb0pGclN0QzZpMzd3TUsyTWRxOEpXa2xxUUNBRnZ4N0lVRWVlbmtLS3BSTjFIRnF5UTFDa3oyYjhDVTJiRHVFME1HamJoYURjM09ZWURkUTF4U1RZSHhDQWVmb2tpOEIzaTV1RFV4LUZiT0x0T3NqNXh1MA?oc=5",
     "at": "2026-09-10T01:49:54+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "마라톤 페트롤리엄 법률 책임자 벤슨, 610만 달러 규모 주식 매각",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5mNDdkY1QwWi1NQWN2Qm83Qk1JeFh5LU42MDA5TVM0cmxIY01wekkyaUhoem5NNU1feE1PSFhWT2p4VDl2ZnBIOVhmT05nWWV3U0FKeWFxMTlmWjhRVkJ3c0VUTG5lci1xS0cxWGdxUC05NktZeVB1c2lOQQ?oc=5",
-    "at": "2026-09-03T07:00:00+00:00",
-    "lang": "ko"
-   }
-  ],
-  "LITE": [
-   {
-    "title": "Lumentum Holdings Inc (LITE) 주식 움직였습니다 하락 5.08%에 9월10일: 변동 원인",
-    "publisher": "TradingKey",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZXIxaTNuYmc1NUd6T1dpVnQ3NWhsNXNnNm1xTlo1bzlLb2hRUjNRM0poTGVEdnAzZVN6ME9zQTJmYjV0VXRQN1VOd2RPZk1saUFDSXRENUlDMW9NY3BlYjhmZWRoME8xdjk4c1dBd3JPTFNOZkZsdEh1OEpvT3ROWWpFU0RxLVZLWnhwRC1hQQ?oc=5",
-    "at": "2026-09-10T18:16:24+00:00",
     "lang": "ko"
    }
   ],
@@ -501,19 +492,28 @@
     "lang": "ko"
    }
   ],
-  "PSX": [
+  "FTNT": [
    {
-    "title": "필립스 66 주가, 260.68달러로 사상 최고치 경신",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1obDg4djhsWVpOOG5URmVVck5uVVVwQTBldmZTc3lEeUpIakdtTlVMYVJ2cjd1MVlITVk5RTV2Y3NMXzI4UW02dEo5VzZvaXYxcnRjbjZ2bkNyZmlxUDY1c0lsVWtSWm03V3BlbVU5WTU?oc=5",
-    "at": "2026-09-08T13:35:00+00:00",
+    "title": "포티넷(FTNT) 주식, 가트너 ‘리더’ 선정에 힘입어 12%의 프리미엄을 기록할 전망",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPN1p2Q1dTRFdwX0FsQlh1bXltOU9oSEJ5c3dnRjFMUzhPNXNsVU1uVUdNNmlCaVJzbFo4ZkFnZkE2MTh2V3BwLXRqUTNXcFBkMXVydDQ3aWUyYUw5bVVIZUZ1UkNzQlJ3SnhpSGpKN2RsdmVNVFUwNl9YeUJ1TnFjYXVmTmlSbkdFVm95Y3RmWXBjNDk40gGUAUFVX3lxTE83WnZDV1NEV3BfQWxCWHVteW05T2hIQnlzd2dGMUxTOE81c2xVTW5VR002aUJpUnNsWjhmQWdmQTYxOHZXcHAtdGpRM1dwUGQxdXJ0NDdpZTJhTDltVUhlRnVSQ3NCUndKeGlIako3ZGx2ZU1UVTA2X1h5QnVOcWNhdWZOaVJuR0VWb3ljdGZZcGM0OTg?oc=5",
+    "at": "2026-09-12T19:30:09+00:00",
     "lang": "ko"
-   },
+   }
+  ],
+  "PSX": [
    {
     "title": "실적 전망 수정이 필립스 66 주식 투자자들에게 미칠 영향",
     "publisher": "simplywall.st",
     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVVBRVGtqa3FMV1JrQjB2a1hUMUV2YU9aM3E3Tk5tRXFaOTlXZDhMZ3EzYXl1V0p3YkRxcUJCaEpkdFNHSERWNmxEVzFPeHNkUWRvQl9HYlloRFdMaGRKQ0VlbFVzUVFMSXRWVjVnRXJHMWZIaVFZcF93MG5UeDVfeTJtaGlYaUtGRXJGYkxEdzJQQdIBkgFBVV95cUxNVVBRVGtqa3FMV1JrQjB2a1hUMUV2YU9aM3E3Tk5tRXFaOTlXZDhMZ3EzYXl1V0p3YkRxcUJCaEpkdFNHSERWNmxEVzFPeHNkUWRvQl9HYlloRFdMaGRKQ0VlbFVzUVFMSXRWVjVnRXJHMWZIaVFZcF93MG5UeDVfeTJtaGlYaUtGRXJGYkxEdzJQQQ?oc=5",
     "at": "2026-09-11T05:37:21+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "필립스 66 주가, 260.68달러로 사상 최고치 경신",
+    "publisher": "Investing.com 한국어",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1obDg4djhsWVpOOG5URmVVck5uVVVwQTBldmZTc3lEeUpIakdtTlVMYVJ2cjd1MVlITVk5RTV2Y3NMXzI4UW02dEo5VzZvaXYxcnRjbjZ2bkNyZmlxUDY1c0lsVWtSWm03V3BlbVU5WTU?oc=5",
+    "at": "2026-09-08T13:35:00+00:00",
     "lang": "ko"
    },
    {
@@ -526,17 +526,17 @@
   ],
   "NTAP": [
    {
+    "title": "실적 호조와 상향 조정된 실적 전망으로 넷앱 주가에 이목 집중",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxON3ZzTkJMM1dhTUpLa2RVdWRVTnJLaDlhUE82eWJFdkktWFNyNmw1Ti1GckFOQnF1U1diajRyeFRZRk9lZDJZaWw3eDVMNHAwMzFieF9OSDRpNjRDT19zN3BDb2NnMGFWVVdJdUZtWjlaQUVxOHh4bktYTTV1TzVXVFNqN1VsYlZRdWwxN9IBjAFBVV95cUxON3ZzTkJMM1dhTUpLa2RVdWRVTnJLaDlhUE82eWJFdkktWFNyNmw1Ti1GckFOQnF1U1diajRyeFRZRk9lZDJZaWw3eDVMNHAwMzFieF9OSDRpNjRDT19zN3BDb2NnMGFWVVdJdUZtWjlaQUVxOHh4bktYTTV1TzVXVFNqN1VsYlZRdWwxNw?oc=5",
+    "at": "2026-09-13T11:50:33+00:00",
+    "lang": "ko"
+   },
+   {
     "title": "NetApp Inc (NTAP) 주식 움직였습니다 상승 7.94%에 9월11일: 변동 원인",
     "publisher": "TradingKey",
     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUmlKSlY0aE5pZEo1V05aMEFmQ2VBZVlUX2h5bURKN3liREo5QjZZR1NxTEpZU2Y2NVVDekhEcnhBNmRFT2ROYmQwUkgwV2E2NGlhenVJN2FYUVV0WU5iTjJtemRaSVNKRXpaMWVhR0dYUWx1c214d3F0WWJudkt6bTJwU0JtVTFjZUt1dnlDZw?oc=5",
     "at": "2026-09-11T19:16:06+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "웰스파고, 넷앱 주가 목표 190달러로 상향…경영 실적 긍정 평가",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBNS05ZaENLZjdGSDJlcUhybDBpZDl3azI3WkU0cS1wOGktN1RkVV9sLW1raG1Xak9QTHdXSmRVTDBVcEZwTlktYXpoZVJkbVJWLVRFZFY1bnZXUC0yNXhaT3Zvb0YzRXVvSzkyOWg0Z0JoNFB3?oc=5",
-    "at": "2026-09-03T10:40:00+00:00",
     "lang": "ko"
    },
    {
@@ -554,45 +554,6 @@
     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5GVUxrMEhFTmlQT0JCM09vYkZpTnJPWGp1dUhOX1hYYkg0RllqbGluWE9PQlQwOVl3UndyUU9QVTdQakc4enlfYUJxdDJ0QWlndVhweDlPQnNNZ1NMWURqWDJabDVaTnlYaE9aY192bWMtT0VVUm9XRTB1MA?oc=5",
     "at": "2026-09-09T02:01:00+00:00",
     "lang": "ko"
-   },
-   {
-    "title": "플렉스스틸 CIO 맥클라플린, FLXS 주식 203,625달러 매도",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5QRGxMZDVHLTdydzd6dGI0VUVoR3pPNjB4QnY5bm1lT283U1AtT3ctN0xGaEVic3k1M2ZFb0M0MTM5QS1OLUU2b2lDNjJySXRuWk1ZcFBaZ0tHNkdIWjRTdjYxQzdTeDBXUXN0UFdfelJjVEQ2QkVWb2tmNA?oc=5",
-    "at": "2026-09-03T18:16:00+00:00",
-    "lang": "ko"
-   }
-  ],
-  "NUE": [
-   {
-    "title": "美 증시 S&P500 '상승'...DELL·레딧·뉴코 '급등' vs PANW '추락'",
-    "publisher": "초이스경제",
-    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE55Z0RQYTVvU2JrZEpWSGVkMm53bGQ5d0lSVlp4UkRlc0R1bGlWekgwb00teUkyZTNYakI1SHhESXV2eUdHNlV0SXdZNUtNanJuUjI3WUJlQ0pDai1kQU5VMC0zcDFBX0g5SzdkVGNrTdIBc0FVX3lxTE1CMTFsLUwyaDk1cXptN2tUZXVibFRpblpxR0hRdXpKX3JnYlhUZm1EU0gwZTI0ZEtOUnZDMnpkTDFFa2huRVpkXzM1cUVrUlNwa2lFT2szYm9IUUFVb3R2LXRIM1ZDaklVN05nbGVoblpnWm8?oc=5",
-    "at": "2026-09-02T21:13:42+00:00",
-    "lang": "ko"
-   }
-  ],
-  "MCHP": [
-   {
-    "title": "캔터 피츠제럴드, 아날로그 부문 강세에 마이크로칩 테크놀로지 목표 주가 유지",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1ORDE3R0dBOTFEcWg2dkFESnRNTmlaX2xCamhhLXNVSmpxaTVMaTR0ZVJ5T0dKNy1sNnpSYkpiYXpsaUdPcHN4LXdKUHFnQUlDV2hOT3g0RVJTUDdzMlN6OUkzRkV6UDItaE9yWFBfMnRKSjhY?oc=5",
-    "at": "2026-09-09T12:34:00+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "투자자들은 마이크로칩 테크놀로지(MCHP)의 새로운 클럭 버퍼 출시 소식에 어떻게 반응하고 있을까",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSEN2azZuNjNsaHlneDV2OUJfclpOMEM3UHdOQWI3bDVQdmFXbkpDSXlNN0ZQZVpmMVp3dFNheFZWRl9CeXE0ck9SelFvdGFjM2VNdEJIckRNSmM3S01LWlZfSHlfaGZ4M3d3SFZOVWxlb2xtUHI0bEk4VVZnVlVZYUVjRTFNVjJDdHpDOHpNLXhjMU5OcnQyVk0wcEN5eW84YXptTFZuNVBOejB30gGsAUFVX3lxTE1IQ3ZrNm42M2xoeWd4NXY5Ql9yWk4wQzdQd05BYjdsNVB2YVduSkNJeU03RlBlWmYxWnd0U2F4VlZGX0J5cTRyT1J6UW90YWMzZU10QkhyRE1KYzdLTUtaVl9IeV9oZngzd3dIVk5VbGVvbG1QcjRsSThVVmdWVVlhRWNFMU1WMkN0ekM4ek0teGMxTk5ydDJWTTBwQ3l5bzhhem1MVm41UE56MHc?oc=5",
-    "at": "2026-09-10T06:53:57+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "마이크로칩의 개방형 표준 차량용 디스플레이가 마이크로칩 테크놀로지(MCHP)의 경쟁 구도를 재편할 것인가?",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ2RnVGlBam1CNGdJeVA5RGZvMmprSU1lNGtIWkdHVm9jU2RHMWV0SWZ2SzRQZmFoRWVIVkJtcEstbWhBRWx1M1lza29hbUl2bVNKSXJIRy1CMlgxTHJnV28xSUxJVmdDZWhhdVJNVE5HRGJTV0VuWWQ2eTROSjF4MGh1c3VGQ2h5X1dhX3pLMWhybWlMTDZSVlVCYXQzUlZmOFoyRzlsd9IBrAFBVV95cUxNSEVuUzQ1OERIcnpic3dadXhBa3ZGSW1PdW4xUUdycWoxZTZySW54SktjV0VfY00xR2l2clhQUkc2M3hmcGljbDU1Rm9Jc0tuM3JfT3lXSW91OVVTT0dWVXZBY2NabFEzYW9OaEdCWVVSQ0xFdUVtbHljeXVtODk4aFNYSkxldzZXWHdPdC1tZV9LcmFLMlA5RXZJN3pGWGU0bTZOSkdXQmYwbnRW?oc=5",
-    "at": "2026-09-07T07:39:56+00:00",
-    "lang": "ko"
    }
   ],
   "DDOG": [
@@ -604,17 +565,10 @@
     "lang": "ko"
    },
    {
-    "title": "Datadog Inc (DDOG) 주식 움직였습니다 상승 6.79%에 9월9일: 투자자가 알아야 할 정보",
-    "publisher": "TradingKey",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUUw4T0dJMkUtWG4zaTI4aDJ4ZU8yczRpb0xhc0tGcWp1eFJfbm90QTEwU0JFdVBqeU9FVHpVWm1HWGNSRXg4YmE0Vi0yYWZtV092OVFaMFRINWNucnVMV01BMER1S3UxYk9VS1J2N3FmOU95SUk0US03R3hfMF9qNGtWaFJoNm0xWUdaTlF3OA?oc=5",
-    "at": "2026-09-09T16:16:12+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "데이터독, 수요일 시간외 5% 이상 오르는 이유는?",
-    "publisher": "Benzinga",
-    "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxQN0ZURWRYb0E4dHZMT293Wi0tODhaZDYtdkNHUEx5MTV3S3JpNXlPb01HR2Y0cXdCRGZmMWdJdW1PNTFkSWxHLVQ2bV91dk5fYmZoZjAycG1weEpJZjk2ZmhfR1VEYmNXeDZ6aXZvc3k4RDE0Uk5rY09KZGNycWNCZFJrQzNyX1RWRVFYT3dWVVcwRDZEOUNqTTdVVzRzci0wbGNfcFdZS3FtSGEwQXBERExHYjd3OEYxMGlHMkdzV1lVMlZLWkVyVlBOQWZJNzRGWGxSWU1pTE44bVlPUERrQ1p5UW9qZVk1UFlfUlo5U2N6RXZNZFYteWpBc0pWcHNoS05EOUR4RFVoa3lHX2hvMVluZDliU3h4MFhwVEhZcmxkUm9mdWZUNVBBbGJ2YmJMTEhGQkp3?oc=5",
-    "at": "2026-09-03T07:00:00+00:00",
+    "title": "Datadog(DDOG)의 AI 성장 잠재력이 이제 Snowflake의 실적에 지나치게 의존하고 있는 것은 아닐까?",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOR3d1SkNNRzhsSlhTbVR0bVY0Q3BldENvYzBVbDhCNjNCaF9uTFZLekNRdDRReTV2UUhtNVgzNmh4OFdrMzNCY1dZZXBuTDM5ZWViOTNFTEI0LTNOR3Z2ZDNjbU5PRGl3cVl6OUVhdi1Zd29ZaGlHVDFFMWYyTVNBMUltblJJdEMzaE82aXR30gGTAUFVX3lxTE9VTWJWeFJCV25oVms3ZU02eE1RUklxMTVvS3ZZQXVqRTROSFB5TjM0TXZFZnlGRkdOZ2ZyRWsxV2pXQzYwWTREd0tPVmhNcTFuRmhwRGVOSXpOMXNoMlpkaWtTMXNjQnQwejNhWTVYaEJDdGJZaExFZDFmZE5sRnJzdGZENGVEcmtfcXVpTWhEVGRJSQ?oc=5",
+    "at": "2026-09-04T13:58:28+00:00",
     "lang": "ko"
    }
   ],
@@ -652,10 +606,10 @@
   ],
   "WDC": [
    {
-    "title": "Western Digital(WDC) AI 데이터센터 수요 이야기 속 주가 지금은 이미 비싼가",
+    "title": "관세 리스크가 지속되면서 웨스턴디지털(WDC) 주가가 공정 가치보다 낮은 수준으로 평가되고 있다",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcjRuN0Rjb196ekRpM0FKYU5wSVk4NXJSMzcxUjQxR0JMcWNyaVNkc0JTOS1rZTZJSDk2NkNvdTR4eEduVWQybDJrZ0RKS1lkOFNRN0pyTVJidTl3U0RPRE15U0tSVjBqMkRtT29ZVVpkUW1vS0dITlVpT3dWTDlPQkJqaUp6STg1a2tNZWkxWmkwcDBBcDZz0gGXAUFVX3lxTE1yNG43RGNvX3p6RGkzQUphTnBJWTg1clIzNzFSNDFHQkxxY3JpU2RzQlM5LWtlNklIOTY2Q291NHh4R25VZDJsMmtnREpLWWQ4U1E3SnJNUmJ1OXdTRE9ETXlTS1JWMGoyRG1Pb1lVWmRRbW9LR0hOVWlPd1ZMOU9CQmppSnpJODVra01laTFaaTBwMEFwNnM?oc=5",
-    "at": "2026-09-12T00:45:29+00:00",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQRnVJRVM0WlF0bHlWM2NaOVpiYlp4eHI5YS14enhlZGs0MXJYaGlNQWFSbE1mOWtjLWtpT3NJUkIwX1NvbnQ0WF9KcmxuclMwZFVQTV9uajE1Zk1vaGpyWDRDZlBXRkhsQTZYQzdNbTZSQWxFcFVBcHpBZXJlR240Um1vRjFpa2VUQmdQSlBDN1hSVC15UjNN0gGXAUFVX3lxTFBGdUlFUzRaUXRseVYzY1o5WmJiWnh4cjlhLXh6eGVkazQxclhoaU1BYVJsTWY5a2Mta2lPc0lSQjBfU29udDRYX0pybG5yUzBkVVBNX25qMTVmTW9oanJYNENmUFdGSGxBNlhDN01tNlJBbEVwVUFwekFlcmVHbjRSbW9GMWlrZVRCZ1BKUEM3WFJULXlSM00?oc=5",
+    "at": "2026-09-11T09:37:13+00:00",
     "lang": "ko"
    },
    {
@@ -691,10 +645,10 @@
   ],
   "ADSK": [
    {
-    "title": "Autodesk Inc (ADSK) 주식 움직였습니다 하락 8.05%에 9월4일: 투자자가 알아야 할 정보",
-    "publisher": "TradingKey",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSHJGa0Fyd0pxSC1NNEpMWUc0b1FOb1Qtc0FEelNUQmNNdjZvdHhIaXhram5GY3NxYUhmNWpSaHpKRnVtTXlMVkUwMHBZblNQektIMlBuS1B6akxxbzVBc3JQNlNOSThfcnFib0dXVVdrSFBzbWEwaUZGSlgxX0Z4WlpET2tRbFZkN3RFdC05Yw?oc=5",
-    "at": "2026-09-04T18:16:11+00:00",
+    "title": "오토데스크(ADSK) 주가는 저평가된 것으로 보이지만, 실적에 대한 우려로 인해 여전히 주가가 낮은 수준을 유지하고 있다",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZDhpdVpvVHduaVVZTW9ZWV93Mi14aWh4S0FTazRNUTJDaVVVVGFRSFp1aHc3MHFyNldyUVI5ZW9ZTkZwLXNGRjlmSEM0cEJ2THNYeVdWUkhIdFh0UE1IRWItbVF6Z2h4WXJ0WFZHN2t6TGxlcTlwZnY5Z29RN3Z1alA2YXBrYmhGTkN1ZXNHb9IBlAFBVV95cUxPZGtxYm9TZm5SeXlON1FzU3p3am5UWWFIZXBHdzd4V3QzVnQwUkV4S1RveDdUS3hsTmo1MGZmcE9CckI1WHF4VmhrZ290ajdrUnoyaldMVjd5b0RiYnRMdENGVzZndlhKTGRJeWtnUlcySDBuQk96a1RoZ2hDbjh2T1Itc2hQSERXdVk3VFM4TFZHNUd2?oc=5",
+    "at": "2026-09-08T18:17:08+00:00",
     "lang": "ko"
    },
    {
@@ -714,10 +668,26 @@
     "lang": "ko"
    },
    {
+    "title": "상업용 항공우주 수요가 하우메트 에어로스페이스(HWM) 주식에 대한 시장 전망을 바꾼 것일까?",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQaDZkTUZpQno5U2EyZlNYSEFMSUhlV0NCOWEtRVhXam45djFfU2l1X2RkYnRjUnlOOHg5T1MyaURudjVBTW9NVU5tR0UtZ2otYlpMRU5oUTdYS3R2YzItVE92ZUQ1bDJjYUd6NXZ3R0Q2V3NtWk9vWVpfdTExemdDbWNSNzJHbF96ZzdOM1pBaU5EaDVFSlVZbjZGeEzSAaIBQVVfeXFMT2t6dHkwakVQWTZDbXZMa0h5RWp2YnpuQnYwclRDQTBmNWFuejYwUUpsZjFxMzZGcUFoWVRKZE8yNk9WR09fazA0MWhhZi1VM2NkS3RqOTlMX3puX2d5UU5XaDdzQ3BTZGI3bkF4RmdnZnVvVmk5OElMQlZOVEEzeHhxNXplN3otZDJiUUJpaUl2LWpRbTBUa3RKaHBodjlUUlJR?oc=5",
+    "at": "2026-09-13T13:04:56+00:00",
+    "lang": "ko"
+   },
+   {
     "title": "스페이스X의 자체 터빈 블레이드 주조 기술이 호메트 에어로스페이스(HWM)의 투자 전망을 바꿔놓은 것일까?",
     "publisher": "simplywall.st",
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbTFDNWxPLWFNR2d6VTYxUUszZWF1VjNKQTRoN2hBUVNhUmZxUko1b2otVEtmdmVIQ0hfZmtNWWRGMHpFaHdZRzRTM0tpSXU5YWtqSHZIcjdLWVUyTjB5WDlCZF85WndDdGtZRTVkUmtySW1FYkZwcVl2UVhtTnNLemdXS3pZTUtQYTZiNVlmYmdFdnF2SThZWi1WWkXSAaIBQVVfeXFMTi02U2VXQUhpWFVZSkQ1eWF3OUJxaGYzcVVjQ2lTYzBZQmlzOEFWVnhYYUR5MkJCd01LZGg3WEc3b2o3NWV2c0pGX1NvNFRoQkdlczlMNTlBMm9tUVpYa2VjcUdxenlPTDJ0QjR0NnpUTVNJemhMcHhNZUY2ODlRYmxFLTQtcTlaRUdQRXRWNGFfQXBJaGJjaURSX3hzWUYyTjd3?oc=5",
     "at": "2026-09-04T20:05:50+00:00",
+    "lang": "ko"
+   }
+  ],
+  "VRT": [
+   {
+    "title": "AI 전력 공급 계약 체결이 임박함에 따라 버티브(VRT) 주가가 1% 과대평가되었을 수 있다",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNellILWoyQmFkNFppaWQ0TXJRS1psUjV5TTNiQ1BUU05jNk96OExqMFJLWmxxaVRNeUtpUkt5YnE5V3JJby0zQWFtb3V6a0tGMTdkQVFvMnRvNzFoZkx5Y0hUcG5sel9zdWluZkZjdWpPb21yaV9uSVpJZVpDeTJ1WVlLVzh6OUVITFNMaTU2dmNNVHFWSVhPNlBkYjV0bzTSAaQBQVVfeXFMUGV5TkVKQXJoRkFwdTdoNlRGcl9vbmtsVFRXOUdaaUJ2MkFvYjdzeFpvLWZHSFRYWTJvaU1zNXZ5SXJIZGhKcV9TQlJOZjM4dzRlVjRacnlLbndGdF9tM2F6dmZCMlp6Qk1HU1lUZVZieVJPWWRNOC1FdmtvWkpfUERFdXlKWS1lZUtmdzZHUWZCVGpPWno3QTlmc0N3SDhTeUZLRVI?oc=5",
+    "at": "2026-09-10T10:48:30+00:00",
     "lang": "ko"
    }
   ],
@@ -734,15 +704,8 @@
    {
     "title": "AI 서버 수요가 슈퍼 마이크로 주가에 미칠 영향",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZEZaR3ZpMXRsaGxMLTBCYi04cU5DbVJrX2w4eWlkMl92TXk5OHZNSGdZTnlDcHdyZWg5UXljT0dBeWxQaVdKR1R3U2RPTjJJYVNMQ1ZsMFF0cVpMLWpSXzN3RmJmdHhvQnJiWUtfZ3BoYzZYbFVWYzN6VF9tNk5hWnJzaXpEdzhaTWF2RFg0VXlibHgwWWdSOGFyU2xMaVnSAZ8BQVVfeXFMT2RGWkd2aTF0bGhsTC0wQmItOHFOQ21Sa19sOHlpZDJfdk15OTh2TUhnWU55Q3B3cmVoOVF5Y09HQXlsUGlXSkdUd1NkT04ySWFTTENWbDBRdHFaTC1qUl8zd0ZiZnR4b0JyYllLX2dwaGM2WGxVVmMzelRfbTZOYVpyc2l6RHc4Wk1hdkRYNFV5Ymx4MFlnUjhhclNsTGlZ?oc=5",
-    "at": "2026-09-09T19:45:21+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "Super Micro Computer Inc (SMCI) 주식 마감했습니다 상승 7.28%에 9월11일: 핵심 원인 공개",
-    "publisher": "TradingKey",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdEZITjJVZ19uM3JCQTVTLUItOF9ra0hLMm1rU1NKUEVmczBqdjU1YVhSQnpMUFI5ZlJzNWlWdE5yRnFGdjl2aDBCNE5vOUsxM21leWdKNkE1RWhqTmJvSmVqMGVFYnl4OWlQVXluQzQzNm5XUGFnVm10U2NZNy1GRFJqTG11eU9zdlZ4ZjVKRQ?oc=5",
-    "at": "2026-09-11T20:16:13+00:00",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQmJ3V0ZDU0xsOHI3MDFOOUkxYmR2SjB0Umg0X1FqajM0REpWXzZrOGk4MXhkOEE0UEhjckd6dnk2cXhIWG5XbFQ5YnVRX1h5cHYyNU9ad1dUbTktemJGYmlHV3pUWm50VGxlVG80YnlrT0lIZkVjWWhNbFprZmFFeGJpcFBYUl9wakdNMTBFV2JONHp6a3FuQXpn0gGfAUFVX3lxTE9kRlpHdmkxdGxobEwtMEJiLThxTkNtUmtfbDh5aWQyX3ZNeTk4dk1IZ1lOeUNwd3JlaDlReWNPR0F5bFBpV0pHVHdTZE9OMklhU0xDVmwwUXRxWkwtalJfM3dGYmZ0eG9CcmJZS19ncGhjNlhsVVZjM3pUX202TmFacnNpekR3OFpNYXZEWDRVeWJseDBZZ1I4YXJTbExpWQ?oc=5",
+    "at": "2026-09-09T19:44:56+00:00",
     "lang": "ko"
    },
    {
@@ -750,6 +713,13 @@
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBqc1R3cEpLS093bkJjd2hON1NiT19qUi1waDlRSGZLZjhvbzMzeXFOSTdtTmFkV3FGMENBT3ExTHBXRldHZXNpdnFxMkpnSGFVUGZPOWlQb016NVdHaVczVzRlMjdDdnY1NXNxdVlJamlDb1pyQVpWWVRoVQ?oc=5",
     "at": "2026-09-09T00:18:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "Super Micro Computer Inc (SMCI) 주식 마감했습니다 상승 7.28%에 9월11일: 핵심 원인 공개",
+    "publisher": "TradingKey",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdEZITjJVZ19uM3JCQTVTLUItOF9ra0hLMm1rU1NKUEVmczBqdjU1YVhSQnpMUFI5ZlJzNWlWdE5yRnFGdjl2aDBCNE5vOUsxM21leWdKNkE1RWhqTmJvSmVqMGVFYnl4OWlQVXluQzQzNm5XUGFnVm10U2NZNy1GRFJqTG11eU9zdlZ4ZjVKRQ?oc=5",
+    "at": "2026-09-11T20:16:13+00:00",
     "lang": "ko"
    }
   ],
@@ -778,10 +748,10 @@
   ],
   "VLO": [
    {
-    "title": "실적 전망치가 상승함에 따라 투자자들이 발레로 에너지 주가에 어떻게 반응할까",
+    "title": "발레로(VLO) 주가는 지난 5년간의 큰 상승세를 바탕으로 공정가치 이상으로 평가된다",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQNXhMdjYyTVdIR2YzNU5SdFlPQzZEcWFPcXU2ZzlRSE4zck04Wjd6ODQ2eEVxRkwwZ0lBbV9TUjlvUUk0WTFpd1hsSWtFSG5ITjRfWjBCOWRzZHAyYldJaVYyUUhKUm9VZEpvLXJXT1hCMUVkYzhKeTl4SlJUS3M0RUtmWmM5bHN2YXdISWxIZ9IBlAFBVV95cUxPQXFDWmJWVjRQdjZ2WVVmQUltWFh5V21MQVRlMWxteERHS2twaFFySktkQ3NaSGVUaEtpRnRLak02M0I0b2Q3Y3ZZdGlFZ2hGMmpOcEVrN1dfMW9ramVOVmRCdHlqUkkwWDh1ZGhNN0pzNjlLSUx2VW5rRXVUUHFMUkpXLTgyVUtCbjlzNmJVTndnckhn?oc=5",
-    "at": "2026-09-12T00:09:36+00:00",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOaGJZSS1RSVQzc0ZpVXJYS1hla0lOM24zTllvR0dQNG9tQ181ZWhiVkZrVmxYY29ieUN1WHZtU3U3RzdMVFh5LVpBZTdXSjExR2dkb1YxSkpVcWRkY2hiQzNIV0JZLS1FcVpvM29fdEtuSVo2TXBfN2VKMWh4MWpJVVprMWxDaThwVllLR200WnNaVVpZ0gGUAUFVX3lxTE5oYllJLVFJVDNzRmlVclhLWGVrSU4zbjNOWW9HR1A0b21DXzVlaGJWRmtWbFhjb2J5Q3VYdm1TdTdHN0xUWHktWkFlN1dKMTFHZ2RvVjFKSlVxZGRjaGJDM0hXQlktLUVxWm8zb190S25JWjZNcF83ZUoxaHgxaklVWmsxbENpOHBWWUtHbTRac1pVWlk?oc=5",
+    "at": "2026-09-12T23:39:38+00:00",
     "lang": "ko"
    },
    {
@@ -801,22 +771,22 @@
   ],
   "PLTR": [
    {
-    "title": "팔란티어(PLTR) 주가, 미 육군 신규 계약 소식 이후 9% 저평가되었을 가능성",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNQmEyaDZmMU1YZzVaVlJkNldtUlZWNjM2WW14SXUxVFVudHE4c1JNemdLVjdkTkZUOHUwMkxuUHZVRHZMaTFJX2UzbVNMQWd4bFFjWV9pQUhQOGVtMkFSVDFiR1I5UndPdkp3OXYtRjY2NnRvQXhrMUdHYlVaSHEzZlhXUW42WFNTU2dVZVAtUGNkRzdJZkdWMExNM25Zb0FCcGp0ckZ30gGmAUFVX3lxTE1CYTJoNmYxTVhnNVpWUmQ2V21SVlY2MzZZbXhJdTFUVW50cThzUk16Z0tWN2RORlQ4dTAyTG5QdlVEdkxpMUlfZTNtU0xBZ3hsUWNZX2lBSFA4ZW0yQVJUMWJHUjlSd092Snc5di1GNjY2dG9BeGsxR0diVVpIcTNmWFdRbjZYU1NTZ1VlUC1QY2RHN0lmR1YwTE0zbllvQUJwanRyRnc?oc=5",
-    "at": "2026-09-11T02:03:44+00:00",
+    "title": "팔란티어 주식 2030: $254 목표가는 현실적인가 아니면 지나치게 낙관적인가?",
+    "publisher": "TradingKey",
+    "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNQ3dOaThzSy1Vc0piTmR6VHZORW9LN1ZDMnBFQzY2VVlSZER3dFN3Qjh1SmJSNjhzcmFuT2tJbURCM2xWZHF3Yy00TU1NQzNkTTVTNWFOWGJ1UEJIRmRraGRqMTVyQ3NvNWMtb1czUkNyZzVRSG84TEp5ZUhvUzJqM1dtUm1BMEdFX29QaENKaEtOVmlKR1RKZkNtRDYwZ0lweWlCTXJaM1M5ZzVGUFZueENDTjVFMHFsdy1uOXgzdFNQaFdvTFE2Zi1jc3JGM3gyRWZqRVd5WEZOdXhza3VqaA?oc=5",
+    "at": "2026-09-13T04:43:46+00:00",
     "lang": "ko"
    },
    {
-    "title": "네비우스 그룹(NBIS), 팔란티어(PLTR)와 주권형 AI 스택 구축 제휴에 주가 7.7%↑",
-    "publisher": "인포스탁데일리",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5DVTVuT25iRXN6RzRSemtjd2pVQlFSY0VHMzhXeHJnMEN2bXJ4TmFYY3VmeHk3d0YyQkFoZ04wTm44WGZsb2MwT0IweHBXSXE3a29RQ3NEU1JlNXF5MDlFUFBrcjQ3bEt3N1NnbldYV05CQmR4c1E?oc=5",
-    "at": "2026-09-09T07:50:10+00:00",
+    "title": "팔란티어 테크놀로지스(PLTR) 엔비디아 협업으로 다시 주목받다, 지금도 주가는 비싼가?",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxObkF6SUFmLU5UN0ZPZ2o0SDFjbHhwYjZLTUpFOG91Qnl3dzhWaldoenVsbEg0dTFMUGpzZExtY2luMUJBcHNDTWFrR0lEYkprZkNPYk51MmdGT3B3WHB3UTRLcVM3YlhCTERBdUM1QXk4TlBkT3FNbFZVLWh1RVpHUjB5dGhYSnlvbXFXYmZYV3U5MTAybXB3TTlRWXUzMU1id3J4bEdB0gGmAUFVX3lxTE5uQXpJQWYtTlQ3Rk9najRIMWNseHBiNktNSkU4b3VCeXd3OFZqV2h6dWxsSDR1MUxQanNkTG1jaW4xQkFwc0NNYWtHSURiSmtmQ09iTnUyZ0ZPcHdYcHdRNEtxUzdiWEJMREF1QzVBeThOUGRPcU1sVlUtaHVFWkdSMHl0aFhKeW9tcVdiZlhXdTkxMDJtcHdNOVFZdTMxTWJ3cnhsR0E?oc=5",
+    "at": "2026-09-13T12:46:18+00:00",
     "lang": "ko"
    },
    {
     "title": "빅쇼트 '마이클 버리' 백기? 엔비디아·팔란티어 공매도 축소",
-    "publisher": "더구루",
+    "publisher": "theguru.co.kr",
     "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9sakgzc1ZKeUlCcmpEelFBZ2hBX2Y4SkRYWThsNDJQa1hnMjdjZHFxMWZrcHFFOFo3WTlBVE5ZTkVFcG5WVWRNaUlZRzdMUzJPc3JRSXFyMms1SlNsbkE?oc=5",
     "at": "2026-09-11T02:04:52+00:00",
     "lang": "ko"
@@ -824,17 +794,17 @@
   ],
   "CVX": [
    {
+    "title": "셰브론(CVX) 주가는 170% 급등한 후에도 여전히 저평가된 것으로 보인다",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZTFUTkdaWks4S013cG9SaXJjOTdiaWhJT0p6ZmZBWTdsSk03eC1lNTRya0d1OS1hNWxabzdubXBERXVXNHJVQTJQelBOano2LWdNQ3RxNWVGS3p4Tk5CU2RwbHd3SGR6bUdHRElSM09DYThSMjIzdEgwMmNTdnpMeEdadGVHM2kzbGFsb9IBjAFBVV95cUxOZTFUTkdaWks4S013cG9SaXJjOTdiaWhJT0p6ZmZBWTdsSk03eC1lNTRya0d1OS1hNWxabzdubXBERXVXNHJVQTJQelBOano2LWdNQ3RxNWVGS3p4Tk5CU2RwbHd3SGR6bUdHRElSM09DYThSMjIzdEgwMmNTdnpMeEdadGVHM2kzbGFsbw?oc=5",
+    "at": "2026-09-13T12:18:14+00:00",
+    "lang": "ko"
+   },
+   {
     "title": "셰브론 주가, 214.85달러로 사상 최고치 경신",
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5HUDhyV0R5SnA5WURFYmRLb1h2SlFDb1o1M2V2ZC1CRDNGQ3lNd1RHT1RkRlBlY3YxUFRBaXN1akVVU2tybEJRSExWZzJqbTZmNFVFdjVoMjFzc0wwaDB2T2cwV3NQOWJXZDZyS1hHZW4?oc=5",
     "at": "2026-09-09T13:41:00+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "셰브론, 파이퍼 샌들러로부터 유가 급등에 월가 최고 목표주가 받아",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE90OFFqMHRVVTJuVUtEdGRuVU9HSWEwdWo3cHBEQjB3RW9YOVFiRUhvWlUzRlpOY09FT245QThrZW5odnBjLVZiWmFra0dDNFl2ZnFNWF9EckhWeUZkeDhiX2tkZFItaHBBbUNGUEpnU20?oc=5",
-    "at": "2026-09-03T13:08:00+00:00",
     "lang": "ko"
    }
   ],
@@ -844,20 +814,6 @@
     "publisher": "simplywall.st",
     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPb0pXTk1EQTlmVFRkZzJ6M0ZUTjBybm44aFp6bVZzMXdNNmdiN2xUeDBreG5RVkVzNEhUcEZxbVZJSzVYTHhlTHo5dy1MUXpJT3pjZDdXOUEzaV90SDk1TWhaTG1hY1pvWFMza0JaTDNKaHBYVU1VUkY5eDY0b1dhOWZRONIBiAFBVV95cUxPYmoxbmU0cGc5ZUZEeUszaWJ2cmoyTWN5blVQTjdBNUdxbWotTm5pNERqc0FzaUg3bzJCZC01TjlWaVVqbVZVZ3ppcHhyR29HRml5NmYtMWcydlFTN3RLejl5RlgxOXhEY2tQVUVzTlIybHRkUThBakM3YmhsYXZJeS1tVVY3dXlG?oc=5",
     "at": "2026-09-09T00:48:31+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "Ciena(CIEN)의 AI 기반 수주 잔고가 핵심 네트워킹 투자 전망을 재구성하고 있는 것일까?",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQMVNXaGs1UlhLOXk1ZlVNLTdqQ1FYcE5NNjFXekt0Y2lCdXpRYWlwcy1wRW4zdkhrbVkyaU9sbTBvdHloX0piOEUxVmdYeHVYZWtUY3pYb1JRRjVwdk02X0czOVJGZTBvbm1ValJiT3Z1MjEwcVpMQnFDWlZxa1N1TC05WdIBiAFBVV95cUxPWkVuSlJNblZ3WFdCX2F6elRxV09oWGR2YmtHd3J2ZzRnZEg2dHkwQXZ4WHpGWEV0eDc5aXRhUURvLW5iaUFjMnByX09zOTNlWGQ3QjR4SkdtcWx2U1ZWUElGTVc4bUFwX0JZQW9WUGpKdW9lVmVQREFnd3BSRTlXUUpOUTBxdFRT?oc=5",
-    "at": "2026-09-02T21:49:48+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "Ciena Corp (CIEN) 주식 움직였습니다 하락 10.71%에 9월3일: 어떤 신호인가요?",
-    "publisher": "TradingKey",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNSjhZeGcwbS13akZxQkRINm55bjVOZ1pueGhZb2V0MlhwT2xFQ2ItMWZpdmtqRE9DWm1idVd3ZGRQQ1F5ZlJuZmQ1Y1piVFU0eE1wSkloX3dCb2Eybk1aczF0VFBSMGFnXzB5akxCTUQwSnVXd0Z0YnF6bERvUGtBOEl5dnNYazJGd29Sb09qVQ?oc=5",
-    "at": "2026-09-03T19:16:15+00:00",
     "lang": "ko"
    }
   ],
@@ -880,7 +836,7 @@
   "FIS": [
    {
     "title": "Fidelity National Information Services 주식 기술적 분석: $37.98 지지선 테스트",
-    "publisher": "Traders Union",
+    "publisher": "tradersunion.com",
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPU1RzQU9UZlE1c2V3Y0gtZVUxR0VnSzhRRTlqNnZvVllMbUZyb2RMVi1xSE5wTVVGaVY3bUg0Q0xTeWpFS21iZTlHX1JCdkg1QS1fd3VhNHpxNzJ2YVdDb20zOGNTbUV6MFIyS3JIV0E2ZW44SG4yMW5ZUGFObFdQVUZ2SFJJTGJoQlJzTDhBWjlwOHVEamt1ZTFJaVU?oc=5",
     "at": "2026-09-08T16:16:42+00:00",
     "lang": "ko"
@@ -911,10 +867,17 @@
   ],
   "ADBE": [
    {
-    "title": "[국경 없는 인재 전쟁] AI에 흔들린 어도비, '인포매티카 CEO 출신'을 차기 수장으로 삼은 이유?",
-    "publisher": "더구루",
-    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1zckJvdDJNbFRlNHhETkx3RkVBMmtYeWotVWFRWXZhd1hvblNYNW12VWphcWFYZ0hBQ2Q4U1dRNEpITEFVdFl3dGZFQjJPTnd2R3I4QmtuMUNleDd1S0E?oc=5",
-    "at": "2026-09-12T01:18:39+00:00",
+    "title": "빚만 168조원인데 주가 반등?…오라클의 ‘AI 도박’ 통해야 삼전닉스도 산다 [플러스 관심종목]",
+    "publisher": "매일경제 마켓",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1ocEVHUzkxVXd6OVBhaElJUmFjczh4VTVrcDNHcDQzQVhkejZ4ejJsMjNodjNGeW5fSkhoWGQ2ZVZjU1hlQ0VIajZ5V1dXUHp4emc?oc=5",
+    "at": "2026-09-13T08:29:59+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "어도비 (ADBE) 주가 AI 성장에도 늦어진 수익화가 남긴 할인 이유",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNTXRhMTZEZHYtODdpbFhKZlJzZTNzYUt0TlJPakRwS2s3N21pbldublNhOUlwVUR3R1VWaFJNY3VnX0tiSGJ1ZEZTd1ZLVVVvMGV0Vk9lVjNvd3BVZTR3cFZBdzg2Tmc1QVVWVm9HRWlpaWNoYW5lOWQ0OXJDOFZVMFQ5cnI1MWRSUTZ6WHN3RnfSAZABQVVfeXFMTU10YTE2RGR2LTg3aWxYSmZSc2Uzc2FLdE5ST2pEcEtrNzdtaW5Xbm5TYTlJcFVEd0dVVmhSTWN1Z19LYkhidWRGU3dWS1VVbzBldFZPZVYzb3dwVWU0d3BWQXc4Nk5nNUFVVlZvR0VpaWljaGFuZTlkNDlyQzhWVTBUOXJyNTFkUlE2elhzd0Z3?oc=5",
+    "at": "2026-09-13T02:33:21+00:00",
     "lang": "ko"
    },
    {
@@ -922,13 +885,6 @@
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE8wNVFqSENyRWc3YVpoNE1rZ0tkNUQ5c2xWQlZkVm9qSm1qQllYQk5OUjAxdHRRSW5oeGVCbkxvVDJUTkVNRVRrajVuZ1MyV3ZuTnNGMGFsSE1zdXVRYXV3X3Y2eXFCNHBfZkljQ21hY1pFMDNX?oc=5",
     "at": "2026-09-11T08:13:00+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "어도비, 4분기 매출 가이던스에 아쉬움…시간외 2% 약세",
-    "publisher": "연합인포맥스",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9yUWV2QXJVYTJ3TkxuMXRnejdQQ3ZNWlBGVHNqVERrOUZUSDBZXzNmc2JXTEM4Xzd6dXpxQVRfdlhQdnVxcTVCTUxBOTkyODBvZjJLbzk5bUI0Y3dPQ0lVN2tBWUtpemtVWFJUeHlkY3HSAXRBVV95cUxORUtMWjZLVXpTMlhtY1h0SXd5WWVUb2oyQk1zSUxUN0tPRXhOYTJseU5ocW9XbEVCbDZTVWF6R25uSmRpY2M0WG5rREQzdUlTUkducHM3QXBCTkE1cmJiaTc5eEtYQmtCN014aFd4TGJRN1IxXw?oc=5",
-    "at": "2026-09-10T22:20:05+00:00",
     "lang": "ko"
    }
   ],
@@ -941,21 +897,12 @@
     "lang": "ko"
    }
   ],
-  "CHTR": [
-   {
-    "title": "CFO의 사임이 차터 커뮤니케이션스(CHTR)의 투자 스토리를 바꾼 것일까?",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWmhaTE55X2FfdE5aVzVrM2NqMUtnbWZrbzFwXzZfNk9BVGlJc0Z1dGdvenlLUmotSEVNZEszbTRYTmdLRm9EeDNJMllfZWFhODZyaHdMRmlxV1duUDFMN2NkVHZqYmN2UFN6RmtZTFdXMlNZV3oxdThacHEycXBHRnNsN2J6SzlQRk50UGloTDlGR1BBc2R0MEZoUHl1eWRjcFBn0gGjAUFVX3lxTE5aaFpMTnlfYV90TlpXNWszY2oxS2dtZmtvMXBfNl82T0FUaUlzRnV0Z296eUtSai1IRU1kSzNtNFhOZ0tGb0R4M0kyWV9lYWE4NnJod0xGaXFXV25QMUw3Y2RUdmpiY3ZQU3pGa1lMV1cyU1lXejF1OFpwcTJxcEdGc2w3YnpLOVBGTnRQaWhMOUZHUEFzZHQwRmhQeXV5ZGNwUGc?oc=5",
-    "at": "2026-09-08T13:49:35+00:00",
-    "lang": "ko"
-   }
-  ],
   "ALL": [
    {
     "title": "AM 베스트의 신용등급 유지 결정 이후 올스테이트(ALL) 주가가 공정가치보다 낮을 수 있다",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPRnRMZzh5bkxQdm1zUkJvZW56blNnX1NhSHNVUWt3R1lXZnNkU1BfVV9oekFGa0lZOEFMSkh6eklVTm4ta2VZSFdCQ1M1N25iMmJoc09ZQ2JORWxjbXhMQ0RHeUlSd2pDR2o1LVJlRXcxQVAyX1lQLXdJUERrSVhnS25KQ3dsWVlNbGJKYtIBkgFBVV95cUxQcHk2TlJrczUwcW9nU1JuLS1GOUZBLVdBUDJ1Zzc1cy1hUTNBN183NVVpUFVCb3BYQ3JydmRyYmxGUnF6U0Jqc21vVlZON0ZUcnRvZzFUd1pwNXo3TVlJQWZlVWJqTlZyZHpEYmt6eDY4NlR3d0VKcnB6RlkyUE1sM1JZLTF0YjUyNmFfWHdGeUxuUQ?oc=5",
-    "at": "2026-09-12T11:40:28+00:00",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQcHk2TlJrczUwcW9nU1JuLS1GOUZBLVdBUDJ1Zzc1cy1hUTNBN183NVVpUFVCb3BYQ3JydmRyYmxGUnF6U0Jqc21vVlZON0ZUcnRvZzFUd1pwNXo3TVlJQWZlVWJqTlZyZHpEYmt6eDY4NlR3d0VKcnB6RlkyUE1sM1JZLTF0YjUyNmFfWHdGeUxuUdIBkgFBVV95cUxQcHk2TlJrczUwcW9nU1JuLS1GOUZBLVdBUDJ1Zzc1cy1hUTNBN183NVVpUFVCb3BYQ3JydmRyYmxGUnF6U0Jqc21vVlZON0ZUcnRvZzFUd1pwNXo3TVlJQWZlVWJqTlZyZHpEYmt6eDY4NlR3d0VKcnB6RlkyUE1sM1JZLTF0YjUyNmFfWHdGeUxuUQ?oc=5",
+    "at": "2026-09-12T11:40:30+00:00",
     "lang": "ko"
    },
    {
@@ -973,6 +920,15 @@
     "lang": "ko"
    }
   ],
+  "EXPE": [
+   {
+    "title": "Vrbo 제품 출시, 익스피디아 주가 상승 전망을 시험대에 올리다",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZ3JHY19lYjFWN19kX3hzWGpJbEI4T0ZmbkJhc0JLWUpTU19nZUR3MWtXbklZQ2F6QTY3Ukw5ZDYwY2NXaDZSVFQ1QU8wWHdNOVlUT1RSYml5MTdtQllNSnpuR1BTbVA1RXRUSVpIZm5RTkJRaDdfQ2JZMklzNC1Xd0JHZWJFa2w1eE9ZNHhONzNQeEpad0ZnY1FnZDNQX2c0eGEzR2JFVdIBpwFBVV95cUxOZ3JHY19lYjFWN19kX3hzWGpJbEI4T0ZmbkJhc0JLWUpTU19nZUR3MWtXbklZQ2F6QTY3Ukw5ZDYwY2NXaDZSVFQ1QU8wWHdNOVlUT1RSYml5MTdtQllNSnpuR1BTbVA1RXRUSVpIZm5RTkJRaDdfQ2JZMklzNC1Xd0JHZWJFa2w1eE9ZNHhONzNQeEpad0ZnY1FnZDNQX2c0eGEzR2JFVQ?oc=5",
+    "at": "2026-09-08T22:55:40+00:00",
+    "lang": "ko"
+   }
+  ],
   "SYF": [
    {
     "title": "아메리칸 익스프레스의 2분기 매출이 동종 업계 대비 부진한 것으로 나타나면서 AXP 투자 타당성에 변화가 생길 수 있다",
@@ -984,24 +940,24 @@
   ],
   "PYPL": [
    {
-    "title": "페이팔 주식에 대한 인력 감축과 애널리스트들의 낙관론이 투자 전망을 어떻게 바꿨는지",
+    "title": "페이팔(PYPL) 주가는 실적 면에서는 매수 기회로 보이지만, 성장세 부진에 대한 우려에 직면해 있다",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYnUxemVYV21BcjlMYjAwQVg3NkNkdHBfUFFfRkFCWXYwWURYQWxxeUY3UXMyM1d5U19rNUpoci1wQXlLS2NSbHVaVmozRHllUmc4Sk05SnNHYlJWVmFPR0lOVDRxbUtpdXVQZ293QUcwc3ZGYU9mQk5kajY2RmZwNDlEdWRGNHhubFRIaEFEYi1DRUlMZmNteEFxWER1SjM4Mjg0UDhaWXRETTgtYXROctIBsAFBVV95cUxQYnUxemVYV21BcjlMYjAwQVg3NkNkdHBfUFFfRkFCWXYwWURYQWxxeUY3UXMyM1d5U19rNUpoci1wQXlLS2NSbHVaVmozRHllUmc4Sk05SnNHYlJWVmFPR0lOVDRxbUtpdXVQZ293QUcwc3ZGYU9mQk5kajY2RmZwNDlEdWRGNHhubFRIaEFEYi1DRUlMZmNteEFxWER1SjM4Mjg0UDhaWXRETTgtYXROcg?oc=5",
-    "at": "2026-09-09T03:10:56+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "페이팔 홀딩스 주가, 오늘 상승하는 이유는?",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9IY0lSU0FxZ0E1cDZQcjY0RnNZUElKeDJ3Z09KOXE5NmJ3eDE4TjVUZVBsR2kzaEkwa2ZZc0xRd2dMZ1JTcFFiOU15Yzh1NmVNa05VYUpQZFV6M05UZktWNlVwdk5XNjcyX0RiekxqNDc2YlUxd3NF?oc=5",
-    "at": "2026-09-03T15:01:00+00:00",
+    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQT2NNNUNPWl9fTUcxYmtubVRQSS16UWFzTmhzT092Z0R4alV1dUtOVGFSZXJnR0VtNmNiZ1F3WnA3X0xVRkJHU3lWMkc5Nk5yX25wajFnd01fZkt6OWZnUDZvNS0wbzQzMUFVdTlaY1c0MUptMXpRaGFJZnpBZmc2VmdKVUdJWERod0Q4YnVWTmJHSlF6R3A2ZnU5TlZWWVY1Z3lwTjlLUEVJWXY2VFp2atIBsAFBVV95cUxQT2NNNUNPWl9fTUcxYmtubVRQSS16UWFzTmhzT092Z0R4alV1dUtOVGFSZXJnR0VtNmNiZ1F3WnA3X0xVRkJHU3lWMkc5Nk5yX25wajFnd01fZkt6OWZnUDZvNS0wbzQzMUFVdTlaY1c0MUptMXpRaGFJZnpBZmc2VmdKVUdJWERod0Q4YnVWTmJHSlF6R3A2ZnU5TlZWWVY1Z3lwTjlLUEVJWXY2VFp2ag?oc=5",
+    "at": "2026-09-13T07:08:28+00:00",
     "lang": "ko"
    },
    {
     "title": "페이팔, 530억달러 인수 제안 뿌리치고 독자 생존 승부수",
-    "publisher": "머니네버슬립",
+    "publisher": "moneyneversleeps.co.kr",
     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5FWnRPODJQSUU1LVBGZmhQUGl1bXFxbEk1TDNpRG5KczVERlhLa2g3dHNPV1RldkRqT1c1eklRNGRhUmw5eXc4czkxRlFOS3lrYUNPU3JoRzB6RVNMb2N6a0tzT1NJLTFuTFRONGEzd0JJZlnSAXdBVV95cUxPQlRuTmZ4RTliOFh4dmx1QkpWQlVSUm9WM3lzOEItTlVDWTE3Y2xKRnRZTWtOM1FoNjhpTXJSZVFPUzhabzNpbEhzb0xUdkVjdjNmY0pnc2Jjd3RXME5YTjJiaS0wODZaMEZkYV9JREh1dDFCRGkzdw?oc=5",
     "at": "2026-09-11T12:00:00+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "페이팔 주식에 대한 인력 감축과 애널리스트들의 낙관론이 투자 전망을 어떻게 바꿨는지",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYnUxemVYV21BcjlMYjAwQVg3NkNkdHBfUFFfRkFCWXYwWURYQWxxeUY3UXMyM1d5U19rNUpoci1wQXlLS2NSbHVaVmozRHllUmc4Sk05SnNHYlJWVmFPR0lOVDRxbUtpdXVQZ293QUcwc3ZGYU9mQk5kajY2RmZwNDlEdWRGNHhubFRIaEFEYi1DRUlMZmNteEFxWER1SjM4Mjg0UDhaWXRETTgtYXROctIBsAFBVV95cUxQYnUxemVYV21BcjlMYjAwQVg3NkNkdHBfUFFfRkFCWXYwWURYQWxxeUY3UXMyM1d5U19rNUpoci1wQXlLS2NSbHVaVmozRHllUmc4Sk05SnNHYlJWVmFPR0lOVDRxbUtpdXVQZ293QUcwc3ZGYU9mQk5kajY2RmZwNDlEdWRGNHhubFRIaEFEYi1DRUlMZmNteEFxWER1SjM4Mjg0UDhaWXRETTgtYXROcg?oc=5",
+    "at": "2026-09-09T03:10:56+00:00",
     "lang": "ko"
    }
   ],
@@ -1011,6 +967,13 @@
     "publisher": "simplywall.st",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOLUkyQmROdGZFZ19keHdKOUcxV09BTjB1UFc1dGgxVjI2NmgtNURqYktiWm1jSXdoS0p4YWdHdzRJdDRlSUZndUZQbHU3WnVaa0JKUEN5WEh0dk14WTZZdmJkWC1pRU5MeUY4bmJxbU9ubXZhMkFzQlJjSXBZWjBYQUtXSUV6VGhYQXYxeTFreTFydk11VlpQNXdwMNIBmwFBVV95cUxOLUkyQmROdGZFZ19keHdKOUcxV09BTjB1UFc1dGgxVjI2NmgtNURqYktiWm1jSXdoS0p4YWdHdzRJdDRlSUZndUZQbHU3WnVaa0JKUEN5WEh0dk14WTZZdmJkWC1pRU5MeUY4bmJxbU9ubXZhMkFzQlJjSXBZWjBYQUtXSUV6VGhYQXYxeTFreTFydk11VlpQNXdwMA?oc=5",
     "at": "2026-09-10T00:33:28+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "아파치 주식 52주 최고가 46.0 USD 기록",
+    "publisher": "Investing.com 한국어",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE55TXRxMEIwUVF4T0J5cURfNzVKMWJVUFFHTHpsVzFDWnJ5Q3BFUUY3S3FabWJTTTVGcjhmamlraThTa3pGSG5sVFRmLURBdWhXckZDc2J5aDVrVW02RU1MTmQwRUFLX21KRGh0Z1BaUXo?oc=5",
+    "at": "2026-09-10T13:33:00+00:00",
     "lang": "ko"
    }
   ],
@@ -1030,10 +993,10 @@
     "lang": "ko"
    },
    {
-    "title": "“65% 빠졌는데 계속 물타기, 괜찮겠니?”…‘빅쇼트’ 마이클 버리 발목잡은 ‘레깅스’",
-    "publisher": "mk.co.kr",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE53SGZSVDBNNGFsRzl3eXotLTRENTByYmNUMG9OekxGcVpBNm15c3dGMFdZTzlGeDN2TFpDWjJCangxeGVibEZBVE1JVHNzajdNc1E?oc=5",
-    "at": "2026-09-06T02:03:35+00:00",
+    "title": "레깅스 유행 끝났나…룰루레몬 판매 뚝·주가 폭락 무슨 일",
+    "publisher": "서울신문",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBCWmxHa3lqcUFjTWhUYVJRLWJ1QnREWnRXRHp6Y3ZmcTBocXNMY0xXMTFneXBCcUtNU2FVWThSWkVDOXpob1RNeEk3UnBDQ0ktNHNzOVVWNWtVaHZSaTB3TjRLOWc?oc=5",
+    "at": "2026-09-11T04:00:50+00:00",
     "lang": "ko"
    }
   ],
@@ -1053,10 +1016,10 @@
     "lang": "ko"
    },
    {
-    "title": "[뉴스프레소] 브로드컴, 시간외 주가 반전의 키워드 \"향후 2년 끄떡없다\"",
-    "publisher": "supple.kr",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1pOUJfVnpUUVRTdUVjLVJVNF9HR3dnZzZfYWhNWWJtR0Q5Q3FTMWVhb0wtdThoNHIwbkR0djVjYU9jUlJ4Tm5JeTVvMVhOVEEzbG5JRGwydHhCbTI3?oc=5",
-    "at": "2026-09-03T04:11:57+00:00",
+    "title": "레이먼드 제임스, 가이던스 우려로 다이콤 인더스트리스 목표주가 하향",
+    "publisher": "Investing.com 한국어",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBKYWpKeEFaekFCX1dlVE5JaV9IdGhYOFpjcVNUTWdabVd0NmM5ZVZaUDVTSG1EWUlTaDJsUTc5eG95TUZWaWJOZHhSUGkzbWhmeGlCRkpfNXV1Yk52Q2E3QXhFTDFxdE90azhZbFc1ck1hOWE5?oc=5",
+    "at": "2026-09-03T17:04:00+00:00",
     "lang": "ko"
    }
   ],
@@ -1073,8 +1036,8 @@
    {
     "title": "퍼스트 솔라(FSLR) 투자자들은 실적 전망에 따라 조치를 취해야 할까?",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxObWZoMlZsWUlGWmZLV3lXRVlIVkV1SHVSYUVzRnNYWjIwQUxPTkdDd3NmeFdsbWdxNVAyNHoyamJ2djZ4MVBDNWxRZW5VSnpUV1l0MmEydTdhbVFyTDdOQkE0SzJGbTU2dmZJZWVHTUFMcXVNOTkxSVpRTmlyMGFZSFJNMDE1d0xCeE9YOFdZRW8yZUprVHFBY2piMNIBoAFBVV95cUxPb3NWNjZyNGNfNU5YcDExNDVQaTlzTVNqLWYxQkViR3RCSXB1RWx1cUxNQWJfejNuWW1YY2tQYTZobEJkWEVzSWNTcEtxRjVoSGdsOXRJaXJSeDBVNTN1U1doNHVaWVdPU1F3bUJyRHJ6RmRqYUNrbFYtdDBrT0ZHUFRyNDVlVzh6LWwxbXlwMDduSzB4empFTkZmT2Z0SVlJ?oc=5",
-    "at": "2026-09-12T09:23:47+00:00",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPb3NWNjZyNGNfNU5YcDExNDVQaTlzTVNqLWYxQkViR3RCSXB1RWx1cUxNQWJfejNuWW1YY2tQYTZobEJkWEVzSWNTcEtxRjVoSGdsOXRJaXJSeDBVNTN1U1doNHVaWVdPU1F3bUJyRHJ6RmRqYUNrbFYtdDBrT0ZHUFRyNDVlVzh6LWwxbXlwMDduSzB4empFTkZmT2Z0SVlJ0gGgAUFVX3lxTE9vc1Y2NnI0Y181TlhwMTE0NVBpOXNNU2otZjFCRWJHdEJJcHVFbHVxTE1BYl96M25ZbVhja1BhNmhsQmRYRXNJY1NwS3FGNWhIZ2w5dElpclJ4MFU1M3VTV2g0dVpZV09TUXdtQnJEcnpGZGphQ2tsVi10MGtPRkdQVHI0NWVXOHotbDFteXAwN25LMHh6akVORmZPZnRJWUk?oc=5",
+    "at": "2026-09-12T09:31:17+00:00",
     "lang": "ko"
    }
   ],
@@ -1087,21 +1050,19 @@
     "lang": "ko"
    }
   ],
-  "VICI": [
-   {
-    "title": "비치 프로퍼티스 주식, 25.36달러로 52주 신저가 기록",
-    "publisher": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9iSDl6T1JMdEp1RnNvNVd1ckExaldWeFl5QnFOVFhDWTFrT1pGREdaRU9TV2RXV2hMMGVvWU05UmFZdHg2dzJ4T3lvVXhQV09hY1hNRHhoSmdxR054OXVKTXRUOGlSd3hzSkd0bGxoank?oc=5",
-    "at": "2026-09-03T14:44:00+00:00",
-    "lang": "ko"
-   }
-  ],
   "UPS": [
    {
-    "title": "왜 UPS(NYSE:UPS)는 대대적 임원 개편에 나섰을까?",
+    "title": "유나이티드 파슬 서비스(UPS), 경영진 재편 이후 14% 저평가 가능성 주목",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNUDEzNDJMUHRqSlBtdDdSSWpMM2txaVJ1bVo3MVhVRGlmdjJMZFdGLUlLcVhyYlRXY0E0MGZ5MEpmRnhTMEdWSGFXWXlfanpvRDNVeWQwYlZoTGVOcVFBcm1PbFh0N25FTnUxZ2dkU1huV2h6OVNJUHBrTjduYU9XT0NwYk8wOHdSM0tOckFvV3RsVnBmOE9pbXRIaUpoUlZxdl9MZEdPVEVPbWpXU0NiNFVhZnVwcjFPMjBOaEhtbTlyNGtoZjhIczlETG9vSlVQRktqaHdIZ9IBqgFBVV95cUxOU1d6dElwWXhmWVhQQ2xDcElLS1p2WTR4eVl3VXd6cXpQVl9sWEM2cDkzTFY5Z1RreXFEdnBkM0lvUHRPTDk2am9Oa2tuS3EtV0oxQ0ZxTmRUZHQtTmVMNElheWRzd09hQnhUbTh0bi12RVJJajZfeWhYclNrMzlZeXI2UEdCXzZIRGhidHpHaDRVSGUwUXlrY2FFeW1nc2t1bjM2c2ZNQU9Ndw?oc=5",
-    "at": "2026-09-09T07:00:00+00:00",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMlNFcTJndk1EbnVrRlhGV1pBRU43UE5NTTRDb2xyWjBZWmpROGZ0QmNfRGxZSzJ6U3lKdTFRRGN4enNKbzZJWmg5bUR2Y1ZtcUlpS01KZkpvNzNQUkxyVm1kTHFxWThHNjRQSUFOdklIREFUV1hMZF9CVzQzODVCeVFCQVRPV1kxTm9waDdQeUZ1SC1mRUVpWTNKdEdKMFBTNDNhdS1rZFg5QdIBqgFBVV95cUxQMlNFcTJndk1EbnVrRlhGV1pBRU43UE5NTTRDb2xyWjBZWmpROGZ0QmNfRGxZSzJ6U3lKdTFRRGN4enNKbzZJWmg5bUR2Y1ZtcUlpS01KZkpvNzNQUkxyVm1kTHFxWThHNjRQSUFOdklIREFUV1hMZF9CVzQzODVCeVFCQVRPV1kxTm9waDdQeUZ1SC1mRUVpWTNKdEdKMFBTNDNhdS1rZFg5QQ?oc=5",
+    "at": "2026-09-13T06:49:46+00:00",
+    "lang": "ko"
+   },
+   {
+    "title": "파업 위험에도 불구하고 유나이티드 파셀 서비스(UPS)의 주가가 공정가치보다 낮은가?",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSzIyaElDZ24zWnpSNS00aU83bUlOdGNSd1QyVzB1ODZEYmRvZmtIYW1MbW1CRGs0cmhGQ21sMXdpdS10QnJXUGhpdnlPdzNEZlZhS1M1Xzk0cmJuMnVMR094ckE5SXJaa29XMFA4cnY0TEFma0RIdTF2UVp0MERjRFZ5NzBsM0RhUExkakhIM3RuMndfX240WlV1RmRKcDc0NWhXRXZfRVpfd9IBqgFBVV95cUxOSzIyaElDZ24zWnpSNS00aU83bUlOdGNSd1QyVzB1ODZEYmRvZmtIYW1MbW1CRGs0cmhGQ21sMXdpdS10QnJXUGhpdnlPdzNEZlZhS1M1Xzk0cmJuMnVMR094ckE5SXJaa29XMFA4cnY0TEFma0RIdTF2UVp0MERjRFZ5NzBsM0RhUExkakhIM3RuMndfX240WlV1RmRKcDc0NWhXRXZfRVpfdw?oc=5",
+    "at": "2026-09-12T10:09:48+00:00",
     "lang": "ko"
    }
   ],
@@ -1109,8 +1070,8 @@
    {
     "title": "파이프라인에 대한 긍정적 전망에도 불구하고 화이자(PFE) 주가는 이미 충분히 반영된 것으로 보인다",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVDJCa0tIZ0h2QVQ0M3Ezcl9Fenp2SUdNTlk1UjEzNElqNVptY21FNWk4djZ4MkFENkV0SFEwbHhIMmtVNEN3MldLbEF1M0RncGRHd0ZkTVU0cmpiNHBuV3BRS2ZCQzlLaG9EYVBOMlpyd3NXSjhyZ29vU05KUy05Mk5fTjl4TzJRQVZXY2hvV2k4R1FSUnhGZ29UWlnSAaIBQVVfeXFMUFJtckFYSm9DNlRKUHhVZEJta205UEF4U0tZdGV2RTRrTWFfcWpEdy02aWFuNHllZDl4M3kzZGN4MWxpSkxVLUFQMnlzRnFJRjdjTExiT1FjYnoxbWJJNTRsYzEwVWxKekczNzdoOFB1d2I4V1V0cFF2Y20wcWNBUUVMOUZzSTFtUXFEaXBVRld2dEFZMkVFYkN6X0FXZWtZOVJn?oc=5",
-    "at": "2026-09-12T06:24:10+00:00",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQUm1yQVhKb0M2VEpQeFVkQm1rbTlQQXhTS1l0ZXZFNGtNYV9xakR3LTZpYW40eWVkOXgzeTNkY3gxbGlKTFUtQVAyeXNGcUlGN2NMTGJPUWNiejFtYkk1NGxjMTBVbEp6RzM3N2g4UHV3YjhXVXRwUXZjbTBxY0FRRUw5RnNJMW1RcURpcFVGV3Z0QVkyRUViQ3pfQVdla1k5UmfSAaIBQVVfeXFMUFJtckFYSm9DNlRKUHhVZEJta205UEF4U0tZdGV2RTRrTWFfcWpEdy02aWFuNHllZDl4M3kzZGN4MWxpSkxVLUFQMnlzRnFJRjdjTExiT1FjYnoxbWJJNTRsYzEwVWxKekczNzdoOFB1d2I4V1V0cFF2Y20wcWNBUUVMOUZzSTFtUXFEaXBVRld2dEFZMkVFYkN6X0FXZWtZOVJn?oc=5",
+    "at": "2026-09-12T07:12:13+00:00",
     "lang": "ko"
    },
    {
@@ -1121,10 +1082,10 @@
     "lang": "ko"
    },
    {
-    "title": "화이자(PFE) 주가, 코로나19 백신 승인 업데이트 이후 과대평가된 것으로 보여",
+    "title": "화이자(PFE), 메디커스 파마와 CD228V 계약 체결에 밸류에이션 매력은 남아 있을까?",
     "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOY25oRTJjUHpLbVVZazRGR1NFeUNpczJadmc0YmNFaEtVVDNONlpJV0pMYWlvbUJPV2pSdEJ6OGpNMTA1eEZDZnRMQi1vWFZsT0swV0V2QkZmS3B1MjhIdXV2RFozQUJFRHVKS0k3cGo0LUQ4aDZLRHZTWVlpek5jMkJuWXY5cUZkVU4wMVdkVGdaVGFPSkZ6TllESUTSAaIBQVVfeXFMTWJnSUZNTklVUy1ESi1UNENzeVBpU2VDX3VkeUcwelQxSllQU1pNQjd6V2xhODhnM1F0S2J0X3ZwczZ6MU1mcVBPYWJBQW5mdzMzS0ZuSnFqQWxyUGNhR29iZEJmUjgtYkZXUWpKaTRCWmUtSURSQ1F0bW5ma0tIanBCSjV4UVBCSEZoWDBTVE1UM3hKR0RSTGNxN2k2T2ZxRGVn?oc=5",
-    "at": "2026-09-04T10:35:28+00:00",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQSUhhQ21vOUhfVkJnVjJJSXNWQUlLTHl5cFR5aVVxNjFOSTZUNkFlVlFyNmRZNDVadzItTFBTOHdnTnU1aWRVSHRtcG54WEk0bmhzN1pxdVBYdkdpbjBjeDFCYUlieC1NRGVSekwwMWxSb0hYUEwtSlM4Y2Y3ekc0ZHFiclJPVGdJeGRaZ05xTWVXLVJyWlZiNVNrNmfSAaIBQVVfeXFMUE5ERzYtZkc1QTR2WWdGYzh4YzBRVlNLbktNOTBPY3B4b0otTG1BUkFCMnpBSDJELXg3ZmhNdjcya1ZHOThPN2R3ajFKOEI1amotRjRhZmszSy1jQWxxSHVwdmVjTnBnRHJBekpfdXJuZ1VBTmItY3BLVnk1d0paTGNLd2RmSTlIZWtzZGttWHFHR21RMzRaT2tYLUZfdmxEUURB?oc=5",
+    "at": "2026-09-09T07:00:00+00:00",
     "lang": "ko"
    }
   ],
@@ -1139,17 +1100,17 @@
   ],
   "VZ": [
    {
+    "title": "버라이즌(VZ) 주가는 실적 기준으로는 저평가된 것으로 보이지만, 83%의 수익률을 기록한 후에는 적정 수준으로 보인다",
+    "publisher": "simplywall.st",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbVcxNVUxWUdDQTIwa1NjTWpJckN5OU03RDhLVk16dUs5RmNRTFVaYzZac1lacmh4NThDb1J2em4yUEhhamJBTjBRZWtZZjNfTTJxa2F0UkxCdWp2NkFWa0xsTF9FdElJSS1yV0piOENpdS05RzJsZ1ZwMVV2LTk3bVBwLUhLWXJkdGtMUjU4dnFWVUJnekdBdTgwbWZSdGVC0gGgAUFVX3lxTE9tVzE1VTFZR0NBMjBrU2NNaklyQ3k5TTdEOEtWTXp1SzlGY1FMVVpjNlpzWVpyaHg1OENvUnZ6bjJQSGFqYkFOMFFla1lmM19NMnFrYXRSTEJ1anY2QVZrTGxMX0V0SUlJLXJXSmI4Q2l1LTlHMmxnVnAxVXYtOTdtUHAtSEtZcmR0a0xSNTh2cVZVQmd6R0F1ODBtZlJ0ZUI?oc=5",
+    "at": "2026-09-13T02:33:29+00:00",
+    "lang": "ko"
+   },
+   {
     "title": "코닝, 버라이즌 커뮤니케이션과 수십억 달러 광섬유 계약 체결로 주가 상승",
     "publisher": "Investing.com 한국어",
     "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ITDJUMjNPVjEzMUE3a3ZCR3l6cHRtOVJFNzBYUFp2THp0aDc3RGRfdTZRQU1mYWVEc2sxTzRhc3NMc1VIV2I5YnVxQWlWVlBYaW0xQ1BJX0ZaSWRYT2IwOUI4ZFNZYzdRek5mcDBSR1U?oc=5",
     "at": "2026-09-08T13:19:00+00:00",
-    "lang": "ko"
-   },
-   {
-    "title": "버라이즌 커뮤니케이션스(VZ) 프리캐시플로 전망 높였다, 이제는 완전히 가격에 반영됐나?",
-    "publisher": "simplywall.st",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPLXlxWGVSMzctT0FDQXk2XzNqZ2V2ZW1CdzIwVEhTZWtQcU5KaXpHUWpMUWltMjAwT1RJMFgwVzJoSmVBRHhzQnA2WkpkX0ZpVXNJVkNmd0lEMU4tRU5uNUxyOWtLU0dqQ2lwSHFpSW9LWnRRQWlmWGFjbEZTM1Rsd0YyYkxlVVB1R3I3ZUJ1SVNsUGxnV2h2R0VtVWRVSzNs0gGgAUFVX3lxTE8teXFYZVIzNy1PQUNBeTZfM2pnZXZlbUJ3MjBUSFNla1BxTkppekdRakxRaW0yMDBPVEkwWDBXMmhKZUFEeHNCcDZaSmRfRmlVc0lWQ2Z3SUQxTi1FTm41THI5a0tTR2pDaXBIcWlJb0tadFFBaWZYYWNsRlMzVGx3RjJiTGVVUHVHcjdlQnVJU2xQbGdXaHZHRW1VZFVLM2w?oc=5",
-    "at": "2026-09-07T07:06:28+00:00",
     "lang": "ko"
    },
    {
@@ -1169,9 +1130,9 @@
     "lang": "ko"
    },
    {
-    "title": "컴캐스트·차터, 전일 급락에 저가매수 유입…주가 동반 반등",
-    "publisher": "마켓인",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFB6Y1lOR0dpRXBkYll3ZDExZnVsMmN1QmZIZVh3TXRKMWJvS1p6WWlYQkVRXzVkb09XbEx4Z1JvSVZOSnN2RHJoem1VcWlMVGJDVEVlMEQxOF9saXVxVDNWbkJhOHpyRnE0cnpRMWRoSFpkVFU?oc=5",
+    "title": "[美특징주]컴캐스트·차터, 전일 급락에 저가매수 유입…주가 동반 반등",
+    "publisher": "edaily.co.kr",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOdW5RZlhZX1BwVFdkRGktdHUxMEZra28tTVRxR0lvMy0tU24tQ25ZaU82cUhrOUw4RmhjdEtCbjI1b0N0S0NDRXZLWW5NTFpYTUluYUp5bG1ZaEFXbVQ4UHF4OUk4SGIzWEM4emdtanRDbGRaSjUtR1NLT1hzUHYzcw?oc=5",
     "at": "2026-09-10T16:31:24+00:00",
     "lang": "ko"
    },
