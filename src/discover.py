@@ -44,11 +44,11 @@ DISCLAIMER = (
 # 가격 하나로만 판단한다. 재무·뉴스·사람의 해석을 섞지 않는다 —
 # 섞는 순간 규칙을 화면에 그대로 공개할 수 없고, 과거 성적도 잴 수 없다.
 SIGNAL_RULES = [
-    "50일 평균값보다 낮아지면 «팔 때»",
-    "1년 평균과 한 달 평균을 둘 다 넘고, 너무 급하게 오르지 않았으면 «살 때»",
-    "둘 다 아니면 «기다릴 때»",
+    "50일 평균보다 낮아지면 「팔 때」",
+    "1년 평균과 한 달 평균을 둘 다 넘고, 너무 급하게 오르지 않았으면 「살 때」",
+    "둘 다 아니면 「기다릴 때」",
 ]
-SIGNAL_LEVELS = ["목표가는 1년 최고값, 손절선은 50일 평균값이에요"]
+SIGNAL_LEVELS = ["목표가는 1년 최고가, 손절선은 50일 평균이에요"]
 # 칩에 쓰는 짧은 이름. 「실적이 계속 잘 나오는 회사」를 칩에 그대로 넣었더니
 # 모바일에서 칩이 네 줄(251px)을 먹었다. 섹션 제목은 긴 이름 그대로 쓴다.
 SHORT_NAME = {
@@ -60,7 +60,7 @@ SHORT_NAME = {
     "dividend":      "배당",
     "stable":        "덜 흔들리는",
     "oversold":      "많이 떨어진",
-    "earnings_miss": "실적 어긋난",
+    "earnings_miss": "기대 못 미친",
 }
 
 SIGNAL_LABEL = {"buy": "살 때", "watch": "기다릴 때", "exit": "팔 때"}
@@ -68,7 +68,7 @@ SIGNAL_LABEL = {"buy": "살 때", "watch": "기다릴 때", "exit": "팔 때"}
 # 규칙을 화면에서도 다시 계산해야 하는데(시세는 3분, 이 파일은 하루 1회 갱신),
 # 문구까지 양쪽에 두면 언젠가 서로 다른 말을 하게 된다.
 SIGNAL_REASON = {
-    "below_s50":  "50일 평균값 아래로 내려왔어요",
+    "below_s50":  "50일 평균 아래로 내려왔어요",
     "trend":      "1년 평균보다 높고, 아직 너무 오르지도 않았어요",
     "below_s200": "아직 1년 평균보다 낮아요",
     "hot":        "최근에 너무 급하게 올랐어요",
@@ -240,6 +240,12 @@ def sign_pct(v, nd=1):
     return f"{v:+.{nd}f}%"
 
 
+def up_pct(v):
+    """「올랐어요·늘었어요」 앞에 붙는 크기. 동사가 방향을 말하니 부호는 뺀다.
+    1,000%를 넘으면 퍼센트로는 감이 안 와서 몇 배인지로 적는다."""
+    return f"{int(v / 100 + 1)}배 넘게" if v >= 1000 else f"{v:.1f}%"
+
+
 def days_until(iso: str | None) -> int | None:
     """오늘부터 iso 날짜까지 남은 일수. 파싱 실패는 None."""
     if not iso:
@@ -309,10 +315,10 @@ def build_bigcap(rows, total_mcap):
     top_share = (sum(r["mcap"] for r in ranked) / total_mcap * 100) if total_mcap else None
     return {
         "key": "bigcap", "name": "시총 1~10위",
-        "desc": "덩치로 줄 세워 앞의 열 개예요. 지수가 오르내리는 건 사실상 이들이 움직인 결과라, 시장이 어디로 가는지 보려면 여기부터 봅니다.",
+        "desc": "지수가 이 열 종목을 따라 크게 움직여요.",
         "rules": [
-            "업종과 무관하게 시가총액 순위 1위부터 10위까지예요",
-            "순위가 바뀌면 구성도 따라 바뀝니다",
+            "업종 상관없이 시가총액 1~10위예요",
+            "순위가 바뀌면 종목도 바뀌어요",
         ],
         "rows": [strat_row(r, sc, w) for sc, r, w in hits],
         "headline": {"label": "시장에서 차지하는 비중", "value": f(top_share, 1), "fmt": "pct0"},
@@ -416,7 +422,7 @@ def build_momentum(rows, ret6_p75):
             continue
         if not (last > s200 and s50 > s200 and r6 >= ret6_p75 and 45 <= rsi <= 78):
             continue
-        why = [f"6개월 새 {sign_pct(r6)} 올랐어요"]
+        why = [f"6개월 새 {up_pct(r6)} 올랐어요"]
         if r.get("ret_12m") is not None:
             why.append(f"1년으로 보면 {sign_pct(r['ret_12m'])}")
         why.append("아직 과열 구간은 아니에요" if rsi < 70 else "다만 단기 과열 신호가 보여요")
@@ -426,13 +432,13 @@ def build_momentum(rows, ret6_p75):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "momentum", "name": "잘 오르고 있는 주식",
-        "desc": "오르는 중이고, 아직 안 꺾였어요. 지난 반년 수익률이 500종목 중 상위 25% 안에 든 것만 골랐습니다.",
+        "desc": "오르는 중이고, 아직 안 꺾였어요.",
         "rules": [
             "지금 주가가 1년 평균보다 높아요 (200일 이동평균)",
-            "최근 흐름이 장기 흐름보다 위에 있어요 (50일선 > 200일선)",
-            f"6개월 수익률이 500개 종목 중 상위 25% 안에 들어요 ({sign_pct(ret6_p75)} 이상)",
+            "50일 평균이 1년 평균보다 높아요 (50일선 > 200일선)",
+            f"6개월 수익률이 {len(rows)}개 종목 중 상위 25% 안에 들어요 ({sign_pct(ret6_p75)} 이상)",
             "너무 급하게 오르지도, 식지도 않았어요 (RSI 45~78)",
-            "많이 오른 순서로 보여드려요",
+            "많이 오른 순서예요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -453,7 +459,7 @@ def build_value_quality(rows, sector_pe_med):
         cheap = (1 - pe / med) * 100 if med else None
         why = [f"같은 업종 평균보다 {cheap:.0f}% 싸요" if cheap and cheap >= 1
                else "같은 업종 평균보다 싸요",
-               f"넣은 돈 대비 이익을 잘 내요 (ROE {roe:.0f}%)",
+               f"자본 100원으로 1년에 {roe:.0f}원을 벌어요",
                f"매출 100원당 {margin:.0f}원이 이익으로 남아요"]
         hits.append((rank, r, why))
     hits.sort(key=lambda x: x[0], reverse=True)
@@ -461,13 +467,13 @@ def build_value_quality(rows, sector_pe_med):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "value_quality", "name": "싸면서 돈 잘 버는 회사",
-        "desc": "같은 업종 평균보다 싸게 거래되는데 정작 이익은 잘 내고 있는 회사들이에요. 싼 데는 이유가 있을 수도 있으니, 왜 싼지는 따로 봐야 합니다.",
+        "desc": "싼 데는 이유가 있을 수도 있어요.",
         "rules": [
-            "주가가 같은 업종 평균보다 싸요 (예상 PER 기준)",
+            "주가가 같은 업종 평균보다 싸요 (선행 PER 기준)",
             "넣은 돈 대비 이익을 잘 내요 (ROE 15% 이상)",
             "매출 100원당 8원 넘게 이익으로 남겨요",
-            "가격 매력도가 500개 중 상위 45% 안에 들어요",
-            "싸고 잘 버는 순서로 보여드려요",
+            f"싼 정도가 {len(rows)}개 중 상위 45% 안에 들어요",
+            "싸고 잘 버는 순서예요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -490,12 +496,12 @@ def build_earnings(rows):
         if not parts:
             continue
         rank = sum(parts) / len(parts)
-        why = [f"최근 1년 중 {b4}번 시장 기대를 넘었어요",
-               f"직전 실적은 기대보다 {sign_pct(sl)} 잘 나왔어요"]
+        why = [f"기대 대비 {b4}승 {4 - b4}패",
+               f"직전 실적은 기대보다 {up_pct(sl)} 잘 나왔어요"]
         if eps_g is not None and eps_g > 0:
-            why.append(f"이익이 {sign_pct(eps_g)} 늘고 있어요")
+            why.append(f"이익이 {up_pct(eps_g)} 늘고 있어요")
         elif rev_g is not None:
-            why.append(f"매출이 {sign_pct(rev_g)} 늘고 있어요")
+            why.append(f"매출이 {up_pct(rev_g)} 늘고 있어요")
         d = days_until(r.get("next_earnings"))
         if d is not None and 0 <= d <= 45:
             why.append(f"다음 실적 발표가 {d}일 남았어요")
@@ -505,12 +511,12 @@ def build_earnings(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "earnings", "name": "실적이 계속 잘 나오는 회사",
-        "desc": "네 번 발표해서 세 번 이상 시장 기대를 넘긴 회사예요.",
+        "desc": "",
         "rules": [
             "최근 4번의 실적 발표 중 3번 이상 기대를 넘었어요",
             "가장 최근 실적도 기대보다 좋았어요",
             "이익이 늘고 있거나, 매출이 10% 넘게 늘고 있어요",
-            "전문가 평가와 성장세가 좋은 순서로 보여드려요",
+            "증권사 평가와 성장세가 좋은 순서예요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -547,7 +553,7 @@ def build_earnings_miss(rows):
         chronic = b4 is not None and b4 <= 2
         if not (big_miss or chronic):
             continue
-        # 이름이 «자꾸 어긋나는»이므로 몇 번 어긋났는지를 먼저 본다. 한 번 크게 삐끗한
+        # 이름이 «자꾸 기대에 못 미치는»이므로 몇 번 어긋났는지를 먼저 본다. 한 번 크게 삐끗한
         # 종목이 1위로 올라오면 이름과 화면이 어긋난다. 크기는 보조로만 쓰고 100 에서
         # 자른다 — 뜻을 잃은 %는 아예 빼서, 분모 작은 한 종목이 판을 가져가지 않게 한다.
         miss_n = 0 if b4 is None else (4 - b4)
@@ -560,8 +566,7 @@ def build_earnings_miss(rows):
         elif not ok:
             why.append("예상치가 0 근처라 몇 % 빗나갔는지는 뜻이 없어요")
         if b4 is not None:
-            why.append(f"최근 4번 중 {4 - b4}번은 기대를 못 맞췄어요" if b4 < 4
-                       else "다만 최근 4번은 모두 기대를 넘겼어요")
+            why.append(f"기대 대비 {b4}승 {4 - b4}패")
         rev_g = r.get("rev_g")
         if rev_g is not None:
             why.append(f"매출은 1년 새 {abs(rev_g):.1f}% "
@@ -574,13 +579,12 @@ def build_earnings_miss(rows):
     _key = "earnings_miss"
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
-        "key": "earnings_miss", "name": "실적이 자꾸 어긋나는 회사",
-        "desc": "시장이 기대한 숫자를 못 맞추고 있는 회사예요. "
-                "싸게 방치된 걸 수도, 정말 나빠지는 중일 수도 있어요.",
+        "key": "earnings_miss", "name": "실적이 자꾸 기대에 못 미치는 회사",
+        "desc": "",
         "rules": [
             "직전 실적이 기대보다 2% 넘게 못 미쳤거나,",
             "최근 4번의 실적 발표 중 2번 이상 기대를 못 맞췄어요",
-            "자주 어긋난 순서로 보여드려요",
+            "기대에 자주 못 미친 순서예요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -597,7 +601,7 @@ def build_oversold(rows):
         if not (rsi <= 32 and vs200 >= -12 and qua >= 50):
             continue
         why = ["최근 많이 팔려서 단기적으로 싸진 상태예요",
-               (f"그래도 1년 평균보다 {sign_pct(vs200)} 수준은 지키고 있어요"
+               (f"그래도 1년 평균보다 {vs200:.1f}% 위에 있어요"
                 if vs200 >= 0 else f"1년 평균보다 {abs(vs200):.0f}% 아래로만 내려왔어요"),
                "회사 자체 실적은 튼튼한 편이에요"]
         hits.append((qua, r, why))
@@ -606,12 +610,12 @@ def build_oversold(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "oversold", "name": "많이 떨어진 우량주",
-        "desc": "짧은 새 많이 밀렸는데 회사 자체는 멀쩡한 경우예요. 조건이 까다로워서 어떤 날은 한두 종목만 걸리고, 아예 비는 날도 있습니다.",
+        "desc": "최근 많이 떨어졌지만 실적은 멀쩡한 회사예요.",
         "rules": [
-            "최근 매도세가 강했어요 (RSI 32 이하)",
+            "최근 많이 팔렸어요 (RSI 32 이하)",
             "그래도 1년 평균에서 12% 넘게 벗어나진 않았어요",
-            "수익성이 500개 중 상위 절반 안에 들어요",
-            "실적이 튼튼한 순서로 보여드려요",
+            f"수익성이 {len(rows)}개 중 상위 절반 안에 들어요",
+            "실적이 튼튼한 순서예요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -628,7 +632,7 @@ def build_dividend(rows):
             continue
         if not (dy >= 2.5 and fcf > 0 and qua >= 40):
             continue
-        why = [f"1년에 투자금의 {dy:.1f}%를 배당으로 줘요",
+        why = [f"1년에 지금 주가의 {dy:.1f}%를 배당으로 줘요",
                "벌어들인 현금이 배당을 감당하고 있어요"]
         if r.get("margin") is not None:
             why.append(f"매출 100원당 {r['margin']:.0f}원이 이익으로 남아요")
@@ -638,12 +642,12 @@ def build_dividend(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "dividend", "name": "배당 주는 회사",
-        "desc": "갖고만 있어도 1년에 2.5% 넘게 현금으로 주는 회사예요 — 그것도 벌어들인 돈 안에서요.",
+        "desc": "갖고만 있어도 1년에 2.5% 넘게 현금으로 주는 회사예요.",
         "rules": [
             "배당수익률이 연 2.5% 이상이에요",
-            "벌어들이는 현금이 플러스라 배당을 감당할 수 있어요",
-            "수익성이 500개 중 하위권은 아니에요",
-            "배당을 많이 주는 순서로 보여드려요",
+            "쓰고 남는 현금이 있어서 배당을 줄 수 있어요",
+            f"수익성이 {len(rows)}개 중 하위권은 아니에요",
+            "배당을 많이 주는 순서예요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -662,9 +666,10 @@ def build_stable(rows, vol_p30, mcap_med):
             continue
         if beta is not None and beta > 1.1:
             continue
-        why = [f"1년간 가격 출렁임이 {vol:.0f}%로 낮은 편이에요"]
+        why = [f"1년간 가격 출렁임이 {vol:.0f}%로 {len(rows)}종목 중 낮은 편이에요"]
         if beta is not None:
-            why.append(f"시장이 1% 움직일 때 {beta:.1f}% 정도만 움직여요")
+            # 기준이 베타 1.1 이하라 1.0~1.1 은 시장만큼 움직인다. 그땐 «만»을 붙이지 않는다.
+            why.append(f"시장이 1% 움직일 때 {beta:.1f}% 정도{'만' if beta < 1 else ''} 움직여요")
         why.append("덩치가 크고 수익성도 안정적이에요")
         hits.append((qua, r, why))
     hits.sort(key=lambda x: x[0], reverse=True)
@@ -672,12 +677,12 @@ def build_stable(rows, vol_p30, mcap_med):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "stable", "name": "덜 흔들리는 안정형",
-        "desc": "값이 덜 출렁여요. 500종목 중 변동성이 낮은 쪽 30%에 들면서 덩치도 중간 이상인 회사만 남겼습니다.",
+        "desc": "",
         "rules": [
-            f"1년 가격 변동성이 500개 중 하위 30%예요 ({vol_p30:.0f}% 이하)",
+            f"1년 가격 변동성이 {len(rows)}개 중 하위 30%예요 ({vol_p30:.0f}% 이하)",
             "시가총액이 중간값 이상인 큰 회사예요",
-            "시장보다 덜 움직여요 (베타 1.1 이하)",
-            "수익성이 500개 중 상위 절반 안에 들어요",
+            "시장보다 많이 움직이지 않아요 (베타 1.1 이하)",
+            f"수익성이 {len(rows)}개 중 상위 절반 안에 들어요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)
@@ -693,9 +698,9 @@ def build_growth(rows):
             continue
         if not (rev_g >= 20 and (eps_g is None or eps_g > 0)):
             continue
-        why = [f"매출이 1년 새 {sign_pct(rev_g)} 늘었어요"]
+        why = [f"매출이 1년 새 {up_pct(rev_g)} 늘었어요"]
         if eps_g is not None:
-            why.append(f"이익은 {sign_pct(eps_g)} 늘었어요")
+            why.append(f"이익은 {up_pct(eps_g)} 늘었어요")
         if r.get("ret_12m") is not None:
             why.append(f"주가는 1년간 {sign_pct(r['ret_12m'])}")
         hits.append((gro, r, why))
@@ -704,11 +709,11 @@ def build_growth(rows):
     _rows = [strat_row(r, sc, w) for sc, r, w in hits[:20]]
     return {
         "key": "growth", "name": "빠르게 크는 회사",
-        "desc": "매출이 1년 새 20% 넘게 늘었어요. 회사가 아직 커지는 중이라는 뜻인데, 그만큼 주가에 기대가 미리 들어가 있기도 합니다.",
+        "desc": "주가에 기대가 미리 들어가 있을 수 있어요.",
         "rules": [
             "매출이 1년 새 20% 이상 늘었어요",
             "이익도 줄지 않고 있어요",
-            "성장세가 강한 순서로 보여드려요",
+            "성장세가 강한 순서예요",
         ],
         "rows": _rows, "headline": headline(_key, [r for _, r, _ in hits[:20]]),
     }, len(hits)

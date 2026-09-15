@@ -28,7 +28,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication",
  "name":"종목 상황실","url":"https://ctayh1216-creator.github.io/stock-board/",
- "description":"S&P 500 규칙 기반 종목 스크리너와 한국어 주식 뉴스.",
+ "description":"S&P 500과 한국 주식을 규칙으로 걸러낸 오늘의 종목과 한국어 뉴스.",
  "applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"ko",
  "isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}}
 </script>
@@ -564,7 +564,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
     <div class="cats" id="cats"></div>
     <div id="strats"></div>
     <details class="all" id="allBox">
-      <summary>S&amp;P 500 전체 종목 표 보기</summary>
+      <summary>전체 종목 표 보기</summary>
       <div class="tools">
         <input id="q" type="search" placeholder="티커 또는 종목명" aria-label="검색">
         <select id="sec" aria-label="섹터"><option value="">전체 섹터</option></select>
@@ -911,7 +911,7 @@ function sigLevels(sg, last){
   var tgt = (has(sg.hi) && px && sg.hi > px)
     ? '<div class="v num">' + price(sg.hi) + '</div>' +
       '<div class="d num up">' + pct1(gap(sg.hi)) + '</div>'
-    : '<div class="v num">' + NB + '</div><div class="d">이미 52주 최고가예요</div>';
+    : '<div class="v num">' + NB + '</div><div class="d">이미 1년 최고가예요</div>';
   /* 청산 구간이면 손절선이 현재가 위에 있다 — 이미 뚫고 내려왔다는 뜻이라 이름을 바꾼다. */
   var stopK = sg.state === "exit" ? "손절선 · 이미 아래" : "손절선";
   var sp = gap(sg.stop);
@@ -928,7 +928,7 @@ function sigRecord(){
   var s = BT && BT.signal;
   if (!s || !s.backtested || !has(s.win_rate)) return "";
   var w = sigWins(s);
-  return '<p class="sh-record"><b>' + w + '승 ' + (s.months - w) + '패</b> · 누적 ' +
+  return '<p class="sh-record">살 때 신호 전체 <b>' + w + '승 ' + (s.months - w) + '패</b> · 누적 ' +
     pct1(s.cumulative) + ' (' + esc(benchName()) + ' ' + pct1(s.bench_cumulative) + ')</p>';
 }
 /* 배지만 보고 믿는 일이 없도록, 목록 위에 집계와 판정을 같이 둔다. */
@@ -952,9 +952,8 @@ function renderSignalRecord(){
     '<div class="v">' + w + '<small>승</small> ' + l + '<small>패</small></div>' +
     '<div class="bar"><i style="width:' + pct + '%;background:var(--up)"></i>' +
       '<i style="width:' + (100 - pct) + '%;background:var(--down)"></i></div>' +
-    '<div class="n">' + s.months + '번 붙어서 ' + w + '번 이겼어요' +
-    (Math.abs(s.cumulative - s.bench_cumulative) < 3 ? '. 지수와 거의 같았어요' : '') +
-    '</div></div>';
+    '<div class="n">누적 ' + pct1(s.cumulative) + ' · ' + esc(benchName()) + ' ' +
+      pct1(s.bench_cumulative) + '</div></div>';
 }
 function sigRules(){
   var g = D && D.signal;
@@ -993,15 +992,14 @@ function renderChanges(){
   var since = koDate(g.since);
   var head = '<div class="sec-h"><h2>오늘 바뀐 신호</h2>' +
       (list.length ? '<span class="n">' + list.length + '종목</span>' : "") + '</div>' +
-    '<p class="sec-d">' + (since ? since + ' 마지막 상태와 견줬어요.'
-                                 : '내일부터 보여드릴게요.') + '</p>';
+    '<p class="sec-d">' + (since ? since + '과 비교했어요.' : '내일부터 나와요.') + '</p>';
   if (!list.length){
     /* 견줄 기록이 없는 날은 «바뀐 종목이 없다»고 말하면 안 된다 — 견주지도 않았다. */
-    box.innerHTML = head + (since ? '<p class="rec-none">오늘은 구간이 바뀐 종목이 없어요.</p>' : "");
+    box.innerHTML = head + (since ? '<p class="rec-none">오늘은 신호가 바뀐 종목이 없어요.</p>' : "");
     return;
   }
   box.innerHTML = head + '<div class="cardlist">' + list.slice(0, 12).map(chgHtml).join("") + '</div>' +
-    (list.length > 12 ? '<p class="hint">외 ' + (list.length - 12) + '종목이 더 바뀌었어요.</p>' : "");
+    (list.length > 12 ? '<p class="hint">' + (list.length - 12) + '종목이 더 바뀌었어요.</p>' : "");
 }
 
 /* 관심종목 — 수량·평단 없이 티커만. 이 기기에만 남는다. */
@@ -1043,7 +1041,7 @@ function extHtml(r, kind){
     '<div class="pick-bot">' +
       '<span class="sig ' + (kind === "high" ? "buy" : "exit") + '"><i></i>' +
         (kind === "high" ? "1년 최고" : "1년 최저") + '</span>' +
-      '<div class="why"><span>1년 만에 ' + (kind === "high" ? "가장 높아요" : "가장 낮아요") + '</span></div>' +
+      '<div class="why"></div>' +
       '<span class="pick-sp">' + sparkSvg(r.spark, 56, 20) + '</span></div>' +
   '</div>';
 }
@@ -1068,7 +1066,7 @@ function earnHtml(e){
   if (!r) return "";
   var when = koDate(e.date) || esc(e.date || "");
   var d = e.days === 0 ? "오늘" : e.days === 1 ? "내일" : e.days + "일 뒤";
-  var past = has(e.beats4) ? "최근 4번 중 " + e.beats4 + "번 기대를 넘겼어요" : "";
+  var past = has(e.beats4) ? "기대 대비 " + e.beats4 + "승 " + (4 - e.beats4) + "패" : "";
   return '<div class="pick" data-tk="' + esc(r.ticker) + '" role="button" tabindex="0">' +
     '<div class="pick-top">' +
       logoHtml(r.ticker, 28, r.name) +
@@ -1142,12 +1140,12 @@ function catStat(key){
 function stateTags(r){
   var t = [];
   if (has(r.pos52w)){
-    if (r.pos52w >= 95) t.push(["52주 최고가 부근", "hot"]);
-    else if (r.pos52w <= 10) t.push(["52주 최저가 부근", "cold"]);
+    if (r.pos52w >= 95) t.push(["1년 최고가 근처", "hot"]);
+    else if (r.pos52w <= 10) t.push(["1년 최저가 근처", "cold"]);
   }
   if (has(r.rsi14)){
     if (r.rsi14 >= 70) t.push(["단기 과열", "hot"]);
-    else if (r.rsi14 <= 30) t.push(["단기 과매도", "cold"]);
+    else if (r.rsi14 <= 30) t.push(["단기 많이 팔림", "cold"]);
   }
   if (has(r.vs_sma200)) t.push([r.vs_sma200 >= 0 ? "1년 평균 위" : "1년 평균 아래",
                                 r.vs_sma200 >= 0 ? "hot" : "cold"]);
@@ -1161,21 +1159,29 @@ function stateTags(r){
 /* 화면에 나오는 지표를 한 줄로 풀어 쓴다. 눌러서 펼쳐 본다. */
 var GLOSSARY = {
   "RSI": ["최근에 얼마나 급하게 올랐는지",
-          "0~100 사이 값이에요. 70을 넘으면 짧은 기간에 많이 올랐다는 뜻이고, 30 아래면 많이 팔렸다는 뜻이에요. 높다고 나쁘거나 낮다고 좋은 건 아닙니다."],
+          "0~100 사이 값이에요. 70을 넘으면 짧은 기간에 많이 올랐다는 뜻이고, 30 아래면 많이 팔렸다는 뜻이에요."],
   "선행 PER": ["지금 주가가 내년 예상 이익의 몇 배인지",
-          "10이면 지금 값에 사서 회사가 내년만큼 벌면 10년 걸려 본전이라는 뜻이에요. 낮으면 싼 편이지만, 업종마다 기준이 달라 같은 업종끼리 비교해야 합니다."],
+          "10이면 지금 값에 사서 회사가 내년만큼 벌면 10년 걸려 본전이라는 뜻이에요. 낮으면 싼 편인데, 업종마다 기준이 달라서 같은 업종끼리 봐야 해요."],
   "배당": ["1년에 주가의 몇 %를 현금으로 주는지",
-          "3%면 100만원어치 갖고 있을 때 1년에 3만원쯤 받는다는 뜻이에요. 회사 사정에 따라 줄거나 없어질 수 있습니다."],
+          "3%면 100만원어치 갖고 있을 때 1년에 3만원쯤 받는다는 뜻이에요. 회사 사정에 따라 줄거나 끊길 수 있어요."],
   "ROE": ["회사가 자기 돈으로 얼마나 잘 버는지",
-          "20%면 자본 100원으로 1년에 20원을 벌었다는 뜻이에요. 높을수록 장사를 잘한다는 신호로 봅니다."],
+          "20%면 자본 100원으로 1년에 20원을 벌었다는 뜻이에요. 높을수록 잘 버는 거예요."],
   "변동성": ["가격이 얼마나 출렁이는지",
-          "1년 기준 값이에요. 20%면 보통 수준, 50%를 넘으면 하루하루 크게 오르내린다는 뜻입니다."],
-  "목표가 대비": ["증권사 목표주가까지 남은 거리",
-          "여러 증권사 목표가 평균과 지금 주가의 차이예요. 전망일 뿐이고 자주 바뀝니다."],
-  "1개월": ["최근 한 달 수익률", ""],
-  "6개월": ["최근 여섯 달 수익률", ""],
-  "1년": ["최근 1년 수익률", ""]
+          "1년 기준 값이에요. 20%면 보통이고, 50%를 넘으면 크게 오르내리는 편이에요."],
+  "증권사 목표가": ["증권사 목표주가까지 남은 거리",
+          "여러 증권사 목표가 평균과 지금 주가의 차이예요. 전망이라 자주 바뀌어요."]
 };
+/* 섹터 이름은 미국은 GICS, 한국은 야후 표기로 들어온다. 화면에는 한국어 한 벌로 적는다. */
+var SECTOR_KO = {
+  "Information Technology": "정보기술", "Technology": "정보기술",
+  "Health Care": "헬스케어", "Healthcare": "헬스케어",
+  "Financials": "금융", "Financial Services": "금융",
+  "Consumer Discretionary": "경기소비재", "Consumer Cyclical": "경기소비재",
+  "Consumer Staples": "필수소비재", "Consumer Defensive": "필수소비재",
+  "Communication Services": "커뮤니케이션", "Industrials": "산업재", "Energy": "에너지",
+  "Utilities": "유틸리티", "Real Estate": "부동산", "Materials": "소재", "Basic Materials": "소재"
+};
+function secKo(s){ return SECTOR_KO[s] || s; }
 function perText(v){ return !has(v) ? NB : (v <= 0 ? "적자" : num1(v)); }
 function catCard(st){
   /* 카드에 큰 숫자를 넣었더니 226px 짜리가 아홉 개 되어 옆으로 계속 스크롤해야 했다.
@@ -1197,7 +1203,7 @@ function recordHtml(key){
   if (!b || !b.backtested) return "";
   var beat = b.win_rate, lose = 100 - beat;
   return '<div class="rec">' +
-    '<div><div class="l">지수와 붙어서</div><div class="v">' + num1(beat) + '%</div>' +
+    '<div><div class="l">승률</div><div class="v">' + num1(beat) + '%</div>' +
       '<div class="rec-bar"><i style="width:' + beat + '%;background:var(--up)"></i>' +
       '<i style="width:' + lose + '%;background:var(--down)"></i></div>' +
       '<div class="s">' + Math.round(beat * b.months / 100) + '승 ' +
@@ -1220,7 +1226,7 @@ function recordList(){
     var b = BT && BT.strategies && BT.strategies[s.key];
     return {name: s.name, n: (s.rows || []).length,
             bt: (b && b.backtested) ? b : null,
-            why: (b && !b.backtested) ? b.reason : "가격 기록만으로는 재현할 수 없어요."};
+            why: (b && !b.backtested) ? b.reason : "가격 기록만으로는 못 재요."};
   });
   var sg = BT && BT.signal;
   if (sg && sg.backtested){
@@ -1292,12 +1298,12 @@ function renderRecord(){
   if (!box) return;
   var list = recordList(), scored = list.filter(function(x){ return x.bt; });
   if (!scored.length){
-    box.innerHTML = '<p class="rec-none">아직 잴 수 있는 전적이 없어요.</p>';
+    box.innerHTML = '<p class="rec-none">성적을 아직 못 불러왔어요.</p>';
     return;
   }
   var i = 0;
   box.innerHTML = transHtml() +
-    '<div class="sec-h"><h2>기준별로 보면</h2></div>' +
+    '<div class="sec-h"><h2>기준별 성적</h2></div>' +
     '<div class="rk">' + list.map(function(x){
       return rankRow(x, x.bt ? i++ : -1); }).join("") + '</div>' +
     btCaveatCard();
@@ -1321,7 +1327,7 @@ function epsTable(h){
   }).join("");
   return '<table class="eps"><thead><tr><th>분기</th><th>예상 EPS</th><th>실제 EPS</th>' +
     '<th>기대 대비</th></tr></thead><tbody>' + rows + '</tbody></table>' +
-    (hid ? '<p class="hint">예상 EPS가 0 근처인 분기는 %가 뜻을 잃어 비워뒀어요.</p>' : "");
+    (hid ? '<p class="hint">예상 EPS가 0에 가까운 분기는 %가 지나치게 커져서 비워 뒀어요.</p>' : "");
 }
 function findRow(ticker){
   var t = (D.table || []).find(function(r){ return r.ticker === ticker; });
@@ -1377,7 +1383,7 @@ function openSheet(ticker){
     '<div class="sh-card">' +
       '<div class="sh-h">' + logoHtml(r.ticker, 44, r.name) +
         '<div><div class="sh-tk">' + esc(mainLabel(r)) + '</div>' +
-        '<div class="sh-nm">' + esc(subLabel(r)) + (r.sector ? ' · ' + esc(r.sector) : "") + '</div></div>' +
+        '<div class="sh-nm">' + esc(subLabel(r)) + (r.sector ? ' · ' + esc(secKo(r.sector)) : "") + '</div></div>' +
         '<div class="sh-px"><div class="p num">' + price(r.last) + '</div>' +
           '<div class="c num ' + cls(r.day_pct) + '">' + pct1(r.day_pct) + '</div></div></div>' +
       (function(){
@@ -1406,7 +1412,7 @@ function openSheet(ticker){
       cell("배당", has(r.div_yield) ? num1(r.div_yield) + "%" : NB) +
       cell("ROE", has(r.roe) ? num1(r.roe) + "%" : NB) +
       cell("변동성", has(r.vol_ann) ? num1(r.vol_ann) + "%" : NB) +
-      cell("목표가 대비", pct0(r.upside), cls(r.upside)) +
+      cell("증권사 목표가", pct0(r.upside), cls(r.upside)) +
     '</div></div>' +
     '<div class="gbox" id="gbox" hidden></div>' +
     (r.eps_hist && r.eps_hist.length ? sec("분기별 실적", epsTable(r.eps_hist)) : "") +
@@ -1448,12 +1454,12 @@ function renderStrategies(){
       ? topHtml(rows[0]) +
         (rows.length > 1 ? '<div class="picks">' + rows.slice(1).map(function(r, i){
             return pickHtml(r, i + 2); }).join("") + '</div>' : "")
-      : '<p class="empty">오늘은 이 조건을 만족한 종목이 없습니다. 규칙이 걸러낸 결과이며 오류가 아닙니다.</p>';
+      : '<p class="empty">오늘은 걸린 종목이 없어요.</p>';
     var rules = (s.rules || []).map(function(x){ return '<span>' + esc(x) + '</span>'; }).join("");
     return '<div class="sec-h">' +
         '<h2>' + esc(s.name || s.key) + '</h2>' +
         '<span class="n">' + rows.length + '종목</span></div>' +
-      '<p class="sec-d">' + esc(s.desc || "") + '</p>' +
+      (s.desc ? '<p class="sec-d">' + esc(s.desc) + '</p>' : "") +
       recordHtml(s.key) +
       body +
       (rules ? '<details class="rules"><summary>어떤 규칙으로 골랐나요</summary>' +
@@ -1471,7 +1477,7 @@ var COLS = [
   { k:"rsi14",     label:"RSI",     get:function(r){ return r.rsi14; } },
   { k:"pe_fwd",    label:"선행PER", get:function(r){ return r.pe_fwd; } },
   { k:"div_yield", label:"배당",    get:function(r){ return r.div_yield; } },
-  { k:"upside",    label:"목표가대비", get:function(r){ return r.upside; } },
+  { k:"upside",    label:"증권사 목표가", get:function(r){ return r.upside; } },
   { k:"composite", label:"종합점수", get:compositeOf }
 ];
 var COL_BY_KEY = {};
@@ -1501,22 +1507,22 @@ function renderTable(){
       '<td class="num">' + (has(r.div_yield) ? r.div_yield.toFixed(1) + "%" : NB) + "</td>" +
       '<td class="num ' + cls(r.upside) + '">' + pct0(r.upside) + "</td>" +
       '<td class="num"><b>' + num1(compositeOf(r)) + "</b></td></tr>";
-  }).join("") : '<tr><td colspan="9" class="t3" style="text-align:center;padding:26px">조건에 맞는 종목이 없습니다.</td></tr>';
+  }).join("") : '<tr><td colspan="9" class="t3" style="text-align:center;padding:26px">조건에 맞는 종목이 없어요.</td></tr>';
 }
 function rebuildSectors(){
   var secs = {};
   (D.table || []).forEach(function(r){ if (r.sector) secs[r.sector] = 1; });
-  var names = Object.keys(secs).sort();
+  var names = Object.keys(secs).sort(function(a, b){ return secKo(a).localeCompare(secKo(b), "ko"); });
   if (names.indexOf(tblState.sector) < 0) tblState.sector = "";
   $("sec").innerHTML = '<option value="">전체 섹터</option>' +
-    names.map(function(s){ return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("");
+    names.map(function(s){ return '<option value="' + esc(s) + '">' + esc(secKo(s)) + "</option>"; }).join("");
   $("sec").value = tblState.sector;
 }
 
 /* ============ 뉴스 탭 ============ */
 function btCaveatHtml(){
   if (!BT || !BT.caveats) return "";
-  return '<br><br><b>과거 성적 표시에 대해</b><br>' +
+  return '<br><br><b>성적 계산 기준</b><br>' +
     BT.caveats.map(function(c){ return "· " + esc(c); }).join("<br>");
 }
 /* 전적 탭 하단 주의사항은 카드 안에 담아 목록과 같은 결로 맞춘다. */
@@ -1541,7 +1547,7 @@ function newsGroup(title, items, desc){
 /* 한 덩어리 40건을 시간순으로 늘어놓으면 내 종목 소식이 남의 소식에 묻힌다.
    내 것 → 시장 → 나머지 로 나눠 카드 세 장으로 만든다. */
 function renderNews(){
-  if (!NEWS) { $("newsList").innerHTML = '<p class="empty">뉴스를 불러오는 중입니다.</p>'; return; }
+  if (!NEWS) { $("newsList").innerHTML = '<p class="empty">뉴스를 불러오는 중이에요.</p>'; return; }
   var mine = {};
   PF.forEach(function(h){ mine[h.t] = 1; });
   WATCH.forEach(function(t){ mine[t] = 1; });
@@ -1560,7 +1566,7 @@ function renderNews(){
     newsGroup("내 종목 소식", of(0).slice(0, 15)) +
     newsGroup("시장 소식", of(1).slice(0, 10)) +
     newsGroup("그 밖의 소식", of(2).slice(0, 20));
-  $("newsList").innerHTML = html || '<p class="empty">표시할 뉴스가 없습니다.</p>';
+  $("newsList").innerHTML = html || '<p class="empty">보여줄 뉴스가 없어요.</p>';
 }
 
 /* ============ 내 자산 탭 ============ */
@@ -1605,7 +1611,7 @@ function renderPortfolio(){
   $("pfHero").innerHTML = '<div class="big">' +
     '<div class="k">총 평가액</div>' +
     '<div class="v num">' + (c.fx ? won0(c.mvKrw) + "원" : "$" + usd(c.mvUsd, 0)) + "</div>" +
-    '<div class="n">지금까지 <b class="num ' + cls(c.fx ? pnlKrw : pnlUsd) + '">' +
+    '<div class="n">지금까지 손익 <b class="num ' + cls(c.fx ? pnlKrw : pnlUsd) + '">' +
       (c.fx ? swon(pnlKrw) + "원" : susd(pnlUsd, 0)) +
       /* 금액이 원화면 %도 원화끼리 — 달러 %를 붙이면 환율 몫이 빠진 수익률이 원화 옆에 뜬다 */
       (c.fx ? (c.costKrw ? " (" + pct1(pnlKrw / c.costKrw * 100) + ")" : "")
@@ -1632,7 +1638,7 @@ function renderPortfolio(){
 var HERO = {
   picks: ["오늘 주목할 종목", ""],
   record:["얼마나 맞았나",
-          "지수랑 붙어서 몇 번 이겼는지."],
+          "달마다 지수와 붙은 승패예요."],
   news:  ["오늘의 시장 뉴스", ""],
   mine:  ["내 종목", "넣은 내용은 이 기기에만 저장돼요."]
 };
@@ -1696,13 +1702,13 @@ function load(){
     try { renderAll(); }
     catch (err) {
       console.error("렌더 실패:", err);
-      $("status").innerHTML = '<div class="rec-none">화면을 그리는 중 문제가 생겼습니다. ' +
+      $("status").innerHTML = '<div class="rec-none">화면을 띄우다가 문제가 생겼어요. ' +
         esc(err && err.message ? err.message : String(err)) + '</div>';
     }
   }).catch(function(e){
     if (!D) $("status").innerHTML = '<div class="card"><h2 style="margin:0 0 8px;font-size:17px">' +
-      '데이터를 불러오지 못했습니다</h2><p class="hint" style="margin:0 0 14px">' + esc(e.message) +
-      ' — 잠시 후 다시 시도해 주세요.</p><button class="btn" type="button" data-retry>다시 시도</button></div>';
+      '데이터를 못 불러왔어요</h2><p class="hint" style="margin:0 0 14px">' + esc(e.message) +
+      '<br>잠시 뒤 다시 시도해 주세요.</p><button class="btn" type="button" data-retry>다시 시도</button></div>';
   }).finally(function(){ loading = false; });
 }
 
@@ -1826,7 +1832,7 @@ $("pfAdd").addEventListener("click", function(){
   if (i >= 0) PF[i] = row; else PF.push(row);
   pfSave(PF);
   ["pfTicker","pfQty","pfCost","pfFx"].forEach(function(id){ $(id).value = ""; });
-  $("pfNote").textContent = t + " 추가했습니다.";
+  $("pfNote").textContent = t + " 추가했어요.";
   renderPortfolio(); renderNews();
 });
 $("pfHolds").addEventListener("click", function(e){
@@ -1837,7 +1843,7 @@ $("pfHolds").addEventListener("click", function(e){
 });
 $("pfExport").addEventListener("click", function(){
   var code = JSON.stringify(PF);
-  var ok = function(){ $("pfNote").textContent = "백업 코드를 복사했습니다. 다른 기기의 '가져오기'에 붙여넣으세요."; };
+  var ok = function(){ $("pfNote").textContent = "백업 코드를 복사했어요. 다른 기기에서 '가져오기'에 붙여 넣으세요."; };
   if (navigator.clipboard && navigator.clipboard.writeText)
     navigator.clipboard.writeText(code).then(ok, function(){ window.prompt("아래 코드를 복사하세요", code); });
   else window.prompt("아래 코드를 복사하세요", code);
@@ -1850,8 +1856,8 @@ $("pfImport").addEventListener("click", function(){
     if (!Array.isArray(arr)) throw new Error("형식 오류");
     PF = arr.filter(function(x){ return x && x.t && x.qty > 0 && x.cost > 0; });
     pfSave(PF); renderPortfolio(); renderNews();
-    $("pfNote").textContent = PF.length + "종목을 가져왔습니다.";
-  } catch(e){ $("pfNote").textContent = "가져오기 실패 — 백업 코드 형식이 아닙니다."; }
+    $("pfNote").textContent = PF.length + "종목을 가져왔어요.";
+  } catch(e){ $("pfNote").textContent = "백업 코드가 아니라서 못 가져왔어요."; }
 });
 
 /* 테마: 라이트(기본) ↔ 다크.
