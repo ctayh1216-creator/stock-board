@@ -3,13 +3,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>종목 상황실 — 오늘의 주식 추천과 뉴스</title>
-<meta name="description" content="S&P 500 전 종목을 규칙으로 걸러 오늘 주목할 종목을 골라주고, 한국어 뉴스를 함께 보여줍니다. 무료, 로그인 없음.">
+<title>종목 상황실</title>
+<meta name="description" content="S&amp;P 500과 한국 주식을 규칙으로 걸러낸 오늘의 종목과 한국어 뉴스.">
 <link rel="canonical" href="https://ctayh1216-creator.github.io/stock-board/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="종목 상황실 — 오늘의 주식 추천과 뉴스">
-<meta property="og:description" content="S&P 500을 규칙으로 걸러낸 오늘의 종목과 한국어 뉴스.">
+<meta property="og:title" content="종목 상황실">
+<meta property="og:description" content="S&amp;P 500과 한국 주식을 규칙으로 걸러낸 오늘의 종목과 한국어 뉴스.">
 <meta property="og:url" content="https://ctayh1216-creator.github.io/stock-board/">
 <meta property="og:image" content="https://ctayh1216-creator.github.io/stock-board/og.png">
 <meta property="og:image:type" content="image/png">
@@ -70,6 +70,10 @@
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
   font-size:17px;font-weight:400;line-height:1.59;letter-spacing:normal;
   -webkit-font-smoothing:antialiased}
+/* 한글은 낱말 단위로 줄을 바꾼다. 없으면 「계산해 / 요.」 「테 / 라다인」처럼 낱말 가운데서 끊긴다.
+   overflow-wrap 은 anywhere 가 아니라 break-word — anywhere 는 최소 폭 계산을 바꿔
+   좁은 줄에서 가격 숫자까지 쪼갤 수 있다. break-word 는 한 줄에 안 들어갈 때만 쪼갠다. */
+body{word-break:keep-all;overflow-wrap:break-word}
 h1,h2{font-family:var(--display);letter-spacing:normal}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
 .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
@@ -109,6 +113,7 @@ button{font:inherit;color:inherit}
 .hero .stamp{margin-top:20px;font-size:13px;color:var(--t3)}
 .hero.slim{padding:12px 22px 0;text-align:left}
 .hero.slim h1,.hero.slim p{display:none}
+.hero p:empty{display:none}
 .hero.slim .stamp{margin-top:0}
 
 /* ---------- layout ---------- */
@@ -587,9 +592,9 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
       <div class="sec-h"><h2>종목 추가</h2></div>
       <div class="fcard">
         <div class="form">
-          <input id="pfTicker" list="tickerList" placeholder="티커 (NVDA)" aria-label="티커" autocapitalize="characters">
+          <input id="pfTicker" list="tickerList" placeholder="종목 (NVDA)" aria-label="종목" autocapitalize="characters">
           <input id="pfQty" type="number" inputmode="decimal" min="0" step="any" placeholder="수량" aria-label="수량">
-          <input id="pfCost" type="number" inputmode="decimal" min="0" step="any" placeholder="평단 $" aria-label="평단 달러">
+          <input id="pfCost" type="number" inputmode="decimal" min="0" step="any" placeholder="산 가격 $" aria-label="산 가격 (달러)">
           <input id="pfFx" type="number" inputmode="decimal" min="0" step="any" placeholder="매입환율 (선택)" aria-label="매입환율">
         </div>
         <button class="btn" id="pfAdd" type="button">추가하기</button>
@@ -1552,7 +1557,7 @@ function renderNews(){
   var byTime = function(a, b){ return new Date(b.at || 0) - new Date(a.at || 0); };
   var of = function(pri){ return items.filter(function(n){ return n.pri === pri; }).sort(byTime); };
   var html =
-    newsGroup("내 종목 소식", of(0).slice(0, 15), "보유·관심 종목에 나온 기사예요.") +
+    newsGroup("내 종목 소식", of(0).slice(0, 15)) +
     newsGroup("시장 소식", of(1).slice(0, 10)) +
     newsGroup("그 밖의 소식", of(2).slice(0, 20));
   $("newsList").innerHTML = html || '<p class="empty">표시할 뉴스가 없습니다.</p>';
@@ -1591,7 +1596,7 @@ function renderPortfolio(){
   if (!PF.length){
     $("pfHero").innerHTML = '<div class="big pf-empty">' +
       '<div class="t">내 주식을 넣어보세요</div>' +
-      '<div class="d">티커·수량·평단만 넣으면 지금 시세로 평가액과 손익을 계산해요.</div></div>';
+      '<div class="d">종목, 수량, 산 가격을 넣으면 지금 시세로 손익을 계산해요.</div></div>';
     $("pfGrid").hidden = true; $("pfHoldCard").hidden = true;
     return;
   }
@@ -1602,18 +1607,20 @@ function renderPortfolio(){
     '<div class="v num">' + (c.fx ? won0(c.mvKrw) + "원" : "$" + usd(c.mvUsd, 0)) + "</div>" +
     '<div class="n">지금까지 <b class="num ' + cls(c.fx ? pnlKrw : pnlUsd) + '">' +
       (c.fx ? swon(pnlKrw) + "원" : susd(pnlUsd, 0)) +
-      (c.costUsd ? " (" + pct1(pnlUsd / c.costUsd * 100) + ")" : "") + "</b></div></div>";
+      /* 금액이 원화면 %도 원화끼리 — 달러 %를 붙이면 환율 몫이 빠진 수익률이 원화 옆에 뜬다 */
+      (c.fx ? (c.costKrw ? " (" + pct1(pnlKrw / c.costKrw * 100) + ")" : "")
+            : (c.costUsd ? " (" + pct1(pnlUsd / c.costUsd * 100) + ")" : "")) + "</b></div></div>";
   var g = function(l, v, k){
     return '<div class="kv"><span class="l">' + l + '</span><span class="v num ' + (k || "") + '">' + v + "</span></div>"; };
   $("pfGrid").innerHTML =
     g("오늘 변동", susd(c.dayUsd, 0), cls(c.dayUsd)) +
     g("달러 기준 손익", pct1(c.costUsd ? pnlUsd / c.costUsd * 100 : null), cls(pnlUsd)) +
     g("환율", c.fx ? usd(c.fx, 1) + "원" : NB) +
-    g("전량 팔면 낼 세금", c.fx ? eok(pfTax(pnlKrw)) + "원" : NB);
+    g("다 팔면 낼 세금", c.fx ? eok(pfTax(pnlKrw)) + "원" : NB);
   $("pfGrid").hidden = false;
   $("pfHolds").innerHTML = c.rows.map(function(r, i){
     return '<div class="hold">' + logoHtml(r.t, 32) + '<div><div class="tk">' + esc(r.t) + "</div>" +
-      '<div class="qt">' + r.qty + "주 · 평단 $" + usd(r.cost, 2) + "</div></div>" +
+      '<div class="qt">' + r.qty + "주 · 산 가격 $" + usd(r.cost, 2) + "</div></div>" +
       '<div class="r"><div class="a num">$' + usd(r.mvUsd, 0) + "</div>" +
       '<div class="b num ' + cls(r.pnlUsdPct) + '">' + pct1(r.pnlUsdPct) + "</div></div>" +
       '<button class="x" type="button" data-del="' + i + '" aria-label="' + esc(r.t) + ' 삭제">✕</button></div>';
@@ -1626,7 +1633,7 @@ var HERO = {
   picks: ["오늘 주목할 종목", ""],
   record:["얼마나 맞았나",
           "지수랑 붙어서 몇 번 이겼는지."],
-  news:  ["오늘의 시장 뉴스", "누르면 원문으로 가요."],
+  news:  ["오늘의 시장 뉴스", ""],
   mine:  ["내 종목", "넣은 내용은 이 기기에만 저장돼요."]
 };
 function setView(v){
@@ -1658,7 +1665,7 @@ function renderAll(){
     '투자자문업 등록 사업자가 아니며, 개인에게 맞춘 조언이 아닙니다. ' +
     '투자 판단과 책임은 이용자 본인에게 있습니다.<br><br>' +
     '시세·재무 데이터 출처는 Yahoo Finance이며 지연될 수 있습니다. 뉴스는 각 언론사의 제목과 ' +
-    '링크만 전달합니다. 내 종목에 입력한 내용은 이 기기에만 저장되고 어디로도 전송되지 않습니다.' +
+    '링크만 전달합니다.' +
     btCaveatHtml() +
     '<br><br><a href="me/" style="color:var(--accent);text-decoration:none">내 포트폴리오 콘솔 →</a>';
 }
@@ -1811,8 +1818,8 @@ $("status").addEventListener("click", function(e){
 $("pfAdd").addEventListener("click", function(){
   var t = ($("pfTicker").value || "").trim().toUpperCase();
   var qty = parseFloat($("pfQty").value), cost = parseFloat($("pfCost").value), bfx = parseFloat($("pfFx").value);
-  if (!TBL[t]) { $("pfNote").textContent = "'" + t + "' 는 S&P 500 목록에 없는 티커입니다."; return; }
-  if (!(qty > 0) || !(cost > 0)) { $("pfNote").textContent = "수량과 평단을 숫자로 입력해 주세요."; return; }
+  if (!TBL[t]) { $("pfNote").textContent = "'" + t + "'는 S&P 500 목록에 없는 종목이에요."; return; }
+  if (!(qty > 0) || !(cost > 0)) { $("pfNote").textContent = "수량과 산 가격을 숫자로 입력해 주세요."; return; }
   var row = { t:t, qty:qty, cost:cost };
   if (bfx > 0) row.bfx = bfx;
   var i = PF.findIndex(function(x){ return x.t === t; });
