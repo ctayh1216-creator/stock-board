@@ -165,7 +165,7 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
 #gate[hidden]{display:none}
 .gate-card{position:relative;background:var(--surface);border-radius:var(--r);
   padding:32px 30px;width:100%;max-width:350px}
-.gate-card h2{margin:4px 0 8px;font-size:21px;font-weight:800}
+.gate-card h2{margin:4px 0 18px;font-size:21px;font-weight:800}
 .gate-card p{margin:0 0 18px;font-size:13.5px;color:var(--ink-3);line-height:1.6}
 .gate-card input[type=password]{width:100%;font:inherit;font-family:var(--sans);font-size:15px;
   padding:13px 14px;border:0;border-radius:14px;background:var(--ground);color:var(--ink)}
@@ -240,12 +240,12 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
   <section class="panel on" id="p-overview">
     <div class="grid g2">
       <div class="card">
-        <h3>수익의 출처 — 주가인가, 환율인가</h3>
+        <h3>원화 손익 분해</h3>
         <div id="attribChart"></div>
       </div>
       <div class="card flush">
         <h3>1년 성과</h3>
-        <p class="hint">지금 수량을 1년 전부터 들고 있었다고 가정한 궤적입니다. 두 선의 간격이 환율이 가져간 몫입니다.</p>
+        <p class="hint">지금 수량을 1년 전부터 들고 있었다고 가정했습니다. 포트(원화)와 포트(달러) 두 선의 간격이 환율 때문에 생긴 차이입니다.</p>
         <div id="perfChart"></div>
       </div>
     </div>
@@ -262,12 +262,11 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
     <div class="grid g2">
       <div class="card flush">
         <h3>환율 시나리오</h3>
-        <p class="hint">주가를 묶어두고 환율만 움직였을 때의 원화 손익입니다.</p>
+        <p class="hint">주가는 그대로 두고 환율만 바꿨을 때의 원화 손익입니다.</p>
         <div id="fxChart"></div>
       </div>
       <div class="card flush">
         <h3>구간별 손익표</h3>
-        <p class="hint">환율 10원당 평가액이 얼마나 움직이는지가 이 포트폴리오의 환노출 크기입니다.</p>
         <div class="scroll"><table id="fxTable"></table></div>
       </div>
     </div>
@@ -278,18 +277,18 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
     <div class="grid g2">
       <div class="card flush">
         <h3>종목 간 상관계수</h3>
-        <p class="hint">최근 1년 일간수익률 기준. 높을수록 같이 움직입니다.</p>
+        <p class="hint">최근 1년 일간수익률 기준입니다.</p>
         <div id="corrChart"></div>
       </div>
       <div class="card flush">
-        <h3>비중 대 리스크 기여도</h3>
-        <p class="hint">돈을 얼마나 넣었는지(비중)와 변동성을 얼마나 만들어내는지(리스크 기여도)는 다릅니다.</p>
+        <h3>비중 대비 리스크 기여도</h3>
+        <p class="hint">리스크 기여도는 포트폴리오 변동성에서 그 종목이 차지하는 몫입니다.</p>
         <div id="riskChart"></div>
       </div>
     </div>
     <div class="grid g2" style="margin-top:14px">
-      <div class="card"><h3>포트폴리오 지표</h3><p class="hint">집중도와 변동성 측정치.</p><div id="riskStats"></div></div>
-      <div class="card flush"><h3>섹터 노출</h3><p class="hint">GICS 섹터 분류 기준 비중.</p><div class="scroll"><table id="sectorTable"></table></div></div>
+      <div class="card"><h3>포트폴리오 지표</h3><div id="riskStats"></div></div>
+      <div class="card flush"><h3>섹터 노출</h3><p class="hint">Yahoo Finance 섹터 분류입니다.</p><div class="scroll"><table id="sectorTable"></table></div></div>
     </div>
     <div id="riskNotes"></div>
   </section>
@@ -308,8 +307,8 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
 
   <section class="panel" id="p-div">
     <div class="card flush">
-      <h3>분산 후보 상관 스크린</h3>
-      <p class="hint">최근 1년 일간수익률 상관계수입니다. 과거 기록일 뿐 앞으로를 보장하지 않습니다.</p>
+      <h3>분산 후보</h3>
+      <p class="hint">최근 1년 일간수익률 상관계수입니다.</p>
       <div class="scroll"><table id="divTable"></table></div>
     </div>
     <div id="divNotes"></div>
@@ -317,18 +316,16 @@ footer{max-width:1280px;margin:36px auto 0;padding:18px 20px 24px;border-top:1px
 </div>
 
 <footer>
-  <b>이 페이지는 투자 자문이 아닙니다.</b> 매수·매도 판단에 필요한 공개 시장 데이터를 계산해 보여주는 도구입니다. 특정 종목의 매매나 시점을 권유하지 않으며, 표시된 수치는 투자 판단의 근거가 아니라 재료입니다.<br>
-  시세·펀더멘털 출처 Yahoo Finance (지연 가능), 환율 USD/KRW. 애널리스트 목표주가와 컨센서스는 제3자 의견을 그대로 옮긴 것입니다. 세금 계산은 단순화한 추정이며 실제 신고는 증권사 자료와 세무 상담을 따르십시오.
+  시세·재무 데이터와 환율은 Yahoo Finance에서 받으며 지연될 수 있습니다. 세금은 단순화한 추정치입니다.
 </footer>
 <div class="tip" id="tip"></div>
 
 <div id="gate" hidden>
   <div class="gate-card">
-    <div class="eyebrow">Stock Board</div>
+    <div class="eyebrow">종목 상황실</div>
     <h2>포트폴리오 콘솔</h2>
-    <p>이 페이지는 암호화되어 있습니다. 열람 암호를 입력하면 이 기기에서 복호화됩니다.</p>
-    <input id="gatePass" type="password" autocomplete="current-password" placeholder="열람 암호" aria-label="열람 암호">
-    <label><input type="checkbox" id="gateRemember" checked> 이 기기에서 기억</label>
+    <input id="gatePass" type="password" autocomplete="current-password" placeholder="암호" aria-label="암호">
+    <label><input type="checkbox" id="gateRemember" checked> 이 기기에 저장</label>
     <button id="gateGo" type="button">열기</button>
     <div id="gateErr" class="gate-err" role="alert"></div>
   </div>
@@ -390,7 +387,7 @@ const hideTip = () => { tipEl.style.opacity = "0"; };
 /* ---------------- tabs ---------------- */
 const TABS = [
   ["overview","개요"],["positions","종목 심층"],["fx","환율 리스크"],
-  ["risk","집중도·상관"],["tax","양도세"],["div","분산 스크린"],["screener","종목 스크리너"]
+  ["risk","집중도·상관"],["tax","양도세"],["div","분산 후보"],["screener","종목 스크리너"]
 ];
 function buildTabs(){
   const nav = document.getElementById("tabs");
@@ -439,7 +436,7 @@ function header(D){
 function attribChart(D){
   const a=D.summary.attrib;
   const rows=[["주가효과",a.price,"매입 당시 환율로 환산한 달러 손익"],
-              ["환율효과",a.fx,"원금에 붙은 환차손익"],
+              ["환율효과",a.fx,"달러 원금에서 생긴 환차손익"],
               ["교차항",a.cross,"주가·환율 변동이 겹친 부분"]];
   const W=520,rh=54,H=rows.length*rh+52, m={l:14,r:14};
   const mx=Math.max(...rows.map(r=>Math.abs(r[1])),1);
@@ -463,9 +460,10 @@ function attribChart(D){
   s.appendChild(txt(m.l,y+26,"원화 손익 합계",{class:"axis",style:"font-size:11.5px;fill:var(--ink)","font-weight":"600"}));
   s.appendChild(txt(W-m.r,y+26,swon(tot)+"원",{class:"dlabel","text-anchor":"end",fill:`var(${tot>=0?"--up":"--down"})`,style:"font-size:13px"}));
   const box=document.getElementById("attribChart"); box.innerHTML=""; box.appendChild(s);
-  const drag = a.price>0 ? Math.min(100, Math.abs(a.fx)/a.price*100) : null;
-  if(drag!==null) box.appendChild(el("p",{class:"note",style:"margin-left:0;margin-right:0"},
-    `주가로 번 <b>${eok(a.price)}원</b> 가운데 <b>${drag.toFixed(0)}%</b>를 환율이 되돌렸습니다. 원화로 체감하는 수익률이 달러 수익률보다 낮은 이유입니다.`));
+  const note = a.price>0 && a.fx<0
+    ? `주가로 번 <b>${eok(a.price)}원</b> 가운데 <b>${Math.min(100, -a.fx/a.price*100).toFixed(0)}%</b>를 환율에서 잃었습니다.`
+    : a.fx>0 ? `환율에서 <b>${eok(a.fx)}원</b>을 더 벌었습니다.` : null;
+  if(note) box.appendChild(el("p",{class:"note",style:"margin-left:0;margin-right:0"},note));
 }
 
 /* ---------------- 성과 라인차트 ---------------- */
@@ -543,7 +541,7 @@ const NB="—";
 /* ---------------- 보유 종목 테이블 ---------------- */
 function holdTable(D){
   const t=document.getElementById("holdTable"); t.innerHTML="";
-  const cols=["종목","수량","평단($)","현재가($)","일간","비중","평가액(원)","달러손익","원화손익","매입환율","RSI","vs 200일","52주 위치"];
+  const cols=["종목","수량","평단($)","현재가($)","일간","비중","평가액(원)","달러손익","원화손익","매입환율","RSI","200일선 대비","52주 위치"];
   const th=el("tr"); cols.forEach((c,i)=>th.appendChild(el("th",{},c))); t.appendChild(el("thead")).appendChild(th);
   const tb=el("tbody");
   D.positions.forEach((p,i)=>{
@@ -694,12 +692,15 @@ function fxSection(D){
   t.appendChild(tb);
 
   const nb=document.getElementById("fxNotes"); nb.innerHTML="";
+  const vb=D.fx.vs_avg_buy_pct, cf=D.risk.corr_port_fx;
   nb.appendChild(el("div",{class:"banner"},"<div>"+
-    `환헤지 비율 <b>0%</b> — 자산 전액이 달러 노출입니다. 환율이 <b>10원</b> 움직일 때 평가액은 <b>${won(sc.krw_sensitivity_per_10won)}원</b> 움직입니다.<br>`+
-    `매입 시점 평균 환율 <b>${usd(sc.avg_buy_fx,1)}원</b> 대비 현재 <b class="${cls(D.fx.vs_avg_buy_pct)}">${pctS(D.fx.vs_avg_buy_pct)}</b>. `+
-    `포트폴리오 수익률과 환율의 상관계수는 <b>${has(D.risk.corr_port_fx)?D.risk.corr_port_fx.toFixed(2):NB}</b>로, 주가와 환율이 서로를 상쇄해주지 않았다는 뜻입니다.`+
+    `환헤지 없이 자산 전부가 달러입니다. 환율이 10원 움직이면 평가액은 <b>${won(sc.krw_sensitivity_per_10won)}원</b> 움직입니다.<br>`+
+    (has(vb)?`지금 환율은 평균 매입환율 <b>${usd(sc.avg_buy_fx,1)}원</b>보다 <b class="${cls(vb)}">${Math.abs(vb).toFixed(1)}%</b> ${vb>=0?"높습니다":"낮습니다"}. `:"")+
+    (has(cf)?`포트폴리오 수익률과 환율의 상관계수는 <b>${cf.toFixed(2)}</b>입니다. `+
+      (cf<=-0.2?"주가가 내릴 때 환율이 올라 원화 손익을 일부 상쇄했습니다."
+       :cf>=0.2?"주가와 환율이 같은 방향으로 움직여 상쇄 효과가 없었습니다."
+       :"둘 사이에 뚜렷한 관계는 없었습니다."):"")+
     "</div>"));
-  nb.appendChild(el("p",{class:"note",style:"margin-left:0"},sc.note));
 }
 window.__P2={holdTable,overviewNotes,posCards,fxSection};
 })();
@@ -780,7 +781,7 @@ function riskChart(D){
   const box=document.getElementById("riskChart"); box.innerHTML="";
   box.appendChild(el("div",{class:"legend",style:"padding:0 18px"},
     `<span><span class="swatch" style="background:var(--ink-3);opacity:.4"></span>자산 비중</span>`+
-    `<span><span class="swatch" style="background:var(--ink-3)"></span>변동성 기여도</span>`));
+    `<span><span class="swatch" style="background:var(--ink-3)"></span>리스크 기여도</span>`));
   const wrap=el("div",{style:"padding:0 18px 14px"}); wrap.appendChild(s); box.appendChild(wrap);
 }
 
@@ -788,7 +789,7 @@ function riskStats(D){
   const r=D.risk, box=document.getElementById("riskStats"); box.innerHTML="";
   const mini=el("div",{class:"mini"});
   const cell=(l,v)=>mini.appendChild(el("div",{},`<div class="l">${l}</div><div class="v">${v}</div>`));
-  cell("연율 변동성",r.vol_ann_pct+"%");
+  cell("연 변동성",r.vol_ann_pct+"%");
   cell("시장 베타",r.beta_spy);
   cell("유효 종목 수",r.effective_n+" / "+D.positions.length);
   cell("최대 종목 비중",r.max_weight_pct+"%");
@@ -808,11 +809,18 @@ function riskStats(D){
   t.appendChild(tb);
 
   const nb=document.getElementById("riskNotes"); nb.innerHTML="";
-  const meta=D.positions.find(p=>p.ticker==="META");
+  const pos=D.positions, n=pos.length;
+  const first=o=>Object.entries(o).sort((a,b)=>b[1]-a[1])[0]||[];
+  const [sec,secW]=first(r.sector_weights), [rcT,rcV]=first(r.risk_contribution);
+  const inSec=pos.filter(p=>p.sector===sec).map(p=>p.ticker);
+  const lowB=pos.filter(p=>p.tech&&has(p.tech.beta_spy)).sort((a,b)=>a.tech.beta_spy-b.tech.beta_spy)[0];
   nb.appendChild(el("div",{class:"banner"},"<div>"+
-    `종목 수 5개에 유효 종목 수 <b>${r.effective_n}</b>로 금액 배분 자체는 고릅니다. 다만 섹터로 보면 <b>Communication Services ${(r.sector_weights["Communication Services"]||0).toFixed(0)}%</b>에 빅테크 4종목이 겹쳐 있고, `+
-    `가장 변동성이 큰 종목이 리스크의 <b>${Math.max(...Object.values(r.risk_contribution)).toFixed(0)}%</b>를 차지합니다. `+
-    (meta?`LLY만이 시장과 낮은 상관(베타 ${D.positions[0].tech.beta_spy})으로 홀로 분산 역할을 하고 있습니다.`:"")+
+    (r.effective_n>=n*0.8
+      ?`금액은 ${n}종목에 고르게 나뉘어 있습니다(유효 종목 수 <b>${r.effective_n}</b>). `
+      :`금액이 일부 종목에 몰려 있습니다(유효 종목 수 <b>${r.effective_n}</b> / ${n}). `)+
+    (inSec.length>1?`섹터 비중은 ${sec}(${inSec.join("·")}) <b>${secW.toFixed(0)}%</b>가 가장 큽니다. `:"")+
+    (rcT?`리스크 기여도가 가장 큰 종목은 ${rcT}(<b>${rcV.toFixed(0)}%</b>)입니다. `:"")+
+    (lowB?`시장 베타가 가장 낮은 종목은 ${lowB.ticker}(<b>${lowB.tech.beta_spy}</b>)입니다.`:"")+
     "</div>"));
 }
 
@@ -836,28 +844,28 @@ function taxSection(D){
   const cards=document.getElementById("taxCards"); cards.innerHTML="";
   const card=(h,hint,rows)=>{
     const c=el("div",{class:"card"});
-    c.appendChild(el("h3",{},h)); c.appendChild(el("p",{class:"hint"},hint));
+    c.appendChild(el("h3",{},h)); if(hint) c.appendChild(el("p",{class:"hint"},hint));
     const m=el("div",{class:"mini"});
     rows.forEach(([l,v,k])=>m.appendChild(el("div",{},`<div class="l">${l}</div><div class="v ${k||""}">${v}</div>`)));
     c.appendChild(m); return c;
   };
-  cards.appendChild(card("전량 매도","이익과 손실이 통산되어 과표가 크게 줄어듭니다.",[
+  cards.appendChild(card("전량 매도","이익과 손실을 통산합니다.",[
     ["양도차익 합계",swon(T.sell_all.total_gain_krw),cls(T.sell_all.total_gain_krw)],
     ["공제 후 과표",won(T.sell_all.taxable_krw)],
     ["세금",won(T.sell_all.tax_krw)+"원","up"]]));
-  cards.appendChild(card("이익 종목만 매도","손실 상계 없이 이익만 실현하는 경우.",[
+  cards.appendChild(card("이익 종목만 매도","",[
     ["양도차익",swon(T.winners_only.gain_krw),cls(T.winners_only.gain_krw)],
     ["세금",won(T.winners_only.tax_krw)+"원","up"],
     ["전량 대비 추가 부담",swon(T.loss_offset_value_krw)+"원"]]));
-  cards.appendChild(card("손실 상계 가치","같은 해에 손실 종목을 함께 실현하면 줄어드는 세금.",[
+  cards.appendChild(card("손실 상계","같은 해에 손실 종목도 함께 팔면 줄어드는 세금입니다.",[
     ["손실 종목",T.losers.join(", ")||NB],
     ["절세 효과",won(T.loss_offset_value_krw)+"원","down"],
     ["연 기본공제","2,500,000원"]]));
 
   const nb=document.getElementById("taxNotes"); nb.innerHTML="";
   nb.appendChild(el("div",{class:"banner"},"<div>"+
-    `양도세는 <b>원화 환산 차익</b> 기준입니다 — 달러로 벌어도 환율이 내리면 과표가 줄고, 환율이 오르면 주가가 그대로여도 세금이 생길 수 있습니다. `+
-    `공제 250만원은 <b>매년 1월 1일 리셋</b>되므로, 이익 실현을 연도별로 나누면 해마다 공제를 새로 쓸 수 있습니다. 결제일(T+1) 기준으로 과세연도가 정해지니 연말 매도는 결제일을 확인하십시오.`+
+    `달러로 벌어도 환율이 내리면 과표가 줄고, 주가가 그대로여도 환율이 오르면 세금이 생길 수 있습니다. `+
+    `기본공제 250만원은 해마다 새로 받으므로 이익 실현을 여러 해로 나누면 공제도 해마다 받습니다. 과세연도는 결제일(T+1) 기준이라 연말에 판 주식은 다음 해 양도로 잡힐 수 있습니다.`+
     "</div>"));
 }
 
@@ -890,7 +898,7 @@ function divSection(D){
   const low=V.rows.slice(0,3).map(r=>`<b>${r.ticker}</b>(${r.name}, ${r.corr_port.toFixed(2)})`).join(" · ");
   nb.appendChild(el("div",{class:"banner"},"<div>"+
     `현재 포트폴리오와 상관이 가장 낮았던 자산은 ${low}입니다. `+
-    `과거 1년의 상관이며, 시장 급락기에는 상관이 일제히 높아지는 경향이 있다는 점을 감안하십시오. ${V.disclaimer}`+
+    `시장이 급락할 때는 자산 간 상관이 한꺼번에 높아지곤 합니다.`+
     "</div>"));
 }
 
@@ -912,7 +920,7 @@ var NB = "—";
 
 var PRESETS = [
   {key:"composite", label:"종합"},
-  {key:"fit",       label:"분산 적합"},
+  {key:"fit",       label:"분산 적합도"},
   {key:"value",     label:"가치"},
   {key:"growth",    label:"성장"},
   {key:"momentum",  label:"모멘텀"},
@@ -934,7 +942,7 @@ var COLS = [
   {id:"growth",    label:"성장",       get:function(r){ return score(r,"growth"); }},
   {id:"momentum",  label:"모멘텀",     get:function(r){ return score(r,"momentum"); }},
   {id:"analyst",   label:"애널리스트", get:function(r){ return score(r,"analyst"); }},
-  {id:"fit",       label:"분산적합",   get:function(r){ return score(r,"fit"); }},
+  {id:"fit",       label:"분산 적합도", get:function(r){ return score(r,"fit"); }},
   {id:"corr_port", label:"포트상관",   get:function(r){ return has(r.corr_port) ? r.corr_port : null; }},
   {id:"upside",    label:"상승여력",   get:function(r){ return has(r.upside) ? r.upside : null; }},
   {id:"pe_fwd",    label:"선행PER",    get:function(r){ return has(r.pe_fwd) ? r.pe_fwd : null; }}
@@ -1040,10 +1048,9 @@ function bannerHtml(S){
       : d.toLocaleString("ko-KR",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"});
   }
   var top = topComposite(S.rows||[],3);
-  var parts = ["기준 시각 <b>"+dt+"</b> · 유니버스 <b>"+(S.universe_size||(S.rows?S.rows.length:0))+"종목</b>."];
-  if(top.length) parts.push("데이터 기준 상위: "+top.map(function(t){ return "<b>"+esc(t)+"</b>"; }).join(" · ")
-    + " — 보유 종목을 제외하고 종합 점수가 높았던 순서일 뿐, 순위 자체가 매수 근거는 아닙니다.");
-  if(S.disclaimer) parts.push(esc(S.disclaimer));
+  var parts = ["기준 시각 <b>"+dt+"</b>"];
+  if(top.length) parts.push("보유 종목을 빼면 종합 점수 "+(top.length>1?"1~"+top.length+"위는 ":"1위는 ")
+    + top.map(function(t){ return "<b>"+esc(t)+"</b>"; }).join(" · ")+"입니다.");
   return "<div>"+parts.join("<br>")+"</div>";
 }
 
@@ -1059,12 +1066,10 @@ function holdingCompareCard(S){
   if(!holds.length) return null;
   var card = el("div",{class:"card flush"});
   card.appendChild(el("h3",{},"보유 종목과 같은 섹터 비교"));
-  card.appendChild(el("p",{class:"hint"},
-    "보유 종목과 <b>같은 섹터</b>에서 종합 점수가 더 높은 종목을 나란히 놓은 표입니다. "
-    + "점수는 과거 데이터의 상대 순위이며, 교체 매매를 권하는 것이 아닙니다 — 판단 재료입니다."));
   var rows = holds.map(function(h){
+    /* 다른 보유 종목도 후보에 넣는다 — 빼면 더 높은 보유 종목이 있어도 «섹터 1위» 로 적힌다 */
     var peers = S.rows.filter(function(r){
-      return !r.is_holding && r.sector===h.sector
+      return r.ticker!==h.ticker && r.sector===h.sector
         && has(r.scores&&r.scores.composite) && has(h.scores&&h.scores.composite)
         && r.scores.composite > h.scores.composite;
     }).sort(function(a,b){ return b.scores.composite-a.scores.composite; }).slice(0,3);
@@ -1074,7 +1079,7 @@ function holdingCompareCard(S){
             + '<b class="mono">'+esc(pr.ticker)+'</b>&nbsp;'
             + '<span class="num">'+fmtScore(pr.scores.composite)+'</span></span>';
         }).join("")
-      : '<span class="dim">이 섹터에서 종합 점수가 더 높은 종목 없음</span>';
+      : '<span class="dim">섹터 1위</span>';
     return '<tr>'
       + '<td class="tk">'+esc(h.ticker)
       + '<span class="dim" style="font-weight:400;margin-left:6px;font-family:inherit">'+esc(h.sector||"")+'</span></td>'
@@ -1100,7 +1105,7 @@ function screenerSection(D){
     var c0 = el("div",{class:"card"});
     c0.appendChild(el("h3",{},"종목 스크리너"));
     c0.appendChild(el("p",{class:"hint",style:"margin-bottom:0"},
-      '스크리너 데이터가 아직 생성되지 않았습니다. 갱신 스크립트가 <span class="mono">data/screener.json</span>을 만들면 이 탭이 채워집니다. 스크립트를 실행한 뒤 새로고침하세요.'));
+      '스크리너 데이터가 아직 없습니다. 갱신 스크립트를 실행해 <span class="mono">data/screener.json</span>을 만든 뒤 새로고침하세요.'));
     root.appendChild(c0);
     return;
   }
@@ -1109,8 +1114,8 @@ function screenerSection(D){
   var card = el("div",{class:"card flush"});
   card.appendChild(el("h3",{},"종목 스크리너"));
   card.appendChild(el("p",{class:"hint"},
-    "미국 대형주 <b>"+(S.universe_size||S.rows.length)+"종목</b>을 가치·퀄리티·성장·모멘텀·애널리스트·분산적합 6개 팩터의 백분위 점수(0–100)로 비교한 표입니다. "
-    + "점수는 유니버스 안에서의 상대 순위일 뿐 절대 평가가 아니며, <b>투자 권유가 아닙니다</b>. 열 제목을 누르면 그 열로 정렬됩니다."));
+    "미국 대형주 <b>"+(S.universe_size||S.rows.length)+"종목</b>을 여섯 가지 기준으로 서로 비교해 백분위 점수(0~100)를 매겼습니다. "
+    + "열 제목을 누르면 그 열로 정렬됩니다."));
 
   var chipBtn = function(label){
     return el("button",{class:"chip flat",type:"button",
@@ -1131,7 +1136,6 @@ function screenerSection(D){
   var tgl = chipBtn("보유 종목 포함");
   tgl.onclick = function(){ state.showHold=!state.showHold; render(); };
   tglRow.appendChild(tgl);
-  tglRow.appendChild(el("span",{class:"dim",style:"font-size:11px"},"보유 종목 행은 배경색과 ‘보유’ 표시로 구분됩니다."));
   card.appendChild(tglRow);
 
   var wrap = el("div",{class:"scroll"});
@@ -1358,10 +1362,10 @@ async function start(){
     if(window.__ENC_MODE__){
       try{ localStorage.removeItem("sb_pass"); }catch(_){}
       PASS=null;
-      showGate("열지 못했습니다 — "+e.message);
+      showGate("열지 못했습니다. "+e.message);
     }else{
       document.querySelector(".wrap").prepend(el("div",{class:"banner"},
-        `<div><b>데이터를 불러오지 못했습니다.</b> ${e.message} — 로컬에서는 <span class="mono">python3 -m http.server</span>로 열거나 refresh.sh를 먼저 실행하세요.</div>`));
+        `<div><b>데이터를 불러오지 못했습니다.</b> ${e.message}<br>로컬에서는 <span class="mono">python3 -m http.server</span>로 열거나 refresh.sh를 먼저 실행하세요.</div>`));
     }
   }
 }
