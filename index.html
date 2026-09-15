@@ -588,7 +588,7 @@ td.tk small{display:block;font-weight:400;font-size:13px;color:var(--t3);margin-
       <div class="sec-h"><h2>보유 종목</h2></div>
       <div class="cardlist" id="pfHolds"></div>
     </div>
-    <div>
+    <div id="pfAddBlock">
       <div class="sec-h"><h2>종목 추가</h2></div>
       <div class="fcard">
         <div class="form">
@@ -1594,6 +1594,16 @@ function pfCompute(){
 function pfTax(g){ return (!has(g) || g <= 2500000) ? 0 : (g - 2500000) * 0.22; }
 
 function renderPortfolio(){
+  /* 내 종목은 미국 주식 전용 — 달러 가격·매입환율·해외주식 양도세로 계산한다.
+     한국 화면에서 받으면 한국 종목표(TBL)로 막히고 미국 보유분은 시세를 못 찾는다. */
+  $("pfAddBlock").hidden = isKR();
+  if (isKR()){
+    $("pfHero").innerHTML = '<div class="big pf-empty">' +
+      '<div class="t">내 종목은 미국 주식만 돼요</div>' +
+      '<button class="btn" type="button" data-go-us>미국으로 바꾸기</button></div>';
+    $("pfGrid").hidden = true; $("pfHoldCard").hidden = true;
+    return;
+  }
   TBL = {};
   (D && D.table || []).forEach(function(r){ TBL[r.ticker] = r; });
   $("tickerList").innerHTML = (D && D.table || []).map(function(r){
@@ -1840,6 +1850,10 @@ $("pfHolds").addEventListener("click", function(e){
   if (!b) return;
   PF.splice(parseInt(b.getAttribute("data-del"), 10), 1);
   pfSave(PF); renderPortfolio(); renderNews();
+});
+$("pfHero").addEventListener("click", function(e){
+  if (e.target.closest && e.target.closest("[data-go-us]"))
+    $("mkts").querySelector('[data-mk="us"]').click();
 });
 $("pfExport").addEventListener("click", function(){
   var code = JSON.stringify(PF);
