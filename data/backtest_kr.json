@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T16:40:08+00:00",
+ "generated_at": "2026-09-19T16:18:58+00:00",
  "benchmark": "코스피 200",
  "top_n": 20,
  "caveats": [
@@ -11,14 +11,14 @@
  "strategies": {
   "momentum": {
    "backtested": true,
-   "months": 21,
-   "avg_monthly": 3.12,
-   "bench_avg_monthly": 5.21,
-   "win_rate": 38.1,
+   "months": 22,
+   "avg_monthly": 2.95,
+   "bench_avg_monthly": 5.04,
+   "win_rate": 36.4,
    "best": 36.37,
    "worst": -28.82,
-   "cumulative": 56.4,
-   "bench_cumulative": 144.5,
+   "cumulative": 55.2,
+   "bench_cumulative": 148.3,
    "monthly": [
     {
      "month": "2024-11",
@@ -145,19 +145,25 @@
      "n": 20,
      "ret": 7.82,
      "bench": -1.11
+    },
+    {
+     "month": "2026-09",
+     "n": 20,
+     "ret": -0.75,
+     "bench": 1.55
     }
    ]
   },
   "oversold": {
    "backtested": true,
-   "months": 16,
-   "avg_monthly": 1.65,
-   "bench_avg_monthly": 6.81,
-   "win_rate": 43.8,
+   "months": 17,
+   "avg_monthly": 1.56,
+   "bench_avg_monthly": 6.5,
+   "win_rate": 41.2,
    "best": 17.67,
    "worst": -9.85,
    "cumulative": 26.1,
-   "bench_cumulative": 136.2,
+   "bench_cumulative": 139.8,
    "monthly": [
     {
      "month": "2024-11",
@@ -254,6 +260,12 @@
      "n": 2,
      "ret": -9.85,
      "bench": -1.11
+    },
+    {
+     "month": "2026-09",
+     "n": 1,
+     "ret": 0.0,
+     "bench": 1.55
     }
    ],
    "partial": "가격 조건만으로 계산했어요. 실제 화면엔 수익성 조건이 하나 더 있어요."
@@ -290,14 +302,14 @@
  "transitions": {
   "buy": {
    "backtested": true,
-   "months": 21,
-   "avg_monthly": 4.81,
-   "bench_avg_monthly": 6.98,
-   "win_rate": 42.9,
+   "months": 22,
+   "avg_monthly": 4.57,
+   "bench_avg_monthly": 6.74,
+   "win_rate": 40.9,
    "best": 57.6,
    "worst": -25.49,
-   "cumulative": 115.1,
-   "bench_cumulative": 239.7,
+   "cumulative": 114.3,
+   "bench_cumulative": 244.9,
    "monthly": [
     {
      "month": "2024-12",
@@ -361,8 +373,8 @@
     },
     {
      "month": "2025-10",
-     "n": 26,
-     "ret": 6.47,
+     "n": 25,
+     "ret": 6.8,
      "bench": 22.36
     },
     {
@@ -424,21 +436,27 @@
      "n": 11,
      "ret": 11.8,
      "bench": -1.11
+    },
+    {
+     "month": "2026-09",
+     "n": 35,
+     "ret": -0.7,
+     "bench": 1.55
     }
    ],
    "good_when": "above",
-   "avg_n": 26.5
+   "avg_n": 26.9
   },
   "exit": {
    "backtested": true,
-   "months": 21,
-   "avg_monthly": 3.53,
-   "bench_avg_monthly": 6.98,
-   "win_rate": 38.1,
+   "months": 22,
+   "avg_monthly": 2.93,
+   "bench_avg_monthly": 6.74,
+   "win_rate": 36.4,
    "best": 19.2,
    "worst": -13.13,
-   "cumulative": 90.8,
-   "bench_cumulative": 239.7,
+   "cumulative": 72.4,
+   "bench_cumulative": 244.9,
    "monthly": [
     {
      "month": "2024-12",
@@ -565,22 +583,28 @@
      "n": 19,
      "ret": 7.98,
      "bench": -1.11
+    },
+    {
+     "month": "2026-09",
+     "n": 4,
+     "ret": -9.6,
+     "bench": 1.55
     }
    ],
    "good_when": "below",
-   "avg_n": 31.0
+   "avg_n": 29.8
   }
  },
  "signal": {
   "backtested": true,
-  "months": 22,
-  "avg_monthly": 2.96,
-  "bench_avg_monthly": 6.47,
-  "win_rate": 45.5,
+  "months": 23,
+  "avg_monthly": 2.82,
+  "bench_avg_monthly": 6.26,
+  "win_rate": 43.5,
   "best": 31.04,
   "worst": -25.12,
-  "cumulative": 63.5,
-  "bench_cumulative": 225.3,
+  "cumulative": 62.8,
+  "bench_cumulative": 230.3,
   "monthly": [
    {
     "month": "2024-11",
@@ -650,8 +674,8 @@
    },
    {
     "month": "2025-10",
-    "n": 38,
-    "ret": 10.37,
+    "n": 37,
+    "ret": 10.71,
     "bench": 22.36
    },
    {
@@ -713,9 +737,15 @@
     "n": 11,
     "ret": 11.8,
     "bench": -1.11
+   },
+   {
+    "month": "2026-09",
+    "n": 41,
+    "ret": -0.74,
+    "bench": 1.55
    }
   ],
-  "hold_all_avg_monthly": 2.98,
-  "hold_all_cumulative": 83.3
+  "hold_all_avg_monthly": 2.92,
+  "hold_all_cumulative": 80.7
  }
 }
